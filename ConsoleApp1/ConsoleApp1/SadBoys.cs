@@ -11,5 +11,11 @@ namespace ConsoleApp1
         int cristian = 0;
         int teo = 13;
         int KILLYOURSELF = 0;
+		int randy = 8;
+
+		private void Cry(int time)
+		{
+			//SadBoy cries for time (in seconds)
+		}
     }
 }
