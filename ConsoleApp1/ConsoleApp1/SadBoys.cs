@@ -10,5 +10,6 @@ namespace ConsoleApp1
     {
         int cristian = 0;
         int teo = 13;
+        int KILLYOURSELF = 0;
     }
 }
