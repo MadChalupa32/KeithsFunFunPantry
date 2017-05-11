@@ -9,5 +9,6 @@ namespace ConsoleApp1
     class SadBoys
     {
         int cristian = 0;
+        int KILLYOURSELF = 0;
     }
 }
