@@ -16,7 +16,7 @@ namespace ConsoleApp1
 		public static void IDontKnowWhatToMakeSo_Here()
 		{
 			//Someone, change the name of this method
-			Console.WriteLine("Please, change this...");
+			Console.WriteLine("HI");
 		}
     }
 }
