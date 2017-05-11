@@ -12,6 +12,7 @@ namespace ConsoleApp1
         int teo = 13;
         int KILLYOURSELF = 0;
 		int randy = 8;
+        int tay = 80;
 
 		private void Cry(int time)
 		{
