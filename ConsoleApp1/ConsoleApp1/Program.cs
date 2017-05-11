@@ -12,5 +12,11 @@ namespace ConsoleApp1
         {
             Console.WriteLine("Goodbye, Brian!");
         }
+
+		public static void IDontKnowWhatToMakeSo_Here()
+		{
+			//Someone, change the name of this method
+			Console.WriteLine("Please, change this...");
+		}
     }
 }
