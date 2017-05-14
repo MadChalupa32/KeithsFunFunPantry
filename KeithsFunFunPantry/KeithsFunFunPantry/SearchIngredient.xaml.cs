@@ -10,29 +10,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace KeithsFunFunPantry
 {
     /// <summary>
-    /// Interaction logic for SplashScreen.xaml
+    /// Interaction logic for SearchIngredient.xaml
     /// </summary>
-    public partial class SplashScreen : Window
+    public partial class SearchIngredient : Page
     {
-        HomePage homePage = new HomePage();
-        public SplashScreen()
+        public SearchIngredient()
         {
             InitializeComponent();
-        }
-        private void Move(Object sender, MouseButtonEventArgs e)
-        {
-            DragMove();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            homePage.Show();
-            this.Close();
         }
     }
 }

@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace KeithsFunFunPantry
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for SearchRecipe.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class SearchRecipe : Page
     {
-        public MainWindow()
+        public SearchRecipe()
         {
             InitializeComponent();
         }
