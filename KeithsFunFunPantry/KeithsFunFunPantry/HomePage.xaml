@@ -8,9 +8,23 @@
         Title="HomePage" Height="750" Width="1250" Icon="Images/AppIcon.ico">
     <Grid>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
+            <Button Background="Transparent" BorderThickness="0" Click="BackButton_Click">
+                <Image Margin="10,9" >
+                    <Image.Source>
+                        <BitmapImage  UriSource="Images/Left.png" />
+                    </Image.Source>
+                </Image>
+            </Button>
+            <Button Background="Transparent" BorderThickness="0" Click="ForwardButton_Click">
+                <Image Margin="10,9" >
+                    <Image.Source>
+                        <BitmapImage  UriSource="Images/Right.png" />
+                    </Image.Source>
+                </Image>
+            </Button>
             <Button Content="Pantry" MinWidth="50" Click="PantryView_Click"/>
             <Button Content="Recipe" MinWidth="50" Margin="10,0,0,0" Click="RecipeView_Click"/>
-            <Button Content="Search by ingredients" MinWidth="50" Margin="10,0,0,0" Click="SearchIngredient_Click"/>
+            <Button Content="Search by ingredients" MinWidth="50" Margin="10,0,0,0.2" Click="SearchIngredient_Click"/>
             <Button Content="Search by recipe" MinWidth="50" Margin="10,0,0,0" Click="SearchRecipe_Click"/>
         </StackPanel>
         <Frame x:Name="Frame_HomePage" Margin="0, 100, 0, 0" NavigationUIVisibility="Hidden"/>

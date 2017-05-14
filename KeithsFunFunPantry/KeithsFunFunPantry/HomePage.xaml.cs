@@ -39,7 +39,7 @@ namespace KeithsFunFunPantry
 
         private void RecipeView_Click(object sender, RoutedEventArgs e)
         {
-            //Frame_HomePage.Content = recipeView;
+            Frame_HomePage.Content = new RecipeView();
         }
 
         private void SearchIngredient_Click(object sender, RoutedEventArgs e)
@@ -49,6 +49,21 @@ namespace KeithsFunFunPantry
         private void SearchRecipe_Click(object sender, RoutedEventArgs e)
         {
             //Frame_HomePage.Content = searchRecipe;
+        }
+
+        private void BackButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame_HomePage.NavigationService.CanGoBack)
+            {
+                Frame_HomePage.NavigationService.GoBack();
+            }
+        }
+        private void ForwardButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Frame_HomePage.NavigationService.CanGoForward)
+            {
+                Frame_HomePage.NavigationService.GoForward();
+            }
         }
     }
 }
