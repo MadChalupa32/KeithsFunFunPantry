@@ -26,7 +26,7 @@ namespace KeithsFunFunPantry
             TextBoxOptions();
         }
 
-        private string ph = "Search by Ingredients";
+        private string ph = "Search by Ingredient";
         private void TextBoxOptions()
         {
             TextBox_ByIngredientSearch.GotFocus += RemoveText;

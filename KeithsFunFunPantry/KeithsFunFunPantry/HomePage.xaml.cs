@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace KeithsFunFunPantry
 {
@@ -27,6 +28,7 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
         }
+
         private void ExitButton_Click(object sender, RoutedEventArgs e)
         {
             Close();
@@ -48,7 +50,7 @@ namespace KeithsFunFunPantry
         }
         private void SearchRecipe_Click(object sender, RoutedEventArgs e)
         {
-            //Frame_HomePage.Content = searchRecipe;
+            Frame_HomePage.Content = new SearchRecipe();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)

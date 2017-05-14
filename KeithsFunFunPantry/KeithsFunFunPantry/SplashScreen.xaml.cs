@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.Windows.Threading;
 
 namespace KeithsFunFunPantry
 {
@@ -22,16 +23,23 @@ namespace KeithsFunFunPantry
         HomePage homePage = new HomePage();
         public SplashScreen()
         {
+            Splash();
             InitializeComponent();
         }
-        private void Move(Object sender, MouseButtonEventArgs e)
+
+        DispatcherTimer timer = new DispatcherTimer();
+        private void Splash()
         {
-            DragMove();
+
+            timer.Tick += new EventHandler(TimerTicker);
+            timer.Interval = new TimeSpan(0, 0, 1);
+            timer.Start();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void TimerTicker(object sender, EventArgs e)
         {
             homePage.Show();
+            timer.Stop();
             this.Close();
         }
     }

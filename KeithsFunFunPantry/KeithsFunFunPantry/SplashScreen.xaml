@@ -6,10 +6,9 @@
         xmlns:local="clr-namespace:KeithsFunFunPantry"
         mc:Ignorable="d"
         Title="SplashScreen" Height="651" Width="651" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" Icon="Images/AppIcon.ico">
-    <Grid  MouseLeftButtonDown="Move">
+    <Grid>
         <Grid.Background>
             <ImageBrush ImageSource="Images/Logo.png"/>
         </Grid.Background>
-        <Button Content="Enter" Height="50" Width="50" VerticalAlignment="Bottom" Click="Button_Click"/>
     </Grid>
 </Window>
