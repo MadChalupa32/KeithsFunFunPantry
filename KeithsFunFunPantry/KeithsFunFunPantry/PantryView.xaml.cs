@@ -20,7 +20,6 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class PantryView : Page
     {
-        HomePage p = new HomePage();
         public PantryView()
         {
             InitializeComponent();

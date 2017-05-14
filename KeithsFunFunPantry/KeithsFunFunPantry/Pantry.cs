@@ -9,6 +9,5 @@ namespace KeithsFunFunPantry
     class Pantry
     {
         private List<Ingredient> ingredients;
-
     }
 }
