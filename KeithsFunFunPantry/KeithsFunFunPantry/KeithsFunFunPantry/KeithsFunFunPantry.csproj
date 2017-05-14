@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F9F29C37-7BF5-4048-B0E7-9DE069A7C75D}</ProjectGuid>
+    <ProjectGuid>{6093F72F-DC55-4908-9AFB-5C8B351B1C00}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>KeithsFunFunPantry</RootNamespace>
     <AssemblyName>KeithsFunFunPantry</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
@@ -54,22 +54,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="PantryView.xaml.cs">
-      <DependentUpon>PantryView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="RecipeView.xaml.cs">
-      <DependentUpon>RecipeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SearchIngredientView.xaml.cs">
-      <DependentUpon>SearchIngredientView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SearchRecipeView.xaml.cs">
-      <DependentUpon>SearchRecipeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Splash Screen.xaml.cs">
-      <DependentUpon>Splash Screen.xaml</DependentUpon>
-    </Compile>
-    <Page Include="HomePage.xaml">
+    <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -77,30 +62,10 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="HomePage.xaml.cs">
-      <DependentUpon>HomePage.xaml</DependentUpon>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="PantryView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="RecipeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SearchIngredientView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SearchRecipeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Splash Screen.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -127,12 +92,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\AppIcon.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Logo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
