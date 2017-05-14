@@ -18,10 +18,10 @@ namespace KeithsFunFunPantry
     /// <summary>
     /// Interaction logic for Splash_Screen.xaml
     /// </summary>
-    public partial class SplashScreen : Window
+    public partial class Splash_Screen : Window
     {
         MainWindow m = new MainWindow();
-        public SplashScreen()
+        public Splash_Screen()
         {
             InitializeComponent();
         }

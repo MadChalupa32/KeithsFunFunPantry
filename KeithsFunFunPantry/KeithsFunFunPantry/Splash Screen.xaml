@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeithsFunFunPantry"
         mc:Ignorable="d"
-        Title="SplashScreen" Height="651" Width="651" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" Icon="Images/AppIcon.ico">
+        Title="Splash_Screen" Height="651" Width="651" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" Icon="Images/AppIcon.ico">
     <Grid  MouseLeftButtonDown="Move">
         <Grid.Background>
             <ImageBrush ImageSource="Images/Logo.png"/>
