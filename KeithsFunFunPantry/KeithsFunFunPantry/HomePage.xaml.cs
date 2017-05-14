@@ -44,7 +44,7 @@ namespace KeithsFunFunPantry
 
         private void SearchIngredient_Click(object sender, RoutedEventArgs e)
         {
-            //Frame_HomePage.Content = searchIngredient;
+            Frame_HomePage.Content = new SearchIngredient();
         }
         private void SearchRecipe_Click(object sender, RoutedEventArgs e)
         {
