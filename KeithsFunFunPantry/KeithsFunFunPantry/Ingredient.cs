@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 namespace KeithsFunFunPantry
 {
     [Serializable()]
-    class Ingredient : Pantry
+    public class Ingredient : Pantry
     {
-        private string name;
+        private string name = " ";
         private int amount;
 
         //Name of the ingredient

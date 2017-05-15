@@ -24,6 +24,7 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
+            ListIngredients();
         }
 
         private string searchBar = "Search Ingredients";
@@ -46,6 +47,17 @@ namespace KeithsFunFunPantry
             if (String.IsNullOrWhiteSpace(TextBox_PantrySearch.Text))
             {
                 TextBox_PantrySearch.Text = searchBar;
+            }
+        }
+        public void ListIngredients()
+        {
+            Pantry p = new Pantry();
+            p.AddNewIngredient("Salt", 20);
+            foreach(Ingredient ingredient in p.Ingredients)
+            {
+                Label label = new Label();
+                label.Content = ingredient.Name + ": Amount: " + ingredient.Amount;
+                listArea.Children.Add(label);
             }
         }
     }
