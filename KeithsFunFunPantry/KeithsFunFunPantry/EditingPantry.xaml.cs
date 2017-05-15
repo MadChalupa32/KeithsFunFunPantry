@@ -21,7 +21,6 @@ namespace KeithsFunFunPantry
     public partial class EditingPantry : Page
     {
         private string searchTB = "Search Recipes";
-        private string amountTB = "Amount";
         public EditingPantry()
         {
             InitializeComponent();
@@ -49,11 +48,6 @@ namespace KeithsFunFunPantry
             {
                 TextBox_IngredientSearch.Text = searchTB;
             }
-        }
-
-        private void TextBoxOptions2()
-        {
-
         }
     }
 }

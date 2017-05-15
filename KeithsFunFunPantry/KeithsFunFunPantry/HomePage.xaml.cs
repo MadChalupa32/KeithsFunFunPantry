@@ -36,7 +36,7 @@ namespace KeithsFunFunPantry
 
         private void PantryView_Click(object sender, RoutedEventArgs e)
         {
-            Frame_HomePage.Content = new PantryView();
+            Frame_HomePage.Content = pantryView;
         }
 
         private void RecipeView_Click(object sender, RoutedEventArgs e)
