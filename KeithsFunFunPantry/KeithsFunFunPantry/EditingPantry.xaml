@@ -49,63 +49,9 @@
                       Grid.Column="4" 
                       Grid.ColumnSpan="3"
                       Margin="20,0,20,10">
-            <StackPanel Margin="20">
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
-                <AC:PantryEdit/>
+            <StackPanel x:Name="StackPanel_PantryList"
+                        Margin="20">
+                
             </StackPanel>
         </ScrollViewer>
     </Grid>

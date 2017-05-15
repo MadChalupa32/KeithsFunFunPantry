@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KeithsFunFunPantry.AppControls;
 
 namespace KeithsFunFunPantry
 {
@@ -20,12 +21,29 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class EditingPantry : Page
     {
+        List<Ingredient> pantryList = new List<Ingredient>() { };
+
         private string searchTB = "Search Recipes";
         public EditingPantry()
         {
             InitializeComponent();
             TextBoxOptions();
+            ShowPantry();
         }
+
+        private void ShowPantry()
+        {
+            pantryList.Add(new Ingredient { Name = "brocolli", Amount = 2 });
+            pantryList.Add(new Ingredient { Name = "Chicken", Amount = 16 });
+            pantryList.Add(new Ingredient { Name = "Radishes", Amount = 3 });
+            foreach (Ingredient ingredient in pantryList)
+            {
+                PantryEdit pe = new PantryEdit();
+                pe.DataContext = pantryList;
+                StackPanel_PantryList.Children.Add(pe);
+            }
+        }
+
         private void TextBoxOptions()
         {
             TextBox_IngredientSearch.GotFocus += RemoveISText;
