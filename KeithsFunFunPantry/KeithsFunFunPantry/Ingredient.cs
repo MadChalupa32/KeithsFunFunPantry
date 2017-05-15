@@ -31,5 +31,10 @@ namespace KeithsFunFunPantry
                 amount = value;
             }
         }
+        public Ingredient(string name, int amount)
+        {
+            Name = name;
+            Amount = amount;
+        }
     }
 }
