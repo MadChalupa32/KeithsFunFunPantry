@@ -10,7 +10,7 @@ namespace KeithsFunFunPantry
 {
     class Pantry
     {
-        private List<Ingredient> ingredients;
+        private List<Ingredient> ingredients = new List<Ingredient>();
 
         //Will create a new ingredient, add to list, and export to file.
         private void AddNewIngredient(string name, int amount)
