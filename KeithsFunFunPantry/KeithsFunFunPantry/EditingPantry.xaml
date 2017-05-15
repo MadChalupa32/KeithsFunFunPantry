@@ -12,7 +12,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="30"/>
-            <ColumnDefinition Width="120"/>
+            <ColumnDefinition Width="95"/>
+            <ColumnDefinition Width="25"/>
             <ColumnDefinition/>
             <ColumnDefinition/>
             <ColumnDefinition/>
@@ -23,23 +24,26 @@
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
             <RowDefinition Height="20"/>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="10"/>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="30"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="20"/>
             <RowDefinition/>
 
         </Grid.RowDefinitions>
-        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="3" Padding="5" CornerRadius="15" BorderThickness="2" BorderBrush="LightGray" UseLayoutRounding='True' Background="White">
+        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Padding="5" CornerRadius="15" BorderThickness="2" BorderBrush="LightGray" UseLayoutRounding='True' Background="White">
             <TextBox x:Name="TextBox_IngredientSearch" Background="Transparent" BorderThickness="0"/>
         </Border>
         <Label Content="Recipe" FontSize="30" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Button Content="Save Pantry" Grid.Column="6" Width="70" Margin="0,20,60,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right"/>
         <Label Content="Add Ingredient:" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="15,8,15,5"/>
-        <TextBox x:Name="TextBox_Amount" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Padding="5" BorderThickness="2" BorderBrush="LightGray"/>
-        <TextBox x:Name="TextBox_Name" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Padding="5" BorderThickness="2" BorderBrush="LightGray"/>
-        <Button Content="Back" Height="30" Width="50" Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="9" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2"/>
-        <StackPanel Background="AliceBlue" Grid.Row="3" Grid.RowSpan="8" Grid.Column="3" Grid.ColumnSpan="3" Margin="20,0,20,20">
+        <TextBox x:Name="TextBox_Amount" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Padding="5" BorderThickness="2" BorderBrush="LightGray"/>
+        <TextBox x:Name="TextBox_Name" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="3" Padding="5" BorderThickness="2" BorderBrush="LightGray"/>
+        <Button Content="Add" Grid.Row="8" Grid.RowSpan="2" Grid.Column="2" Grid.ColumnSpan="2" Width="50" Height="25" Margin="5,10,15,0" VerticalAlignment="Top" HorizontalAlignment="Right"/>
+        <Button Content="Back" Height="30" Width="50" Margin="20" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="10" Grid.RowSpan="2" Grid.Column="1" Grid.ColumnSpan="2"/>
+        <StackPanel Background="AliceBlue" Grid.Row="3" Grid.RowSpan="8" Grid.Column="4" Grid.ColumnSpan="3" Margin="20,0,20,20">
 
         </StackPanel>
     </Grid>
