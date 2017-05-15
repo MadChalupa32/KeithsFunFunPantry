@@ -1,0 +1,60 @@
+﻿<UserControl x:Class="KeithsFunFunPantry.AppControls.PantryEdit"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
+             mc:Ignorable="d" 
+             d:DesignHeight="150" d:DesignWidth="500">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label VerticalAlignment="Center" 
+               HorizontalAlignment="Center"
+               Margin="20">
+            <Image Source="../Images/Minus.png"/>
+        </Label>
+        <Border CornerRadius="5"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="50"
+                Height="50">
+            <Button Background="Transparent"
+                    BorderThickness="0"
+                    Opacity=".2"
+                    OpacityMask="LightBlue"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="50"
+                    Height="50"
+                    Click="Button_Click"/>
+        </Border>
+        <Border CornerRadius="15"
+                BorderBrush="Blue"
+                BorderThickness="5"
+                Margin="5"
+                Grid.Column="1">
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Name: "
+                       Grid.Row="1" 
+                       Grid.Column="1" 
+                       Margin="26,0.2,0,0" 
+                       VerticalAlignment="Top"
+                       HorizontalAlignment="Left"/>
+                <Label Content="Amount:"
+                       Grid.Row="2"
+                       Grid.Column="1"
+                       Margin="44,0,0,15.6"
+                       VerticalAlignment="Bottom"
+                       HorizontalAlignment="Left"/>
+            </Grid>
+        </Border>
+    </Grid>
+</UserControl>

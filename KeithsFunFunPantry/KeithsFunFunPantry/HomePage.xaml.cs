@@ -24,6 +24,8 @@ namespace KeithsFunFunPantry
         //private RecipeView recipeView = new RecipeView();
         //private SearchIngredient searchIngredient = new SearchIngredient();
         //private SearchRecipe searchRecipe = new SearchRecipe();
+
+        
         public HomePage()
         {
             InitializeComponent();
@@ -36,7 +38,7 @@ namespace KeithsFunFunPantry
 
         private void PantryView_Click(object sender, RoutedEventArgs e)
         {
-            Frame_HomePage.Content = pantryView;
+            Frame_HomePage.Content = new PantryView();
         }
 
         private void RecipeView_Click(object sender, RoutedEventArgs e)
