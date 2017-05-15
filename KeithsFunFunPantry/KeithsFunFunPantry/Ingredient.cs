@@ -10,7 +10,7 @@ namespace KeithsFunFunPantry
     [Serializable()]
     public class Ingredient : Pantry
     {
-        private string name = " ";
+        private string name = "";
         private int amount;
 
         //Name of the ingredient
