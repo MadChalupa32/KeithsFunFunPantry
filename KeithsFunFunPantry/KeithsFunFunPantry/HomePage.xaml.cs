@@ -53,6 +53,11 @@ namespace KeithsFunFunPantry
             Frame_HomePage.Content = new SearchRecipe();
         }
 
+        private void EditPantry_Click(object sender, RoutedEventArgs e)
+        {
+            Frame_HomePage.Content = new EditingPantry();
+        }
+
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
             if (Frame_HomePage.NavigationService.CanGoBack)
@@ -67,5 +72,6 @@ namespace KeithsFunFunPantry
                 Frame_HomePage.NavigationService.GoForward();
             }
         }
+
     }
 }

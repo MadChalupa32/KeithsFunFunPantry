@@ -26,17 +26,17 @@ namespace KeithsFunFunPantry
             TextBoxOptions();
         }
 
-        private string ph = "Search by Ingredient";
+        private string searchBar = "Search by Ingredient";
         private void TextBoxOptions()
         {
             TextBox_ByIngredientSearch.GotFocus += RemoveText;
             TextBox_ByIngredientSearch.LostFocus += AddText;
-            TextBox_ByIngredientSearch.Text = ph;
+            TextBox_ByIngredientSearch.Text = searchBar;
         }
 
         public void RemoveText(object sender, EventArgs e)
         {
-            if (TextBox_ByIngredientSearch.Text == ph)
+            if (TextBox_ByIngredientSearch.Text == searchBar)
                 TextBox_ByIngredientSearch.Text = "";
         }
 
@@ -44,7 +44,7 @@ namespace KeithsFunFunPantry
         {
             if (String.IsNullOrWhiteSpace(TextBox_ByIngredientSearch.Text))
             {
-                TextBox_ByIngredientSearch.Text = ph;
+                TextBox_ByIngredientSearch.Text = searchBar;
             }
         }
     }

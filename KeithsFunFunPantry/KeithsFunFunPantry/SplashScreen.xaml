@@ -6,13 +6,9 @@
         xmlns:local="clr-namespace:KeithsFunFunPantry"
         mc:Ignorable="d"
         Title="SplashScreen" Height="800" Width="800" WindowStyle="None" AllowsTransparency="True" WindowStartupLocation="CenterScreen" Background="Transparent" Icon="Images/AppIcon.ico">
-        <Grid Height="500" Width="500">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="43*"/>
-                <ColumnDefinition Width="207*"/>
-            </Grid.ColumnDefinitions>
+        <Grid>
             <Grid.Background>
                 <ImageBrush ImageSource="Images/Logo.png"/>
             </Grid.Background>
-        </Grid>
+    </Grid>
 </Window>
