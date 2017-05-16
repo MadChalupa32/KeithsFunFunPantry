@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 namespace KeithsFunFunPantry
 {
     [Serializable()]
-    public class Ingredient : Pantry
+    public class Ingredient
     {
         private string name = "";
-        private int amount;
+        private Measurement ingredientMeasurement;
 
         //Name of the ingredient
         public string Name
@@ -23,19 +23,17 @@ namespace KeithsFunFunPantry
             }
         }
 
-        //Amount of ingredient currently in pantry
-        public int Amount
+        public Measurement IngredientMeasurement
         {
-            get { return amount; }
-            set
-            {
-                amount = value;
-            }
+            get { return ingredientMeasurement; }
+            set { ingredientMeasurement = value; }
         }
-        public Ingredient(string name, int amount)
+
+        //Amount of ingredient currently in pantry
+        public Ingredient(string name, Measurement m)
         {
             Name = name;
-            Amount = amount;
+            IngredientMeasurement = m;
         }
     }
 }

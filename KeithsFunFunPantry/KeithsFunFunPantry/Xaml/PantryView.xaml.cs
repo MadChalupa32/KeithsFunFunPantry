@@ -51,22 +51,22 @@ namespace KeithsFunFunPantry
         }
         public void ListIngredients()
         {
-            Pantry p = new Pantry();
-            p.AddNewIngredient("Salt", 20);
-            p.AddNewIngredient("Apple", 5);
-            foreach(Ingredient ingredient in p.Ingredients)
-            {
-                //PantryView pv = new PantryView();
-                //pv.DataContext = ingredient.Name;
-                //pv.DataContext = ingredient.Amount;
-                //StackPanel_PantryView.Children.Add(pv);
-                Label label = new Label();
-                label.Content = "Name: " + ingredient.Name + " Amount: " + ingredient.Amount;
-                StackPanel_PantryView.Children.Add(label);
-            }
+            //    //p.AddNewIngredient("Salt", 20);
+            //    //p.AddNewIngredient("Apple", 5);
+            //    foreach(Ingredient ingredient in p.Ingredients)
+            //    {
+            //        //PantryView pv = new PantryView();
+            //        //pv.DataContext = ingredient.Name;
+            //        //pv.DataContext = ingredient.Amount;
+            //        //StackPanel_PantryView.Children.Add(pv);
+            //        Label label = new Label();
+            //        label.Content = "Name: " + ingredient.Name + " Amount: " + ingredient.Amount;
+            //        StackPanel_PantryView.Children.Add(label);
+            //    }
+            throw new NotImplementedException();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+    private void Button_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("boi");
         }
