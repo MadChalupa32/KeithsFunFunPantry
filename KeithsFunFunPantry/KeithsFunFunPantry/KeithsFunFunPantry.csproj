@@ -61,6 +61,7 @@
       <DependentUpon>EditingPantry.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ingredient.cs" />
+    <Compile Include="Measurement.cs" />
     <Compile Include="Pantry.cs" />
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
@@ -68,6 +69,7 @@
     <Compile Include="PantryView.xaml.cs">
       <DependentUpon>PantryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Recipe.cs" />
     <Compile Include="RecipeView.xaml.cs">
       <DependentUpon>RecipeView.xaml</DependentUpon>
     </Compile>
