@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -53,6 +52,7 @@ namespace KeithsFunFunPantry
         {
             Pantry p = new Pantry();
             p.AddNewIngredient("Salt", 20);
+            p.AddNewIngredient("Apple", 5);
             foreach(Ingredient ingredient in p.Ingredients)
             {
                 Label label = new Label();
