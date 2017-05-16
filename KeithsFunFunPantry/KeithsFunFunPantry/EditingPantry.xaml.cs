@@ -36,6 +36,9 @@ namespace KeithsFunFunPantry
             pantryList.Add(new Ingredient ( Name = "brocolli", 2 ));
             pantryList.Add(new Ingredient ( Name = "Chicken", 16 ));
             pantryList.Add(new Ingredient ( Name = "Radishes", 3 ));
+            pantryList.Add(new Ingredient ( Name = "brocolli",2 ));
+            pantryList.Add(new Ingredient ( Name = "Chicken",16 ));
+            pantryList.Add(new Ingredient ( Name = "Radishes",3 ));
             foreach (Ingredient ingredient in pantryList)
             {
                 PantryEdit pe = new PantryEdit();
