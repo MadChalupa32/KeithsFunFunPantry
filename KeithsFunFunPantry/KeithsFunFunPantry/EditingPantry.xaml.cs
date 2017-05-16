@@ -33,13 +33,13 @@ namespace KeithsFunFunPantry
 
         private void ShowPantry()
         {
-            pantryList.Add(new Ingredient { Name = "brocolli", Amount = 2 });
-            pantryList.Add(new Ingredient { Name = "Chicken", Amount = 16 });
-            pantryList.Add(new Ingredient { Name = "Radishes", Amount = 3 });
+            pantryList.Add(new Ingredient ( Name = "brocolli",2 ));
+            pantryList.Add(new Ingredient ( Name = "Chicken",16 ));
+            pantryList.Add(new Ingredient ( Name = "Radishes",3 ));
             foreach (Ingredient ingredient in pantryList)
             {
                 PantryEdit pe = new PantryEdit();
-                pe.DataContext = pantryList;
+                pe.DataContext = ingredient;
                 StackPanel_PantryList.Children.Add(pe);
             }
         }

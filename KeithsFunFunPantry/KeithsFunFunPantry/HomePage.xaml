@@ -7,6 +7,7 @@
         mc:Ignorable="d"
         Title="Keith's Fun Fun Pantry" Height="750" Width="1250" Icon="Images/AppIcon.ico">
     <Grid>
+        
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
             <Button Background="Transparent" BorderThickness="0" Click="BackButton_Click">
                 <Image Margin="10,9" >
@@ -22,12 +23,13 @@
                     </Image.Source>
                 </Image>
             </Button>
-            <Button Content="Pantry" MinWidth="50" Click="PantryView_Click"/>
-            <Button Content="Recipe" MinWidth="50" Margin="10,0,0,0" Click="RecipeView_Click"/>
-            <Button Content="Search by ingredients" MinWidth="50" Margin="10,0,0,0.2" Click="SearchIngredient_Click"/>
-            <Button Content="Search by recipe" MinWidth="50" Margin="10,0,0,0" Click="SearchRecipe_Click"/>
-            <Button Content="Edit Pantry" MinWidth="50" Margin="10,0,0,0" Click="EditPantry_Click"/>
+            <Button Content="Pantry" FontFamily="Georgia" MinWidth="50" Click="PantryView_Click"/>
+            <Button Content="Recipe" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="RecipeView_Click"/>
+            <Button Content="Search by ingredients" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0.2" Click="SearchIngredient_Click"/>
+            <Button Content="Search by recipe" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="SearchRecipe_Click"/>
+            <Button Content="Edit Pantry" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="EditPantry_Click"/>
         </StackPanel>
-        <Frame x:Name="Frame_HomePage" Margin="0, 35, 0, 0" NavigationUIVisibility="Hidden"/>
+        <Frame x:Name="Frame_HomePage" Margin="0, 35, 0, 0" NavigationUIVisibility="Hidden" />
+        <Image Source="Images/Logo.png" Margin="162,117,193.2,220.8"/>
     </Grid>
 </Window>
