@@ -11,26 +11,26 @@ using System.Threading.Tasks;
 namespace KeithsFunFunPantry
 {
     [Serializable()]
-    public class Pantry : INotifyPropertyChanged
+    public static class Pantry
     {
-        public event PropertyChangedEventHandler PropertyChanged;
-        public List<Ingredient> ingredients = new List<Ingredient>();
-        public List<Ingredient> Ingredients
+        //public event PropertyChangedEventHandler PropertyChanged;
+        public static List<Ingredient> ingredients = new List<Ingredient>();
+        public static List<Ingredient> Ingredients
         {
             get { return ingredients; }
             set
             {
                 ingredients = value;
-                FieldChanged();
+                //FieldChanged();
             }
 
         }
 
         //Will create a new ingredient, add to list, and export to file.
-        public void AddNewIngredient(string name, int amount)
+        public static void AddNewIngredient()
         {
-            Ingredient ingredient = new Ingredient(name, amount);
-            ingredients.Add(ingredient);
+            //Ingredient ingredient = new Ingredient(name, new Measurement());
+            //ingredients.Add(ingredient);
             try
             {
                 using (Stream stream = File.Open("ingredients.xml", FileMode.Create))
@@ -45,7 +45,7 @@ namespace KeithsFunFunPantry
             }
         }
         //Will import all ingredients from file to list
-        public void ReadIngredientsFromFile()
+        public static void ReadIngredientsFromFile()
         {
             try
             {
@@ -66,12 +66,12 @@ namespace KeithsFunFunPantry
                 Console.WriteLine("File has failed to open or doesn't exist");
             }
         }
-        protected void FieldChanged([CallerMemberName] string field = null)
-        {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(field));
-            }
-        }
+        //protected void FieldChanged([CallerMemberName] string field = null)
+        //{
+        //    if (PropertyChanged != null)
+        //    {
+        //        PropertyChanged(this, new PropertyChangedEventArgs(field));
+        //    }
+        //}
     }
 }
