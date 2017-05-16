@@ -12,8 +12,18 @@ namespace KeithsFunFunPantry.CS
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private Unit unitOfMeasurement;
         private float amount;
+        private Unit unitOfMeasurement;
+
+        public float Amount
+        {
+            get { return amount; }
+            set
+            {
+                amount = value;
+                FieldChanged();
+            }
+        }
 
         public Unit UnitOfMeasurement
         {
@@ -25,14 +35,10 @@ namespace KeithsFunFunPantry.CS
             }
         }
 
-        public float Amount
+        public Measurement(float a, Unit u)
         {
-            get { return amount; }
-            set
-            {
-                amount = value;
-                FieldChanged();
-            }
+            Amount = a;
+            UnitOfMeasurement = u;
         }
 
         protected void FieldChanged([CallerMemberName] string field = null)

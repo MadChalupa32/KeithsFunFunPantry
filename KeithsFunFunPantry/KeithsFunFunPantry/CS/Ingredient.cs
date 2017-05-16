@@ -5,12 +5,17 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using KeithsFunFunPantry.CS;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
 
 namespace KeithsFunFunPantry
 {
     [Serializable()]
     public class Ingredient
     {
+        public event PropertyChangedEventHandler PropertyChanged;
+
         private string name = "";
         private Measurement ingredientMeasurement;
 
@@ -21,20 +26,33 @@ namespace KeithsFunFunPantry
             set
             {
                 name = value;
+                FieldChanged();
             }
         }
 
+        //Measurement of the ingredient
         public Measurement IngredientMeasurement
         {
             get { return ingredientMeasurement; }
-            set { ingredientMeasurement = value; }
+            set
+            {
+                ingredientMeasurement = value;
+                FieldChanged();
+            }
         }
 
-        //Amount of ingredient currently in pantry
         public Ingredient(string name, Measurement m)
         {
             Name = name;
             IngredientMeasurement = m;
+        }
+
+        protected void FieldChanged([CallerMemberName] string field = null)
+        {
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, new PropertyChangedEventArgs(field));
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.CS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
@@ -21,16 +22,17 @@ namespace KeithsFunFunPantry
             set
             {
                 ingredients = value;
-                //FieldChanged();
             }
-
+        }
+        public static void AddNewIngredient(string name, Measurement m)
+        {
+            Ingredient i = new Ingredient(name, m);
+            ingredients.Add(i);
         }
 
-        //Will create a new ingredient, add to list, and export to file.
-        public static void AddNewIngredient()
+        //Will export to file.
+        public static void SaveIngredient()
         {
-            //Ingredient ingredient = new Ingredient(name, new Measurement());
-            //ingredients.Add(ingredient);
             try
             {
                 using (Stream stream = File.Open("ingredients.xml", FileMode.Create))
@@ -66,12 +68,5 @@ namespace KeithsFunFunPantry
                 Console.WriteLine("File has failed to open or doesn't exist");
             }
         }
-        //protected void FieldChanged([CallerMemberName] string field = null)
-        //{
-        //    if (PropertyChanged != null)
-        //    {
-        //        PropertyChanged(this, new PropertyChangedEventArgs(field));
-        //    }
-        //}
     }
 }
