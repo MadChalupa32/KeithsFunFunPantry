@@ -5,21 +5,21 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeithsFunFunPantry"
         mc:Ignorable="d"
-        Title="Keith's Fun Fun Pantry" Height="750" Width="1250" Icon="Images/AppIcon.ico">
+        Title="Keith's Fun Fun Pantry" Height="750" Width="1250" Icon="../Images/AppIcon.ico">
     <Grid>
         
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
             <Button Background="Transparent" BorderThickness="0" Click="BackButton_Click">
                 <Image Margin="10,9" >
                     <Image.Source>
-                        <BitmapImage  UriSource="Images/Left.png" />
+                        <BitmapImage  UriSource="../Images/Left.png" />
                     </Image.Source>
                 </Image>
             </Button>
             <Button Background="Transparent" BorderThickness="0" Click="ForwardButton_Click">
                 <Image Margin="10,9" >
                     <Image.Source>
-                        <BitmapImage  UriSource="Images/Right.png" />
+                        <BitmapImage  UriSource="../Images/Right.png" />
                     </Image.Source>
                 </Image>
             </Button>
@@ -30,6 +30,39 @@
             <Button Content="Edit Pantry" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="EditPantry_Click"/>
         </StackPanel>
         <Frame x:Name="Frame_HomePage" Margin="0, 35, 0, 0" NavigationUIVisibility="Hidden" />
-        <Image Source="Images/Logo.png" Margin="162,117,193.2,220.8"/>
+        <Label Content="KEITH's"
+               Foreground="Black"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Center"
+               Margin="0,90,0,0"
+               FontSize="50"
+               FontWeight="Bold"
+               Opacity=".2"/>
+        <Label Content="FUN"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Left"
+               Margin="300,0,0,0"
+               FontSize="50"
+               FontWeight="Bold"
+               Opacity=".2"/>
+        <Label Content="FUN"
+               VerticalAlignment="Center"
+               HorizontalAlignment="Right"
+               Margin="0,0,300,0"
+               FontSize="50"
+               FontWeight="Bold"
+               Opacity=".2"/>
+        <Label Content="PANTRY"
+               VerticalAlignment="Bottom"
+               HorizontalAlignment="Center"
+               Margin="0,0,0,90"
+               FontSize="50"
+               FontWeight="Bold"
+               Opacity=".2"/>
+        <Image Source="../Images/Logo.png" 
+               VerticalAlignment="Center" 
+               HorizontalAlignment="Center" 
+               Margin="150" 
+               Opacity=".2"/>
     </Grid>
 </Window>

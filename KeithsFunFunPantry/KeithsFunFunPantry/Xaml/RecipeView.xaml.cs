@@ -47,5 +47,10 @@ namespace KeithsFunFunPantry
                 TextBox_RecipeSearch.Text = searchBar;
             }
         }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Boi");
+        }
     }
 }

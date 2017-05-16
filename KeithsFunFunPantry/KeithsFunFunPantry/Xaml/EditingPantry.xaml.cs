@@ -23,7 +23,7 @@ namespace KeithsFunFunPantry
     {
         List<Ingredient> pantryList = new List<Ingredient>() { };
 
-        private string searchTB = "Search Recipes";
+        private string searchTB = "Search Ingredient";
         public EditingPantry()
         {
             InitializeComponent();
@@ -33,17 +33,17 @@ namespace KeithsFunFunPantry
 
         private void ShowPantry()
         {
-            pantryList.Add(new Ingredient ( Name = "brocolli", 2 ));
+            pantryList.Add(new Ingredient ( Name = "Brocolli", 2 ));
             pantryList.Add(new Ingredient ( Name = "Chicken", 16 ));
             pantryList.Add(new Ingredient ( Name = "Radishes", 3 ));
-            pantryList.Add(new Ingredient ( Name = "brocolli",2 ));
-            pantryList.Add(new Ingredient ( Name = "Chicken",16 ));
-            pantryList.Add(new Ingredient ( Name = "Radishes",3 ));
+            pantryList.Add(new Ingredient ( Name = "Brocolli", 2 ));
+            pantryList.Add(new Ingredient ( Name = "Chicken", 16 ));
+            pantryList.Add(new Ingredient ( Name = "Radishes", 3 ));
             foreach (Ingredient ingredient in pantryList)
             {
                 PantryEdit pe = new PantryEdit();
                 pe.DataContext = ingredient;
-                StackPanel_PantryList.Children.Add(pe);
+                StackPanel_EditPantry.Children.Add(pe);
             }
         }
 
@@ -69,6 +69,11 @@ namespace KeithsFunFunPantry
             {
                 TextBox_IngredientSearch.Text = searchTB;
             }
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Boi");
         }
     }
 }

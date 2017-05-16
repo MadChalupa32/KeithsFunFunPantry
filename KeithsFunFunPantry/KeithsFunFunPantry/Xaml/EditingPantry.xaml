@@ -34,10 +34,42 @@
             <RowDefinition/>
 
         </Grid.RowDefinitions>
-        <Border Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="4" Padding="5" CornerRadius="15" BorderThickness="2" BorderBrush="LightGray" UseLayoutRounding='True' Background="White">
-            <TextBox x:Name="TextBox_IngredientSearch" Background="Transparent" BorderThickness="0"/>
+        <Border Grid.Row="1" 
+                Grid.Column="1" 
+                Grid.ColumnSpan="4" 
+                Padding="5" 
+                CornerRadius="15" 
+                BorderThickness="2" 
+                BorderBrush="LightGray" 
+                UseLayoutRounding='True' 
+                Background="White">
+            <TextBox x:Name="TextBox_IngredientSearch" 
+                     Background="Transparent" 
+                     BorderThickness="0" 
+                     Margin="28,0,0,0"/>
         </Border>
-        <Label Content="Recipe" FontSize="30" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <Label VerticalAlignment="Center" 
+               HorizontalAlignment="Left"
+               Background="Transparent"
+               Margin="3,1,0,0"
+               Grid.Row="1"
+               Grid.Column="1"
+               Grid.ColumnSpan="2">
+            <Image Source="../Images/Search.png"/>
+        </Label>
+        <Button Background="Transparent"
+                Grid.Column="1"
+                Grid.Row="1"
+                BorderThickness="0"
+                Opacity=".2"
+                OpacityMask="Transparent"
+                Width="20"
+                Height="20"
+                Margin="7,6,0,5"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Left"
+                Click="Button_Click"/>
+        <Label Content="Edit Pantry" FontSize="30" Grid.ColumnSpan="5" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Button Content="Save Pantry" Grid.Column="6" Width="70" Margin="0,20,60,0" Height="25" VerticalAlignment="Top" HorizontalAlignment="Right"/>
         <Label Content="Add Ingredient:" Grid.Row="3" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="15,8,15,5"/>
         <TextBox x:Name="TextBox_Amount" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="3" Padding="5" BorderThickness="2" BorderBrush="LightGray"/>
@@ -49,7 +81,7 @@
                       Grid.Column="4" 
                       Grid.ColumnSpan="3"
                       Margin="20,0,20,10">
-            <StackPanel x:Name="StackPanel_PantryList"
+            <StackPanel x:Name="StackPanel_EditPantry"
                         Margin="20">
                 
             </StackPanel>

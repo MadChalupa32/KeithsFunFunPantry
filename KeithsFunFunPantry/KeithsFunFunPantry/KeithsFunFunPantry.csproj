@@ -57,29 +57,38 @@
     <Compile Include="AppControls\PantryEdit.xaml.cs">
       <DependentUpon>PantryEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="EditingPantry.xaml.cs">
+    <Compile Include="AppControls\PantryItem.xaml.cs">
+      <DependentUpon>PantryItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppControls\RecipeItem.xaml.cs">
+      <DependentUpon>RecipeItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppControls\SearchIngredientItem.xaml.cs">
+      <DependentUpon>SearchIngredientItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\EditingPantry.xaml.cs">
       <DependentUpon>EditingPantry.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Ingredient.cs" />
-    <Compile Include="Measurement.cs" />
-    <Compile Include="Pantry.cs" />
-    <Compile Include="HomePage.xaml.cs">
+    <Compile Include="CS\Ingredient.cs" />
+    <Compile Include="CS\Measurement.cs" />
+    <Compile Include="CS\Pantry.cs" />
+    <Compile Include="Xaml\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="PantryView.xaml.cs">
+    <Compile Include="Xaml\PantryView.xaml.cs">
       <DependentUpon>PantryView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Recipe.cs" />
-    <Compile Include="RecipeView.xaml.cs">
+    <Compile Include="CS\Recipe.cs" />
+    <Compile Include="Xaml\RecipeView.xaml.cs">
       <DependentUpon>RecipeView.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SearchIngredient.xaml.cs">
+    <Compile Include="Xaml\SearchIngredient.xaml.cs">
       <DependentUpon>SearchIngredient.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SearchRecipe.xaml.cs">
+    <Compile Include="Xaml\SearchRecipe.xaml.cs">
       <DependentUpon>SearchRecipe.xaml</DependentUpon>
     </Compile>
-    <Compile Include="SplashScreen.xaml.cs">
+    <Compile Include="Xaml\SplashScreen.xaml.cs">
       <DependentUpon>SplashScreen.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
@@ -90,31 +99,43 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="EditingPantry.xaml">
+    <Page Include="AppControls\PantryItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="HomePage.xaml">
+    <Page Include="AppControls\RecipeItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="PantryView.xaml">
+    <Page Include="AppControls\SearchIngredientItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="RecipeView.xaml">
+    <Page Include="Xaml\EditingPantry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SearchIngredient.xaml">
+    <Page Include="Xaml\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SearchRecipe.xaml">
+    <Page Include="Xaml\PantryView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="SplashScreen.xaml">
+    <Page Include="Xaml\RecipeView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SearchIngredient.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SearchRecipe.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\SplashScreen.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -163,5 +184,6 @@
   <ItemGroup>
     <Resource Include="Images\Search.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -11,6 +11,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KeithsFunFunPantry.AppControls;
 
 namespace KeithsFunFunPantry
 {
@@ -55,9 +56,13 @@ namespace KeithsFunFunPantry
             p.AddNewIngredient("Apple", 5);
             foreach(Ingredient ingredient in p.Ingredients)
             {
+                //PantryView pv = new PantryView();
+                //pv.DataContext = ingredient.Name;
+                //pv.DataContext = ingredient.Amount;
+                //StackPanel_PantryView.Children.Add(pv);
                 Label label = new Label();
-                label.Content = "Name: " + ingredient.Name + ": Amount: " + ingredient.Amount;
-                listArea.Children.Add(label);
+                label.Content = "Name: " + ingredient.Name + " Amount: " + ingredient.Amount;
+                StackPanel_PantryView.Children.Add(label);
             }
         }
 
