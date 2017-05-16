@@ -55,7 +55,8 @@
                Grid.ColumnSpan="2">
             <Image Source="../Images/Search.png"/>
         </Label>
-        <Button Background="Transparent"
+        <Button x:Name="recipeSearchButton"
+				Background="Transparent"
                 Grid.Column="1"
                 Grid.Row="1"
                 BorderThickness="0"
@@ -66,7 +67,7 @@
                 Margin="7,6,0,5"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                Click="SearchButtonClick_Handler"/>
+                Click="RecipeSearchButton_ClickHandler"/>
         <Label Content="Search by Recipe" FontSize="30" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Label Content="List of Recipes"
                Grid.Row="1"
