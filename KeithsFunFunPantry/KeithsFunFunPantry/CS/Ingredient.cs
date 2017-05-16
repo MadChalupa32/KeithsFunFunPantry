@@ -22,6 +22,7 @@ namespace KeithsFunFunPantry
                 name = value;
             }
         }
+
         //Amount of ingredient currently in pantry
         public int Amount
         {
