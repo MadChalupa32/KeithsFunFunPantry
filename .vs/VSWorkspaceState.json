@@ -2,8 +2,9 @@
   "ExpandedNodes": [
     "",
     "\\KeithsFunFunPantry",
+    "\\KeithsFunFunPantry\\AppUnitTests",
     "\\KeithsFunFunPantry\\KeithsFunFunPantry"
   ],
-  "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry.sln",
+  "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry\\SearchRecipe.xaml",
   "PreviewInSolutionExplorer": false
 }
