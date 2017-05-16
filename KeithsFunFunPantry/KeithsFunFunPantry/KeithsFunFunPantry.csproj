@@ -68,6 +68,7 @@
     <Compile Include="PantryView.xaml.cs">
       <DependentUpon>PantryView.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Recipe.cs" />
     <Compile Include="RecipeView.xaml.cs">
       <DependentUpon>RecipeView.xaml</DependentUpon>
     </Compile>
