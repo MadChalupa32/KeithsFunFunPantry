@@ -61,6 +61,7 @@
       <DependentUpon>EditingPantry.xaml</DependentUpon>
     </Compile>
     <Compile Include="Ingredient.cs" />
+    <Compile Include="Measurement.cs" />
     <Compile Include="Pantry.cs" />
     <Compile Include="HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>

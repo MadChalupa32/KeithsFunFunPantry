@@ -33,7 +33,7 @@ namespace KeithsFunFunPantry
             ingredients.Add(ingredient);
             try
             {
-                using (Stream stream = File.Open("ingredients.xml", FileMode.Append))
+                using (Stream stream = File.Open("ingredients.xml", FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, ingredients);
