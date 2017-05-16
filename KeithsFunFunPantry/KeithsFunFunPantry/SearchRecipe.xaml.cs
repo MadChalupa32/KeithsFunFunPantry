@@ -47,5 +47,13 @@ namespace KeithsFunFunPantry
                 TextBox_ByRecipeSearch.Text = searchBar;
             }
         }
+
+		public void SearchButtonClick_Handler(object sender, RoutedEventArgs e)
+		{
+			string query = TextBox_ByRecipeSearch.Text;
+			(Recipe[])RecipeList.Children.Where(recipe => recipe.Title.Contains(query));
+			//Randy spent most of the day trying to understan how the UI was already set up.
+				//I spent a lot of time exploring the files that Cristian created so that I understood where data was stored.
+		}
     }
 }
