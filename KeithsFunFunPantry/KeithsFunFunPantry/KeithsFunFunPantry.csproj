@@ -66,11 +66,11 @@
     <Compile Include="AppControls\SearchIngredientItem.xaml.cs">
       <DependentUpon>SearchIngredientItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CS\Measurement.cs" />
     <Compile Include="Xaml\EditingPantry.xaml.cs">
       <DependentUpon>EditingPantry.xaml</DependentUpon>
     </Compile>
     <Compile Include="CS\Ingredient.cs" />
-    <Compile Include="CS\Measurement.cs" />
     <Compile Include="CS\Pantry.cs" />
     <Compile Include="Xaml\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
