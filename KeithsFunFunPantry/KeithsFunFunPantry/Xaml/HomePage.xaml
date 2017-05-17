@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeithsFunFunPantry"
         mc:Ignorable="d"
-        Title="Keith's Fun Fun Pantry" Height="750" Width="1250" Icon="../Images/AppIcon.ico">
+        Title="Keith's Fun Fun Pantry" Height="750" Width="1250" Icon="../Images/AppIcon.ico"
+        Closing="Window_Closing"
+        >
     <Grid>
         
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">

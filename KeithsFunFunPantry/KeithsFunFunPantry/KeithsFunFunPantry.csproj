@@ -66,6 +66,7 @@
     <Compile Include="AppControls\SearchIngredientItem.xaml.cs">
       <DependentUpon>SearchIngredientItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CS\RecipeBook.cs" />
     <Compile Include="Xaml\EditingPantry.xaml.cs">
       <DependentUpon>EditingPantry.xaml</DependentUpon>
     </Compile>

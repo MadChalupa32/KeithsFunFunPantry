@@ -75,5 +75,10 @@ namespace KeithsFunFunPantry
             }
         }
 
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            RecipeBook book = RecipeBook.Instance;
+            book.SaveRecipes();
+        }
     }
 }

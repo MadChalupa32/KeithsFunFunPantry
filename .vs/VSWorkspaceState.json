@@ -3,8 +3,9 @@
     "",
     "\\KeithsFunFunPantry",
     "\\KeithsFunFunPantry\\AppUnitTests",
-    "\\KeithsFunFunPantry\\KeithsFunFunPantry"
+    "\\KeithsFunFunPantry\\KeithsFunFunPantry",
+    "\\KeithsFunFunPantry\\KeithsFunFunPantry\\Xaml"
   ],
-  "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry.sln",
+  "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry\\Xaml\\HomePage.xaml.cs",
   "PreviewInSolutionExplorer": false
 }
