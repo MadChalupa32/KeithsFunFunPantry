@@ -5,9 +5,10 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using KeithsFunFunPantry.CS;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace KeithsFunFunPantry
 {
@@ -15,7 +16,7 @@ namespace KeithsFunFunPantry
     public class Ingredient
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
+        Regex nameValidation = new Regex(@"^[a-zA-Z\s]*$");
         private string name = "";
         private Measurement ingredientMeasurement;
 
@@ -25,8 +26,15 @@ namespace KeithsFunFunPantry
             get { return name; }
             set
             {
-                name = value;
-                FieldChanged();
+                if (nameValidation.IsMatch(value))
+                {
+                    name = value;
+                    FieldChanged();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid name");
+                }
             }
         }
 

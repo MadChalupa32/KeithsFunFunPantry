@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace KeithsFunFunPantry.CS
 {
+    [Serializable()]
     public class Measurement
     {
         public event PropertyChangedEventHandler PropertyChanged;
