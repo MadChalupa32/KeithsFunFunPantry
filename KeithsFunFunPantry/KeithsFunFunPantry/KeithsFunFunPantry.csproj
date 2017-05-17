@@ -63,6 +63,9 @@
     <Compile Include="AppControls\RecipeItem.xaml.cs">
       <DependentUpon>RecipeItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="AppControls\RecipeViewItem.xaml.cs">
+      <DependentUpon>RecipeViewItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AppControls\SearchIngredientItem.xaml.cs">
       <DependentUpon>SearchIngredientItem.xaml</DependentUpon>
     </Compile>
@@ -104,6 +107,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="AppControls\RecipeItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppControls\RecipeViewItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -184,6 +191,8 @@
   <ItemGroup>
     <Resource Include="Images\Search.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\ListItem.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

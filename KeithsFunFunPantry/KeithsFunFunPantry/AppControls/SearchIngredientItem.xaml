@@ -5,21 +5,48 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="520">
-    <Border CornerRadius="15"
+             d:DesignHeight="150" d:DesignWidth="900">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label VerticalAlignment="Center" 
+               HorizontalAlignment="Center"
+               Margin="20">
+            <Image Source="../Images/ListItem.png"/>
+        </Label>
+        <Border CornerRadius="5"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="50"
+                Height="50">
+            <Button Background="Transparent"
+                    BorderThickness="0"
+                    Opacity=".2"
+                    OpacityMask="LightBlue"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="50"
+                    Height="50"
+                    Click="Button_Click"/>
+        </Border>
+        <Border CornerRadius="15"
                 BorderBrush="Blue"
                 BorderThickness="5"
                 Margin="5"
                 Grid.Column="1">
-        <Grid Margin="5">
-            <Label Content="???"
-                   FontSize="30"
-                   FontWeight="Bold"
-                   VerticalAlignment="Center"
-                   HorizontalAlignment="Center"/>
-            <Button Background="Transparent"
-                    BorderThickness="0"
-                    Click="Button_Click"/>
-        </Grid>
-    </Border>
+            <Grid Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="Recipe Name"
+                       FontSize="30"
+                       FontWeight="Bold"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Center"/>
+            </Grid>
+        </Border>
+    </Grid>
 </UserControl>
