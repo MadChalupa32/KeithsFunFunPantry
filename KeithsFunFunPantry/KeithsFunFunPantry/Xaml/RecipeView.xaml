@@ -88,6 +88,10 @@
             <StackPanel x:Name="StackPanel_RecipeView"
                         Margin="20">
                 <AC:RecipeViewItem/>
+                <AC:RecipeViewItem/>
+                <AC:RecipeViewItem/>
+                <AC:RecipeViewItem/>
+                <AC:RecipeViewItem/>
             </StackPanel>
         </ScrollViewer>
 

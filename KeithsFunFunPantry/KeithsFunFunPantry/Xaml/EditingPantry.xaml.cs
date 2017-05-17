@@ -35,9 +35,9 @@ namespace KeithsFunFunPantry
             Pantry.AddNewIngredient("Brocolli", new CS.Measurement(2f, CS.Unit.cup));
             Pantry.AddNewIngredient("Chicken", new CS.Measurement(16f, CS.Unit.pound));
             Pantry.AddNewIngredient("Radishes", new CS.Measurement(3f, CS.Unit.cup));
-            Pantry.AddNewIngredient("Brocolli", new CS.Measurement(2f, CS.Unit.cup));
-            Pantry.AddNewIngredient("Chicken", new CS.Measurement(16f, CS.Unit.pound));
-            Pantry.AddNewIngredient("Radishes", new CS.Measurement(3f, CS.Unit.cup));
+            Pantry.AddNewIngredient("Sugar", new CS.Measurement(4f, CS.Unit.cup));
+            Pantry.AddNewIngredient("Steak", new CS.Measurement(16f, CS.Unit.pound));
+            Pantry.AddNewIngredient("Milk", new CS.Measurement(2f, CS.Unit.gallon));
             foreach (Ingredient ingredient in Pantry.Ingredients)
             {
                 PantryEdit pe = new PantryEdit();
@@ -71,6 +71,11 @@ namespace KeithsFunFunPantry
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Boi");
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Boi");
         }

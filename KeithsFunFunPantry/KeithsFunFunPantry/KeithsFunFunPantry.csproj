@@ -57,17 +57,20 @@
     <Compile Include="AppControls\PantryEdit.xaml.cs">
       <DependentUpon>PantryEdit.xaml</DependentUpon>
     </Compile>
-    <Compile Include="AppControls\PantryItem.xaml.cs">
-      <DependentUpon>PantryItem.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="AppControls\RecipeItem.xaml.cs">
-      <DependentUpon>RecipeItem.xaml</DependentUpon>
+    <Compile Include="AppControls\PantryViewItem.xaml.cs">
+      <DependentUpon>PantryViewItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppControls\RecipeViewItem.xaml.cs">
       <DependentUpon>RecipeViewItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="AppControls\SearchIngredientItem.xaml.cs">
       <DependentUpon>SearchIngredientItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppControls\SR_PantryItem.xaml.cs">
+      <DependentUpon>SR_PantryItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppControls\SR_RecipeItem.xaml.cs">
+      <DependentUpon>SR_RecipeItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="CS\Measurement.cs" />
     <Compile Include="Xaml\EditingPantry.xaml.cs">
@@ -77,6 +80,9 @@
     <Compile Include="CS\Pantry.cs" />
     <Compile Include="Xaml\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Xaml\MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\PantryView.xaml.cs">
       <DependentUpon>PantryView.xaml</DependentUpon>
@@ -102,11 +108,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="AppControls\PantryItem.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="AppControls\RecipeItem.xaml">
+    <Page Include="AppControls\PantryViewItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -118,11 +120,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="AppControls\SR_PantryItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppControls\SR_RecipeItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Xaml\EditingPantry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\HomePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Xaml\MainPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -193,6 +207,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\ListItem.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\BackgroundLogo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

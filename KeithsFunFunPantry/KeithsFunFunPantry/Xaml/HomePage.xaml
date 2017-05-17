@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="Keith's Fun Fun Pantry" Height="750" Width="1250" Icon="../Images/AppIcon.ico">
     <Grid>
-        
+        <Image Source="../Images/BackgroundLogo.png"
+               VerticalAlignment="Center"
+               Opacity=".2"/>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
             <Button Background="Transparent" BorderThickness="0" Click="BackButton_Click">
                 <Image Margin="10,9" >
@@ -23,46 +25,77 @@
                     </Image.Source>
                 </Image>
             </Button>
-            <Button Content="Pantry" FontFamily="Georgia" MinWidth="50" Click="PantryView_Click"/>
-            <Button Content="Recipe" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="RecipeView_Click"/>
-            <Button Content="Search by ingredients" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0.2" Click="SearchIngredient_Click"/>
-            <Button Content="Search by recipe" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="SearchRecipe_Click"/>
-            <Button Content="Edit Pantry" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="EditPantry_Click"/>
+            <Button Content="Home Page" 
+                    FontFamily="Georgia" 
+                    FontSize="15"
+                    MinWidth="50" 
+                    Margin="10,0,0,0" 
+                    Click="HomePage_Click"/>
+            <Button Content="Pantry" 
+                    FontFamily="Georgia" 
+                    FontSize="15"
+                    MinWidth="50" 
+                    Margin="10,0,0,0" 
+                    Click="PantryView_Click"/>
+            <Button Content="Recipe" 
+                    FontFamily="Georgia" 
+                    FontSize="15"
+                    MinWidth="50" 
+                    Margin="10,0,0,0" 
+                    Click="RecipeView_Click"/>
+            <Button Content="Search by ingredients" 
+                    FontFamily="Georgia" 
+                    FontSize="15"
+                    MinWidth="50" 
+                    Margin="10,0,0,0" 
+                    Click="SearchIngredient_Click"/>
+            <Button Content="Search by Recipe" 
+                    FontFamily="Georgia" 
+                    FontSize="15"
+                    MinWidth="50" 
+                    Margin="10,0,0,0" 
+                    Click="SearchRecipe_Click"/>
+            <Button Content="Edit Pantry" 
+                    FontFamily="Georgia"
+                    FontSize="15"
+                    MinWidth="50"
+                    Margin="10,0,0,0"
+                    Click="EditPantry_Click"/>
         </StackPanel>
         <Frame x:Name="Frame_HomePage" Margin="0, 35, 0, 0" NavigationUIVisibility="Hidden" />
-        <Label Content="KEITH's"
+        <!-- <Label Content="KEITH's"
                Foreground="Black"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
                Margin="0,90,0,0"
                FontSize="50"
                FontWeight="Bold"
-               Opacity=".2"/>
+               />
         <Label Content="FUN"
                VerticalAlignment="Center"
                HorizontalAlignment="Left"
                Margin="300,0,0,0"
                FontSize="50"
                FontWeight="Bold"
-               Opacity=".2"/>
+               />
         <Label Content="FUN"
                VerticalAlignment="Center"
                HorizontalAlignment="Right"
                Margin="0,0,300,0"
                FontSize="50"
                FontWeight="Bold"
-               Opacity=".2"/>
+               />
         <Label Content="PANTRY"
                VerticalAlignment="Bottom"
                HorizontalAlignment="Center"
                Margin="0,0,0,90"
                FontSize="50"
                FontWeight="Bold"
-               Opacity=".2"/>
+               />
         <Image Source="../Images/Logo.png" 
                VerticalAlignment="Center" 
                HorizontalAlignment="Center" 
                Margin="150" 
-               Opacity=".2"/>
+               />-->
     </Grid>
 </Window>
