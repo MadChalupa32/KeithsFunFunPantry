@@ -21,7 +21,6 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class EditingPantry : Page
     {
-        List<Ingredient> pantryList = new List<Ingredient>() { };
 
         private string searchTB = "Search Ingredient";
         public EditingPantry()
@@ -33,13 +32,13 @@ namespace KeithsFunFunPantry
 
         private void ShowPantry()
         {
-            pantryList.Add(new Ingredient ( Name = "Brocolli", 2 ));
-            pantryList.Add(new Ingredient ( Name = "Chicken", 16 ));
-            pantryList.Add(new Ingredient ( Name = "Radishes", 3 ));
-            pantryList.Add(new Ingredient ( Name = "Brocolli", 2 ));
-            pantryList.Add(new Ingredient ( Name = "Chicken", 16 ));
-            pantryList.Add(new Ingredient ( Name = "Radishes", 3 ));
-            foreach (Ingredient ingredient in pantryList)
+            Pantry.AddNewIngredient("Brocolli", new CS.Measurement(2f, CS.Unit.cup));
+            Pantry.AddNewIngredient("Chicken", new CS.Measurement(16f, CS.Unit.pound));
+            Pantry.AddNewIngredient("Radishes", new CS.Measurement(3f, CS.Unit.cup));
+            Pantry.AddNewIngredient("Sugar", new CS.Measurement(4f, CS.Unit.cup));
+            Pantry.AddNewIngredient("Steak", new CS.Measurement(16f, CS.Unit.pound));
+            Pantry.AddNewIngredient("Milk", new CS.Measurement(2f, CS.Unit.gallon));
+            foreach (Ingredient ingredient in Pantry.Ingredients)
             {
                 PantryEdit pe = new PantryEdit();
                 pe.DataContext = ingredient;
@@ -72,6 +71,11 @@ namespace KeithsFunFunPantry
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Boi");
+        }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Boi");
         }

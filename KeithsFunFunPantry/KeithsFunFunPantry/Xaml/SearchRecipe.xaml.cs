@@ -48,15 +48,16 @@ namespace KeithsFunFunPantry
             }
         }
 
-		public void SearchButtonClick_Handler(object sender, RoutedEventArgs e)
+		/// <summary>
+		/// Event handler that will search the recipe list for recipe objects whose title contains the query found in the recipe search text box.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		public void RecipeSearchButton_ClickHandler(object sender, RoutedEventArgs e)
 		{
-            MessageBox.Show("Boi");
-			//string query = TextBox_ByRecipeSearch.Text;
-			//RecipeBook.recipes.Where(recipe => recipe.Title.Contains(query));
-			//Randy
-				//I spent most of the day trying to understan how the UI was already set up,
-				//and a lot of time exploring the files that Cristian created so that I 
-				//understood where data was stored.
+			string query = TextBox_ByRecipeSearch.Text;
+			//RecipeBook.Recipes.Where(recipe => recipe.Title.Contains(query));
+			MessageBox.Show("Inside recipe search handler\nQuery: {0}", query);
 		}
     }
 }

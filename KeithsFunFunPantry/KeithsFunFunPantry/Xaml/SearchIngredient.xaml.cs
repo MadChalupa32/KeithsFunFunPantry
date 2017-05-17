@@ -48,9 +48,22 @@ namespace KeithsFunFunPantry
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+		/// <summary>
+		/// Event handler that will search the pantry for ingredient objects whose name contains the query found in the ingredient search text box.
+		/// </summary>
+		/// <param name="sender"></param>
+		/// <param name="e"></param>
+		private void IngredientSearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Boi");
+			string query = TextBox_ByIngredientSearch.Text;
+			//Pantry.Ingredients.Where(ingredient => ingredient.Name.Contains(query));
+            MessageBox.Show("Inside ingredient search handler\nQuery: {0}", query);
         }
+
+		/*Randy 5/16
+		 *	Today, I wrote the search functionality for the ingredients list, and continued to
+		 *	familiarize myself with my teammates' work. I can't really begin to test until the 
+		 *	Pantry and RecipeBook classes are finished.
+		 */
     }
 }

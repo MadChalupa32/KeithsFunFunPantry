@@ -13,21 +13,17 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KeithsFunFunPantry.AppControls
+
+namespace KeithsFunFunPantry.Xaml
 {
     /// <summary>
-    /// Interaction logic for PantryItem.xaml
+    /// Interaction logic for MainPage.xaml
     /// </summary>
-    public partial class PantryItem : UserControl
+    public partial class MainPage : Page
     {
-        public PantryItem()
+        public MainPage()
         {
             InitializeComponent();
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Boi");
         }
     }
 }
