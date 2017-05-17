@@ -15,6 +15,7 @@
             <Label Content="???"
                    FontSize="30"
                    FontWeight="Bold"
+                   FontFamily="Georgia"
                    VerticalAlignment="Center"
                    HorizontalAlignment="Center"/>
             <Button Background="Transparent"
