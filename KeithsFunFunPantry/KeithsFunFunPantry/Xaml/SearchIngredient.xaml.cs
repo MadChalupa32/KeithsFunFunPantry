@@ -59,5 +59,11 @@ namespace KeithsFunFunPantry
 			//Pantry.Ingredients.Where(ingredient => ingredient.Name.Contains(query));
             MessageBox.Show("Inside ingredient search handler\nQuery: {0}", query);
         }
+
+		/*Randy 5/16
+		 *	Today, I wrote the search functionality for the ingredients list, and continued to
+		 *	familiarize myself with my teammates' work. I can't really begin to test until the 
+		 *	Pantry and RecipeBook classes are finished.
+		 */
     }
 }
