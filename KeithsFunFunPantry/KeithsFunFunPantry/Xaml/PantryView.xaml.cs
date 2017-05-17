@@ -25,7 +25,7 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
-            ListIngredients();
+            //ListIngredients();
         }
 
         private string searchBar = "Search Ingredients";
@@ -52,19 +52,19 @@ namespace KeithsFunFunPantry
         }
         public void ListIngredients()
         {
-            Pantry.AddNewIngredient("Salt", new Measurement(20f, Unit.gram));
-            Pantry.AddNewIngredient("Apple Slices", new Measurement(5f, Unit.cup));
-            foreach (Ingredient ingredient in Pantry.Ingredients)
-            {
-                //PantryView pv = new PantryView();
-                //    pv.DataContext = ingredient.Name;
-                //    pv.DataContext = ingredient.IngredientMeasurement.ToString();
-                //    StackPanel_PantryView.Children.Add(pv);
-                //    Label label = new Label();
-                //    label.Content = "Name: " + ingredient.Name + " Amount: " + ingredient.IngredientMeasurement.ToString();
-                //    StackPanel_PantryView.Children.Add(label);
-            }
-    }
+            //Pantry.AddNewIngredient("Salt", new Measurement(20f, Unit.gram));
+            //Pantry.AddNewIngredient("Apple Slices", new Measurement(5f, Unit.cup));
+            //foreach (Ingredient ingredient in Pantry.Ingredients)
+            //{
+            //    PantryView pv = new PantryView();
+            //    pv.DataContext = ingredient.Name;
+            //    pv.DataContext = ingredient.IngredientMeasurement.ToString();
+            //    StackPanel_PantryView.Children.Add(pv);
+            //    Label label = new Label();
+            //    label.Content = "Name: " + ingredient.Name + " Amount: " + ingredient.IngredientMeasurement.ToString();
+            //    StackPanel_PantryView.Children.Add(label);
+            //}
+        }
 
     private void Button_Click(object sender, RoutedEventArgs e)
         {

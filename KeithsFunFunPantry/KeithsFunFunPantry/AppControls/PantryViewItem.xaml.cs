@@ -16,18 +16,18 @@ using System.Windows.Shapes;
 namespace KeithsFunFunPantry.AppControls
 {
     /// <summary>
-    /// Interaction logic for PantryItem.xaml
+    /// Interaction logic for PantryViewItem.xaml
     /// </summary>
-    public partial class PantryItem : UserControl
+    public partial class PantryViewItem : UserControl
     {
-        public PantryItem()
+        public PantryViewItem()
         {
             InitializeComponent();
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Boi");
+            MessageBox.Show("boi");
         }
     }
 }
