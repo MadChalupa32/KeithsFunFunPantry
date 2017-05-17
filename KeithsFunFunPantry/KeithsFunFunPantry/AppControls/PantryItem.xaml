@@ -5,53 +5,56 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="520">
-    <Border CornerRadius="15"
+             d:DesignHeight="150" d:DesignWidth="900">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100"/>
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+        <Label VerticalAlignment="Center" 
+               HorizontalAlignment="Center"
+               Margin="20">
+            <Image Source="../Images/ListItem.png"/>
+        </Label>
+        <Border CornerRadius="5"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center"
+                Width="50"
+                Height="50">
+            <Button Background="Transparent"
+                    BorderThickness="0"
+                    Opacity=".2"
+                    OpacityMask="LightBlue"
+                    VerticalAlignment="Center"
+                    HorizontalAlignment="Center"
+                    Width="50"
+                    Height="50"
+                    Click="Button_Click"/>
+        </Border>
+        <Border CornerRadius="15"
                 BorderBrush="Blue"
                 BorderThickness="5"
                 Margin="5"
                 Grid.Column="1">
             <Grid Margin="5">
-                <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="150"/>
+                    <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Name:"
-                       Margin="25,0,0,0"
+                <Label Content="Name"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
                        FontSize="30"
                        FontWeight="Bold"
-                       VerticalAlignment="Top"
-                       HorizontalAlignment="Right"/>
-                <Label Content="Amount:"
-                       Grid.Row="1"
-                       FontSize="30"
-                       FontWeight="Bold"
-                       VerticalAlignment="Top"
-                       HorizontalAlignment="Right"/>
-                <!--<Label Content="{Binding Path=Name}"-->
-                <Label Content="???"
+                       Margin="120,0,0,0"/>
+                <Label Content="Amount"
                        Grid.Column="1"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left"
                        FontSize="30"
                        FontWeight="Bold"
-                       VerticalAlignment="Top"
-                       HorizontalAlignment="Left"/>
-                <!--<Label Content="{Binding Path=Amount}"-->
-                <Label Content="???"
-                       Grid.Row="1"
-                       Grid.Column="1"
-                       FontSize="30"
-                       FontWeight="Bold"
-                       VerticalAlignment="Top"
-                       HorizontalAlignment="Left"/>
-            <Button Background="Transparent"
-                    BorderThickness="0"
-                    Grid.RowSpan="2"
-                    Grid.ColumnSpan="2"
-                    Click="Button_Click"/>
-        </Grid>
-    </Border>
+                       Margin="20,0,0,0"/>
+            </Grid>
+        </Border>
+    </Grid>
 </UserControl>

@@ -79,6 +79,5 @@ namespace KeithsFunFunPantry
                 Frame_HomePage.NavigationService.GoForward();
             }
         }
-
     }
 }
