@@ -52,7 +52,7 @@ namespace KeithsFunFunPantry
         }
         public void ListIngredients()
         {
-            Pantry.AddNewIngredient("Salt", new Measurement(20f, "gram"));
+            //Pantry.AddNewIngredient("Salt", new Measurement(20f, "gram"));
             //    //p.AddNewIngredient("Salt", 20);
             //    //p.AddNewIngredient("Apple", 5);
             //    foreach(Ingredient ingredient in p.Ingredients)

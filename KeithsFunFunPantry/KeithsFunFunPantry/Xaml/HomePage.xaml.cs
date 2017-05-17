@@ -33,7 +33,7 @@ namespace KeithsFunFunPantry
         }
         private void HomePage_Closed(object sender, EventArgs e)
         {
-            Pantry.AddNewIngredient();
+           // Pantry.AddNewIngredient();
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
