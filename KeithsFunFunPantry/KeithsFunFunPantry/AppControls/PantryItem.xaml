@@ -24,12 +24,14 @@
                        Margin="25,0,0,0"
                        FontSize="30"
                        FontWeight="Bold"
+                       FontFamily="Georgia"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Right"/>
                 <Label Content="Amount:"
                        Grid.Row="1"
                        FontSize="30"
                        FontWeight="Bold"
+                       FontFamily="Georgia"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Right"/>
                 <!--<Label Content="{Binding Path=Name}"-->
@@ -37,6 +39,7 @@
                        Grid.Column="1"
                        FontSize="30"
                        FontWeight="Bold"
+                       FontFamily="Georgia"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Left"/>
                 <!--<Label Content="{Binding Path=Amount}"-->
@@ -45,6 +48,7 @@
                        Grid.Column="1"
                        FontSize="30"
                        FontWeight="Bold"
+                       FontFamily="Georgia"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Left"/>
             <Button Background="Transparent"

@@ -25,7 +25,7 @@ namespace KeithsFunFunPantry
         //private SearchIngredient searchIngredient = new SearchIngredient();
         //private SearchRecipe searchRecipe = new SearchRecipe();
 
-        
+
         public HomePage()
         {
             InitializeComponent();

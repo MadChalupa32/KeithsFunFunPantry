@@ -20,6 +20,7 @@
                        Margin="0,0,0,0"
                        FontSize="30"
                        FontWeight="Bold"
+                       FontFamily="Georgia"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Right"/>
             <!--<Label Content="{Binding Path=Name}"-->
@@ -27,6 +28,7 @@
                        Grid.Column="1"
                        FontSize="30"
                        FontWeight="Bold"
+                       FontFamily="Georgia"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"/>
             <Button Background="Transparent"

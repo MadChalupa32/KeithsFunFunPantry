@@ -43,7 +43,8 @@
                 Background="White">
             <TextBox x:Name="TextBox_ByIngredientSearch" 
                      Background="Transparent" 
-                     BorderThickness="0" 
+                     BorderThickness="0"
+                     FontFamily="Georgia"
                      Margin="28,0,0,0"/>
         </Border>
         <Label VerticalAlignment="Center" 
@@ -67,12 +68,12 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 Click="Button_Click"/>
-        <Label Content="Search by Ingredients" FontSize="30" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <CheckBox Content="Only include chosen ingredients in recipe" Grid.Row="3" Grid.ColumnSpan="3" Margin="6,3,0,2"/>
-        <CheckBox Content="Chicken" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Beef" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Pork" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Rice" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
+        <Label Content="Search by Ingredients" FontSize="30" FontFamily="Georgia" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
+        <CheckBox Content="Only include chosen ingredients in recipe" FontFamily="Georgia" Grid.Row="3" Grid.ColumnSpan="3" Margin="6,3,0,2"/>
+        <CheckBox Content="Chicken" FontFamily="Georgia" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
+        <CheckBox Content="Beef" FontFamily="Georgia" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
+        <CheckBox Content="Pork" FontFamily="Georgia" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
+        <CheckBox Content="Rice" FontFamily="Georgia" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
         <ScrollViewer Background="AliceBlue"
                       Grid.Row="3"
                       Grid.RowSpan="8"
