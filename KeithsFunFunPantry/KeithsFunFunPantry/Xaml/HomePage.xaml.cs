@@ -22,6 +22,12 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class HomePage : Window
     {
+        private PantryView pantryView = new PantryView();
+        //private RecipeView recipeView = new RecipeView();
+        //private SearchIngredient searchIngredient = new SearchIngredient();
+        //private SearchRecipe searchRecipe = new SearchRecipe();
+
+
         public HomePage()
         {
             InitializeComponent();

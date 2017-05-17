@@ -44,6 +44,7 @@
             <TextBox x:Name="TextBox_ByRecipeSearch" 
                      Background="Transparent" 
                      BorderThickness="0" 
+                     FontFamily="Georgia"
                      Margin="28,0,0,0"/>
         </Border>
         <Label VerticalAlignment="Center" 
@@ -69,6 +70,7 @@
                 HorizontalAlignment="Left"
                 Click="RecipeSearchButton_ClickHandler"/>
         <Label Content="Search by Recipe" FontSize="30" Grid.ColumnSpan="3" Margin="10.4,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Height="50" Width="234"/>
+        <Label Content="Search by Recipe" FontSize="30" FontFamily="Georgia" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Label Content="List of Recipes"
                Grid.Row="1"
                Grid.RowSpan="3"
@@ -101,10 +103,15 @@
                 <AC:SR_RecipeItem/>
             </StackPanel>
         </ScrollViewer>
-
-        <ScrollViewer Background="AliceBlue"
-                      Grid.Row="3"
-                      Grid.RowSpan="7"
+        <Label Content="Pantry ingredients"
+               Grid.Row="2"
+               Grid.Column="5"
+               Grid.ColumnSpan="5"
+               Margin="0,0,0,0"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Center"/>
+        <ScrollViewer Grid.Row="2"
+                      Grid.RowSpan="3"
                       Grid.Column="5"
                       Grid.ColumnSpan="2"
                       Margin="19.8,19.6,20.6,19.8">

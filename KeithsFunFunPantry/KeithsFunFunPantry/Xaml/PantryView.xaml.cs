@@ -25,7 +25,7 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
-            ListIngredients();
+            //ListIngredients();
         }
 
         private string searchBar = "Search Ingredients";

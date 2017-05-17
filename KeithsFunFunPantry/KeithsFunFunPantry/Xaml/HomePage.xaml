@@ -61,6 +61,12 @@
                     MinWidth="50"
                     Margin="10,0,0,0"
                     Click="EditPantry_Click"/>
+            <Button Content="Pantry" FontFamily="Georgia" MinWidth="50" Click="PantryView_Click"/>
+            <Button Content="Recipe" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="RecipeView_Click"/>
+            <Button Content="Search by ingredients" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0.2" Click="SearchIngredient_Click"/>
+            <Button Content="Search by recipe" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="SearchRecipe_Click"/>
+            <Button Content="Edit Pantry" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="EditPantry_Click"/>
+            <Button Content="Home" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0"/>
         </StackPanel>
         <Frame x:Name="Frame_HomePage" Margin="0, 35, 0, 0" NavigationUIVisibility="Hidden" />
         <!-- <Label Content="KEITH's"
