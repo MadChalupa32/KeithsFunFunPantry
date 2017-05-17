@@ -61,47 +61,7 @@
                     MinWidth="50"
                     Margin="10,0,0,0"
                     Click="EditPantry_Click"/>
-            <Button Content="Pantry" FontFamily="Georgia" MinWidth="50" Click="PantryView_Click"/>
-            <Button Content="Recipe" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="RecipeView_Click"/>
-            <Button Content="Search by ingredients" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0.2" Click="SearchIngredient_Click"/>
-            <Button Content="Search by recipe" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="SearchRecipe_Click"/>
-            <Button Content="Edit Pantry" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0" Click="EditPantry_Click"/>
-            <Button Content="Home" FontFamily="Georgia" MinWidth="50" Margin="10,0,0,0"/>
         </StackPanel>
         <Frame x:Name="Frame_HomePage" Margin="0, 35, 0, 0" NavigationUIVisibility="Hidden" />
-        <!-- <Label Content="KEITH's"
-               Foreground="Black"
-               VerticalAlignment="Top"
-               HorizontalAlignment="Center"
-               Margin="0,90,0,0"
-               FontSize="50"
-               FontWeight="Bold"
-               />
-        <Label Content="FUN"
-               VerticalAlignment="Center"
-               HorizontalAlignment="Left"
-               Margin="300,0,0,0"
-               FontSize="50"
-               FontWeight="Bold"
-               />
-        <Label Content="FUN"
-               VerticalAlignment="Center"
-               HorizontalAlignment="Right"
-               Margin="0,0,300,0"
-               FontSize="50"
-               FontWeight="Bold"
-               />
-        <Label Content="PANTRY"
-               VerticalAlignment="Bottom"
-               HorizontalAlignment="Center"
-               Margin="0,0,0,90"
-               FontSize="50"
-               FontWeight="Bold"
-               />
-        <Image Source="../Images/Logo.png" 
-               VerticalAlignment="Center" 
-               HorizontalAlignment="Center" 
-               Margin="150" 
-               />-->
     </Grid>
 </Window>
