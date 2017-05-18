@@ -2,12 +2,11 @@
   "ExpandedNodes": [
     "",
     "\\KeithsFunFunPantry",
-    "\\KeithsFunFunPantry\\AppUnitTests",
     "\\KeithsFunFunPantry\\KeithsFunFunPantry",
     "\\KeithsFunFunPantry\\KeithsFunFunPantry\\AppControls",
+    "\\KeithsFunFunPantry\\KeithsFunFunPantry\\CS",
     "\\KeithsFunFunPantry\\KeithsFunFunPantry\\Xaml"
-    "\\KeithsFunFunPantry\\KeithsFunFunPantry"
   ],
-  "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry\\Xaml\\HomePage.xaml",
+  "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry\\Xaml\\EditingPantry.xaml",
   "PreviewInSolutionExplorer": false
 }

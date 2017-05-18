@@ -32,13 +32,14 @@
                     Click="Button_Click"/>
         </Border>
         <Border CornerRadius="15"
-                BorderBrush="Blue"
+                BorderBrush="#A3CC72"
                 BorderThickness="5"
                 Margin="5"
                 Grid.Column="1">
             <Grid Margin="5">
                 <Label Content="Grilled Cheese"
                        Margin="25,0,0,0"
+                       FontFamily="Georgia"
                        FontSize="30"
                        FontWeight="Bold"
                        VerticalAlignment="Center"
