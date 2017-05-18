@@ -13,7 +13,7 @@ namespace KeithsFunFunPantry
     
     //find way to serialize the RecipeBook, potentially inhereting a List<Recipe>       SINGLETON
     [Serializable]
-    public class RecipeBook : List<Recipe>
+    public class RecipeBook
     {
         private static RecipeBook instance;
         private RecipeBook()
@@ -22,11 +22,11 @@ namespace KeithsFunFunPantry
             {
                 try
                 {
-                    var recipesInTheFile = format.Deserialize(file);
+                    var recipesInTheFile = format.Deserialize(file) as RecipeBook;
                     if (recipesInTheFile != null)
                     {
-                        instance = (RecipeBook)recipesInTheFile;
-                        Recipes = instance.Recipes;
+                        instance = recipesInTheFile;
+                        //Recipes = instance.Recipes;
                     }
                 }
                 catch (SerializationException e)
