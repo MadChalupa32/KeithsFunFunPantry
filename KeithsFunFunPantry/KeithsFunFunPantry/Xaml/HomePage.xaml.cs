@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using KeithsFunFunPantry.CS;
+using KeithsFunFunPantry.Xaml;
 
 namespace KeithsFunFunPantry
 {
@@ -33,7 +35,7 @@ namespace KeithsFunFunPantry
         }
         private void HomePage_Closed(object sender, EventArgs e)
         {
-            Pantry.AddNewIngredient();
+            Pantry.SaveIngredient();
         }
 
         private void ExitButton_Click(object sender, RoutedEventArgs e)
@@ -80,5 +82,13 @@ namespace KeithsFunFunPantry
             }
         }
 
-    }
+private void HomePage_Click(object sender, RoutedEventArgs e)
+        {
+            Frame_HomePage.Content = new MainPage();
+        }
+private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+            RecipeBook book = RecipeBook.Instance;
+            book.SaveRecipes();
+        }    }
 }

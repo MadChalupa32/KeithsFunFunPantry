@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace KeithsFunFunPantry
 {
-    class Recipe
+    [Serializable]
+    public class Recipe
     {
         public Recipe(List<Ingredient> ingredientList, String title, string directions = "", string notes = "")
         {

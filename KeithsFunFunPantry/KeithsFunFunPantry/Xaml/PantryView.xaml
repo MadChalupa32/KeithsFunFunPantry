@@ -55,7 +55,26 @@
                Grid.ColumnSpan="2">
             <Image Source="../Images/Search.png"/>
         </Label>
-        <Button Background="Transparent"
+        <Label Content="Ingredient Name"
+               Grid.Row="2"
+               Grid.RowSpan="2"
+               Grid.Column="3"
+               Grid.ColumnSpan="2"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Center"
+               FontSize="20"
+               FontWeight="Bold"/>
+        <Label Content="Amount of Ingredient"
+               Grid.Row="2"
+               Grid.RowSpan="2"
+               Grid.Column="4"
+               Grid.ColumnSpan="2"
+               VerticalAlignment="Top"
+               HorizontalAlignment="Center"
+               FontSize="20"
+               FontWeight="Bold"/>
+        <Button x:Name="recipeSearchButton"
+                Background="Transparent"
                 Grid.Column="1"
                 Grid.Row="1"
                 BorderThickness="0"
@@ -67,20 +86,37 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 Click="Button_Click"/>
-        <Label Content="Pantry" FontFamily="Georgia" FontSize="30" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <CheckBox Content="Vegan" FontFamily="Georgia" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Quick and Easy" FontFamily="Georgia" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Fruits" FontFamily="Georgia" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Vegetables" FontFamily="Georgia" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <ScrollViewer Background="AliceBlue" 
-                      Grid.Row="3" 
+        <Label Content="Pantry" 
+               FontSize="30" 
+               Grid.ColumnSpan="4" 
+               Margin="60,0,0,0" 
+               VerticalAlignment="Top" 
+               HorizontalAlignment="Left"/>
+        <CheckBox Content="Vegan" 
+                  Grid.Row="3" 
+                  Grid.Column="1" 
+                  Grid.ColumnSpan="2" 
+                  Margin="5,2"/>
+        <CheckBox Content="Quick and Easy" 
+                  Grid.Row="4"
+                  Grid.Column="1" 
+                  Grid.ColumnSpan="2" 
+                  Margin="5,2"/>
+        <CheckBox Content="Fruits" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
+        <CheckBox Content="Vegetables" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
+        <ScrollViewer Background="#C1E5FF" 
+                      Grid.Row="4" 
                       Grid.RowSpan="7" 
                       Grid.Column="3" 
                       Grid.ColumnSpan="3" 
                       Margin="20,0,20,20">
             <StackPanel x:Name="StackPanel_PantryView"
                         Margin="20">
-                <AC:PantryItem/>
+                <AC:PantryViewItem/>
+                <AC:PantryViewItem/>
+                <AC:PantryViewItem/>
+                <AC:PantryViewItem/>
+                <AC:PantryViewItem/>
             </StackPanel>
         </ScrollViewer>
     </Grid>
