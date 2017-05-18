@@ -21,7 +21,6 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class EditingPantry : Page
     {
-
         private string searchTB = "Search Ingredient";
         public EditingPantry()
         {
@@ -70,14 +69,14 @@ namespace KeithsFunFunPantry
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Boi");
         }
 
-        private void Button_Click_1(object sender, RoutedEventArgs e)
+        private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Boi");
+            
         }
     }
 }
