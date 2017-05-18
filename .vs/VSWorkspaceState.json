@@ -1,7 +1,11 @@
 {
   "ExpandedNodes": [
     "",
-    "\\KeithsFunFunPantry"
+    "\\KeithsFunFunPantry",
+    "\\KeithsFunFunPantry\\KeithsFunFunPantry",
+    "\\KeithsFunFunPantry\\KeithsFunFunPantry\\AppControls",
+    "\\KeithsFunFunPantry\\KeithsFunFunPantry\\CS",
+    "\\KeithsFunFunPantry\\KeithsFunFunPantry\\Xaml"
   ],
   "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry.sln",
   "PreviewInSolutionExplorer": false

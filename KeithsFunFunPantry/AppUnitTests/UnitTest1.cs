@@ -32,6 +32,7 @@ namespace AppUnitTests
 		public void AddNewIngredientTest_IngredientCount()
 		{
 			Pantry.Ingredients = new List<Ingredient>();
+
 			Pantry.AddNewIngredient("Milk", new Measurement(1f, Unit.gallon));
 			Pantry.AddNewIngredient("Sugar", new Measurement(1f, Unit.pound));
 			Pantry.AddNewIngredient("Baking Powder", new Measurement(24f, Unit.tablespoon));
@@ -57,6 +58,7 @@ namespace AppUnitTests
 		//	Pantry.RemoveIngredient(Pantry.Ingredients[2]);
 		//	Assert.AreEqual(2, Pantry.Ingredients.Count);
 		//}
+
 		//    [TestMethod]
 		//    public void ReadIngredientsFromFileTest()
 		//    {
@@ -65,5 +67,37 @@ namespace AppUnitTests
 		//        p.ReadIngredientsFromFile();
 		//        Assert.AreEqual(expectedResult, p.ingredients);
 		//    }
+
+		[TestMethod]
+		public void RecipeNameSearchTest()
+		{
+			
+		}
+
+		[TestMethod]
+		public void IngredientNameSearchTest()
+		{
+			Pantry.Ingredients = new List<Ingredient>()
+			{
+				new Ingredient("Milk", new Measurement(1f, Unit.gallon)),
+				new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.ounce)),
+				new Ingredient("Sugar", new Measurement(1f, Unit.pound)),
+				new Ingredient("Baking Powder", new Measurement(24f, Unit.tablespoon)),
+				new Ingredient("Shredded Cheese", new Measurement(12f, Unit.cup)),
+				new Ingredient("Cheese", new Measurement(4.5f, Unit.cup)),
+				new Ingredient("Salt", new Measurement(243.67f, Unit.kilogram))
+			};
+
+			string query = "cheese";
+			List<Ingredient> results = Pantry.IngredientNameSearch(query);
+
+			List<Ingredient> expectedResults = new List<Ingredient>()
+			{
+				new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.ounce)),
+				new Ingredient("Shredded Cheese", new Measurement(12f, Unit.cup)),
+				new Ingredient("Cheese", new Measurement(4.5f, Unit.cup)),
+			};
+			Assert.AreEqual(expectedResults, results);
+		}
 	}
 }

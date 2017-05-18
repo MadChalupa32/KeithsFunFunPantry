@@ -71,15 +71,18 @@
                 Margin="7.4,6,0,4.4"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                Click="SearchButton_Click"/>
+                FontFamily ="Georgia"
+                Click="Button_Click"/>
         <Label Content="Edit Pantry" 
                FontSize="30" 
-               Grid.ColumnSpan="4"
-               Margin="10.4,0,0,0" 
+               FontFamily="Georgia"
+               Grid.ColumnSpan="5"
+               Margin="60,0,0,0" 
                VerticalAlignment="Top"
                HorizontalAlignment="Left" Grid.Column="1"/>
         <Button Content="Save Pantry" 
                 Grid.Column="6" 
+                FontFamily="Georgia"
                 Width="70" 
                 Margin="0,20,59.6,0" 
                 Height="25" 
@@ -92,6 +95,7 @@
                Margin="15,4.6,15.2,0"
                VerticalAlignment="Top"
                FontSize="15"
+               FontFamily="Georgia"
                FontWeight="Bold"/>
         <TextBox x:Name="TextBox_Amount" 
                  Grid.Row="4" 
@@ -137,14 +141,17 @@
         <Label Content="Pantry Items"
                Grid.Row="2"
                Grid.RowSpan="2"
-               Grid.Column="5"
+               Grid.Column="4"
+               FontFamily="Georgia"
+               Grid.ColumnSpan="3"
                VerticalAlignment="Center"
                HorizontalAlignment="Center"
                FontSize="20"
-               FontWeight="Bold" Margin="108.8,1.6,108.4,1.4"/>
-        <ScrollViewer Background="AliceBlue"
-                      Grid.Row="3" 
-                      Grid.RowSpan="10" 
+               FontWeight="Bold"/>
+        <ScrollViewer Background="#E5C698"
+                      Opacity=".7"
+                      Grid.Row="4" 
+                      Grid.RowSpan="9" 
                       Grid.Column="4" 
                       Grid.ColumnSpan="3"
                       Margin="20,19.6,19.6,9.8">

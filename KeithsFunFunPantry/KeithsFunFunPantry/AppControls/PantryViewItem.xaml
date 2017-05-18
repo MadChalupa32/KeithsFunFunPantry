@@ -32,7 +32,7 @@
                     Click="Button_Click"/>
         </Border>
         <Border CornerRadius="15"
-                BorderBrush="#336B87"
+                BorderBrush="#A3CC72"
                 BorderThickness="5"
                 Margin="5"
                 Grid.Column="1">
@@ -44,6 +44,7 @@
                 <Label Content="Name"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
+                       FontFamily="Georgia"
                        FontSize="30"
                        FontWeight="Bold"
                        Margin="120,0,0,0"/>
@@ -51,6 +52,7 @@
                        Grid.Column="1"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
+                       FontFamily="Georgia"
                        FontSize="30"
                        FontWeight="Bold"
                        Margin="20,0,0,0"/>
