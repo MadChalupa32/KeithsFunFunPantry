@@ -68,5 +68,17 @@ namespace KeithsFunFunPantry
                 Console.WriteLine("File has failed to open or doesn't exist");
             }
         }
-    }
+
+		//Ingredient-specific search function
+		//private void IngredientNameSearch(string query)
+			//Don't need the return except for unit tests
+		public static List<Ingredient> IngredientNameSearch(string query)
+		{
+			List<Ingredient> queryResults = (List<Ingredient>)Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
+
+			return queryResults;
+			//What to we want to do with the results?
+
+		}
+	}
 }
