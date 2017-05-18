@@ -46,6 +46,11 @@ namespace KeithsFunFunPantry
             IngredientMeasurement = m;
         }
 
+        public override string ToString()
+        {
+            return Name + " " + IngredientMeasurement;
+        }
+
         protected void FieldChanged([CallerMemberName] string field = null)
         {
             if (PropertyChanged != null)

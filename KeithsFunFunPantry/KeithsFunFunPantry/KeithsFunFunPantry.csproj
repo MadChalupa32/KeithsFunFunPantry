@@ -67,6 +67,7 @@
       <DependentUpon>SearchIngredientItem.xaml</DependentUpon>
     </Compile>
     <Compile Include="CS\Measurement.cs" />
+    <Compile Include="CS\Unit.cs" />
     <Compile Include="Xaml\EditingPantry.xaml.cs">
       <DependentUpon>EditingPantry.xaml</DependentUpon>
     </Compile>
