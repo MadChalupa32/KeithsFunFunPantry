@@ -66,14 +66,17 @@
     <Compile Include="AppControls\SearchIngredientItem.xaml.cs">
       <DependentUpon>SearchIngredientItem.xaml</DependentUpon>
     </Compile>
-<Compile Include="CS\RecipeBook.cs" />
-<Compile Include="AppControls\SR_PantryItem.xaml.cs"><DependentUpon>SR_PantryItem.xaml</DependentUpon></Compile>
-<Compile Include="AppControls\SR_RecipeItem.xaml.cs">
+    <Compile Include="CS\Logging.cs" />
+    <Compile Include="CS\RecipeBook.cs" />
+    <Compile Include="AppControls\SR_PantryItem.xaml.cs">
+      <DependentUpon>SR_PantryItem.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppControls\SR_RecipeItem.xaml.cs">
       <DependentUpon>SR_RecipeItem.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CS\Measurement.cs" />    <Compile Include="Xaml\EditingPantry.xaml.cs">
-      <DependentUpon>EditingPantry.xaml</DependentUpon>
-    </Compile>
+    <Compile Include="Xaml\EditingPantry.xaml.cs" />
+    <Compile Include="CS\Measurement.cs" />
+    <Compile Include="CS\Unit.cs" />
     <Compile Include="CS\Ingredient.cs" />
     <Compile Include="CS\Pantry.cs" />
     <Compile Include="Xaml\HomePage.xaml.cs">
@@ -208,6 +211,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\BackgroundLogo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="bin\Debug\log.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

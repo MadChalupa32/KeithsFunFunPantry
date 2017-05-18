@@ -55,15 +55,24 @@ namespace KeithsFunFunPantry
 		/// <param name="e"></param>
 		private void IngredientSearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-			string query = TextBox_ByIngredientSearch.Text;
-			//Pantry.Ingredients.Where(ingredient => ingredient.Name.Contains(query));
+			string query = TextBox_ByIngredientSearch.Text.ToLower();
+			Pantry.IngredientNameSearch(query);
+
             MessageBox.Show("Inside ingredient search handler\nQuery: {0}", query);
         }
 
-		/*Randy 5/16
-		 *	Today, I wrote the search functionality for the ingredients list, and continued to
-		 *	familiarize myself with my teammates' work. I can't really begin to test until the 
-		 *	Pantry and RecipeBook classes are finished.
+		/*Randy 5/17
+		 *	Today, I reworked the recipe- and ingredient-specific search functionality a little bit. 
+		 *	I moved the ingredient search into the Pantry class and changed the event to accomodate
+		 *	that. I also wrote some unit tests for the Pantry class and started writing the tests 
+		 *	for the searching methods. 
+		 *	
+		 *	
+		 *	To Do:
+		 *	Make search events call methods
+		 *	Move methods to corresponding classes
+		 *	Alter(remove?) search windows
+		 *		If removed, move events to Pantry and Recipe windows.
 		 */
     }
 }

@@ -76,8 +76,9 @@
                Grid.Column="3"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
+               FontFamily="Georgia"
                FontSize="20"
-               FontWeight="Bold" Height="37" Margin="98,30,105.2,0" Width="144"/>
+               FontWeight="Bold" Height="37" Margin="61,30,95.2,0" Width="191"/>
         <Label Content="Pantry ingredients"
                Grid.Row="1"
                Grid.RowSpan="3"
@@ -85,9 +86,11 @@
                Grid.ColumnSpan="2"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
+               FontFamily="Georgia"
                FontSize="20"
-               FontWeight="Bold" Height="37" Margin="217.8,30,216.6,0" Width="184"/>
-        <ScrollViewer Background="AliceBlue"
+               FontWeight="Bold" Height="37" Margin="196.8,30,186.6,0" Width="235"/>
+        <ScrollViewer Background="#E5C698"
+                      Opacity=".7"
                       Grid.Row="3" 
                       Grid.RowSpan="7" 
                       Grid.Column="1" 
@@ -102,7 +105,8 @@
                 <AC:SR_RecipeItem/>
             </StackPanel>
         </ScrollViewer>
-        <ScrollViewer Background="AliceBlue"
+        <ScrollViewer Background="#E5C698"
+                      Opacity=".7"
                       Grid.Row="3"
                       Grid.RowSpan="7"
                       Grid.Column="5"

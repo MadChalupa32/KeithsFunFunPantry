@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace KeithsFunFunPantry.CS
 {
-    [Serializable()]
+    [Serializable]
     public class Measurement
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -42,6 +42,11 @@ namespace KeithsFunFunPantry.CS
             UnitOfMeasurement = u;
         }
 
+        public override string ToString()
+        {
+            return Amount + " " + UnitOfMeasurement.ShortHand;
+        }
+       
         protected void FieldChanged([CallerMemberName] string field = null)
         {
             if (PropertyChanged != null)
@@ -49,14 +54,5 @@ namespace KeithsFunFunPantry.CS
                 PropertyChanged(this, new PropertyChangedEventArgs(field));
             }
         }
-    }
-
-    public enum Unit
-    {
-        teaspoon, tablespoon, cup,
-        ounce, pound,
-        pint, quart, gallon,
-        milliliter, liter,
-        gram, kilogram
     }
 }

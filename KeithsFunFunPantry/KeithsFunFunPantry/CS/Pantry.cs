@@ -15,7 +15,7 @@ namespace KeithsFunFunPantry
     public static class Pantry
     {
         //public event PropertyChangedEventHandler PropertyChanged;
-        public static List<Ingredient> ingredients = new List<Ingredient>();
+        private static List<Ingredient> ingredients = new List<Ingredient>();
         public static List<Ingredient> Ingredients
         {
             get { return ingredients; }
@@ -27,7 +27,7 @@ namespace KeithsFunFunPantry
         public static void AddNewIngredient(string name, Measurement m)
         {
             Ingredient i = new Ingredient(name, m);
-            ingredients.Add(i);
+            Ingredients.Add(i);
         }
 
         //Will export to file.
@@ -35,10 +35,10 @@ namespace KeithsFunFunPantry
         {
             try
             {
-                using (Stream stream = File.Open("ingredients.xml", FileMode.Create))
+                using (Stream stream = File.Open("ingredients.xml", FileMode.CreateNew))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
-                    bin.Serialize(stream, ingredients);
+                    bin.Serialize(stream, Ingredients);
                 }
             }
             catch (IOException)
@@ -68,5 +68,21 @@ namespace KeithsFunFunPantry
                 Console.WriteLine("File has failed to open or doesn't exist");
             }
         }
-    }
+        public static void RemoveIngredients()
+        {
+            //Ingredients.Remove();
+        }
+
+		//Ingredient-specific search function
+		//private void IngredientNameSearch(string query)
+			//Don't need the return except for unit tests
+		public static List<Ingredient> IngredientNameSearch(string query)
+		{
+			List<Ingredient> queryResults = (List<Ingredient>)Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
+
+			return queryResults;
+			//What to we want to do with the results?
+
+		}
+	}
 }
