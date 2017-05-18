@@ -70,7 +70,7 @@ namespace KeithsFunFunPantry
         }
         public static void RemoveIngredients()
         {
-            Ingredients.Remove()
+            //Ingredients.Remove();
         }
 
 		//Ingredient-specific search function

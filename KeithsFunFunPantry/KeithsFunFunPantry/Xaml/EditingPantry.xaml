@@ -60,7 +60,7 @@
                Grid.ColumnSpan="2">
             <Image Source="../Images/Search.png"/>
         </Label>
-        <Button Background="Transparent"
+        <!--<Button Background="Transparent"
                 Grid.Column="1"
                 Grid.Row="1"
                 BorderThickness="0"
@@ -72,7 +72,7 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 FontFamily ="Georgia"
-                Click="Button_Click"/>
+                Click="Button_Click"/> -->
         <Label Content="Edit Pantry" 
                FontSize="30" 
                FontFamily="Georgia"
@@ -111,7 +111,7 @@
                  Padding="5" 
                  BorderThickness="3" 
                  BorderBrush="Black"/>
-        <MenuItem Click="AddPresetButton_Click" x:Name="AddPresetButton">
+        <!--<MenuItem Click="AddPresetButton_Click" x:Name="AddPresetButton">
             
             <MenuItem.Header>
                 <StackPanel Orientation="Horizontal">
@@ -126,6 +126,7 @@
                 </ContextMenu>
             </MenuItem.ContextMenu>
         </MenuItem>
+        -->
 
         <Button Content="Add" 
                 Grid.Row="10" 

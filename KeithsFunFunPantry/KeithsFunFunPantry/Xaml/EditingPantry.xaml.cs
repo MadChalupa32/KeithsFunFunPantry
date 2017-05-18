@@ -31,12 +31,12 @@ namespace KeithsFunFunPantry
 
         private void ShowPantry()
         {
-            Pantry.AddNewIngredient("Brocolli", new CS.Measurement(2f, CS.Unit.cup));
-            Pantry.AddNewIngredient("Chicken", new CS.Measurement(16f, CS.Unit.pound));
-            Pantry.AddNewIngredient("Radishes", new CS.Measurement(3f, CS.Unit.cup));
-            Pantry.AddNewIngredient("Sugar", new CS.Measurement(4f, CS.Unit.cup));
-            Pantry.AddNewIngredient("Steak", new CS.Measurement(16f, CS.Unit.pound));
-            Pantry.AddNewIngredient("Milk", new CS.Measurement(2f, CS.Unit.gallon));
+            Pantry.AddNewIngredient("Brocolli", new CS.Measurement(2f, CS.Unit.Cup));
+            Pantry.AddNewIngredient("Chicken", new CS.Measurement(16f, CS.Unit.Pound));
+            Pantry.AddNewIngredient("Radishes", new CS.Measurement(3f, CS.Unit.Cup));
+            Pantry.AddNewIngredient("Sugar", new CS.Measurement(4f, CS.Unit.Cup));
+            Pantry.AddNewIngredient("Steak", new CS.Measurement(16f, CS.Unit.Pound));
+            Pantry.AddNewIngredient("Milk", new CS.Measurement(2f, CS.Unit.Gallon));
             foreach (Ingredient ingredient in Pantry.Ingredients)
             {
                 PantryEdit pe = new PantryEdit();
@@ -51,7 +51,7 @@ namespace KeithsFunFunPantry
             TextBox_IngredientSearch.LostFocus += AddISText;
             TextBox_IngredientSearch.Text = searchTB;
         }
-    
+
 
         private void RemoveISText(object sender, EventArgs e)
         {
@@ -76,8 +76,7 @@ namespace KeithsFunFunPantry
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            
+
         }
     }
 }
-
