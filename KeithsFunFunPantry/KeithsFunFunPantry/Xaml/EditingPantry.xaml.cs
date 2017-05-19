@@ -132,7 +132,7 @@ namespace KeithsFunFunPantry
 
             foreach (Unit units in Unit.TotalUnits)
             {
-                ComboBox_Units.Items.Add(units.LongHand);
+				ComboBox_Units.Items.Add(units.LongHand);
             }
             //ComboBox_Units.Items.Add(Unit.Teaspoon.LongHand);
             //ComboBox_Units.Items.Add(Unit.Tablespoon.LongHand);
@@ -152,9 +152,11 @@ namespace KeithsFunFunPantry
 
         }
 
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Searched for Entry" + "\n" + TextBox_IngredientSearch.Text);
+			string query = TextBox_IngredientSearch.Text;
+
+			Pantry.IngredientSearchController(query);
         }
 
         //Logic for the Add Button (eventually adds the ingredient to the pantry list
@@ -164,7 +166,7 @@ namespace KeithsFunFunPantry
             MessageBox.Show("Adds Item to List and Clears the Boxes");
             TextBox_Name.Text = "Name";
             TextBox_Amount.Text = "Amount";
-            ComboBox_Units.Text = "Unit";
+			ComboBox_Units.Text = "Unit";
         }
 
         //Saves the Current pantry
