@@ -8,6 +8,7 @@ using System.Runtime.CompilerServices;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace KeithsFunFunPantry
 {
@@ -26,16 +27,48 @@ namespace KeithsFunFunPantry
         }
         public static void AddNewIngredient(string name, Measurement m)
         {
+            bool foundMatch = false;
+            int count = Ingredients.Count();
             Ingredient i = new Ingredient(name, m);
-            Ingredients.Add(i);
+            while (!foundMatch && count >= 0)
+            {
+                if (count == 0)
+                {
+                    Ingredients.Add(i);
+                    Logging.WriteLog(LogLevel.Info, "Ingredient ' " + name + " ' added to list");
+                    foundMatch = true;
+                    break;
+                }
+                else if (Ingredients.ElementAt(count-1).Name == i.Name)
+                {
+                    Logging.WriteLog(LogLevel.Info, "Ingredient already exists in list");
+                    Logging.WriteLog(LogLevel.Info, "Increasing the amount");
+                    IncrementAmount(i);
+                    foundMatch = true;
+                }
+                else
+                {
+                    count--;
+                }
+            }
         }
-
+        private static void IncrementAmount(Ingredient i)
+        {
+            float addedAmount = i.IngredientMeasurement.Amount;
+            for(int x = 0; x < Ingredients.Count(); x++)
+            {
+                if(i.Name == Ingredients[x].Name)
+                {
+                    Ingredients[x].IngredientMeasurement.Amount += addedAmount;
+                }
+            }
+        }
         //Will export to file.
         public static void SaveIngredient()
         {
             try
             {
-                using (Stream stream = File.Open("ingredients.xml", FileMode.CreateNew))
+                using (Stream stream = File.Open(@"C:\Users\Brian Walsh\Source\Repos\KeithsFunFunPantry\KeithsFunFunPantry\KeithsFunFunPantry\bin\Debug\ingredients.xml", FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, Ingredients);
@@ -43,7 +76,7 @@ namespace KeithsFunFunPantry
             }
             catch (IOException)
             {
-                Console.WriteLine("File has failed to open");
+                Logging.WriteLog(LogLevel.Error, "File has failed to open");
             }
         }
         //Will import all ingredients from file to list
@@ -56,21 +89,26 @@ namespace KeithsFunFunPantry
                     BinaryFormatter bin = new BinaryFormatter();
                     var ingredient = (List<Ingredient>)bin.Deserialize(stream);
                     var sortedIngredients = ingredient.OrderBy(a => a.Name);
-                    ingredients.Clear();
+                    Ingredients.Clear();
                     foreach(Ingredient ingredient1 in sortedIngredients)
                     {
-                        ingredients.Add(ingredient1);
+                        if (!Ingredients.Contains(ingredient1))
+                        {
+                        Ingredients.Add(ingredient1);
+                        Logging.WriteLog(LogLevel.Info, ingredient1 + "imported");
+                        }
                     }
                 }
+                Pantry.DisplayIngredients(Ingredients);
             }
             catch (IOException)
             {
-                Console.WriteLine("File has failed to open or doesn't exist");
+                Logging.WriteLog(LogLevel.Error, "File has failed to open or doesn't exist");
             }
         }
-        public static void RemoveIngredients()
+        public static void RemoveIngredients(Ingredient i)
         {
-            //Ingredients.Remove();
+            Ingredients.Remove(i);
         }
 
 		//Ingredient-specific search function
@@ -84,5 +122,12 @@ namespace KeithsFunFunPantry
 			//What to we want to do with the results?
 
 		}
+        public static void DisplayIngredients(List<Ingredient> i)
+        {
+            foreach (Ingredient ingredient in i)
+            {
+                Logging.WriteLog(LogLevel.Info, "Ingredient: " + ingredient.Name + " added");
+            }
+        }
 	}
 }

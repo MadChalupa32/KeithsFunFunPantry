@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using System.Text.RegularExpressions;
+using System.Windows;
 
 namespace KeithsFunFunPantry
 {
@@ -14,7 +16,7 @@ namespace KeithsFunFunPantry
     public class Ingredient
     {
         public event PropertyChangedEventHandler PropertyChanged;
-
+        Regex nameValidation = new Regex(@"^[a-zA-Z/s]*$");
         private string name = "";
         private Measurement ingredientMeasurement;
 
@@ -24,8 +26,16 @@ namespace KeithsFunFunPantry
             get { return name; }
             set
             {
+                if (nameValidation.IsMatch(name))
+                {
                 name = value;
                 FieldChanged();
+                }
+                else
+                {
+                    MessageBox.Show("Please enter a valid name for the ingredient.");
+                    Logging.WriteLog(LogLevel.Warning, "Invalid ingredient name entered" + name);
+                }
             }
         }
 
