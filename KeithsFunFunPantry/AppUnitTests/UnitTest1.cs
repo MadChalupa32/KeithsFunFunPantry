@@ -44,7 +44,34 @@ namespace AppUnitTests
         [TestMethod]
         public void RecipeNameSearchTest()
         {
+            List<Ingredient> ingredients = new List<Ingredient>()
+            {
+                new Ingredient("Milk", new Measurement(1f, Unit.Gallon)),
+                new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
+                new Ingredient("Sugar", new Measurement(1f, Unit.Pound))
+            };
 
+            RecipeBook.Recipes = new List<Recipes>()
+            {
+                new Recipe(ingredients, "Chocolate Cake"),
+                new Recipe(ingredients, "Grilled Cheese"),
+                new Recipe(ingredients, "Pound Cake"),
+                new Recipe(ingredients, "Spaghetti"),
+                new Recipe(ingredients, "Shepard's Pie"),
+                new Recipe(ingredients, "Strawberry Cake"),
+                new Recipe(ingredients, "Banana Bread")
+            };
+
+            string query = "cake";
+            List<Recipe> results = RecipeBook.RecipeNameSearch(query);
+
+            List<Recipe> expectedResults = new List<Recipe>()
+            {
+                new Recipe(ingredients, "Chocolate Cake"),
+                new Recipe(ingredients, "Pound Cake"),
+                new Recipe(ingredients, "Strawberry Cake")
+            };
+            Assert.AreEqual(expectedResults, results);
         }
 
         [TestMethod]
