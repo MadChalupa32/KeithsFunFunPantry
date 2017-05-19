@@ -13,10 +13,10 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="30"/>
-            <ColumnDefinition Width="120"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="123.2"/>
+            <ColumnDefinition Width="344*"/>
+            <ColumnDefinition Width="347*"/>
+            <ColumnDefinition Width="347*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -40,7 +40,7 @@
                 BorderThickness="2" 
                 BorderBrush="LightGray" 
                 UseLayoutRounding='True' 
-                Background="White">
+                Background="White" Margin="0.4,0,0.2,0.4">
             <TextBox x:Name="TextBox_ByIngredientSearch" 
                      Background="Transparent" 
                      BorderThickness="0"
@@ -50,10 +50,10 @@
         <Label VerticalAlignment="Center" 
                HorizontalAlignment="Left"
                Background="Transparent"
-               Margin="3,1,0,0"
+               Margin="3.4,1,0,0.4"
                Grid.Row="1"
                Grid.Column="1"
-               Grid.ColumnSpan="2">
+               Grid.ColumnSpan="2" Height="29" Width="28">
             <Image Source="../Images/Search.png"/>
         </Label>
         <Button Background="Transparent"
@@ -64,33 +64,32 @@
                 OpacityMask="Transparent"
                 Width="20"
                 Height="20"
-                Margin="7,6,0,5"
+                Margin="7.4,6,0,4.4"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 Click="IngredientSearchButton_ClickHandler"/>
-        <Label Content="Search by Ingredients" FontFamily="Georgia" FontSize="30" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <CheckBox Content="Only include chosen ingredients in recipe" FontFamily="Georgia" Grid.Row="3" Grid.ColumnSpan="3" Margin="6,3,0,2"/>
-        <CheckBox Content="Chicken" FontFamily="Georgia" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Beef" FontFamily="Georgia" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Pork" FontFamily="Georgia" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Rice" FontFamily="Georgia" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
+        <Label Content="Search by Ingredients" FontFamily="Georgia" FontSize="30" Grid.ColumnSpan="3" Margin="10.4,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Height="45" Width="299"/>
+        <CheckBox Content="Only include chosen ingredients:" FontFamily="Georgia" Grid.Row="3" Grid.ColumnSpan="3" Margin="6,2.6,0.2,2.4"/>
+        <CheckBox Content="Chicken" FontFamily="Georgia" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="5.4,1.6,4.2,2.4"/>
+        <CheckBox Content="Beef" FontFamily="Georgia" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5.4,1.6,4.2,2.4"/>
+        <CheckBox Content="Pork" FontFamily="Georgia" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5.4,1.6,4.2,2.4"/>
+        <CheckBox Content="Rice" FontFamily="Georgia" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Margin="5.4,1.6,4.2,2.4"/>
         <Label Content="Recipes"
-               Grid.Row="2"
-               Grid.RowSpan="2"
-               Grid.Column="3"
-               Grid.ColumnSpan="3"
+               Grid.Row="1"
+               Grid.RowSpan="3"
+               Grid.Column="4"
                FontFamily="Georgia"
                FontSize="20"
                FontWeight="Bold"
                VerticalAlignment="Top"
-               HorizontalAlignment="Center"/>
+               HorizontalAlignment="Center" Height="32" Margin="128.8,30,128.4,0" Width="90"/>
         <ScrollViewer Background="#E5C698"
                       Opacity=".7"
-                      Grid.Row="4"
-                      Grid.RowSpan="7"
+                      Grid.Row="3"
+                      Grid.RowSpan="8"
                       Grid.Column="3"
                       Grid.ColumnSpan="3"
-                      Margin="20,0,20,20">
+                      Margin="20.8,19.6,19.6,19.8">
             <StackPanel x:Name="StackPanel_SearchIngredients"
                         Margin="20">
                 <AC:SearchIngredientItem/>
