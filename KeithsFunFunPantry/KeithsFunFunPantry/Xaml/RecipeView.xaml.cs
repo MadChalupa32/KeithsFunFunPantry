@@ -48,9 +48,9 @@ namespace KeithsFunFunPantry
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Boi");
+            MessageBox.Show("Searched for Entry");
         }
     }
 }

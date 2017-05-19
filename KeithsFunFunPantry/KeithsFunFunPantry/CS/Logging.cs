@@ -13,7 +13,7 @@ namespace KeithsFunFunPantry.CS
         public static void WriteLog(LogLevel l, string message)
         {
             string logString = GetTimestamp(DateTime.Now) + " - " + l.ToString() + ": " + message + "\n";
-            File.AppendAllText("log.txt", logString);
+            File.WriteAllText("log.txt", logString);
         }
         private static string GetTimestamp(DateTime value)
         {

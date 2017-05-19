@@ -65,7 +65,7 @@
                 Margin="7,6,0,5"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                Click="Button_Click"/>
+                Click="SearchButton_Click"/>
         <Label Content="Recipe" FontFamily="Georgia" FontSize="30" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <CheckBox Content="Vegan" FontFamily="Georgia" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
         <CheckBox Content="Quick and Easy" FontFamily="Georgia" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>

@@ -11,7 +11,7 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Label VerticalAlignment="Center" 
+        <!--<Label VerticalAlignment="Center" 
                HorizontalAlignment="Center"
                Margin="20">
             <Image Source="../Images/ListItem.png"/>
@@ -30,7 +30,7 @@
                     Width="50"
                     Height="50"
                     Click="Button_Click"/>
-        </Border>
+        </Border>-->
         <Border CornerRadius="15"
                 BorderBrush="#A3CC72"
                 BorderThickness="5"
