@@ -95,7 +95,8 @@
                       Grid.RowSpan="7" 
                       Grid.Column="1" 
                       Grid.ColumnSpan="5" 
-                      Margin="20,20,261,20">
+                      Margin="20,20,261,20"
+                      VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="RecipeList" 
                         Margin="20">
                 <AC:SR_RecipeItem/>
@@ -111,7 +112,8 @@
                       Grid.RowSpan="7"
                       Grid.Column="5"
                       Grid.ColumnSpan="2"
-                      Margin="100,20,20,20">
+                      Margin="100,20,20,20"
+                      VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="PantryList"
                         Margin="20">
                 <AC:SR_PantryItem/>
