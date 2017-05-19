@@ -111,6 +111,15 @@ namespace KeithsFunFunPantry
             Ingredients.Remove(i);
         }
 
+        public static void DisplayIngredients(List<Ingredient> i)
+        {
+            foreach (Ingredient ingredient in i)
+            {
+                Logging.WriteLog(LogLevel.Info, "Ingredient: " + ingredient.Name + " added");
+            }
+        }
+
+
 
 		#region Search Function
 
@@ -142,12 +151,5 @@ namespace KeithsFunFunPantry
 		}
 		*/
 		#endregion
-        public static void DisplayIngredients(List<Ingredient> i)
-        {
-            foreach (Ingredient ingredient in i)
-            {
-                Logging.WriteLog(LogLevel.Info, "Ingredient: " + ingredient.Name + " added");
-            }
-        }
 	}
 }
