@@ -89,7 +89,8 @@
                       Grid.RowSpan="8"
                       Grid.Column="3"
                       Grid.ColumnSpan="3"
-                      Margin="20.6,19.6,19.6,19.8">
+                      Margin="20.6,19.6,19.6,19.8"
+                      VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="StackPanel_SearchIngredients"
                         Margin="20">
                 <AC:SearchIngredientItem/>
