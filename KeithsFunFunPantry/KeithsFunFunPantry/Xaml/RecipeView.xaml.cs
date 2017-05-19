@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.AppControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,11 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
+            RecipeBook book = RecipeBook.Instance;
+            foreach(Recipe recipe in book.Recipes)
+            {
+                StackPanel_RecipeView.Children.Add(new RecipeViewItem(recipe));
+            }
         }
 
         private string searchBar = "Search Recipes";
