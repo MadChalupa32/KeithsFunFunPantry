@@ -53,11 +53,14 @@ namespace KeithsFunFunPantry
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
-		public void RecipeSearchButton_ClickHandler(object sender, RoutedEventArgs e)
+		public void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
 		{
 			string query = TextBox_ByRecipeSearch.Text;
-			//RecipeBook.Recipes.Where(recipe => recipe.Title.Contains(query));
-			MessageBox.Show("Inside recipe search handler\nQuery: {0}", query);
+
+			//Compile a list<string> of the check box values (advanced searching)
+
+			RecipeBook book = RecipeBook.Instance;
+			book.RecipeSearchController(query);
 		}
     }
 }
