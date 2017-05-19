@@ -135,7 +135,7 @@ namespace KeithsFunFunPantry
 		//Executes name search and returns the results
 		public static List<Ingredient> IngredientNameSearch(string query)
 		{
-			List<Ingredient> queryResults = (List<Ingredient>)Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
+			List<Ingredient> queryResults = Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query)).ToList();
 
 			return queryResults;
 		}

@@ -29,7 +29,7 @@
                     HorizontalAlignment="Center"
                     Width="50"
                     Height="50"
-                    Click="Button_Click"/>
+                    Click="Show_Click"/>
         </Border>
         <Border CornerRadius="15"
                 BorderBrush="#A3CC72"
@@ -46,5 +46,17 @@
                        HorizontalAlignment="Left"/>
             </Grid>
         </Border>
+        <Popup Name="MyPopup"
+               Placement="Mouse"
+               HorizontalOffset="-100"
+               VerticalOffset="-100"
+               AllowsTransparency="True">
+            <Grid>
+                <Rectangle Width="200" Height="200" Fill="#A3CC72"/>
+                <Button Content="Hide"
+                        Click="HidePopUp_Click" 
+                        Margin="80"/>
+            </Grid>
+        </Popup>
     </Grid>
 </UserControl>

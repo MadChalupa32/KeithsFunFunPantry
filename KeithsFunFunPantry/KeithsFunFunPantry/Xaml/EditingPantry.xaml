@@ -72,7 +72,7 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 FontFamily ="Georgia"
-                Click="SearchButton_Click"/> 
+                Click="SearchButton_ClickHandler"/> 
         <Label Content="Edit Pantry" 
                FontSize="30" 
                FontFamily="Georgia"
@@ -166,7 +166,8 @@
                       Grid.RowSpan="9" 
                       Grid.Column="4" 
                       Grid.ColumnSpan="3"
-                      Margin="20,19.6,19.6,9.8">
+                      Margin="20,19.6,19.6,9.8"
+                      VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="StackPanel_EditPantry"
                         Margin="20">
 
