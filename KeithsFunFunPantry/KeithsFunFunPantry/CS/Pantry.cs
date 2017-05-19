@@ -119,8 +119,6 @@ namespace KeithsFunFunPantry
             }
         }
 
-
-
 		#region Search Function
 
 		//Controls ingredient-specific search function
