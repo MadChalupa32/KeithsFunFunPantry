@@ -66,9 +66,13 @@ namespace KeithsFunFunPantry
             //}
         }
 
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+		private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Searched for Entry");
-        }
+			string query = TextBox_PantrySearch.Text.ToLower();
+
+			//Compile a list<string> of the checked boxes (for advanced searching)
+
+			Pantry.IngredientSearchController(query/*, checkBoxValues*/);
+		}
     }
 }

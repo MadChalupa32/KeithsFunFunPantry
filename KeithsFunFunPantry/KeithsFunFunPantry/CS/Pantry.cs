@@ -111,17 +111,6 @@ namespace KeithsFunFunPantry
             Ingredients.Remove(i);
         }
 
-		//Ingredient-specific search function
-		//private void IngredientNameSearch(string query)
-			//Don't need the return except for unit tests
-		public static List<Ingredient> IngredientNameSearch(string query)
-		{
-			List<Ingredient> queryResults = (List<Ingredient>)Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
-
-			return queryResults;
-			//What to we want to do with the results?
-
-		}
         public static void DisplayIngredients(List<Ingredient> i)
         {
             foreach (Ingredient ingredient in i)
@@ -129,5 +118,38 @@ namespace KeithsFunFunPantry
                 Logging.WriteLog(LogLevel.Info, "Ingredient: " + ingredient.Name + " added");
             }
         }
+
+
+
+		#region Search Function
+
+		//Controls ingredient-specific search function
+		public static void IngredientSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
+		{
+			List<Ingredient> nameSearchResults = IngredientNameSearch(query);
+
+			//Leave until check box search is ready to be implemented
+			//List<Ingredient> finalSearchResults = IngredientCheckBoxFilter(nameSearchResults, checkBoxValuesToFilter);
+		}
+
+		//Executes name search and returns the results
+		public static List<Ingredient> IngredientNameSearch(string query)
+		{
+			List<Ingredient> queryResults = (List<Ingredient>)Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
+
+			return queryResults;
+		}
+
+		/*
+		//Filters the given list based on the check box values and returns the filtered list
+			//Narrow down nameSearchResults based on check boxes
+		public static List<Ingredient> IngredientCheckBoxFilter(List<Ingredient> ingredientList, List<string> checkBoxValuesToFilter)
+		{
+			//for each String checkBoxValue, (linq) where ingredient.tags.contains(checkBoxValue)
+			
+			//Don't forget to check for duplicates
+		}
+		*/
+		#endregion
 	}
 }

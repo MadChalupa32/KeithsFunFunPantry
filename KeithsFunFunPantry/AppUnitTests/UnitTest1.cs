@@ -62,7 +62,7 @@ namespace AppUnitTests
             };
 
             string query = "cheese";
-            //List<Ingredient> results = Pantry.IngredientNameSearch(query);
+            List<Ingredient> results = Pantry.IngredientNameSearch(query);
 
             List<Ingredient> expectedResults = new List<Ingredient>()
             {
@@ -70,7 +70,7 @@ namespace AppUnitTests
                 new Ingredient("Shredded Cheese", new Measurement(12f, Unit.Cup)),
                 new Ingredient("Cheese", new Measurement(4.5f, Unit.Cup)),
             };
-            //Assert.AreEqual(expectedResults, results);
+            Assert.AreEqual(expectedResults, results);
         }
     }
 }

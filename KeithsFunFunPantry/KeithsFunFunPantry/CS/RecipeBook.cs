@@ -50,7 +50,9 @@ namespace KeithsFunFunPantry
                 return instance;
             }
         }
-        static IFormatter format = new BinaryFormatter();
+
+
+		static IFormatter format = new BinaryFormatter();
         private List<Recipe> recipes = new List<Recipe>();
 
         public List<Recipe> Recipes
@@ -76,5 +78,29 @@ namespace KeithsFunFunPantry
                 MessageBox.Show(e.ToString());
             } 
         }
-    }
+
+
+		#region Search Function
+
+		//Controls recipe-specific search function
+		public void RecipeSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
+		{
+			List<Recipe> nameSearchResults = RecipeNameSearch(query);
+
+			//Leave until check box search is ready to be implemented
+			//List<Recipe> finalSearchResults = RecipeCheckBoxFilter(nameSearchResults, checkBoxValuesToFilter);
+		}
+
+		//Executes name search and returns the results
+		private List<Recipe> RecipeNameSearch(string query)
+		{
+			List<Recipe> queryResults = (List<Recipe>)recipes.Where(recipe => recipe.Title.ToLower().Contains(query));
+
+			return queryResults;
+		}
+
+		//See checkbox filtering in Pantry class for checkBoxFiltering
+
+		#endregion
+	}
 }

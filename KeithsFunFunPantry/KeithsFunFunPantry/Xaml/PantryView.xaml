@@ -87,7 +87,7 @@
                 Margin="7,6,0,5"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                Click="SearchButton_Click"/>
+                Click="SearchButton_ClickHandler"/>
         <Label Content="Pantry" 
                FontSize="30" 
                FontFamily="Georgia"
