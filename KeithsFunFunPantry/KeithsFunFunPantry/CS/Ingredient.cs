@@ -17,6 +17,7 @@ namespace KeithsFunFunPantry
 
         private string name = "";
         private Measurement ingredientMeasurement;
+        private List<string> tags = new List<string>();
 
         //Name of the ingredient
         public string Name
@@ -36,6 +37,17 @@ namespace KeithsFunFunPantry
             set
             {
                 ingredientMeasurement = value;
+                FieldChanged();
+            }
+        }
+
+        //the List of Tags corresponding to the ingredient
+        public List<string> Tags
+        {
+            get { return tags; }
+            set
+            {
+                tags = value;
                 FieldChanged();
             }
         }
