@@ -5,12 +5,9 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
              mc:Ignorable="d" 
-             d:DesignHeight="150" Width="500">
+             d:DesignHeight="150" Width="400">
     <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
+        
         <!--<Label VerticalAlignment="Center" 
                HorizontalAlignment="Center"
                Margin="20">
