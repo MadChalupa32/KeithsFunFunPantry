@@ -68,7 +68,7 @@
                 Margin="7.4,0,0,4.4"
                 VerticalAlignment="Bottom"
                 HorizontalAlignment="Left"
-                Click="RecipeSearchButton_ClickHandler"/>
+                Click="SearchButton_ClickHandler"/>
         <Label Content="Search by Recipe" FontSize="30" FontFamily="Georgia" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Label Content="List of Recipes"
                Grid.Row="1"
