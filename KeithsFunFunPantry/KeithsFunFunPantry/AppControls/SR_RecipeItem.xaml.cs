@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -25,9 +26,14 @@ namespace KeithsFunFunPantry.AppControls
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void Show_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("boi");
+            MyPopup.IsOpen = true;
+        }
+
+        private void HidePopUp_Click(object sender, RoutedEventArgs e)
+        {
+            MyPopup.IsOpen = false;
         }
     }
 }

@@ -72,7 +72,7 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 FontFamily ="Georgia"
-                Click="SearchButton_Click"/> 
+                Click="SearchButton_ClickHandler"/> 
         <Label Content="Edit Pantry" 
                FontSize="30" 
                FontFamily="Georgia"
