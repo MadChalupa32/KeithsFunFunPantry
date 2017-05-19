@@ -27,7 +27,7 @@ namespace KeithsFunFunPantry.AppControls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            
+            MessageBox.Show("Removes Item");
         }
     }
 }

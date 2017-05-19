@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using KeithsFunFunPantry.AppControls;
+using KeithsFunFunPantry.CS;
 
 namespace KeithsFunFunPantry
 {
@@ -22,10 +23,14 @@ namespace KeithsFunFunPantry
     public partial class EditingPantry : Page
     {
         private string searchTB = "Search Ingredient";
+        private string amountTB = "Amount";
+        private string nameTB = "Name";
         public EditingPantry()
         {
             InitializeComponent();
             TextBoxOptions();
+            TextBoxOptions1();
+            TextBoxOptions2();
             ShowPantry();
         }
 
@@ -51,13 +56,40 @@ namespace KeithsFunFunPantry
             TextBox_IngredientSearch.LostFocus += AddISText;
             TextBox_IngredientSearch.Text = searchTB;
         }
+        private void TextBoxOptions1()
+        {
+            TextBox_Amount.GotFocus += RemoveASText;
+            TextBox_Amount.LostFocus += AddASText;
+            TextBox_Amount.FontFamily = new FontFamily("Georgia");
+            TextBox_Amount.Text = amountTB;
+        }
 
-
+        private void TextBoxOptions2()
+        {
+            TextBox_Name.GotFocus += RemoveNSText;
+            TextBox_Name.LostFocus += AddNSText;
+            TextBox_Name.FontFamily = new FontFamily("Georgia");
+            TextBox_Name.Text = nameTB;
+        }
         private void RemoveISText(object sender, EventArgs e)
         {
             if (TextBox_IngredientSearch.Text == searchTB)
             {
                 TextBox_IngredientSearch.Text = "";
+            }
+        }
+        private void RemoveASText(object sender, EventArgs e)
+        {
+            if (TextBox_Amount.Text == amountTB)
+            {
+                TextBox_Amount.Text = "";
+            }
+        }
+        private void RemoveNSText(object sender, EventArgs e)
+        {
+            if (TextBox_Name.Text == nameTB)
+            {
+                TextBox_Name.Text = "";
             }
         }
 
@@ -69,14 +101,41 @@ namespace KeithsFunFunPantry
             }
         }
 
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        private void AddASText(object sender, EventArgs e)
         {
-            MessageBox.Show("Boi");
+            if (String.IsNullOrWhiteSpace(TextBox_Amount.Text))
+            {
+                TextBox_Amount.Text = amountTB;
+            }
+        }
+        private void AddNSText(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(TextBox_Name.Text))
+            {
+                TextBox_Name.Text = nameTB;
+            }
         }
 
-        private void AddButton_Click(object sender, RoutedEventArgs e)
-        {
 
+        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Searched for Entry");
+        }
+
+        private void AddIngredient_Click(object sender, RoutedEventArgs e)
+        {
+            //TextBox_Amount
+            //TextBox_Name
+            //ComboBox_Units
+            MessageBox.Show("Adds Item to List and Clears the Boxes");
+            TextBox_Name.Text = "Name";
+            TextBox_Amount.Text = "Amount";
+            ComboBox_Units.Text = "Unit";
+        }
+
+        private void SavePantry_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Saves Current Pantry");
         }
     }
 }

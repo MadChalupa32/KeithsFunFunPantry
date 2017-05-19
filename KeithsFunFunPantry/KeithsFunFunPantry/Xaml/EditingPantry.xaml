@@ -60,7 +60,7 @@
                Grid.ColumnSpan="2">
             <Image Source="../Images/Search.png"/>
         </Label>
-        <!--<Button Background="Transparent"
+        <Button Background="Transparent"
                 Grid.Column="1"
                 Grid.Row="1"
                 BorderThickness="0"
@@ -72,7 +72,7 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 FontFamily ="Georgia"
-                Click="Button_Click"/> -->
+                Click="SearchButton_Click"/> 
         <Label Content="Edit Pantry" 
                FontSize="30" 
                FontFamily="Georgia"
@@ -87,7 +87,8 @@
                 Margin="0,20,59.6,0" 
                 Height="25" 
                 VerticalAlignment="Top" 
-                HorizontalAlignment="Right"/>
+                HorizontalAlignment="Right"
+                Click="SavePantry_Click"/>
         <Label Content="Add Ingredient:" 
                Grid.Row="3" 
                Grid.RowSpan="2"
@@ -97,20 +98,30 @@
                FontSize="15"
                FontFamily="Georgia"
                FontWeight="Bold"/>
-        <TextBox x:Name="TextBox_Amount" 
-                 Grid.Row="5" 
-                 Grid.Column="1" 
-                 Grid.ColumnSpan="3" 
-                 Padding="5" 
-                 BorderThickness="3" 
-                 BorderBrush="#7EB4EA"/>
         <TextBox x:Name="TextBox_Name" 
-                 Grid.Row="7" 
+                 Grid.Row="5" 
                  Grid.Column="1"
                  Grid.ColumnSpan="3"
                  Padding="5" 
                  BorderThickness="3" 
                  BorderBrush="Black"/>
+        <TextBox x:Name="TextBox_Amount" 
+                 Grid.Row="7" 
+                 Grid.Column="1" 
+                 Grid.ColumnSpan="3" 
+                 Padding="5" 
+                 BorderThickness="3" 
+                 BorderBrush="#7EB4EA"/>
+        <ComboBox x:Name="ComboBox_Units"
+                  IsEditable="True"
+                  IsReadOnly="True"
+                  Text="Unit"
+                  BorderThickness="3"
+                  BorderBrush="Black"
+                  Grid.Row="9"
+                  Grid.Column="1"
+                  Grid.ColumnSpan="3">
+        </ComboBox>
         <!--<MenuItem Click="AddPresetButton_Click" x:Name="AddPresetButton">
             
             <MenuItem.Header>
@@ -138,7 +149,7 @@
                 Margin="0,10.2,15,0" 
                 VerticalAlignment="Top" 
                 HorizontalAlignment="Right"
-                Click="AddButton_Click"/>
+                Click="AddIngredient_Click"/>
         <Label Content="Pantry Items"
                Grid.Row="2"
                Grid.RowSpan="2"
