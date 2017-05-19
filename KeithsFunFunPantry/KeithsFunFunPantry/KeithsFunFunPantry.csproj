@@ -213,7 +213,7 @@
     <Resource Include="Images\BackgroundLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="bin\Debug\log.txt" />
+    <Folder Include="bin\Debug\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

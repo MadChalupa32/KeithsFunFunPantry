@@ -13,35 +13,39 @@ namespace KeithsFunFunPantry
     
     //find way to serialize the RecipeBook, potentially inhereting a List<Recipe>       SINGLETON
     [Serializable]
-    public class RecipeBook : List<Recipe>
+    public class RecipeBook
     {
         private static RecipeBook instance;
-        private RecipeBook()
-        {
-            using (var file = File.Open("recipeBook.txt", FileMode.OpenOrCreate))
-            {
-                try
-                {
-                    var recipesInTheFile = format.Deserialize(file);
-                    if (recipesInTheFile != null)
-                    {
-                        instance = (RecipeBook)recipesInTheFile;
-                        Recipes = instance.Recipes;
-                    }
-                }
-                catch (SerializationException e)
-                {
 
-                }
-            };
-        }
         public static RecipeBook Instance
         {
             get
             {
-                if(instance == null)
+                if (instance == null)
                 {
-                    instance = new RecipeBook();
+                    using (var file = File.Open("RecipeBook.txt", FileMode.OpenOrCreate))
+                    {
+                        try
+                        {
+                            var recipesInTheFile = format.Deserialize(file) as RecipeBook;
+                            if (recipesInTheFile != null)
+                            {
+                                instance = recipesInTheFile;
+                            }
+                            else
+                            {
+                                instance = new RecipeBook();
+                            }
+
+                        }
+                        catch (SerializationException e)
+                        {
+                            instance = new RecipeBook();
+                            //MessageBox.Show("Failed to load or create the Recipebook!\n" + e.ToString());
+                        }
+                    };
+
+
                 }
                 return instance;
             }
@@ -55,8 +59,6 @@ namespace KeithsFunFunPantry
             set { recipes = value; }
         }
 
-        
-
         public void SaveRecipes()
         {
             try
@@ -66,17 +68,13 @@ namespace KeithsFunFunPantry
                     using (FileStream file = File.Open("recipeBook.txt", FileMode.OpenOrCreate))
                     {
                         format.Serialize(file, Instance);
-                        file.Close();
                     };
-
                 }
-                
             }
             catch ( Exception e) 
                 {
                 MessageBox.Show(e.ToString());
-                } 
-
+            } 
         }
     }
 }
