@@ -48,9 +48,14 @@ namespace KeithsFunFunPantry
             }
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Boi");
+			string query = TextBox_RecipeSearch.Text.ToLower();
+
+			//Compile a list<string> of the check box values (advanced searching)
+
+			RecipeBook book = RecipeBook.Instance;
+			book.RecipeSearchController(query);
         }
     }
 }

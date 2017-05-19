@@ -56,7 +56,7 @@ namespace KeithsFunFunPantry
 		private void IngredientSearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
 			string query = TextBox_ByIngredientSearch.Text.ToLower();
-			Pantry.IngredientNameSearch(query);
+			Pantry.IngredientSearchController(query);
 
             MessageBox.Show("Inside ingredient search handler\nQuery: {0}", query);
         }
