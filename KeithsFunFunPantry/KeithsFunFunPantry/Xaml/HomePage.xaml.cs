@@ -23,10 +23,6 @@ namespace KeithsFunFunPantry
     public partial class HomePage : Window
     {
         private PantryView pantryView = new PantryView();
-        //private RecipeView recipeView = new RecipeView();
-        //private SearchIngredient searchIngredient = new SearchIngredient();
-        //private SearchRecipe searchRecipe = new SearchRecipe();
-
 
         public HomePage()
         {
@@ -38,11 +34,6 @@ namespace KeithsFunFunPantry
         private void HomePage_Closed(object sender, EventArgs e)
         {
             Pantry.SaveIngredient();
-        }
-
-        private void ExitButton_Click(object sender, RoutedEventArgs e)
-        {
-            Close();
         }
 
         private void PantryView_Click(object sender, RoutedEventArgs e)
@@ -84,11 +75,11 @@ namespace KeithsFunFunPantry
             }
         }
 
-private void HomePage_Click(object sender, RoutedEventArgs e)
+    private void HomePage_Click(object sender, RoutedEventArgs e)
         {
             Frame_HomePage.Content = new MainPage();
         }
-private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+    private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {
             RecipeBook book = RecipeBook.Instance;
             book.SaveRecipes();
