@@ -94,7 +94,7 @@ namespace KeithsFunFunPantry
 		//Executes name search and returns the results
 		public List<Recipe> RecipeNameSearch(string query)
 		{
-			List<Recipe> queryResults = (List<Recipe>)recipes.Where(recipe => recipe.Title.ToLower().Contains(query));
+			List<Recipe> queryResults = recipes.Where(recipe => recipe.Title.ToLower().Contains(query)).ToList();
 
 			return queryResults;
 		}
