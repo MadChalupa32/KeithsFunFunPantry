@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.CS;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -31,16 +32,19 @@ namespace KeithsFunFunPantry
                             if (recipesInTheFile != null)
                             {
                                 instance = recipesInTheFile;
+                                Logging.WriteLog(LogLevel.Info, "RecipeBook successfully loaded from the saved file");
                             }
                             else
                             {
                                 instance = new RecipeBook();
+                                Logging.WriteLog(LogLevel.Warning, "New RecipeBook created due deserialized file not registering as a RecipeBook");
                             }
 
                         }
                         catch (SerializationException e)
                         {
                             instance = new RecipeBook();
+                            Logging.WriteLog(LogLevel.Info, "New RecipeBook created due to serialization error.");
                             //MessageBox.Show("Failed to load or create the Recipebook!\n" + e.ToString());
                         }
                     };
@@ -70,12 +74,13 @@ namespace KeithsFunFunPantry
                     using (FileStream file = File.Open("recipeBook.txt", FileMode.OpenOrCreate))
                     {
                         format.Serialize(file, Instance);
+                        Logging.WriteLog(LogLevel.Info, "RecipeBook Succesfully saved.");
                     };
                 }
             }
             catch ( Exception e) 
                 {
-                MessageBox.Show(e.ToString());
+                Logging.WriteLog(LogLevel.Error, "RecipeBook Failed to save properly error follows:\n" + e.ToString());
             } 
         }
 
