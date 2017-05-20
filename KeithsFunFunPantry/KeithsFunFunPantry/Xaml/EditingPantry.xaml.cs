@@ -132,7 +132,7 @@ namespace KeithsFunFunPantry
 
             foreach (Unit units in Unit.TotalUnits)
             {
-				ComboBox_Units.Items.Add(units.LongHand);
+                ComboBox_Units.Items.Add(units.LongHand);
             }
             //ComboBox_Units.Items.Add(Unit.Teaspoon.LongHand);
             //ComboBox_Units.Items.Add(Unit.Tablespoon.LongHand);
@@ -166,12 +166,13 @@ namespace KeithsFunFunPantry
             MessageBox.Show("Adds Item to List and Clears the Boxes");
             TextBox_Name.Text = "Name";
             TextBox_Amount.Text = "Amount";
-			ComboBox_Units.Text = "Unit";
+            ComboBox_Units.Text = "Unit";
         }
 
         //Saves the Current pantry
         private void SavePantry_Click(object sender, RoutedEventArgs e)
         {
+            Pantry.SaveIngredient();
             MessageBox.Show("Saves Current Pantry");
         }
     }

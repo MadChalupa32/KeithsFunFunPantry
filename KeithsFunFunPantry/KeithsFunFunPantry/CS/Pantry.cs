@@ -60,6 +60,7 @@ namespace KeithsFunFunPantry
                 if(i.Name == Ingredients[x].Name)
                 {
                     Ingredients[x].IngredientMeasurement.Amount += addedAmount;
+                    Logging.WriteLog(LogLevel.Info, "Ingredient " + Ingredients[x].Name + " amount incremented by " + i.IngredientMeasurement.Amount);
                 }
             }
         }
@@ -109,17 +110,16 @@ namespace KeithsFunFunPantry
         public static void RemoveIngredients(Ingredient i)
         {
             Ingredients.Remove(i);
+            Logging.WriteLog(LogLevel.Info, "Ingredient " + i.Name + " Removed");
         }
 
         public static void DisplayIngredients(List<Ingredient> i)
         {
             foreach (Ingredient ingredient in i)
             {
-                Logging.WriteLog(LogLevel.Info, "Ingredient: " + ingredient.Name + " added");
+                Logging.WriteLog(LogLevel.Info, "Ingredient " + ingredient.Name + " added");
             }
         }
-
-
 
 		#region Search Function
 
@@ -135,8 +135,7 @@ namespace KeithsFunFunPantry
 		//Executes name search and returns the results
 		public static List<Ingredient> IngredientNameSearch(string query)
 		{
-			List<Ingredient> queryResults = (List<Ingredient>)Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
-
+			List<Ingredient> queryResults = Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query)).ToList();
 			return queryResults;
 		}
 
