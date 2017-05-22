@@ -69,7 +69,7 @@ namespace KeithsFunFunPantry
         {
             try
             {
-                using (Stream stream = File.Open(@"C:\Users\Brian Walsh\Source\Repos\KeithsFunFunPantry\KeithsFunFunPantry\KeithsFunFunPantry\bin\Debug\ingredients.xml", FileMode.Create))
+                using (Stream stream = File.Open("ingredients.xml", FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, Ingredients);
@@ -77,7 +77,7 @@ namespace KeithsFunFunPantry
             }
             catch (IOException)
             {
-                Logging.WriteLog(LogLevel.Error, "File has failed to open");
+                Logging.WriteLog(LogLevel.Error, "Pantry file has failed to open");
             }
         }
         //Will import all ingredients from file to list
