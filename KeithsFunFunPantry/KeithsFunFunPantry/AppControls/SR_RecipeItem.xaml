@@ -52,7 +52,8 @@
                Placement="Mouse"
                HorizontalOffset="300"
                VerticalOffset="-100"
-               AllowsTransparency="False">
+               AllowsTransparency="False"
+               MouseLeftButtonDown="DragMove_LeftDown">
             <Grid Width="550" Height="550">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="32"/>
@@ -81,7 +82,6 @@
                        Panel.ZIndex="1"
                        Margin="5,5,4.5,0"
                        HorizontalContentAlignment="Center"/>
-
                 <TextBlock x:Name="RecipeIngredients"
                            Margin="10,0,10,14"
                            TextWrapping="Wrap"

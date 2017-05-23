@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.AppControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
+			ListIngredients(Pantry.Ingredients);
         }
 
         private string searchBar = "Search by Ingredient";
@@ -48,6 +50,27 @@ namespace KeithsFunFunPantry
             }
         }
 
+		public void ListIngredients(List<Ingredient> displayList)
+		{
+			StackPanel_SearchIngredients.Children.Clear();
+
+
+			foreach (Ingredient ingredient in displayList)
+			{
+				PantryViewItem pvi = new PantryViewItem();
+				pvi.DataContext = ingredient;
+				StackPanel_SearchIngredients.Children.Add(pvi);
+			}
+
+			if (displayList.Count == 0)
+			{
+				Label noResults = new Label();
+				noResults.Content = "No results found";
+				StackPanel_SearchIngredients.Children.Add(noResults);
+			}
+
+		}
+
 		/// <summary>
 		/// Event handler that will search the pantry for ingredient objects whose name contains the query found in the ingredient search text box.
 		/// </summary>
@@ -55,9 +78,19 @@ namespace KeithsFunFunPantry
 		/// <param name="e"></param>
 		private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
+			StackPanel_SearchIngredients.Children.Clear();
+
 			string query = TextBox_ByIngredientSearch.Text.ToLower();
-			Pantry.IngredientSearchController(query);
-        }
+
+			if (!query.Equals("search ingredients"))
+			{
+				ListIngredients(Pantry.IngredientSearchController(query));
+			}
+			else
+			{
+				ListIngredients(Pantry.Ingredients);
+			}
+		}
 
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.AppControls;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,9 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
+
+			RecipeBook book = RecipeBook.Instance;
+			ListRecipes(book.Recipes);
         }
 
         private string searchBar = "Search by Recipe";
@@ -48,6 +52,26 @@ namespace KeithsFunFunPantry
             }
         }
 
+		public void ListRecipes(List<Recipe> displayList)
+		{
+			RecipeList.Children.Clear();
+
+
+			foreach (Recipe recipe in displayList)
+			{
+				RecipeViewItem rvi = new RecipeViewItem(recipe);
+				RecipeList.Children.Add(rvi);
+			}
+
+			if (displayList.Count == 0)
+			{
+				Label noResults = new Label();
+				noResults.Content = "No results found";
+				RecipeList.Children.Add(noResults);
+			}
+
+		}
+
 		/// <summary>
 		/// Event handler that will search the recipe list for recipe objects whose title contains the query found in the recipe search text box.
 		/// </summary>
@@ -61,6 +85,16 @@ namespace KeithsFunFunPantry
 
 			RecipeBook book = RecipeBook.Instance;
 			book.RecipeSearchController(query);
+
+			RecipeList.Children.Clear();
+			if (!query.Equals("search ingredients"))
+			{
+				ListRecipes(book.RecipeSearchController(query));
+			}
+			else
+			{
+				ListRecipes(book.Recipes);
+			}
 		}
     }
 }
