@@ -66,7 +66,7 @@ namespace KeithsFunFunPantry
             //}
         }
 
-		private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
+        private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
 			string query = TextBox_PantrySearch.Text.ToLower();
 

@@ -164,9 +164,55 @@ namespace KeithsFunFunPantry
         {
             //Pantry.AddNewIngredient(TextBox_Name.Text, new CS.Measurement(float.Parse(TextBox_Amount.Text, CultureInfo.InvariantCulture.NumberFormat), CS.Unit.Tablespoon));
             MessageBox.Show("Adds Item to List and Clears the Boxes");
-            TextBox_Name.Text = "Name";
-            TextBox_Amount.Text = "Amount";
-            ComboBox_Units.Text = "Unit";
+            float amount;
+            float.TryParse(TextBox_Amount.Text, out amount);
+            string unit = ComboBox_Units.Text.ToLower();
+            switch (unit)
+            {
+                case "teaspoon":
+                    Ingredient i = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Teaspoon));
+                    break;
+                case "tablespoon":
+                    Ingredient i2 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Tablespoon));
+                    break;
+                case "cup":
+                    Ingredient i3 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Cup));
+                    break;
+                case "ounce":
+                    Ingredient i4 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Ounce));
+                    break;
+                case "fluidounce":
+                    Ingredient i5 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.FluidOunce));
+                    break;
+                case "pound":
+                    Ingredient i6 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Pound));
+                    break;
+                case "pint":
+                    Ingredient i7 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Pint));
+                    break;
+                case "quart":
+                    Ingredient i8 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Quart));
+                    break;
+                case "gallon":
+                    Ingredient i9 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Gallon));
+                    break;
+                case "milliliter":
+                    Ingredient i10 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Milliliter));
+                    break;
+                case "liter":
+                    Ingredient i11 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Liter));
+                    break;
+                case "gram":
+                    Ingredient i12 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Gram));
+                    break;
+                case "kilogram":
+                    Ingredient i13 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Kilogram));
+                    break;
+                case "count":
+                    Ingredient i14 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Count));
+                    break;
+            }
+            Pantry.ListIngredients();
         }
 
         //Saves the Current pantry
