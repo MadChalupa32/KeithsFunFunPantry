@@ -82,7 +82,7 @@ namespace KeithsFunFunPantry
 
 			string query = TextBox_ByIngredientSearch.Text.ToLower();
 
-			if (!query.Equals("search ingredients"))
+			if (!query.Equals("search by ingredient"))
 			{
 				ListIngredients(Pantry.IngredientSearchController(query));
 			}
