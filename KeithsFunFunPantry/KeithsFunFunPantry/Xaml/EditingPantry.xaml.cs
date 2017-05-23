@@ -212,7 +212,7 @@ namespace KeithsFunFunPantry
                     Ingredient i14 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Count));
                     break;
             }
-            Pantry.ListIngredients();
+            //Pantry.ListIngredients();
         }
 
         //Saves the Current pantry
