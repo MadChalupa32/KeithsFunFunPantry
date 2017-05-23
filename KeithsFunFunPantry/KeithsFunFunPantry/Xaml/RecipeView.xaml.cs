@@ -80,7 +80,7 @@ namespace KeithsFunFunPantry
 			RecipeBook book = RecipeBook.Instance;
 
 			StackPanel_RecipeView.Children.Clear();
-			if (!query.Equals("search ingredients"))
+			if (!query.Equals("search recipes"))
 			{
 				ListRecipes(book.RecipeSearchController(query));
 			}
