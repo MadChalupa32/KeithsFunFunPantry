@@ -87,7 +87,9 @@
                 Margin="7,6,0,5"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                Click="SearchButton_ClickHandler"/>
+                Click="SearchButton_ClickHandler">
+            
+        </Button>
         <Label Content="Pantry" 
                FontSize="30" 
                FontFamily="Georgia"
@@ -119,11 +121,7 @@
                       VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="StackPanel_PantryView"
                         Margin="20">
-                <AC:PantryViewItem/>
-                <AC:PantryViewItem/>
-                <AC:PantryViewItem/>
-                <AC:PantryViewItem/>
-                <AC:PantryViewItem/>
+                
             </StackPanel>
         </ScrollViewer>
     </Grid>
