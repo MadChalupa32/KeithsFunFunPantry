@@ -124,13 +124,13 @@ namespace KeithsFunFunPantry
 		#region Search Function
 
 		//Controls ingredient-specific search function
-		public static void IngredientSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
+		public static List<Ingredient> IngredientSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
 		{
 			List<Ingredient> nameSearchResults = IngredientNameSearch(query);
-
-			//Leave until check box search is ready to be implemented
-			//List<Ingredient> finalSearchResults = IngredientCheckBoxFilter(nameSearchResults, checkBoxValuesToFilter);
-		}
+            return nameSearchResults;
+            //Leave until check box search is ready to be implemented
+            //List<Ingredient> finalSearchResults = IngredientCheckBoxFilter(nameSearchResults, checkBoxValuesToFilter);
+        }
 
 		//Executes name search and returns the results
 		public static List<Ingredient> IngredientNameSearch(string query)

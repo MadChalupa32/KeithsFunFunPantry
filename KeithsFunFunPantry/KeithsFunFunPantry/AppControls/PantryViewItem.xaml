@@ -30,14 +30,14 @@
                     <ColumnDefinition/>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
-                <Label Content="Name"
+                <Label Content="{Binding Path=Name}"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
                        FontFamily="Georgia"
                        FontSize="30"
                        FontWeight="Bold"
                        Margin="120,0,0,0"/>
-                <Label Content="Amount"
+                <Label Content="{Binding Path=IngredientMeasurement}"
                        Grid.Column="1"
                        VerticalAlignment="Center"
                        HorizontalAlignment="Left"
