@@ -69,7 +69,7 @@ namespace KeithsFunFunPantry
         {
             try
             {
-                using (Stream stream = File.Open(@"C:\Users\Brian Walsh\Source\Repos\KeithsFunFunPantry\KeithsFunFunPantry\KeithsFunFunPantry\bin\Debug\ingredients.xml", FileMode.Create))
+                using (Stream stream = File.Open("ingredients.xml", FileMode.Create))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
                     bin.Serialize(stream, Ingredients);
@@ -77,7 +77,7 @@ namespace KeithsFunFunPantry
             }
             catch (IOException)
             {
-                Logging.WriteLog(LogLevel.Error, "File has failed to open");
+                Logging.WriteLog(LogLevel.Error, "Pantry file has failed to open");
             }
         }
         //Will import all ingredients from file to list
@@ -127,10 +127,10 @@ namespace KeithsFunFunPantry
         public static void IngredientSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
 		{
 			List<Ingredient> nameSearchResults = IngredientNameSearch(query);
-
-			//Leave until check box search is ready to be implemented
-			//List<Ingredient> finalSearchResults = IngredientCheckBoxFilter(nameSearchResults, checkBoxValuesToFilter);
-		}
+            return nameSearchResults;
+            //Leave until check box search is ready to be implemented
+            //List<Ingredient> finalSearchResults = IngredientCheckBoxFilter(nameSearchResults, checkBoxValuesToFilter);
+        }
 
 		//Executes name search and returns the results
 		public static List<Ingredient> IngredientNameSearch(string query)

@@ -25,7 +25,11 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
-            //ListIngredients();
+
+
+            Pantry.AddNewIngredient("Salt", new Measurement(20f, Unit.Gram));
+            Pantry.AddNewIngredient("Apple Slices", new Measurement(5f, Unit.Cup));
+            ListIngredients(Pantry.Ingredients);
         }
 
         private string searchBar = "Search Ingredients";
@@ -50,29 +54,39 @@ namespace KeithsFunFunPantry
                 TextBox_PantrySearch.Text = searchBar;
             }
         }
-        public void ListIngredients()
+        public void ListIngredients(List<Ingredient> displayList)
         {
-            //Pantry.AddNewIngredient("Salt", new Measurement(20f, Unit.gram));
-            //Pantry.AddNewIngredient("Apple Slices", new Measurement(5f, Unit.cup));
-            //foreach (Ingredient ingredient in Pantry.Ingredients)
-            //{
-            //    PantryView pv = new PantryView();
-            //    pv.DataContext = ingredient.Name;
-            //    pv.DataContext = ingredient.IngredientMeasurement.ToString();
-            //    StackPanel_PantryView.Children.Add(pv);
-            //    Label label = new Label();
-            //    label.Content = "Name: " + ingredient.Name + " Amount: " + ingredient.IngredientMeasurement.ToString();
-            //    StackPanel_PantryView.Children.Add(label);
-            //}
+            StackPanel_PantryView.Children.Clear();
+
+            
+            foreach (Ingredient ingredient in displayList)
+            {
+                PantryViewItem pvi = new PantryViewItem();
+                pvi.DataContext = ingredient;
+                StackPanel_PantryView.Children.Add(pvi);
+            }
+            
+            if (displayList.Count == 0)
+            {
+                Label noResults = new Label();
+                noResults.Content = "No results found";
+                StackPanel_PantryView.Children.Add(noResults);
+            }
+
         }
 
         private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-			string query = TextBox_PantrySearch.Text.ToLower();
-
-			//Compile a list<string> of the checked boxes (for advanced searching)
-
-			Pantry.IngredientSearchController(query/*, checkBoxValues*/);
+            StackPanel_PantryView.Children.Clear();
+            string query = TextBox_PantrySearch.Text.ToLower();
+            if (!query.Equals("search ingredients"))
+            {
+                ListIngredients(Pantry.IngredientSearchController(query));   
+            }
+            else
+            {
+                ListIngredients(Pantry.Ingredients);
+            }
 		}
     }
 }
