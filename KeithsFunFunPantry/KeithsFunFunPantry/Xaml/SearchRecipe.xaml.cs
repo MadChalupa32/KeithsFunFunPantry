@@ -79,7 +79,7 @@ namespace KeithsFunFunPantry
 		/// <param name="e"></param>
 		public void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
 		{
-			string query = TextBox_ByRecipeSearch.Text;
+			string query = TextBox_ByRecipeSearch.Text.ToLower();
 
 			//Compile a list<string> of the check box values (advanced searching)
 
@@ -87,7 +87,7 @@ namespace KeithsFunFunPantry
 			book.RecipeSearchController(query);
 
 			RecipeList.Children.Clear();
-			if (!query.Equals("search ingredients"))
+			if (!query.Equals("search by recipe"))
 			{
 				ListRecipes(book.RecipeSearchController(query));
 			}
