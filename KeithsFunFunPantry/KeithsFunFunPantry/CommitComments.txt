@@ -16,3 +16,4 @@ Taylor Dudley
 	5/22/2017 Worked on timeline redesign and trello sprints
 
 Trystan Orr
+	5-22-17		Worked on redesigning the timeline and Trello boards according to our resubmit of the first delieverable and the rest of our planned features.
