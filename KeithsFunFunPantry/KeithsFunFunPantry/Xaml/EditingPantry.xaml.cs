@@ -151,9 +151,16 @@ namespace KeithsFunFunPantry
 
         private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-			string query = TextBox_IngredientSearch.Text;
-
-			Pantry.IngredientSearchController(query);
+            StackPanel_EditPantry.Children.Clear();
+            string query = TextBox_IngredientSearch.Text.ToLower();
+            if (!query.Equals("search ingredient"))
+            {
+                ListIngredients(Pantry.IngredientSearchController(query));
+            }
+            else
+            {
+                ListIngredients(Pantry.Ingredients);
+            }
         }
 
         //Logic for the Add Button (eventually adds the ingredient to the pantry list
@@ -239,7 +246,14 @@ namespace KeithsFunFunPantry
                 StackPanel_EditPantry.Children.Add(pvi);
             }
 
-            
+            if (displayList.Count == 0)
+            {
+                Label noResults = new Label();
+                noResults.Content = "No results found";
+                StackPanel_EditPantry.Children.Add(noResults);
+            }
+
+
 
         }
 
