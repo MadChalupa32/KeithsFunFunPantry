@@ -26,10 +26,8 @@ namespace KeithsFunFunPantry
             InitializeComponent();
             TextBoxOptions();
             RecipeBook book = RecipeBook.Instance;
-            foreach(Recipe recipe in book.Recipes)
-            {
-                StackPanel_RecipeView.Children.Add(new RecipeViewItem(recipe));
-            }
+            
+            ListRecipes(book.Recipes);
         }
 
         private string searchBar = "Search Recipes";
@@ -54,14 +52,29 @@ namespace KeithsFunFunPantry
             }
         }
 
+        public void ListRecipes(List<Recipe> tempList)
+        {
+            foreach (Recipe recipe in tempList)
+            {
+                StackPanel_RecipeView.Children.Add(new RecipeViewItem(recipe));
+            }
+        }
+
         private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
 			string query = TextBox_RecipeSearch.Text.ToLower();
-
 			//Compile a list<string> of the check box values (advanced searching)
-
 			RecipeBook book = RecipeBook.Instance;
-			book.RecipeSearchController(query);
+            StackPanel_RecipeView.Children.Clear();
+            
+            if (!query.Equals("search recipes"))
+            {
+                ListRecipes(book.RecipeSearchController(query));
+            }
+            else
+            {
+                ListRecipes(book.Recipes);
+            }
         }
     }
 }

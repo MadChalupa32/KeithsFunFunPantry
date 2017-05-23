@@ -43,7 +43,15 @@ namespace KeithsFunFunPantry
                         }
                         catch (SerializationException e)
                         {
+
                             instance = new RecipeBook();
+                            CS.Measurement measure = new CS.Measurement(5, CS.Unit.Count);
+                            List<Ingredient> testList = new List<Ingredient> { new Ingredient("fish", measure), new Ingredient("fish", measure) };
+                            List<Ingredient> testList2 = new List<Ingredient> { new Ingredient("notfish", measure), new Ingredient("nptfish", measure) };
+                            Recipe r1 = new Recipe(testList, "fish");
+                            Recipe r2 = new Recipe(testList2, "notfish");
+                            instance.Recipes.Add(r1);
+                            instance.Recipes.Add(r2);
                             Logging.WriteLog(LogLevel.Info, "New RecipeBook created due to serialization error.");
                             //MessageBox.Show("Failed to load or create the Recipebook!\n" + e.ToString());
                         }
@@ -88,10 +96,10 @@ namespace KeithsFunFunPantry
 		#region Search Function
 
 		//Controls recipe-specific search function
-		public void RecipeSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
+		public List<Recipe> RecipeSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
 		{
 			List<Recipe> nameSearchResults = RecipeNameSearch(query);
-
+            return nameSearchResults;
 			//Leave until check box search is ready to be implemented
 			//List<Recipe> finalSearchResults = RecipeCheckBoxFilter(nameSearchResults, checkBoxValuesToFilter);
 		}
