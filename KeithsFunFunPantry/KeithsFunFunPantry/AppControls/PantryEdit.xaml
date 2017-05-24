@@ -61,13 +61,14 @@
                        VerticalAlignment="Top"
                        HorizontalAlignment="Right"/>
                 <Label Content="{Binding Path=Name}"
+                       x:Name="nameLabel"
                        Grid.Column="1"
                        FontSize="30"
                        FontWeight="Bold"
                        FontFamily="Georgia"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Left"/>
-                <Label Content="{Binding Path=Amount}"
+                <Label x:Name="amountLabel"
                        Grid.Row="1"
                        Grid.Column="1"
                        FontSize="30"

@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UnitConversions\UnitConversion.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -52,6 +53,12 @@
     <Folder Include="US Dry\" />
     <Folder Include="US Liquid\" />
     <Folder Include="US to Metric\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\KeithsFunFunPantry\KeithsFunFunPantry.csproj">
+      <Project>{6093F72F-DC55-4908-9AFB-5C8B351B1C00}</Project>
+      <Name>KeithsFunFunPantry</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
