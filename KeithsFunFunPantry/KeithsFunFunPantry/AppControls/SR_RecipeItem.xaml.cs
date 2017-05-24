@@ -35,10 +35,5 @@ namespace KeithsFunFunPantry.AppControls
         {
             MyPopup.IsOpen = false;
         }
-
-        private void DragMove_LeftDown(object sender, MouseButtonEventArgs e)
-        {
-            //DragMove();
-        }
     }
 }
