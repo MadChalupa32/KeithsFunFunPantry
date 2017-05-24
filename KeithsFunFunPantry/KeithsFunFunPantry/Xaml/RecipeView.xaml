@@ -94,6 +94,13 @@
                 
             </StackPanel>
         </ScrollViewer>
-
+        <Button x:Name="RecipeAddButton"
+                Click="RecipeAddButton_Click"
+                Grid.Column="6"
+                Grid.Row="0"
+                Width="140"
+                Content="Add Recipe"
+                FontSize="24"/>
+        
     </Grid>
 </Page>
