@@ -13,6 +13,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using KeithsFunFunPantry.AppControls;
 using KeithsFunFunPantry.CS;
+using System.Collections.ObjectModel;
 
 namespace KeithsFunFunPantry
 {
@@ -27,8 +28,8 @@ namespace KeithsFunFunPantry
             TextBoxOptions();
 
 
-            Pantry.AddNewIngredient("Salt", new Measurement(20f, Unit.Gram));
-            Pantry.AddNewIngredient("Apple Slices", new Measurement(5f, Unit.Cup));
+            //Pantry.AddNewIngredient("Salt", new Measurement(20f, Unit.Gram));
+            //Pantry.AddNewIngredient("Apple Slices", new Measurement(5f, Unit.Cup));
             ListIngredients(Pantry.Ingredients);
         }
 
@@ -54,7 +55,7 @@ namespace KeithsFunFunPantry
                 TextBox_PantrySearch.Text = searchBar;
             }
         }
-        public void ListIngredients(List<Ingredient> displayList)
+        public void ListIngredients(ObservableCollection<Ingredient> displayList)
         {
             StackPanel_PantryView.Children.Clear();
 

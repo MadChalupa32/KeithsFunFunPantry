@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KeithsFunFunPantry.CS;
 
 namespace KeithsFunFunPantry.AppControls
 {
@@ -27,7 +28,8 @@ namespace KeithsFunFunPantry.AppControls
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            MessageBox.Show("Removes Item");
+            Pantry.RemoveIngredients((string)nameLabel.Content);
         }
+        
     }
 }
