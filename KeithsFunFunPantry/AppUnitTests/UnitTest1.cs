@@ -6,6 +6,7 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Linq;
 using KeithsFunFunPantry.CS;
+using System.Collections.ObjectModel;
 
 namespace AppUnitTests
 {
@@ -15,7 +16,7 @@ namespace AppUnitTests
         [TestMethod]
         public void AddNewIngredientTest_IngredientAddedToEndOfList()
         {
-            Pantry.Ingredients = new List<Ingredient>();
+            Pantry.Ingredients = new ObservableCollection<Ingredient>();
 
             Pantry.AddNewIngredient("Milk", new Measurement(1f, Unit.Gallon));
             Assert.IsTrue(Pantry.Ingredients[Pantry.Ingredients.Count - 1].Name == "Milk");
@@ -34,7 +35,7 @@ namespace AppUnitTests
         [TestMethod]
         public void AddNewIngredientTest_IngredientCount()
         {
-            Pantry.Ingredients = new List<Ingredient>();
+            Pantry.Ingredients = new ObservableCollection<Ingredient>();
 
             Pantry.AddNewIngredient("Milk", new Measurement(1f, Unit.Gallon));
             Pantry.AddNewIngredient("Sugar", new Measurement(1f, Unit.Pound));
@@ -87,7 +88,7 @@ namespace AppUnitTests
         [TestMethod]
         public void IngredientNameSearchTest()
         {
-            Pantry.Ingredients = new List<Ingredient>()
+            Pantry.Ingredients = new ObservableCollection<Ingredient>()
             {
                 new Ingredient("Milk", new Measurement(1f, Unit.Gallon)),
                 new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
@@ -99,9 +100,9 @@ namespace AppUnitTests
             };
 
             string query = "cheese";
-            List<Ingredient> results = Pantry.IngredientNameSearch(query);
+            ObservableCollection<Ingredient> results = Pantry.IngredientNameSearch(query);
 
-            List<Ingredient> expectedResults = new List<Ingredient>()
+            ObservableCollection<Ingredient> expectedResults = new ObservableCollection<Ingredient>()
             {
                 new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
                 new Ingredient("Shredded Cheese", new Measurement(12f, Unit.Cup)),

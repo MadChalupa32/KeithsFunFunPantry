@@ -3,8 +3,9 @@
 Brian Walsh
 
 
-Christian Bravo
-
+Cristian Bravo
+	5/22 Redesigned the trello sprints as a group and worked on the timeline
+	5/23 I helped brian on work on the remove ingredient part of the project
 
 Randal McClure
 	5/23	I helped figure out how to convert between units in the measurement class. This includes where and how we wanted to structure the conversion class/methods. 

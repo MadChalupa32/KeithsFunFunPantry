@@ -52,8 +52,7 @@
                Placement="Mouse"
                HorizontalOffset="300"
                VerticalOffset="-100"
-               AllowsTransparency="False"
-               MouseLeftButtonDown="DragMove_LeftDown">
+               AllowsTransparency="False">
             <Grid Width="550" Height="550">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="32"/>

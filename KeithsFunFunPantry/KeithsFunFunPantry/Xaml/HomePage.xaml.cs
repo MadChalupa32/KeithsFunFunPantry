@@ -59,6 +59,10 @@ namespace KeithsFunFunPantry
         {
             Frame_HomePage.Content = new EditingPantry();
         }
+        private void Sandbox_Click(object sender, RoutedEventArgs e)
+        {
+            Frame_HomePage.Content = new SandboxView();
+        }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
         {
@@ -83,5 +87,7 @@ namespace KeithsFunFunPantry
         {
             RecipeBook book = RecipeBook.Instance;
             book.SaveRecipes();
-        }    }
+        }
+
+    }
 }
