@@ -22,8 +22,10 @@ namespace KeithsFunFunPantry
         {
             get
             {
+                bool genRecipes = false;
                 if (instance == null)
                 {
+                    
                     using (var file = File.Open("RecipeBook.txt", FileMode.OpenOrCreate))
                     {
                         try
@@ -38,7 +40,7 @@ namespace KeithsFunFunPantry
                             {
                                 instance = new RecipeBook();
                                 Logging.WriteLog(LogLevel.Warning, "New RecipeBook created due deserialized file not registering as a RecipeBook");
-                                GenRecipes();
+                                genRecipes = true;
                             }
 
                         }
@@ -47,12 +49,16 @@ namespace KeithsFunFunPantry
 
                             instance = new RecipeBook();
                             Logging.WriteLog(LogLevel.Info, "New RecipeBook created due to serialization error.");
-                            GenRecipes();
+                            genRecipes = true;
                             //MessageBox.Show("Failed to load or create the Recipebook!\n" + e.ToString());
                         }
                     };
 
 
+                }
+                if (genRecipes)
+                {
+                    GenRecipes();
                 }
                 return instance;
             }

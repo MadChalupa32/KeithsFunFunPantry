@@ -12,23 +12,18 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using KeithsFunFunPantry.CS;
+
 namespace KeithsFunFunPantry.AppControls
 {
     /// <summary>
-    /// Interaction logic for PantryEdit.xaml
+    /// Interaction logic for AddRecipeIngredientList.xaml
     /// </summary>
-    public partial class PantryEdit : UserControl
+    public partial class AddRecipeIngredientList : UserControl
     {
-        public PantryEdit()
+        public AddRecipeIngredientList(Ingredient i)
         {
             InitializeComponent();
-            
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Removes Item");
+            DataContext = i;
         }
     }
 }
