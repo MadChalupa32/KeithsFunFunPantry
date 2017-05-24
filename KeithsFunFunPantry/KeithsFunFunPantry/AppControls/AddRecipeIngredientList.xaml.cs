@@ -16,19 +16,14 @@ using System.Windows.Shapes;
 namespace KeithsFunFunPantry.AppControls
 {
     /// <summary>
-    /// Interaction logic for PantryEdit.xaml
+    /// Interaction logic for AddRecipeIngredientList.xaml
     /// </summary>
-    public partial class PantryEdit : UserControl
+    public partial class AddRecipeIngredientList : UserControl
     {
-        public PantryEdit()
+        public AddRecipeIngredientList(Ingredient i)
         {
             InitializeComponent();
-            
-        }
-
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("Removes Item");
+            DataContext = i;
         }
     }
 }

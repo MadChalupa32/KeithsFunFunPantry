@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -89,5 +90,22 @@ namespace KeithsFunFunPantry
 				ListRecipes(book.Recipes);
 			}
 		}
+
+        private void RecipeAddButton_Click(object sender, RoutedEventArgs e)
+        {
+            
+            Window w = new Window();
+            
+            
+            
+            StackPanel sp = new StackPanel();
+            w.Content = sp;
+            sp.Children.Add(new AddRecipeWindow());
+            w.Show();
+
+
+            //StackPanel_RecipeView.Children.Add(p);
+
+        }
     }
 }
