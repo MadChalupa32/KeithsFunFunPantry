@@ -172,7 +172,6 @@
                       VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="StackPanel_EditPantry"
                         Margin="20">
-
             </StackPanel>
         </ScrollViewer>
     </Grid>

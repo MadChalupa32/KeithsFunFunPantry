@@ -36,6 +36,8 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -54,6 +56,12 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AppControls\AddRecipeIngredientList.xaml.cs">
+      <DependentUpon>AddRecipeIngredientList.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AppControls\AddRecipeWindow.xaml.cs">
+      <DependentUpon>AddRecipeWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AppControls\PantryEdit.xaml.cs">
       <DependentUpon>PantryEdit.xaml</DependentUpon>
     </Compile>
@@ -105,6 +113,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="AppControls\AddRecipeIngredientList.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AppControls\AddRecipeWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="AppControls\PantryEdit.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

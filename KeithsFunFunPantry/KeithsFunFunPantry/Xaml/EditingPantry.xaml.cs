@@ -15,6 +15,7 @@ using System.Windows.Shapes;
 using KeithsFunFunPantry.AppControls;
 using KeithsFunFunPantry.CS;
 using System.Globalization;
+using System.Collections.ObjectModel;
 
 namespace KeithsFunFunPantry
 {
@@ -43,12 +44,12 @@ namespace KeithsFunFunPantry
         //Shows the ingredients in the pantry
         private void ShowPantry()
         {
-            Pantry.AddNewIngredient("Brocolli", new CS.Measurement(2f, CS.Unit.Cup));
-            Pantry.AddNewIngredient("Chicken", new CS.Measurement(16f, CS.Unit.Pound));
-            Pantry.AddNewIngredient("Radishes", new CS.Measurement(3f, CS.Unit.Cup));
-            Pantry.AddNewIngredient("Sugar", new CS.Measurement(4f, CS.Unit.Cup));
-            Pantry.AddNewIngredient("Steak", new CS.Measurement(16f, CS.Unit.Pound));
-            Pantry.AddNewIngredient("Milk", new CS.Measurement(2f, CS.Unit.Gallon));
+            //Pantry.AddNewIngredient("Brocolli", new CS.Measurement(2f, CS.Unit.Cup));
+            //Pantry.AddNewIngredient("Chicken", new CS.Measurement(16f, CS.Unit.Pound));
+            //Pantry.AddNewIngredient("Radishes", new CS.Measurement(3f, CS.Unit.Cup));
+            //Pantry.AddNewIngredient("Sugar", new CS.Measurement(4f, CS.Unit.Cup));
+            //Pantry.AddNewIngredient("Steak", new CS.Measurement(16f, CS.Unit.Pound));
+            //Pantry.AddNewIngredient("Milk", new CS.Measurement(2f, CS.Unit.Gallon));
             ListIngredients(Pantry.Ingredients);
         }
 
@@ -234,15 +235,16 @@ namespace KeithsFunFunPantry
 
         }
 
-        public void ListIngredients(List<Ingredient> displayList)
+        public void ListIngredients(ObservableCollection<Ingredient> displayList)
         {
             StackPanel_EditPantry.Children.Clear();
 
 
             foreach (Ingredient ingredient in displayList)
             {
-                PantryViewItem pvi = new PantryViewItem();
+                PantryEdit pvi = new PantryEdit();
                 pvi.DataContext = ingredient;
+                pvi.amountLabel.Content = ingredient.IngredientMeasurement.Amount;
                 StackPanel_EditPantry.Children.Add(pvi);
             }
 

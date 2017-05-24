@@ -1,6 +1,7 @@
 ﻿using KeithsFunFunPantry.CS;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -16,8 +17,8 @@ namespace KeithsFunFunPantry
     public static class Pantry
     {
         //public event PropertyChangedEventHandler PropertyChanged;
-        private static List<Ingredient> ingredients = new List<Ingredient>();
-        public static List<Ingredient> Ingredients
+        private static ObservableCollection<Ingredient> ingredients = new ObservableCollection<Ingredient>();
+        public static ObservableCollection<Ingredient> Ingredients
         {
             get { return ingredients; }
             set
@@ -88,7 +89,7 @@ namespace KeithsFunFunPantry
                 using (Stream stream = File.Open("ingredients.xml", FileMode.Open))
                 {
                     BinaryFormatter bin = new BinaryFormatter();
-                    var ingredient = (List<Ingredient>)bin.Deserialize(stream);
+                    var ingredient = (ObservableCollection<Ingredient>)bin.Deserialize(stream);
                     var sortedIngredients = ingredient.OrderBy(a => a.Name);
                     Ingredients.Clear();
                     foreach(Ingredient ingredient1 in sortedIngredients)
@@ -107,13 +108,19 @@ namespace KeithsFunFunPantry
                 Logging.WriteLog(LogLevel.Error, "File has failed to open or doesn't exist");
             }
         }
-        public static void RemoveIngredients(Ingredient i)
+        public static void RemoveIngredients(string name)
         {
-            Ingredients.Remove(i);
-            Logging.WriteLog(LogLevel.Info, "Ingredient " + i.Name + " Removed");
+            for(int x = 0; x < Ingredients.Count(); x++)
+            {
+                if (Ingredients[x].Name == name)
+                {
+                    Ingredients.Remove(Ingredients[x]);
+                }
+            }
+            Logging.WriteLog(LogLevel.Info, "Ingredient " + name + " Removed");
         }
 
-        public static void DisplayIngredients(List<Ingredient> i)
+        public static void DisplayIngredients(ObservableCollection<Ingredient> i)
         {
             foreach (Ingredient ingredient in i)
             {
@@ -124,18 +131,18 @@ namespace KeithsFunFunPantry
         #region Search Function
 
         //Controls ingredient-specific search function
-        public static List<Ingredient> IngredientSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
+        public static ObservableCollection<Ingredient> IngredientSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
 		{
-			List<Ingredient> nameSearchResults = IngredientNameSearch(query);
+			ObservableCollection<Ingredient> nameSearchResults = IngredientNameSearch(query);
             return nameSearchResults;
             //Leave until check box search is ready to be implemented
             //List<Ingredient> finalSearchResults = IngredientCheckBoxFilter(nameSearchResults, checkBoxValuesToFilter);
         }
 
 		//Executes name search and returns the results
-		public static List<Ingredient> IngredientNameSearch(string query)
+		public static ObservableCollection<Ingredient> IngredientNameSearch(string query)
 		{
-			List<Ingredient> queryResults = Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query)).ToList();
+			ObservableCollection<Ingredient> queryResults = (ObservableCollection<Ingredient>)Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
 			return queryResults;
 		}
 
