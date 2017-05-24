@@ -7,8 +7,7 @@ Christian Bravo
 
 
 Randal McClure
-	5/22	I implemented search result display on the RecipeView and SearchRecipe xaml files. I also helped figure out how and where to implement these
-			functions in the IngredientView and SearchIngredient xaml files. 
+	5/23	I helped figure out how to convert between units in the measurement class. This includes where and how we wanted to structure the conversion class/methods. 
 
 Tyler Wharton
 
