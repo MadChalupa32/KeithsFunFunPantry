@@ -44,12 +44,6 @@ namespace KeithsFunFunPantry
         //Shows the ingredients in the pantry
         private void ShowPantry()
         {
-            //Pantry.AddNewIngredient("Brocolli", new CS.Measurement(2f, CS.Unit.Cup));
-            //Pantry.AddNewIngredient("Chicken", new CS.Measurement(16f, CS.Unit.Pound));
-            //Pantry.AddNewIngredient("Radishes", new CS.Measurement(3f, CS.Unit.Cup));
-            //Pantry.AddNewIngredient("Sugar", new CS.Measurement(4f, CS.Unit.Cup));
-            //Pantry.AddNewIngredient("Steak", new CS.Measurement(16f, CS.Unit.Pound));
-            //Pantry.AddNewIngredient("Milk", new CS.Measurement(2f, CS.Unit.Gallon));
             ListIngredients(Pantry.Ingredients);
         }
 
@@ -168,67 +162,53 @@ namespace KeithsFunFunPantry
         private void AddIngredient_Click(object sender, RoutedEventArgs e)
         {
             //Pantry.AddNewIngredient(TextBox_Name.Text, new CS.Measurement(float.Parse(TextBox_Amount.Text, CultureInfo.InvariantCulture.NumberFormat), CS.Unit.Tablespoon));
-            MessageBox.Show("Adds Item to List and Clears the Boxes");
+            string name = (string)TextBox_Name.Text;
             float amount;
             float.TryParse(TextBox_Amount.Text, out amount);
             string unit = ComboBox_Units.Text.ToLower();
             switch (unit)
             {
                 case "teaspoon":
-                    Ingredient i = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Teaspoon));
-                    Pantry.Ingredients.Add(i);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Teaspoon));
                     break;
                 case "tablespoon":
-                    Ingredient i2 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Tablespoon));
-                    Pantry.Ingredients.Add(i2);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Tablespoon));
                     break;
                 case "cup":
-                    Ingredient i3 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Cup));
-                    Pantry.Ingredients.Add(i3);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Cup));
                     break;
                 case "ounce":
-                    Ingredient i4 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Ounce));
-                    Pantry.Ingredients.Add(i4);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Ounce));
                     break;
                 case "fluidounce":
-                    Ingredient i5 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.FluidOunce));
-                    Pantry.Ingredients.Add(i5);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.FluidOunce));
                     break;
                 case "pound":
-                    Ingredient i6 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Pound));
-                    Pantry.Ingredients.Add(i6);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Pound));
                     break;
                 case "pint":
-                    Ingredient i7 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Pint));
-                    Pantry.Ingredients.Add(i7);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Pint));
                     break;
                 case "quart":
-                    Ingredient i8 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Quart));
-                    Pantry.Ingredients.Add(i8);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Quart));
                     break;
                 case "gallon":
-                    Ingredient i9 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Gallon));
-                    Pantry.Ingredients.Add(i9);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Gallon));
                     break;
                 case "milliliter":
-                    Ingredient i10 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Milliliter));
-                    Pantry.Ingredients.Add(i10);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Milliliter));
                     break;
                 case "liter":
-                    Ingredient i11 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Liter));
-                    Pantry.Ingredients.Add(i11);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Liter));
                     break;
                 case "gram":
-                    Ingredient i12 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Gram));
-                    Pantry.Ingredients.Add(i12);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Gram));
                     break;
                 case "kilogram":
-                    Ingredient i13 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Kilogram));
-                    Pantry.Ingredients.Add(i13);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Kilogram));
                     break;
                 case "count":
-                    Ingredient i14 = new Ingredient(TextBox_Name.Text, new Measurement(amount, Unit.Count));
-                    Pantry.Ingredients.Add(i14);
+                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Count));
                     break;
             }
             ListIngredients(Pantry.Ingredients);

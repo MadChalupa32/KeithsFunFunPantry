@@ -40,7 +40,7 @@ namespace KeithsFunFunPantry
                     foundMatch = true;
                     break;
                 }
-                else if (Ingredients.ElementAt(count-1).Name == i.Name)
+                else if (Ingredients.ElementAt(count - 1).Name.ToLower() == i.Name.ToLower())
                 {
                     Logging.WriteLog(LogLevel.Info, "Ingredient already exists in list");
                     Logging.WriteLog(LogLevel.Info, "Increasing the amount");
@@ -94,11 +94,7 @@ namespace KeithsFunFunPantry
                     Ingredients.Clear();
                     foreach(Ingredient ingredient1 in sortedIngredients)
                     {
-                        if (!Ingredients.Contains(ingredient1))
-                        {
                         Ingredients.Add(ingredient1);
-                        Logging.WriteLog(LogLevel.Info, ingredient1 + "imported");
-                        }
                     }
                 }
                 Pantry.DisplayIngredients(Ingredients);

@@ -28,7 +28,6 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             Pantry.ReadIngredientsFromFile();
-            Pantry.AddNewIngredient("Apple", new Measurement(4f, Unit.Count));
             this.Closed += new EventHandler(HomePage_Closed);
         }
         private void HomePage_Closed(object sender, EventArgs e)
