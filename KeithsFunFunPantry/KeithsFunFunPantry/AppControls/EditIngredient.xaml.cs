@@ -102,6 +102,14 @@ namespace KeithsFunFunPantry.AppControls
                 TextBox_Subtract.Text = addSubTB;
             }
         }
+        private void ButtonAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void ButtonSubtract_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

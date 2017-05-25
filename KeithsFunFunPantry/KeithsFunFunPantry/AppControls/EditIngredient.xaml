@@ -59,7 +59,8 @@
                 Grid.Row="3"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
-                Margin="150,0,5,0"/>
+                Margin="150,0,5,0"
+                Click="ButtonAdd_Click"/>
         <Button Content="Subtract"
                 FontSize="20"
                 FontWeight="Bold"
@@ -67,7 +68,8 @@
                 Grid.Row="5"
                 Grid.Column="1"
                 Grid.ColumnSpan="2"
-                Margin="150,0,5,0"/>
+                Margin="150,0,5,0"
+                Click="ButtonSubtract_Click"/>
         <TextBox x:Name="TextBox_Add"
                  Padding="5"
                  MaxLength="3"
