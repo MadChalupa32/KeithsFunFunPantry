@@ -12,8 +12,33 @@ namespace ScratchConversions.UnitConversions
 		public static void Convert(this Measurement original, Unit unit)
 		{
 			//Validation
-			//Conversion
-			//Change the original measurement
+			//If the measurement is not already in the target unit
+			if(original.UnitOfMeasurement != unit)
+			{
+				//If the measurement can be translated into the target unit
+				//switch (unit)
+				//{
+				//	case Unit.Count
+				//	case Unit.Cup
+				//	case Unit.FluidOunce
+				//	case Unit.Gallon
+				//	case Unit.Gram
+				//	case Unit.Kilogram
+				//	case Unit.Liter
+				//	case Unit.Milliliter
+				//	case Unit.Ounce
+				//	case Unit.Pint
+				//	case Unit.Pound
+				//	case Unit.Quart
+				//	case Unit.Tablespoon
+				//	case Unit.Teaspoon
+				//	case Unit.TotalUnits
+				//	default
+				//}
+
+				//Conversion
+				//Change the original measurement
+			}
 		}
 
 		//Private methods for each conversion
