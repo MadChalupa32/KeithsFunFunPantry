@@ -26,10 +26,6 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
-
-
-            //Pantry.AddNewIngredient("Salt", new Measurement(20f, Unit.Gram));
-            //Pantry.AddNewIngredient("Apple Slices", new Measurement(5f, Unit.Cup));
             ListIngredients(Pantry.Ingredients);
         }
 

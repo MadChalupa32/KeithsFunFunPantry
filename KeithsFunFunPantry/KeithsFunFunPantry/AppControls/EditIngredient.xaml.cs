@@ -37,8 +37,8 @@ namespace KeithsFunFunPantry.AppControls
             foreach (Unit units in Unit.TotalUnits)
             {
                 ComboBox_1.Items.Add(units.LongHand);
-                ComboBox_2.Items.Add(units.LongHand);
-                ComboBox_3.Items.Add(units.LongHand);
+                //ComboBox_2.Items.Add(units.LongHand);
+                //ComboBox_3.Items.Add(units.LongHand);
             }
         }
 
@@ -101,6 +101,14 @@ namespace KeithsFunFunPantry.AppControls
             {
                 TextBox_Subtract.Text = addSubTB;
             }
+        }
+        private void ButtonAdd_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void ButtonSubtract_Click(object sender, EventArgs e)
+        {
+
         }
     }
 

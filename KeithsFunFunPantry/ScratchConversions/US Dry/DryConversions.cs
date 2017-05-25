@@ -32,42 +32,42 @@ namespace ScratchConversions.US_Dry
 
     public class DryConversions
     {
-        private float TablespoonToTeaspoon(float amount)
+        private static float TablespoonToTeaspoon(float amount)
         {
             return (float)(amount * 3);
         }
 
-        private float CupToTeaspoon(float amount)
+        private static float CupToTeaspoon(float amount)
         {
             return (float)(amount * 48);
         }
 
-        private float OunceToTeaspoon(float amount)
+        private static float OunceToTeaspoon(float amount)
         {
             return (float)(amount * 6);
         }
 
-        private float PoundToTeaspoon(float amount)
+        private static float PoundToTeaspoon(float amount)
         {
             return (float)(amount * 96);
         }
 
-        private float TeaspoonToTablespoon(float amount)
+        private static float TeaspoonToTablespoon(float amount)
         {
             return (float)(amount / 3);
         }
 
-        private float TeaspoonToCup(float amount)
+        private static float TeaspoonToCup(float amount)
         {
             return (float)(amount / 48);
         }
 
-        private float TeaspoonToOunce(float amount)
+        private static float TeaspoonToOunce(float amount)
         {
             return (float)(amount / 6);
         }
 
-        private float TeaspoonToPound(float amount)
+        private static float TeaspoonToPound(float amount)
         {
             return (float)(amount / 96);
         }

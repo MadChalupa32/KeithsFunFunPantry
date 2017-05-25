@@ -41,12 +41,71 @@ namespace ScratchConversions.UnitConversions
 			}
 		}
 
-		//Private methods for each conversion
-		#region Dry
+        //Private methods for each conversion
+        #region Dry
+        private static float TablespoonToTeaspoon(float amount)
+        {
+            return (float)(amount * 3);
+        }
 
-		#endregion
-		#region Liquid
-		private static float FluidOuncesToCups(float fluidOunceAmt)
+        private static float CupToTeaspoon(float amount)
+        {
+            return (float)(amount * 48);
+        }
+
+        private static float OunceToTeaspoon(float amount)
+        {
+            return (float)(amount * 6);
+        }
+
+        private static float PoundToTeaspoon(float amount)
+        {
+            return (float)(amount * 96);
+        }
+
+        private static float TeaspoonToTablespoon(float amount)
+        {
+            return (float)(amount / 3);
+        }
+
+        private static float TeaspoonToCup(float amount)
+        {
+            return (float)(amount / 48);
+        }
+
+        private static float TeaspoonToOunce(float amount)
+        {
+            return (float)(amount / 6);
+        }
+
+        private static float TeaspoonToPound(float amount)
+        {
+            return (float)(amount / 96);
+        }
+
+        public static void DryConversionTest()
+        {
+            Console.WriteLine("Tablespoon to Teaspoon");
+            Console.WriteLine(TablespoonToTeaspoon(12f) == 36f ? "passed" : "*failed*");
+            Console.WriteLine("Cup to Teaspoon");
+            Console.WriteLine(CupToTeaspoon(5f) == 240f ? "passed" : "*failed*");
+            Console.WriteLine("Ounce to Teaspoon");
+            Console.WriteLine(OunceToTeaspoon(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine("Pound to Teaspoon");
+            Console.WriteLine(PoundToTeaspoon(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine("Teaspoon to Tablespoon");
+            Console.WriteLine(TeaspoonToTablespoon(45f) == 15f ? "passed" : "*failed*");
+            Console.WriteLine("Teaspoon to Cup");
+            Console.WriteLine(TeaspoonToCup(70f) == 1.438f ? "passed" : "*failed*");
+            Console.WriteLine("Teaspoon to Ounce");
+            Console.WriteLine(TeaspoonToOunce(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine("Teaspoon to Pound");
+            Console.WriteLine(TeaspoonToPound(33f) == 4.125f ? "passed" : "*failed*");
+        }
+        #endregion
+
+        #region Liquid
+        private static float FluidOuncesToCups(float fluidOunceAmt)
 		{
 			float cupAmt = fluidOunceAmt / 8;
 			return cupAmt;
@@ -108,8 +167,12 @@ namespace ScratchConversions.UnitConversions
 
 		}
 		#endregion
-		#region Metric
 
+		#region Metric
+        public static void MetricConversionTest()
+        {
+
+        }
 		#endregion
 	}
 }
