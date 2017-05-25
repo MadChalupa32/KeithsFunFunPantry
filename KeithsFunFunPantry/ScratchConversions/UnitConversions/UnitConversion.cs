@@ -124,13 +124,21 @@ namespace ScratchConversions.UnitConversions
 
 		public static void LiquidConversionTest()
 		{
+			Console.WriteLine("Fluid Ounces to Cups");
 			Console.WriteLine(FluidOuncesToCups(33f) == 4.125f ? "passed" : "*failed*");
+			Console.WriteLine("Pints to Cups");
 			Console.WriteLine(PintsToCups(33f) == 66f ? "passed" : "*failed*");
+			Console.WriteLine("Quarts to Cups");
 			Console.WriteLine(QuartsToCups(23f) == 92f ? "passed" : "*failed*");
+			Console.WriteLine("Gallons to Cups");
 			Console.WriteLine(GallonsToCups(13f) == 208f ? "passed" : "*failed*");
+			Console.WriteLine("Cups to Fluid Ounces");
 			Console.WriteLine(CupsToFluidOunces(13f) == 104f ? "passed" : "*failed*");
+			Console.WriteLine("Cups to Pints");
 			Console.WriteLine(CupsToPints(23f) == 11.5f ? "passed" : "*failed*");
+			Console.WriteLine("Cups to Quarts");
 			Console.WriteLine(CupsToQuarts(23f) == 5.75f ? "passed" : "*failed*");
+			Console.WriteLine("Cups to Gallons");
 			Console.WriteLine(CupsToGallons(33f) == 2.0625f ? "passed" : "*failed*");
 
 		}
