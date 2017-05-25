@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,14 +10,14 @@ namespace KeithsFunFunPantry
     [Serializable]
     public class Recipe
     {
-        public Recipe(List<Ingredient> ingredientList, String title, string directions = "", string notes = "")
+        public Recipe(ObservableCollection<Ingredient> ingredientList, String title, string directions = "", string notes = "")
         {
             IngredientList = ingredientList;
             Directions = directions;
             Title = title;
         }
 
-        private List<Ingredient> ingredientList;
+        public static ObservableCollection<Ingredient> ingredientList;
         private string directions;
         private string title;
         private string notes;
@@ -41,7 +42,7 @@ namespace KeithsFunFunPantry
             set { directions = value; }
         }
 
-        public List<Ingredient> IngredientList
+        public ObservableCollection<Ingredient> IngredientList
         {
             get { return ingredientList; }
             set { ingredientList = value; }
