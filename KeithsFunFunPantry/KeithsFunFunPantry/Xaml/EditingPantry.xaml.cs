@@ -76,7 +76,7 @@ namespace KeithsFunFunPantry
         }
         // Removes Text when it has focus (Search)
         private void RemoveISText(object sender, EventArgs e)
-        {
+     {
             if (TextBox_IngredientSearch.Text == searchTB)
             {
                 TextBox_IngredientSearch.Text = "";
@@ -136,11 +136,11 @@ namespace KeithsFunFunPantry
             string query = TextBox_IngredientSearch.Text.ToLower();
             if (!query.Equals("search ingredient"))
             {
-                ListIngredients(Pantry.IngredientSearchController(query));
+                ListBox_EditPantry.ItemsSource = Pantry.IngredientSearchController(query);
             }
             else
             {
-                ListIngredients(Pantry.Ingredients);
+                ListBox_EditPantry.ItemsSource = Pantry.Ingredients;
             }
         }
 
@@ -165,7 +165,7 @@ namespace KeithsFunFunPantry
                 case "ounce":
                     Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Ounce));
                     break;
-                case "fluidounce":
+                case "fluid ounce":
                     Pantry.AddNewIngredient(name, new Measurement(amount, Unit.FluidOunce));
                     break;
                 case "pound":
