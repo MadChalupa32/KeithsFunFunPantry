@@ -38,13 +38,17 @@ namespace KeithsFunFunPantry
             TextBoxOptions2();
             FillUnits();
             ShowPantry();
-            
         }
 
         //Shows the ingredients in the pantry
         private void ShowPantry()
         {
-            ListIngredients(Pantry.Ingredients);
+            if(Pantry.Ingredients.Count == 0)
+            {
+                Label noResults = new Label();
+                noResults.Content = "No results found";
+            }
+            ListBox_EditPantry.ItemsSource = Pantry.Ingredients;
         }
 
         //Removes text when it has focus, add text when it is empty and has lost focus (Search box)
@@ -121,18 +125,14 @@ namespace KeithsFunFunPantry
         //Fills the ComboBox with the list of Units
         private void FillUnits()
         {
-
             foreach (Unit units in Unit.TotalUnits)
             {
                 ComboBox_Units.Items.Add(units.LongHand);
             }
-
-
         }
 
         private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-            //StackPanel_EditPantry.Children.Clear();
             string query = TextBox_IngredientSearch.Text.ToLower();
             if (!query.Equals("search ingredient"))
             {
@@ -147,7 +147,6 @@ namespace KeithsFunFunPantry
         //Logic for the Add Button (eventually adds the ingredient to the pantry list
         private void AddIngredient_Click(object sender, RoutedEventArgs e)
         {
-            //Pantry.AddNewIngredient(TextBox_Name.Text, new CS.Measurement(float.Parse(TextBox_Amount.Text, CultureInfo.InvariantCulture.NumberFormat), CS.Unit.Tablespoon));
             string name = (string)TextBox_Name.Text;
             float amount;
             float.TryParse(TextBox_Amount.Text, out amount);
@@ -199,37 +198,40 @@ namespace KeithsFunFunPantry
             }
             ListIngredients(Pantry.Ingredients);
 
+            TextBox_Name.Text = "";
+            TextBox_Amount.Text = "";
+            TextBoxOptions1();
+            TextBoxOptions2();
         }
 
         public void ListIngredients(ObservableCollection<Ingredient> displayList)
         {
-            //StackPanel_EditPantry.Children.Clear();
+            //foreach (Ingredient ingredient in displayList)
+            //{
+            //    PantryEdit pvi = new PantryEdit();
+            //    pvi.DataContext = ingredient;
+            //    pvi.amountLabel.Content = ingredient.IngredientMeasurement.Amount;
+            //}
 
-
-            foreach (Ingredient ingredient in displayList)
-            {
-                PantryEdit pvi = new PantryEdit();
-                pvi.DataContext = ingredient;
-                pvi.amountLabel.Content = ingredient.IngredientMeasurement.Amount;
-                //StackPanel_EditPantry.Children.Add(pvi);
-            }
-
-            if (displayList.Count == 0)
-            {
-                Label noResults = new Label();
-                noResults.Content = "No results found";
-                //StackPanel_EditPantry.Children.Add(noResults);
-            }
-
-
-
+            //if (displayList.Count == 0)
+            //{
+            //    Label noResults = new Label();
+            //    noResults.Content = "No results found";
+            //}
         }
+
 
         //Saves the Current pantry
         private void SavePantry_Click(object sender, RoutedEventArgs e)
         {
             Pantry.SaveIngredient();
             MessageBox.Show("Saves Current Pantry");
+        }
+
+        private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            string message = ListBox_EditPantry.SelectedItem.ToString();
+            MessageBox.Show(message);
         }
     }
 }

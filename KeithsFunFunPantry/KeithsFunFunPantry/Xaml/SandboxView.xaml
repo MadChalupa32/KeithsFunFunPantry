@@ -6,10 +6,21 @@
       xmlns:local="clr-namespace:KeithsFunFunPantry.Xaml"
       xmlns:AC="clr-namespace:KeithsFunFunPantry.AppControls"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="500"
+      d:DesignHeight="500" d:DesignWidth="750"
       Title="SandboxView">
 
     <Grid>
-        <AC:EditIngredient/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="70*"/>
+            <RowDefinition Height="35*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="123*"/>
+            <ColumnDefinition Width="274*"/>
+            <ColumnDefinition Width="123*"/>
+        </Grid.ColumnDefinitions>
+        <AC:EditIngredient Grid.Row="1"
+                           Grid.Column="1"/>
     </Grid>
 </Page>

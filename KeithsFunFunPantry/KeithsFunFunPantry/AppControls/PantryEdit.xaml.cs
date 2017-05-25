@@ -26,7 +26,7 @@ namespace KeithsFunFunPantry.AppControls
             
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void RemoveIngredient_Click(object sender, RoutedEventArgs e)
         {
             Pantry.RemoveIngredients((string)nameLabel.Content);
         }

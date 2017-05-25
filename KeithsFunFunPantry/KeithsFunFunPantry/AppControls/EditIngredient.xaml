@@ -19,8 +19,8 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="80*"/>
-            <ColumnDefinition Width="80*"/>
+            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="85*"/>
             <ColumnDefinition Width="80*"/>
             <ColumnDefinition Width="80*"/>
         </Grid.ColumnDefinitions>
@@ -30,6 +30,9 @@
                  Grid.Row="1"
                  Grid.Column="1"
                  Grid.ColumnSpan="2"
+                 FontSize="16"
+                 VerticalContentAlignment="Center"
+                 HorizontalContentAlignment="Left"
                  Margin="5,0"/>
         <TextBox Text="999"
                  IsReadOnly="true"
@@ -47,10 +50,13 @@
                   IsReadOnly="True"
                   Text="Unit"
                   BorderThickness="3"
-                  BorderBrush="Black"
+                  BorderBrush="Gray"
+                  FontSize="20"
                   Grid.Row="1"
                   Grid.Column="4"
                   Grid.ColumnSpan="3"
+                  VerticalContentAlignment="Center"
+                  HorizontalContentAlignment="Left"
                   Margin="5,0"/>
         <Button Content="Add"
                 FontSize="20"
@@ -78,7 +84,7 @@
                  Margin="5,0"
                  VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Center"
-                 FontSize="20"
+                 FontSize="16"
                  FontFamily="Georgia"
                  FontWeight="Bold"/>
         <TextBox x:Name="TextBox_Subtract"
@@ -88,16 +94,33 @@
                  Margin="5,0"
                  VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Center"
-                 FontSize="20"
+                 FontSize="16"
                  FontFamily="Georgia"
                  FontWeight="Bold"/>
         <!--copyLabel-->
         <Label x:Name="Label_2"
+               Content="{Binding ElementName=ComboBox_1, Path=Text, Mode=TwoWay}"
                Grid.Row="3"
                Grid.Column="4"
                Grid.ColumnSpan="2"
+               Background="White"
+               BorderThickness="3"
+               BorderBrush="Gray"
+               FontSize="16"
+               VerticalContentAlignment="Center"
                Margin="5,0"/>
-        <Label x:Name="Label_3"/>
+        <Label x:Name="Label_3"
+               Content="{Binding ElementName=ComboBox_1, Path=Text, Mode=TwoWay}"
+               Grid.Row="5"
+               Grid.Column="4"
+               Grid.ColumnSpan="2"
+               FontSize="16"
+               VerticalContentAlignment="Center"
+               HorizontalContentAlignment="Left"
+               Background="White"
+               BorderThickness="3"
+               BorderBrush="Gray"
+               Margin="5,0"/>
         <!--<ComboBox x:Name="ComboBox_2"
                   Grid.Row="3"
                   Grid.Column="4"

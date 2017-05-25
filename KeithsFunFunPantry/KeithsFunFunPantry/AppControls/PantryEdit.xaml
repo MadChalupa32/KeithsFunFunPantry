@@ -12,46 +12,70 @@
                 BorderThickness="5"
                 Margin="5"
                 Grid.Column="1">
-            <Grid Margin="5">
+            <Grid>
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-                    
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="175*"/>
+                    <ColumnDefinition Width="282*"/>
                 </Grid.ColumnDefinitions>
+                <Label VerticalAlignment="Center" 
+                       HorizontalAlignment="Center"
+                       Margin="20"
+                       Grid.RowSpan="2">
+                    <Image Source="../Images/Minus.png"/>
+                </Label>
+                <Border CornerRadius="5"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Grid.RowSpan="2"
+                        Width="50"
+                        Height="50">
+                    <Button Background="Transparent"
+                            Grid.RowSpan="2"
+                            BorderThickness="0"
+                            Opacity=".2"
+                            OpacityMask="LightBlue"
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"
+                            Width="50"
+                            Height="50"
+                            Click="RemoveIngredient_Click"/>
+                </Border>
+
                 <Label Content="Name:"
-                       Margin="25,0,0,0"
                        FontSize="30"
                        FontWeight="Bold"
                        FontFamily="Georgia"
                        VerticalAlignment="Top"
-                       HorizontalAlignment="Right"/>
+                       HorizontalAlignment="Right" Grid.Column="1"/>
                 <Label Content="Amount:"
                        Grid.Row="1"
                        FontSize="30"
                        FontWeight="Bold"
                        FontFamily="Georgia"
                        VerticalAlignment="Top"
-                       HorizontalAlignment="Right"/>
+                       HorizontalAlignment="Right" Grid.ColumnSpan="2" Margin="0,0.2,0,0"/>
                 <Label Content="{Binding Path=Name}"
                        x:Name="nameLabel"
-                       Grid.Column="1"
+                       Grid.Column="2"
                        FontSize="30"
                        FontWeight="Bold"
                        FontFamily="Georgia"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Left"/>
-                <Label x:Name="amountLabel"
+                <Label Content="{Binding Path=IngredientMeasurement}" 
+                       x:Name="amountLabel"
                        Grid.Row="1"
-                       Grid.Column="1"
+                       Grid.Column="2"
                        FontSize="30"
                        FontWeight="Bold"
                        FontFamily="Georgia"
                        VerticalAlignment="Top"
-                       HorizontalAlignment="Left"/>
+                       HorizontalAlignment="Left" Margin="0,0.2,0,0"/>
             </Grid>
         </Border>
     </Grid>
