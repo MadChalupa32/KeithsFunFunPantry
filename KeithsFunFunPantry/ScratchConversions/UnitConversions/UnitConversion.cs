@@ -13,6 +13,7 @@ namespace ScratchConversions.UnitConversions
 		{
 			//Validation
 			//Conversion
+            //Truncation of the converted amount
 			//Change the original measurement
 		}
 
