@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ScratchConversions.UnitConversions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,7 @@ namespace ScratchConversions
     {
         public static void Main(string[] args)
         {
+			UnitConversion.LiquidConversionTest();
         }
     }
 }

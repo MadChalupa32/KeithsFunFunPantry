@@ -85,35 +85,35 @@ namespace AppUnitTests
             }
         }
 
-        [TestMethod]
-        public void IngredientNameSearchTest()
-        {
-            Pantry.Ingredients = new ObservableCollection<Ingredient>()
-            {
-                new Ingredient("Milk", new Measurement(1f, Unit.Gallon)),
-                new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
-                new Ingredient("Sugar", new Measurement(1f, Unit.Pound)),
-                new Ingredient("Baking Powder", new Measurement(24f, Unit.Tablespoon)),
-                new Ingredient("Shredded Cheese", new Measurement(12f, Unit.Cup)),
-                new Ingredient("Cheese", new Measurement(4.5f, Unit.Cup)),
-                new Ingredient("Salt", new Measurement(243.67f, Unit.Kilogram))
-            };
+		[TestMethod]
+		public void IngredientNameSearchTest()
+		{
+			Pantry.Ingredients = new ObservableCollection<Ingredient>()
+			{
+				new Ingredient("Milk", new Measurement(1f, Unit.Gallon)),
+				new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
+				new Ingredient("Sugar", new Measurement(1f, Unit.Pound)),
+				new Ingredient("Baking Powder", new Measurement(24f, Unit.Tablespoon)),
+				new Ingredient("Shredded Cheese", new Measurement(12f, Unit.Cup)),
+				new Ingredient("Cheese", new Measurement(4.5f, Unit.Cup)),
+				new Ingredient("Salt", new Measurement(243.67f, Unit.Kilogram))
+			};
 
-            string query = "cheese";
-            ObservableCollection<Ingredient> results = Pantry.IngredientNameSearch(query);
+			string query = "cheese";
+			ObservableCollection<Ingredient> results = Pantry.IngredientNameSearch(query);
 
-            ObservableCollection<Ingredient> expectedResults = new ObservableCollection<Ingredient>()
-            {
-                new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
-                new Ingredient("Shredded Cheese", new Measurement(12f, Unit.Cup)),
-                new Ingredient("Cheese", new Measurement(4.5f, Unit.Cup)),
-            };
+			ObservableCollection<Ingredient> expectedResults = new ObservableCollection<Ingredient>()
+			{
+				new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
+				new Ingredient("Shredded Cheese", new Measurement(12f, Unit.Cup)),
+				new Ingredient("Cheese", new Measurement(4.5f, Unit.Cup)),
+			};
 
-            Assert.AreEqual(expectedResults.Count, results.Count);
-            for (int i = 0; i < results.Count; i++)
-            {
-                Assert.AreEqual(expectedResults[i].ToString(), results[i].ToString());
-            }
-        }
-    }
+			Assert.AreEqual(expectedResults.Count, results.Count);
+			for (int i = 0; i < results.Count; i++)
+			{
+				Assert.AreEqual(expectedResults[i].ToString(), results[i].ToString());
+			}
+		}
+	}
 }
