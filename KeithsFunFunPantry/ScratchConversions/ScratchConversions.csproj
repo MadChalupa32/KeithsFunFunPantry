@@ -45,6 +45,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitConversions\UnitConversion.cs" />
+    <Compile Include="US to Metric\TestingMetrics.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -52,7 +53,6 @@
   <ItemGroup>
     <Folder Include="US Dry\" />
     <Folder Include="US Liquid\" />
-    <Folder Include="US to Metric\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\KeithsFunFunPantry\KeithsFunFunPantry.csproj">
