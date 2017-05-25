@@ -45,12 +45,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UnitConversions\UnitConversion.cs" />
+    <Compile Include="US Dry\DryConversions.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="US Dry\" />
     <Folder Include="US Liquid\" />
     <Folder Include="US to Metric\" />
   </ItemGroup>
