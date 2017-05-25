@@ -89,7 +89,14 @@
                  FontSize="20"
                  FontFamily="Georgia"
                  FontWeight="Bold"/>
-        <ComboBox x:Name="ComboBox_2"
+        <!--copyLabel-->
+        <Label x:Name="Label_2"
+               Grid.Row="3"
+               Grid.Column="4"
+               Grid.ColumnSpan="2"
+               Margin="5,0"/>
+        <Label x:Name="Label_3"/>
+        <!--<ComboBox x:Name="ComboBox_2"
                   Grid.Row="3"
                   Grid.Column="4"
                   Grid.ColumnSpan="2"
@@ -98,6 +105,6 @@
                   Grid.Row="5"
                   Grid.Column="4"
                   Grid.ColumnSpan="2"
-                  Margin="5,0"/>
+                  Margin="5,0"/>-->
     </Grid>
 </UserControl>

@@ -44,12 +44,6 @@ namespace KeithsFunFunPantry
         //Shows the ingredients in the pantry
         private void ShowPantry()
         {
-            //Pantry.AddNewIngredient("Brocolli", new CS.Measurement(2f, CS.Unit.Cup));
-            //Pantry.AddNewIngredient("Chicken", new CS.Measurement(16f, CS.Unit.Pound));
-            //Pantry.AddNewIngredient("Radishes", new CS.Measurement(3f, CS.Unit.Cup));
-            //Pantry.AddNewIngredient("Sugar", new CS.Measurement(4f, CS.Unit.Cup));
-            //Pantry.AddNewIngredient("Steak", new CS.Measurement(16f, CS.Unit.Pound));
-            //Pantry.AddNewIngredient("Milk", new CS.Measurement(2f, CS.Unit.Gallon));
             ListIngredients(Pantry.Ingredients);
         }
 
@@ -132,27 +126,13 @@ namespace KeithsFunFunPantry
             {
                 ComboBox_Units.Items.Add(units.LongHand);
             }
-            //ComboBox_Units.Items.Add(Unit.Teaspoon.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Tablespoon.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Cup.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Ounce.LongHand);
-            //ComboBox_Units.Items.Add(Unit.FluidOunce.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Pound.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Pint.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Quart.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Gallon.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Milliliter.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Liter.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Gram.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Kilogram.LongHand);
-            //ComboBox_Units.Items.Add(Unit.Count.LongHand);
 
 
         }
 
         private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-            StackPanel_EditPantry.Children.Clear();
+            //StackPanel_EditPantry.Children.Clear();
             string query = TextBox_IngredientSearch.Text.ToLower();
             if (!query.Equals("search ingredient"))
             {
@@ -237,7 +217,7 @@ namespace KeithsFunFunPantry
 
         public void ListIngredients(ObservableCollection<Ingredient> displayList)
         {
-            StackPanel_EditPantry.Children.Clear();
+            //StackPanel_EditPantry.Children.Clear();
 
 
             foreach (Ingredient ingredient in displayList)
@@ -245,14 +225,14 @@ namespace KeithsFunFunPantry
                 PantryEdit pvi = new PantryEdit();
                 pvi.DataContext = ingredient;
                 pvi.amountLabel.Content = ingredient.IngredientMeasurement.Amount;
-                StackPanel_EditPantry.Children.Add(pvi);
+                //StackPanel_EditPantry.Children.Add(pvi);
             }
 
             if (displayList.Count == 0)
             {
                 Label noResults = new Label();
                 noResults.Content = "No results found";
-                StackPanel_EditPantry.Children.Add(noResults);
+                //StackPanel_EditPantry.Children.Add(noResults);
             }
 
 
