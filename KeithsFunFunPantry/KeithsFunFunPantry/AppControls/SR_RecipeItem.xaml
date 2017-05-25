@@ -127,13 +127,13 @@
                        FontWeight="Bold"
                        FontSize="15"
                        VerticalAlignment="Bottom"
-                       Margin="0,0,0,-8"
-                       Panel.ZIndex="1"/>
+                       Margin="-1,0,1,59"
+                       Panel.ZIndex="1" Grid.RowSpan="2"/>
                 <Label BorderThickness="5"
                        BorderBrush="Black"
                        Grid.ColumnSpan="4"
                        Grid.RowSpan="9"
-                       Background="#A3CC72"/>
+                       Background="#A3CC72" Margin="-1,0,1,0"/>
                 <Button Content="Save"
                         Margin="5,0,5,4.5"
                         Grid.Row="8"

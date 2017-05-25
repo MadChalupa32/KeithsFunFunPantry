@@ -61,6 +61,7 @@ namespace KeithsFunFunPantry
 			{
 				RecipeViewItem rvi = new RecipeViewItem(recipe);
 				StackPanel_RecipeView.Children.Add(rvi);
+                
 			}
 
 			if (displayList.Count == 0)
@@ -95,12 +96,11 @@ namespace KeithsFunFunPantry
         {
             
             Window w = new Window();
-            
-            
-            
+            w.Height = 400;
+            w.Width = 500;
             StackPanel sp = new StackPanel();
             w.Content = sp;
-            sp.Children.Add(new AddRecipeWindow());
+            sp.Children.Add(new AddRecipeWindow(this));
             w.Show();
 
 
