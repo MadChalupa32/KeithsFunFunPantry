@@ -104,11 +104,27 @@ namespace KeithsFunFunPantry.AppControls
         }
         private void ButtonAdd_Click(object sender, EventArgs e)
         {
-
+            float addAmount;
+            float.TryParse(TextBox_Add.Text, out addAmount);
+            for(int x = 0; x < Pantry.Ingredients.Count(); x++)
+            {
+                if (Pantry.Ingredients[x].Name.ToLower() == TextBox_Ingredient.Text.ToLower())
+                {
+                    Pantry.Ingredients[x].IngredientMeasurement.Amount += addAmount;
+                }
+            }
         }
         private void ButtonSubtract_Click(object sender, EventArgs e)
         {
-
+            float subAmount;
+            float.TryParse(TextBox_Subtract.Text, out subAmount);
+            for(int x = 0; x < Pantry.Ingredients.Count(); x++)
+            {
+                if(Pantry.Ingredients[x].Name.ToLower() == TextBox_Ingredient.Text.ToLower())
+                {
+                    Pantry.Ingredients[x].IngredientMeasurement.Amount -= subAmount;
+                }
+            }
         }
     }
 
