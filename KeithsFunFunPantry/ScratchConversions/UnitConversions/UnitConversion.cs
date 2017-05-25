@@ -37,6 +37,7 @@ namespace ScratchConversions.UnitConversions
 				//}
 
 				//Conversion
+                //Truncate the Amount measurement to three places
 				//Change the original measurement
 			}
 		}
@@ -86,21 +87,21 @@ namespace ScratchConversions.UnitConversions
         public static void DryConversionTest()
         {
             Console.WriteLine("Tablespoon to Teaspoon");
-            Console.WriteLine(TablespoonToTeaspoon(12f) == 36f ? "passed" : "*failed*");
+            Console.WriteLine(TablespoonToTeaspoon(12f) == 36f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Cup to Teaspoon");
-            Console.WriteLine(CupToTeaspoon(5f) == 240f ? "passed" : "*failed*");
+            Console.WriteLine(CupToTeaspoon(5f) == 240f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Ounce to Teaspoon");
-            Console.WriteLine(OunceToTeaspoon(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine(OunceToTeaspoon(16f) == 96f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Pound to Teaspoon");
-            Console.WriteLine(PoundToTeaspoon(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine(PoundToTeaspoon(3f) == 288f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Teaspoon to Tablespoon");
-            Console.WriteLine(TeaspoonToTablespoon(45f) == 15f ? "passed" : "*failed*");
+            Console.WriteLine(TeaspoonToTablespoon(45f) == 15f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Teaspoon to Cup");
-            Console.WriteLine(TeaspoonToCup(70f) == 1.438f ? "passed" : "*failed*");
+            Console.WriteLine(TeaspoonToCup(705f) == 14.6875f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Teaspoon to Ounce");
-            Console.WriteLine(TeaspoonToOunce(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine(TeaspoonToOunce(120f) == 20f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Teaspoon to Pound");
-            Console.WriteLine(TeaspoonToPound(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine(TeaspoonToPound(330f) == 3.4375f ? "\tpassed" : "\t*failed*");
         }
         #endregion
 
@@ -149,21 +150,21 @@ namespace ScratchConversions.UnitConversions
 		public static void LiquidConversionTest()
 		{
 			Console.WriteLine("Fluid Ounces to Cups");
-			Console.WriteLine(FluidOuncesToCups(33f) == 4.125f ? "passed" : "*failed*");
+			Console.WriteLine(FluidOuncesToCups(33f) == 4.125f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Pints to Cups");
-			Console.WriteLine(PintsToCups(33f) == 66f ? "passed" : "*failed*");
+			Console.WriteLine(PintsToCups(33f) == 66f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Quarts to Cups");
-			Console.WriteLine(QuartsToCups(23f) == 92f ? "passed" : "*failed*");
+			Console.WriteLine(QuartsToCups(23f) == 92f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Gallons to Cups");
-			Console.WriteLine(GallonsToCups(13f) == 208f ? "passed" : "*failed*");
+			Console.WriteLine(GallonsToCups(13f) == 208f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Cups to Fluid Ounces");
-			Console.WriteLine(CupsToFluidOunces(13f) == 104f ? "passed" : "*failed*");
+			Console.WriteLine(CupsToFluidOunces(13f) == 104f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Cups to Pints");
-			Console.WriteLine(CupsToPints(23f) == 11.5f ? "passed" : "*failed*");
+			Console.WriteLine(CupsToPints(23f) == 11.5f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Cups to Quarts");
-			Console.WriteLine(CupsToQuarts(23f) == 5.75f ? "passed" : "*failed*");
+			Console.WriteLine(CupsToQuarts(23f) == 5.75f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Cups to Gallons");
-			Console.WriteLine(CupsToGallons(33f) == 2.0625f ? "passed" : "*failed*");
+			Console.WriteLine(CupsToGallons(33f) == 2.0625f ? "\tpassed" : "\t*failed*");
 
 		}
 		#endregion
