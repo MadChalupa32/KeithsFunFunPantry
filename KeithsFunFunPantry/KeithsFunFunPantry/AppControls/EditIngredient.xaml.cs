@@ -37,8 +37,8 @@ namespace KeithsFunFunPantry.AppControls
             foreach (Unit units in Unit.TotalUnits)
             {
                 ComboBox_1.Items.Add(units.LongHand);
-                ComboBox_2.Items.Add(units.LongHand);
-                ComboBox_3.Items.Add(units.LongHand);
+                //ComboBox_2.Items.Add(units.LongHand);
+                //ComboBox_3.Items.Add(units.LongHand);
             }
         }
 
