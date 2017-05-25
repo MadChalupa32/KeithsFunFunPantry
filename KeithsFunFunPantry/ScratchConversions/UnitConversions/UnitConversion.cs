@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ScratchConversions.UnitConversions
 {
@@ -15,29 +16,35 @@ namespace ScratchConversions.UnitConversions
 			//If the measurement is not already in the target unit
 			if(original.UnitOfMeasurement != unit)
 			{
-				//If the measurement can be translated into the target unit
-				//switch (unit)
-				//{
-				//	case Unit.Count
-				//	case Unit.Cup
-				//	case Unit.FluidOunce
-				//	case Unit.Gallon
-				//	case Unit.Gram
-				//	case Unit.Kilogram
-				//	case Unit.Liter
-				//	case Unit.Milliliter
-				//	case Unit.Ounce
-				//	case Unit.Pint
-				//	case Unit.Pound
-				//	case Unit.Quart
-				//	case Unit.Tablespoon
-				//	case Unit.Teaspoon
-				//	case Unit.TotalUnits
-				//	default
-				//}
+				float origAmt = original.Amount;
+				//If the measurement can be translated into the target 
+				if (unit == Unit.Cup)
+				{
+					switch (original.UnitOfMeasurement)
+					{
+						//Catch the returns and do something with it
+						case Unit.FluidOunce:
+							FluidOuncesToCups(origAmt);
+							break;
+						case Unit.Pint:
+							PintsToCups(origAmt);
+							break;
+						case Unit.Quart:
+							QuartsToCups(origAmt);
+							break;
+						case Unit.Gallon:
+							GallonsToCups(origAmt);
+							break;
+						case
+					}
+				}
 
 				//Conversion
 				//Change the original measurement
+			}
+			else
+			{
+				MessageBox.Show("");
 			}
 		}
 
