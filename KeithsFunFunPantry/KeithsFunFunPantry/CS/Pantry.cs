@@ -138,7 +138,8 @@ namespace KeithsFunFunPantry
 		//Executes name search and returns the results
 		public static ObservableCollection<Ingredient> IngredientNameSearch(string query)
 		{
-			ObservableCollection<Ingredient> queryResults = (ObservableCollection<Ingredient>)Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
+            ObservableCollection<Ingredient> queryResults = new ObservableCollection<Ingredient>(Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query)));
+            //ObservableCollection<Ingredient> queryResults = Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
 			return queryResults;
 		}
 

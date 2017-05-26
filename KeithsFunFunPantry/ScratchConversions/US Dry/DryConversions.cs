@@ -20,7 +20,7 @@ namespace ScratchConversions.US_Dry
      * Dry Units:
      * teaspoon
      * tablespoon       1 Tbsp = 3 tsp
-     * cup              1 c. = 16 Tbsp
+     * cup              1 c. = 16 Tbsp = 48 tsp
      * ounce            1 oz = 2 Tbsp = 6 tsp
      * pound            1 lb = 16 oz = 96 tsp
      * 

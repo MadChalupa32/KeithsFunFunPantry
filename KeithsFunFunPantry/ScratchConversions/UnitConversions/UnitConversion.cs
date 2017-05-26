@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ScratchConversions.UnitConversions
 {
@@ -11,35 +12,52 @@ namespace ScratchConversions.UnitConversions
 	{
 		public static void Convert(this Measurement original, Unit unit)
 		{
-			//Validation
-			//If the measurement is not already in the target unit
-			if(original.UnitOfMeasurement != unit)
-			{
-				//If the measurement can be translated into the target unit
-				//switch (unit)
-				//{
-				//	case Unit.Count
-				//	case Unit.Cup
-				//	case Unit.FluidOunce
-				//	case Unit.Gallon
-				//	case Unit.Gram
-				//	case Unit.Kilogram
-				//	case Unit.Liter
-				//	case Unit.Milliliter
-				//	case Unit.Ounce
-				//	case Unit.Pint
-				//	case Unit.Pound
-				//	case Unit.Quart
-				//	case Unit.Tablespoon
-				//	case Unit.Teaspoon
-				//	case Unit.TotalUnits
-				//	default
-				//}
+            //Validation
+                //Conversion
+            float convertedAmount = Validation(original, unit);
+            //Truncate the Amount measurement to three places
 
-				//Conversion
-				//Change the original measurement
-			}
-		}
+            //Change the original measurement
+            original.Amount = convertedAmount;
+            original.UnitOfMeasurement = unit;
+        }
+
+        private static float Validation(Measurement original, Unit targetUnit)
+        {
+            float convertedAmount = 0;
+
+            //If the measurement is not already in the target unit
+            if (original.UnitOfMeasurement != targetUnit)
+            {
+                /* Lists of units contained in each Conversion type
+                 * IF both the target & source unit are within the List, continue into the if statement
+                 *      then have the individual If statements for each of the conversion types
+                 */
+                List<Unit> dryUnits = new List<Unit>() { Unit.Teaspoon, Unit.Tablespoon, Unit.Cup, Unit.Ounce, Unit.Pound };
+                List<Unit> liquidUnits = new List<Unit>() { Unit.Cup, Unit.FluidOunce, Unit.Pint, Unit.Quart, Unit.Gallon };
+                List<Unit> metricUnits = new List<Unit>() { Unit.Cup, Unit.FluidOunce, Unit.Gallon, Unit.Gram, Unit.Kilogram, Unit.Liter, Unit.Milliliter, Unit.Ounce, Unit.Pint, Unit.Pound, Unit.Quart, Unit.Tablespoon, Unit.Teaspoon };
+
+                float origAmt = original.Amount;
+                //If the measurement can be translated into the target 
+                if (dryUnits.Contains(original.UnitOfMeasurement) && dryUnits.Contains(targetUnit))
+                {
+
+                } else if (liquidUnits.Contains(original.UnitOfMeasurement) && liquidUnits.Contains(targetUnit))
+                {
+
+                } else if (metricUnits.Contains(original.UnitOfMeasurement) && metricUnits.Contains(targetUnit))
+                {
+
+                }
+            }
+            else
+            //If the measurement's Unit already IS the target unit
+            {
+                MessageBox.Show("Source Unit and Target Unit are the same.");
+            }
+
+            return convertedAmount;
+        }
 
         //Private methods for each conversion
         #region Dry
@@ -86,21 +104,21 @@ namespace ScratchConversions.UnitConversions
         public static void DryConversionTest()
         {
             Console.WriteLine("Tablespoon to Teaspoon");
-            Console.WriteLine(TablespoonToTeaspoon(12f) == 36f ? "passed" : "*failed*");
+            Console.WriteLine(TablespoonToTeaspoon(12f) == 36f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Cup to Teaspoon");
-            Console.WriteLine(CupToTeaspoon(5f) == 240f ? "passed" : "*failed*");
+            Console.WriteLine(CupToTeaspoon(5f) == 240f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Ounce to Teaspoon");
-            Console.WriteLine(OunceToTeaspoon(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine(OunceToTeaspoon(16f) == 96f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Pound to Teaspoon");
-            Console.WriteLine(PoundToTeaspoon(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine(PoundToTeaspoon(3f) == 288f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Teaspoon to Tablespoon");
-            Console.WriteLine(TeaspoonToTablespoon(45f) == 15f ? "passed" : "*failed*");
+            Console.WriteLine(TeaspoonToTablespoon(45f) == 15f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Teaspoon to Cup");
-            Console.WriteLine(TeaspoonToCup(70f) == 1.438f ? "passed" : "*failed*");
+            Console.WriteLine(TeaspoonToCup(705f) == 14.6875f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Teaspoon to Ounce");
-            Console.WriteLine(TeaspoonToOunce(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine(TeaspoonToOunce(120f) == 20f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Teaspoon to Pound");
-            Console.WriteLine(TeaspoonToPound(33f) == 4.125f ? "passed" : "*failed*");
+            Console.WriteLine(TeaspoonToPound(330f) == 3.4375f ? "\tpassed" : "\t*failed*");
         }
         #endregion
 
@@ -149,30 +167,163 @@ namespace ScratchConversions.UnitConversions
 		public static void LiquidConversionTest()
 		{
 			Console.WriteLine("Fluid Ounces to Cups");
-			Console.WriteLine(FluidOuncesToCups(33f) == 4.125f ? "passed" : "*failed*");
+			Console.WriteLine(FluidOuncesToCups(33f) == 4.125f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Pints to Cups");
-			Console.WriteLine(PintsToCups(33f) == 66f ? "passed" : "*failed*");
+			Console.WriteLine(PintsToCups(33f) == 66f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Quarts to Cups");
-			Console.WriteLine(QuartsToCups(23f) == 92f ? "passed" : "*failed*");
+			Console.WriteLine(QuartsToCups(23f) == 92f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Gallons to Cups");
-			Console.WriteLine(GallonsToCups(13f) == 208f ? "passed" : "*failed*");
+			Console.WriteLine(GallonsToCups(13f) == 208f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Cups to Fluid Ounces");
-			Console.WriteLine(CupsToFluidOunces(13f) == 104f ? "passed" : "*failed*");
+			Console.WriteLine(CupsToFluidOunces(13f) == 104f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Cups to Pints");
-			Console.WriteLine(CupsToPints(23f) == 11.5f ? "passed" : "*failed*");
+			Console.WriteLine(CupsToPints(23f) == 11.5f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Cups to Quarts");
-			Console.WriteLine(CupsToQuarts(23f) == 5.75f ? "passed" : "*failed*");
+			Console.WriteLine(CupsToQuarts(23f) == 5.75f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Cups to Gallons");
-			Console.WriteLine(CupsToGallons(33f) == 2.0625f ? "passed" : "*failed*");
+			Console.WriteLine(CupsToGallons(33f) == 2.0625f ? "\tpassed" : "\t*failed*");
 
 		}
 		#endregion
 
 		#region Metric
-        public static void MetricConversionTest()
+        
+        private static float TeaspoonToMilliliter(float amount)
         {
-
+            return (float)(amount *5);
         }
-		#endregion
-	}
+
+        private static float TableSpoonToMilliliter(float amount)
+        {
+            return (float)(amount * 15);
+        }
+        private static float FluidOunceToMilliliter(float amount)
+        {
+            return (float)(amount * 30);
+        }
+        private static float CupToMilliliter(float amount)
+        {
+            return (float)(amount * 240);
+        }
+        private static float PintToMilliliter(float amount)
+        {
+            return (float)(amount * 470);
+        }
+
+        private static float QuartToLiter(float amount)
+        {
+            return (float)(amount * .95);
+        }
+        private static float GallonToLiter(float amount)
+        {
+            return (float)(amount * 3.8);
+        }
+        
+        private static float OunceToGrams(float amount)
+        {
+            return (float)(amount * 28);
+        }
+        private static float PoundToGrams(float amount)
+        {
+            return (float)(amount * 454);
+        }
+        private static float MilliliterToTeaspoon(float amount)
+        {
+            return (float)(amount * .2);
+        }
+        private static float MilliliterToTablespoon(float amount)
+        {
+            return (float)(amount * .067);
+        }
+        private static float MilliliterToOunce(float amount)
+        {
+            return (float)(amount * .033);
+        }
+        private static float MilliliterToCup(float amount)
+        {
+            return (float)(amount * .004);
+        }
+        private static float LiterToOunce(float amount)
+        {
+            return (float)(amount * 34);
+        }
+        private static float LiterToCup(float amount)
+        {
+            return (float)(amount * 4.2);
+        }
+        private static float LiterToPint(float amount)
+        {
+            return (float)(amount * 2.1);
+        }
+        private static float LiterToQuarts(float amount)
+        {
+            return (float)(amount * 1.06);
+        }
+        private static float LiterToGallon(float amount)
+        {
+            return (float)(amount * .26);
+        }
+        private static float GramToOunce(float amount)
+        {
+            return (float)(amount * .035);
+        }
+        private static float GramToPound(float amount)
+        {
+            return (float)(amount * .002);
+        }
+        private static float KilogramToOunce(float amount)
+        {
+            return (float)(amount * 35);
+        }
+        private static float KilogramToPounds(float amount)
+        {
+            return (float)(amount * 2.205);
+        }
+         public static void MetricConversionTest()
+        {
+            Console.WriteLine("Teaspoon to Milliliter");
+            Console.WriteLine(TeaspoonToMilliliter(5f) == 25f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Tablespoon to Milliliter");
+            Console.WriteLine(TableSpoonToMilliliter(3f) == 45f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Fluid Ounce to Milliter");
+            Console.WriteLine(FluidOunceToMilliliter(2f) == 60f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Cups to Milliliter");
+            Console.WriteLine(CupToMilliliter(1f) == 240f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Pints to Milliliter");
+            Console.WriteLine(PintToMilliliter(4f) == 1880? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Quarts to Liters");
+            Console.WriteLine(QuartToLiter(70f) == 66.5f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Gallon to Liters");
+            Console.WriteLine(GallonToLiter(6f) == 22.8f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Ounce to Grams");
+            Console.WriteLine(OunceToGrams(2f) == 56f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Pound to Grams");
+            Console.WriteLine(PoundToGrams(5f) == 2270f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Milliliter to Teaspoon");
+            Console.WriteLine(MilliliterToTeaspoon(2f) == .4f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Milliliter to Tablespoon");
+            Console.WriteLine(MilliliterToTablespoon(2f) == .134f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Milliliter to Ounce ");
+            Console.WriteLine(MilliliterToOunce(2f) == .066f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Milliliter to Cup");
+            Console.WriteLine(MilliliterToCup(4f) == .016f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Liters to Ounce");
+            Console.WriteLine(LiterToOunce(10f) == 340f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Liter to Cup");
+            Console.WriteLine(LiterToCup(6f) == 25.2f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Liter to Gallons");
+            Console.WriteLine(LiterToGallon(2f) == .52f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Liter to Quarts");
+            Console.WriteLine(LiterToQuarts(3f) == 3.18f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Gram to Ounce");
+            Console.WriteLine(GramToOunce(9f) == .315f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Gram to Pounds");
+            Console.WriteLine(GramToPound(10f) == .02f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Kilogram to Ounce");
+            Console.WriteLine(KilogramToOunce(6f) == 210f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Kilogram to Pounds");
+            Console.WriteLine(KilogramToPounds(9f) == 19.845f ? "\tpassed" : "\t*failed*");
+         }
+    }
 }
+        #endregion

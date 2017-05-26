@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -31,7 +32,7 @@ namespace KeithsFunFunPantry.AppControls
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            List<Ingredient> selectedIngredients = new List<Ingredient>();
+            ObservableCollection<Ingredient> selectedIngredients = new ObservableCollection<Ingredient>();
             foreach (Object obj in IngredientDisplayer.SelectedItems)
             {
                 selectedIngredients.Add((Ingredient)obj);

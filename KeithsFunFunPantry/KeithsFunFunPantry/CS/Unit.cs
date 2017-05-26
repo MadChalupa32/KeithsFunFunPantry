@@ -36,8 +36,8 @@ namespace KeithsFunFunPantry.CS
 
         public static Unit FluidOunce = new Unit()
         {
-            LongHand = "Fluid Ounce",
-            ShortHand = "fl oz"
+            LongHand = "Fluid_Ounce",
+            ShortHand = "fl_oz"
         };
 
         public static Unit Pound = new Unit()

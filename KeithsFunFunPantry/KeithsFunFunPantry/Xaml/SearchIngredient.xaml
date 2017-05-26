@@ -83,7 +83,27 @@
                FontWeight="Bold"
                VerticalAlignment="Top"
                HorizontalAlignment="Center" Height="32" Margin="128.8,30,128.4,0" Width="90"/>
-        <ScrollViewer Background="#E5C698"
+        <ListBox x:Name="ListBox_SearchIngredient"
+                 Background="#E5C698"
+                 Grid.Row="3"
+                 Grid.RowSpan="8"
+                 Grid.Column="3"
+                 Grid.ColumnSpan="3"
+                 HorizontalContentAlignment="Stretch"
+                 Margin="20">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border BorderBrush="{Binding Color}"
+                            BorderThickness="2"
+                            CornerRadius="15">
+                        <StackPanel>
+                            <AC:SearchIngredientItem/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+        <!--<ScrollViewer Background="#E5C698"
                       Opacity=".7"
                       Grid.Row="3"
                       Grid.RowSpan="8"
@@ -93,12 +113,7 @@
                       VerticalScrollBarVisibility="Auto">
             <StackPanel x:Name="StackPanel_SearchIngredients"
                         Margin="20">
-                <AC:SearchIngredientItem/>
-                <AC:SearchIngredientItem/>
-                <AC:SearchIngredientItem/>
-                <AC:SearchIngredientItem/>
-                <AC:SearchIngredientItem/>
             </StackPanel>
-        </ScrollViewer>
+        </ScrollViewer>-->
     </Grid>
 </Page>
