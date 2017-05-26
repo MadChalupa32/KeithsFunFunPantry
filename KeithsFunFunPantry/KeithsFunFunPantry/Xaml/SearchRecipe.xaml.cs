@@ -27,9 +27,9 @@ namespace KeithsFunFunPantry
             TextBoxOptions();
 
 			RecipeBook book = RecipeBook.Instance;
-			ListRecipes(book.Recipes);
+			//ListRecipes(book.Recipes);
 
-            ListBox_EditRecipe.ItemsSource = Recipe.ingredientList;
+            ListBox_EditRecipe.ItemsSource = RecipeBook.Instance.Recipes;
         }
 
         private string searchBar = "Search by Recipe";

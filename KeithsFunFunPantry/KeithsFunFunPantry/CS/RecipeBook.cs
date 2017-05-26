@@ -79,8 +79,8 @@ namespace KeithsFunFunPantry
         private static void GenRecipes()
         {
             CS.Measurement measure = new CS.Measurement(5, CS.Unit.Count);
-            ObservableCollection<Ingredient> testList = new ObservableCollection<Ingredient> { new Ingredient("fish", measure), new Ingredient("fish", measure) };
-            ObservableCollection<Ingredient> testList2 = new ObservableCollection<Ingredient> { new Ingredient("notfish", measure), new Ingredient("nptfish", measure) };
+            List<Ingredient> testList = new List<Ingredient> { new Ingredient("fish", measure), new Ingredient("fish", measure) };
+            List<Ingredient> testList2 = new List<Ingredient> { new Ingredient("notfish", measure), new Ingredient("nptfish", measure) };
             Recipe r1 = new Recipe(testList, "fish");
             Recipe r2 = new Recipe(testList2, "notfish");
             Instance.Recipes.Add(r1);

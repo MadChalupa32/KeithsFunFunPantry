@@ -32,7 +32,7 @@ namespace KeithsFunFunPantry.AppControls
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            ObservableCollection<Ingredient> selectedIngredients = new ObservableCollection<Ingredient>();
+            List<Ingredient> selectedIngredients = new List<Ingredient>();
             foreach (Object obj in IngredientDisplayer.SelectedItems)
             {
                 selectedIngredients.Add((Ingredient)obj);

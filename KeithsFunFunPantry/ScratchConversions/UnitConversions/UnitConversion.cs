@@ -23,19 +23,19 @@ namespace ScratchConversions.UnitConversions
 					switch (original.UnitOfMeasurement)
 					{
 						//Catch the returns and do something with it
-						case Unit.FluidOunce:
-							FluidOuncesToCups(origAmt);
-							break;
-						case Unit.Pint:
-							PintsToCups(origAmt);
-							break;
-						case Unit.Quart:
-							QuartsToCups(origAmt);
-							break;
-						case Unit.Gallon:
-							GallonsToCups(origAmt);
-							break;
-						case
+						//case Unit.FluidOunce:
+						//	FluidOuncesToCups(origAmt);
+						//	break;
+						//case Unit.Pint:
+						//	PintsToCups(origAmt);
+						//	break;
+						//case Unit.Quart:
+						//	QuartsToCups(origAmt);
+						//	break;
+						//case Unit.Gallon:
+						//	GallonsToCups(origAmt);
+						//	break;
+						//case
 					}
 				}
 
