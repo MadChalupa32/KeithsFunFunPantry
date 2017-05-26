@@ -24,7 +24,11 @@ namespace ScratchConversions
             Console.WriteLine();
 
             Console.WriteLine("\tMetric Conversion Tests");
+            
+            Console.WriteLine("Metric Conversion Tests");
             UnitConversion.MetricConversionTest();
+
+            Console.ReadLine();
         }
     }
 }

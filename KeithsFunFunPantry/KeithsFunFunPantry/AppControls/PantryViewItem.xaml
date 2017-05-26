@@ -25,7 +25,7 @@
                 BorderThickness="5"
                 Margin="5"
                 Grid.Column="1">
-            <Grid Margin="5">
+            <Grid Margin="5.2,0,4.8,5" Height="121" VerticalAlignment="Bottom">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition/>
@@ -36,7 +36,7 @@
                        FontFamily="Georgia"
                        FontSize="30"
                        FontWeight="Bold"
-                       Margin="120,0,0,0"/>
+                       Margin="220,0,0,0"/>
                 <Label Content="{Binding Path=IngredientMeasurement}"
                        Grid.Column="1"
                        VerticalAlignment="Center"
@@ -44,7 +44,7 @@
                        FontFamily="Georgia"
                        FontSize="30"
                        FontWeight="Bold"
-                       Margin="20,0,0,0"/>
+                       Margin="60,0,0,0"/>
             </Grid>
         </Border>
     </Grid>
