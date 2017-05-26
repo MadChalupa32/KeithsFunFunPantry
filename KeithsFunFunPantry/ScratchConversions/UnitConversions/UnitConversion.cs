@@ -119,14 +119,14 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine(TeaspoonToOunce(120f) == 20f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Teaspoon to Pound");
 			Console.WriteLine(TeaspoonToPound(330f) == 3.4375f ? "\tpassed" : "\t*failed*");
-            //Console.WriteLine("Tablespoon to Cup");
-            //Console.WriteLine(TablespoonToCup(50f) == 3.125f ? "\tpassed" : "\t*failed*");
-            //Console.WriteLine("Tablespoon To Ounce")
-            //Console.WriteLine(TablespoonToOunce(1f) == 0.5f ? "\tpassed" : "\t*failed*");
-            //Console.WriteLine("Tablespoon to Pound")
-            //Console.WriteLine(TablespoonToPound(20f) == .625f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Tablespoon to Cup");
+            Console.WriteLine(TablespoonToCup(50f) == 3.125f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Tablespoon To Ounce")
+            Console.WriteLine(TablespoonToOunce(1f) == 0.5f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Tablespoon to Pound")
+            Console.WriteLine(TablespoonToPound(20f) == .625f ? "\tpassed" : "\t*failed*");
             //Console.WriteLine("Ounce to Tablespoon)"
-		}
+        }
 		#endregion
 
 		#region Liquid
@@ -401,127 +401,6 @@ namespace ScratchConversions.UnitConversions
 		#endregion
 
 
-		public static void ValidateStuffs(this Measurement originalMeasure, Unit targetUnit)
-		{
-			Dictionary<Unit, Dictionary<Unit, Func<float, float>>> conversions = new Dictionary<Unit, Dictionary<Unit, Func<float, float>>>()
-			{
-				{
-					//Target unit is Cup
-					Unit.Cup,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						//Original measure is in Fluid Ounces
-						{ Unit.FluidOunce, FluidOuncesToCups },
-						//Original measure is in Pints
-						{ Unit.Pint, PintsToCups },
-						//Original measure is in Quarts
-						{ Unit.Quart, QuartsToCups },
-						//Original measure is in Gallons
-						{ Unit.Gallon, GallonsToCups },
-						//Original measure is in Teaspoon
-						{ Unit.Teaspoon, TeaspoonToCup }
-					}
-				},
-				{
-					//Target unit is Fluid Ounce
-					Unit.FluidOunce,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit.Cup, CupsToFluidOunces },
-						{ Unit.Pint, (origAmt)=>{ float retVal = CupsToFluidOunces(PintsToCups(origAmt)); return retVal; } }
-					}
-				},
-				{
-					//Target unit is Gallon
-					Unit.Gallon,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Gram
-					Unit.Gram,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Kilogram
-					Unit.Kilogram,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Liter
-					Unit.Liter,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Milliliter
-					Unit.Milliliter,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Ounce
-					Unit.Ounce,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Pint
-					Unit.Pint,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Pound
-					Unit.Pound,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Quart
-					Unit.Quart,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Tablespoon
-					Unit.Tablespoon,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Teaspoon
-					Unit.Teaspoon,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				}
-			};
-			
-		}
 		//public static void ValidateStuffs(this Measurement originalMeasure, Unit targetUnit)
 		//{
 		//	Dictionary<Unit, Dictionary<Unit, Func<float, float>>> conversions = new Dictionary<Unit, Dictionary<Unit, Func<float, float>>>()
@@ -548,7 +427,8 @@ namespace ScratchConversions.UnitConversions
 		//			Unit.FluidOunce,
 		//			new Dictionary<Unit, Func<float,float>>()
 		//			{
-		//				{ Unit, /*method*/ }
+		//				{ Unit.Cup, CupsToFluidOunces },
+		//				{ Unit.Pint, (origAmt)=>{ float retVal = CupsToFluidOunces(PintsToCups(origAmt)); return retVal; } }
 		//			}
 		//		},
 		//		{
@@ -640,7 +520,8 @@ namespace ScratchConversions.UnitConversions
 		//			}
 		//		}
 		//	};
-
-		//}
+			
+		}
+	
 	}
 }
