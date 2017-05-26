@@ -12,42 +12,52 @@ namespace ScratchConversions.UnitConversions
 	{
 		public static void Convert(this Measurement original, Unit unit)
 		{
-			//Validation
-			//If the measurement is not already in the target unit
-			if(original.UnitOfMeasurement != unit)
-			{
-				float origAmt = original.Amount;
-				//If the measurement can be translated into the target 
-				if (unit == Unit.Cup)
-				{
-					switch (original.UnitOfMeasurement)
-					{
-						//Catch the returns and do something with it
-						case Unit.FluidOunce:
-							FluidOuncesToCups(origAmt);
-							break;
-						case Unit.Pint:
-							PintsToCups(origAmt);
-							break;
-						case Unit.Quart:
-							QuartsToCups(origAmt);
-							break;
-						case Unit.Gallon:
-							GallonsToCups(origAmt);
-							break;
-						case
-					}
-				}
+            //Validation
+                //Conversion
+            float convertedAmount = Validation(original, unit);
+            //Truncate the Amount measurement to three places
 
-				//Conversion
-                //Truncate the Amount measurement to three places
-				//Change the original measurement
-			}
-			else
-			{
-				MessageBox.Show("");
-			}
-		}
+            //Change the original measurement
+            original.Amount = convertedAmount;
+            original.UnitOfMeasurement = unit;
+        }
+
+        private static float Validation(Measurement original, Unit targetUnit)
+        {
+            float convertedAmount = 0;
+
+            //If the measurement is not already in the target unit
+            if (original.UnitOfMeasurement != targetUnit)
+            {
+                /* Lists of units contained in each Conversion type
+                 * IF both the target & source unit are within the List, continue into the if statement
+                 *      then have the individual If statements for each of the conversion types
+                 */
+                List<Unit> dryUnits = new List<Unit>() { Unit.Teaspoon, Unit.Tablespoon, Unit.Cup, Unit.Ounce, Unit.Pound };
+                List<Unit> liquidUnits = new List<Unit>() { Unit.Cup, Unit.FluidOunce, Unit.Pint, Unit.Quart, Unit.Gallon };
+                List<Unit> metricUnits = new List<Unit>() { Unit.Cup, Unit.FluidOunce, Unit.Gallon, Unit.Gram, Unit.Kilogram, Unit.Liter, Unit.Milliliter, Unit.Ounce, Unit.Pint, Unit.Pound, Unit.Quart, Unit.Tablespoon, Unit.Teaspoon };
+
+                float origAmt = original.Amount;
+                //If the measurement can be translated into the target 
+                if (dryUnits.Contains(original.UnitOfMeasurement) && dryUnits.Contains(targetUnit))
+                {
+
+                } else if (liquidUnits.Contains(original.UnitOfMeasurement) && liquidUnits.Contains(targetUnit))
+                {
+
+                } else if (metricUnits.Contains(original.UnitOfMeasurement) && metricUnits.Contains(targetUnit))
+                {
+
+                }
+            }
+            else
+            //If the measurement's Unit already IS the target unit
+            {
+                MessageBox.Show("Source Unit and Target Unit are the same.");
+            }
+
+            return convertedAmount;
+        }
 
         //Private methods for each conversion
         #region Dry
