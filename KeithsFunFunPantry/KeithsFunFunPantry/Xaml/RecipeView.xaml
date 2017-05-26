@@ -81,26 +81,47 @@
                FontWeight="Bold"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"/>
-        <ScrollViewer Background="#E5C698"
-                      Opacity=".7"
-                      Grid.Row="4"
-                      Grid.RowSpan="7" 
-                      Grid.Column="3"
-                      Grid.ColumnSpan="3"
-                      Margin="20,0,20,20"
-                      VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="StackPanel_RecipeView"
-                        Margin="20">
+        
+        <ListBox x:Name="ListBox_RecipeView"
+                 Margin="20, 0, 20, 20"
+                 Background="#E5C698"
+                 Opacity=".7"
+                 Grid.Column="3"
+                 Grid.ColumnSpan="3"
+                 Grid.Row="4"
+                 Grid.RowSpan="7"
+                 HorizontalContentAlignment="Stretch">
+            
+            <ListBox.ItemTemplate>
                 
-            </StackPanel>
-        </ScrollViewer>
+                <DataTemplate>
+                    <Border BorderBrush="{Binding Color}"
+                            BorderThickness="2"
+                            CornerRadius="15">
+                        <StackPanel>
+                            <AC:RecipeViewItem KeyDown="RecipeViewItem_KeyDown"/>
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
         <Button x:Name="RecipeAddButton"
                 Click="RecipeAddButton_Click"
-                Grid.Column="6"
+                Grid.Column="5"
                 Grid.Row="0"
                 Width="140"
                 Content="Add Recipe"
-                FontSize="24"/>
+                FontSize="24"
+                Margin="10"/>
+        <Button x:Name="RecipeRemoveButton"
+                Click="RecipeRemoveButton_Click"
+                Grid.Column="4"
+                Grid.Row="0"
+                Width="180"
+                Content="Remove Recipe"
+                FontSize="24"
+                Margin="10"
+                HorizontalAlignment="Right"/>
         
     </Grid>
 </Page>

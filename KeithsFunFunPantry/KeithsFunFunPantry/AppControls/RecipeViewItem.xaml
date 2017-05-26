@@ -44,8 +44,7 @@
                        FontSize="30"
                        FontWeight="Bold"
                        VerticalAlignment="Center"
-                       HorizontalAlignment="Left"
-                       Margin="250,0,0,0"/>
+                       HorizontalAlignment="Center"/>
             </Grid>
         </Border>
     </Grid>

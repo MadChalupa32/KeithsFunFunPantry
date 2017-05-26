@@ -18,10 +18,10 @@ namespace KeithsFunFunPantry.AppControls
     /// <summary>
     /// Interaction logic for AddRecipeWindow.xaml
     /// </summary>
-    public partial class AddRecipeWindow : UserControl
+    public partial class ViewAndEditRecipe : UserControl
     {
         RecipeView rv;
-        public AddRecipeWindow(RecipeView rv)
+        public ViewAndEditRecipe(RecipeView rv)
         {
             InitializeComponent();
             IngredientDisplayer.ItemsSource = Pantry.Ingredients;
@@ -36,7 +36,7 @@ namespace KeithsFunFunPantry.AppControls
             {
                 selectedIngredients.Add((Ingredient)obj);
             }
-            Recipe r = new Recipe(selectedIngredients,TitleEntryTB.Text,DirectionsEntryTB.Text,NotesEntryTB.Text);
+            Recipe r = new Recipe(selectedIngredients, TitleEntryTB.Text, DirectionsEntryTB.Text, NotesEntryTB.Text);
             RecipeBook book = RecipeBook.Instance;
             book.Recipes.Add(r);
             rv.ListBox_RecipeView.ItemsSource = null;
@@ -103,7 +103,7 @@ namespace KeithsFunFunPantry.AppControls
             if (String.IsNullOrWhiteSpace(NotesEntryTB.Text))
             {
                 NotesEntryTB.Text = NotesDefault;
-                
+
             }
         }
 

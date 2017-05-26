@@ -59,7 +59,7 @@ namespace KeithsFunFunPantry
 
 			foreach (Recipe recipe in displayList)
 			{
-				RecipeViewItem rvi = new RecipeViewItem(recipe);
+				RecipeViewItem rvi = new RecipeViewItem();
 				RecipeList.Children.Add(rvi);
 			}
 

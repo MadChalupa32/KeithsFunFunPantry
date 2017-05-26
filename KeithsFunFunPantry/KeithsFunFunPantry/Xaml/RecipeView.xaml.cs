@@ -22,12 +22,12 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class RecipeView : Page
     {
+        private RecipeBook book = RecipeBook.Instance;
         public RecipeView()
         {
             InitializeComponent();
             TextBoxOptions();
-            RecipeBook book = RecipeBook.Instance;
-			ListRecipes(book.Recipes);
+            ListBox_RecipeView.ItemsSource = book.Recipes;
         }
 
         private string searchBar = "Search Recipes";
@@ -52,26 +52,6 @@ namespace KeithsFunFunPantry
             }
         }
 
-		public void ListRecipes(List<Recipe> displayList)
-		{
-			StackPanel_RecipeView.Children.Clear();
-
-
-			foreach (Recipe recipe in displayList)
-			{
-				RecipeViewItem rvi = new RecipeViewItem(recipe);
-				StackPanel_RecipeView.Children.Add(rvi);
-                
-			}
-
-			if (displayList.Count == 0)
-			{
-				Label noResults = new Label();
-				noResults.Content = "No results found";
-				StackPanel_RecipeView.Children.Add(noResults);
-			}
-
-		}
 
 		private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
@@ -81,14 +61,16 @@ namespace KeithsFunFunPantry
 
 			RecipeBook book = RecipeBook.Instance;
 
-			StackPanel_RecipeView.Children.Clear();
+			
 			if (!query.Equals("search recipes"))
 			{
-				ListRecipes(book.RecipeSearchController(query));
-			}
+				
+                ListBox_RecipeView.ItemsSource = book.RecipeSearchController(query);
+
+            }
 			else
 			{
-				ListRecipes(book.Recipes);
+                ListBox_RecipeView.ItemsSource = book.Recipes;
 			}
 		}
 
@@ -107,5 +89,33 @@ namespace KeithsFunFunPantry
             //StackPanel_RecipeView.Children.Add(p);
 
         }
+
+        private void RecipeRemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            book.Recipes.Remove((Recipe)ListBox_RecipeView.SelectedItem);
+            ListBox_RecipeView.ItemsSource = null;
+            ListBox_RecipeView.ItemsSource = book.Recipes;
+        }
+
+
+        private void RecipeViewItem_KeyDown(object sender, KeyEventArgs e)
+        {
+
+
+
+            MessageBox.Show(e.Key.ToString());
+            if(e.Key == Key.Enter)
+            {
+                Window w = new Window();
+                w.Height = 400;
+                w.Width = 500;
+                StackPanel sp = new StackPanel();
+                w.Content = sp;
+                sp.Children.Add(new ViewAndEditRecipe(this));
+                w.Show();
+            }
+        }
+
+        
     }
 }

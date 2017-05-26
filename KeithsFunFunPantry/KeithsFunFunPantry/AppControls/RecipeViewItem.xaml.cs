@@ -20,10 +20,9 @@ namespace KeithsFunFunPantry.AppControls
     /// </summary>
     public partial class RecipeViewItem : UserControl
     {
-        public RecipeViewItem(Recipe r)
+        public RecipeViewItem()
         {
             InitializeComponent();
-            DataContext = r;
         }
     }
 }
