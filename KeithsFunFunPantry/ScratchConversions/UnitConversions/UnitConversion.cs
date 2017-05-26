@@ -128,41 +128,108 @@ namespace ScratchConversions.UnitConversions
 			float cupAmt = fluidOunceAmt / 8;
 			return cupAmt;
 		}
-		private static float PintsToCups(float pintAmt)
-		{
-			float cupAmt = pintAmt * 2;
-			return cupAmt;
-		}
-		private static float QuartsToCups(float quartAmt)
-		{
-			float cupAmt = quartAmt * 4;
-			return cupAmt;
-		}
-		private static float GallonsToCups(float gallonAmt)
-		{
-			float cupAmt = gallonAmt * 16;
-			return cupAmt;
-		}
 		private static float CupsToFluidOunces(float cupAmt)
 		{
 			float fluidOunceAmt = cupAmt * 8;
 			return fluidOunceAmt;
+		}
+		private static float FluidOuncesToPints(float fluidOunceAmt)
+		{
+			float pintAmt = CupsToPints(FluidOuncesToCups(fluidOunceAmt));
+			return pintAmt;
+		}
+		private static float FluidOuncesToQuarts(float fluidOunceAmt)
+		{
+			float quartAmt = CupsToFluidOunces(QuartsToCups(fluidOunceAmt));
+			return quartAmt;
+		}
+		private static float FluidOuncesToGallons(float fluidOunceAmt)
+		{
+			float gallonAmt = CupsToFluidOunces(GallonsToCups(fluidOunceAmt));
+			return gallonAmt;
+		}
+
+
+		private static float PintsToFluidOunces(float pintAmt)
+		{
+			float fluidOunceAmt = CupsToFluidOunces(PintsToCups(pintAmt));
+			return fluidOunceAmt;
+		}
+		private static float PintsToCups(float pintAmt)
+		{
+			float cupAmt = pintAmt * 2;
+			return cupAmt;
 		}
 		private static float CupsToPints(float cupAmt)
 		{
 			float pintAmt = cupAmt / 2;
 			return pintAmt;
 		}
+		private static float PintsToQuarts(float pintAmt)
+		{
+			float quartAmt = CupsToQuarts(PintsToCups(pintAmt));
+			return quartAmt;
+		}
+		private static float PintsToGallons(float pintAmt)
+		{
+			float gallonAmt = CupsToGallons(PintsToCups(pintAmt));
+			return gallonAmt;
+		}
+
+
+		private static float QuartsToFluidOunces(float quartAmt)
+		{
+			float fluidOunceAmt = CupsToFluidOunces(QuartsToCups(quartAmt));
+			return fluidOunceAmt;
+		}
+		private static float QuartsToCups(float quartAmt)
+		{
+			float cupAmt = quartAmt * 4;
+			return cupAmt;
+		}
 		private static float CupsToQuarts(float cupAmt)
 		{
 			float quartAmt = cupAmt / 4;
 			return quartAmt;
+		}
+		private static float QuartsToPints(float quartAmt)
+		{
+			float pintAmt = CupsToPints(QuartsToCups(quartAmt));
+			return pintAmt;
+		}
+		private static float QuartsToGallons(float quartAmt)
+		{
+			float gallonAmt = CupsToGallons(QuartsToCups(quartAmt));
+			return gallonAmt;
+		}
+
+
+		private static float GallonsToFluidOunces(float gallonAmt)
+		{
+			float fluidOunceAmt = CupsToFluidOunces(GallonsToCups(gallonAmt));
+			return fluidOunceAmt;
+		}
+		private static float GallonsToCups(float gallonAmt)
+		{
+			float cupAmt = gallonAmt * 16;
+			return cupAmt;
 		}
 		private static float CupsToGallons(float cupAmt)
 		{
 			float gallonAmt = cupAmt / 16;
 			return gallonAmt;
 		}
+		private static float GallonsToPints(float gallonAmt)
+		{
+			float pintAmt = CupsToPints(GallonsToCups(gallonAmt));
+			return pintAmt;
+		}
+		private static float GallonsToQuarts(float gallonAmt)
+		{
+			float quartAmt = CupsToQuarts(GallonsToCups(gallonAmt));
+			return quartAmt;
+		}
+		
 
 		public static void LiquidConversionTest()
 		{
@@ -353,7 +420,8 @@ namespace ScratchConversions.UnitConversions
 					Unit.FluidOunce,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit, /*method*/ }
+						{ Unit.Cup, CupsToFluidOunces },
+						{ Unit.Pint, (origAmt)=>{ float retVal = CupsToFluidOunces(PintsToCups(origAmt)); return retVal; } }
 					}
 				},
 				{
@@ -445,7 +513,7 @@ namespace ScratchConversions.UnitConversions
 					}
 				}
 			};
-
+			
 		}
 	}
 }

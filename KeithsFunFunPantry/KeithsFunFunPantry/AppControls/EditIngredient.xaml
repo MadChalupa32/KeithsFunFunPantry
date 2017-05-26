@@ -34,7 +34,7 @@
                  VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Left"
                  Margin="5,0"/>
-        <TextBox Text="999"
+        <TextBox 
                  IsReadOnly="true"
                  Grid.Row="1"
                  Grid.Column="3"
