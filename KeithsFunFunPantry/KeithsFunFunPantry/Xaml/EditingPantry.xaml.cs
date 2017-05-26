@@ -230,8 +230,14 @@ namespace KeithsFunFunPantry
 
         private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            string message = ListBox_EditPantry.SelectedItem.ToString();
-            MessageBox.Show(message);
+            
+            MyPopup.IsOpen = true;
+
+        }
+
+        private void HidePopUp_Click(object sender, RoutedEventArgs e)
+        {
+            MyPopup.IsOpen = false;
         }
     }
 }
