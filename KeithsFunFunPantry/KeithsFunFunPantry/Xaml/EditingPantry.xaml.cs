@@ -228,16 +228,16 @@ namespace KeithsFunFunPantry
             MessageBox.Show("Saves Current Pantry");
         }
 
-        private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
+        //private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        //{
             
-            MyPopup.IsOpen = true;
+        //    MyPopup.IsOpen = true;
 
-        }
+        //}
 
-        private void HidePopUp_Click(object sender, RoutedEventArgs e)
-        {
-            MyPopup.IsOpen = false;
-        }
+        //private void HidePopUp_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MyPopup.IsOpen = false;
+        //}
     }
 }

@@ -104,7 +104,7 @@ namespace KeithsFunFunPantry
 
 
             MessageBox.Show(e.Key.ToString());
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
                 Window w = new Window();
                 w.Height = 400;
@@ -115,7 +115,19 @@ namespace KeithsFunFunPantry
                 w.Show();
             }
         }
+        private void ListBox_RecipeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
 
-        
+            MyPopup.IsOpen = true;
+
+        }
+
+        private void HidePopUp_Click(object sender, RoutedEventArgs e)
+        {
+            MyPopup.IsOpen = false;
+        }
+
+
+
     }
 }

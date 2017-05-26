@@ -90,7 +90,8 @@
                  Grid.ColumnSpan="3"
                  Grid.Row="4"
                  Grid.RowSpan="7"
-                 HorizontalContentAlignment="Stretch">
+                 HorizontalContentAlignment="Stretch"
+                 MouseDoubleClick="ListBox_RecipeView_MouseDoubleClick">
             
             <ListBox.ItemTemplate>
                 
@@ -122,6 +123,110 @@
                 FontSize="24"
                 Margin="10"
                 HorizontalAlignment="Right"/>
-        
+        <Popup Name="MyPopup"
+               Placement="Mouse"
+               HorizontalOffset="300"
+               VerticalOffset="-100"
+               AllowsTransparency="False">
+            <Grid Width="550" Height="550">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="32"/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition Height="50"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <Label x:Name="RecipeName"
+                       Background="#E5C698"
+                       Content="{Binding ElementName=RecipeName_L, Path=Content}"
+                       Grid.ColumnSpan="4"
+                       VerticalAlignment="Top"
+                       FontSize="15"
+                       FontWeight="Bold"
+                       Panel.ZIndex="1"
+                       Margin="5,5,4.5,0"
+                       HorizontalContentAlignment="Center"/>
+                <TextBlock x:Name="RecipeIngredients"
+                           Margin="10,0,10,14"
+                           TextWrapping="Wrap"
+                           MaxHeight="187"
+                           Text="Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown. Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown.Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining "
+                           Grid.Row="1"
+                           Grid.ColumnSpan="4"
+                           Panel.ZIndex="1" 
+                           FontFamily="Georgia"
+                           FontSize="15"
+                           Grid.RowSpan="3"/>
+                <TextBlock x:Name="RecipeInstructions"
+                       Text="1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown. Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown.Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining"
+                       Panel.ZIndex="1"
+                       TextWrapping="Wrap"
+                       Grid.Row="4"
+                       MaxHeight="180"
+                       Grid.RowSpan="3"
+                       Grid.ColumnSpan="4"
+                       FontFamily="Georgia"
+                       FontSize="15"
+                       Margin="10,0,10,20"/>
+                <Rectangle Fill="Black" 
+                           Panel.ZIndex="1" 
+                           Grid.Row="3" 
+                           Grid.ColumnSpan="4"
+                           VerticalAlignment="Bottom"
+                           Height="4"/>
+                <Rectangle Fill="Black" 
+                           Panel.ZIndex="1" 
+                           Grid.Row="6" 
+                           Grid.ColumnSpan="4"
+                           Margin="0,0,0,-30"
+                           Height="4"/>
+                <TextBox x:Name="RecipeNotes"
+                         Background="LightGray"
+                         Grid.Row="7"
+                         Panel.ZIndex="1"
+                         Grid.ColumnSpan="4"
+                         Padding="5"
+                         Margin="5,0,4.5,0"/>
+                <Label Content="Notes:"
+                       Grid.Row="6"
+                       FontWeight="Bold"
+                       FontSize="15"
+                       VerticalAlignment="Bottom"
+                       Margin="-1,0,1,59"
+                       Panel.ZIndex="1" Grid.RowSpan="2"/>
+                <Label BorderThickness="5"
+                       BorderBrush="Black"
+                       Grid.ColumnSpan="4"
+                       Grid.RowSpan="9"
+                       Background="#A3CC72" Margin="-1,0,1,0"/>
+                <Button Content="Save"
+                        Margin="5,0,5,4.5"
+                        Grid.Row="8"
+                        Grid.ColumnSpan="4"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        Panel.ZIndex="1"
+                        Width="70"
+                        Height="40"
+                        Background="Black"
+                        Foreground="White"
+                        FontSize="24"
+                        FontFamily="Georgia"
+                        FontWeight="Bold"
+                        Click="HidePopUp_Click"/>
+                <Label/>
+            </Grid>
+        </Popup>
+
     </Grid>
 </Page>
