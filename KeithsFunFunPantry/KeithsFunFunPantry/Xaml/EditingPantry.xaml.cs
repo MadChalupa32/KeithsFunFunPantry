@@ -220,7 +220,6 @@ namespace KeithsFunFunPantry
             //}
         }
 
-
         //Saves the Current pantry
         private void SavePantry_Click(object sender, RoutedEventArgs e)
         {
@@ -228,16 +227,14 @@ namespace KeithsFunFunPantry
             MessageBox.Show("Saves Current Pantry");
         }
 
-        //private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        //{
-            
-        //    MyPopup.IsOpen = true;
+        private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            myPopup2.IsOpen = true;
+        }
 
-        //}
-
-        //private void HidePopUp_Click(object sender, RoutedEventArgs e)
-        //{
-        //    MyPopup.IsOpen = false;
-        //}
+        private void HidePopUp_Click(object sender, RoutedEventArgs e)
+        {
+            myPopup2.IsOpen = false;
+        }
     }
 }
