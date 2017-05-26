@@ -10,14 +10,14 @@ namespace KeithsFunFunPantry
     [Serializable]
     public class Recipe
     {
-        public Recipe(ObservableCollection<Ingredient> ingredientList, String title, string directions = "", string notes = "")
+        public Recipe(List<Ingredient> ingredientList, String title, string directions = "", string notes = "")
         {
             IngredientList = ingredientList;
             Directions = directions;
             Title = title;
         }
 
-        public static ObservableCollection<Ingredient> ingredientList;
+        private List<Ingredient> ingredientList;
         private string directions;
         private string title;
         private string notes;
@@ -42,7 +42,7 @@ namespace KeithsFunFunPantry
             set { directions = value; }
         }
 
-        public ObservableCollection<Ingredient> IngredientList
+        public List<Ingredient> IngredientList
         {
             get { return ingredientList; }
             set { ingredientList = value; }
