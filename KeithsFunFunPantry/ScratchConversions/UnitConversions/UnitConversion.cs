@@ -200,7 +200,9 @@ namespace ScratchConversions.UnitConversions
 						//Original measure is in Quarts
 						{ Unit.Quart, QuartsToCups },
 						//Original measure is in Gallons
-						{ Unit.Gallon, GallonsToCups }
+						{ Unit.Gallon, GallonsToCups },
+						//Original measure is in Teaspoon
+						{ Unit.Teaspoon, TeaspoonToCup }
 					}
 				},
 				{
