@@ -11,17 +11,19 @@ namespace ScratchConversions
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Dry Conversion Tests");
+            Console.WriteLine("\tDry Conversion Tests");
             UnitConversion.DryConversionTest();
 
             Console.WriteLine();
             Console.WriteLine();
 
-            Console.WriteLine("Liquid Conversion Tests");
-			UnitConversion.LiquidConversionTest();
+            Console.WriteLine("\tLiquid Conversion Tests");
+            UnitConversion.LiquidConversionTest();
 
             Console.WriteLine();
             Console.WriteLine();
+
+            Console.WriteLine("\tMetric Conversion Tests");
             
             Console.WriteLine("Metric Conversion Tests");
             UnitConversion.MetricConversionTest();
