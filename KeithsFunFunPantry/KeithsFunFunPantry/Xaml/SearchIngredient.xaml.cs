@@ -26,6 +26,7 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
+            ListBox_SearchIngredient.ItemsSource = Pantry.Ingredients;
 			ListIngredients(Pantry.Ingredients);
         }
 
@@ -53,21 +54,21 @@ namespace KeithsFunFunPantry
 
 		public void ListIngredients(ObservableCollection<Ingredient> displayList)
 		{
-			StackPanel_SearchIngredients.Children.Clear();
+			//StackPanel_SearchIngredients.Children.Clear();
 
 
 			foreach (Ingredient ingredient in displayList)
 			{
 				PantryViewItem pvi = new PantryViewItem();
 				pvi.DataContext = ingredient;
-				StackPanel_SearchIngredients.Children.Add(pvi);
+				//StackPanel_SearchIngredients.Children.Add(pvi);
 			}
 
 			if (displayList.Count == 0)
 			{
 				Label noResults = new Label();
 				noResults.Content = "No results found";
-				StackPanel_SearchIngredients.Children.Add(noResults);
+				//StackPanel_SearchIngredients.Children.Add(noResults);
 			}
 
 		}
@@ -79,7 +80,7 @@ namespace KeithsFunFunPantry
 		/// <param name="e"></param>
 		private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-			StackPanel_SearchIngredients.Children.Clear();
+			//StackPanel_SearchIngredients.Children.Clear();
 
 			string query = TextBox_ByIngredientSearch.Text.ToLower();
 
