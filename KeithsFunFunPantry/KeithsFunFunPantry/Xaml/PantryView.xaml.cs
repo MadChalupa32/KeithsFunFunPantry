@@ -26,7 +26,9 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
-            ListIngredients(Pantry.Ingredients);
+            //ListIngredients(Pantry.Ingredients);
+            ListBox_PantryView.ItemsSource = Pantry.Ingredients;
+            
         }
 
         private string searchBar = "Search Ingredients";
@@ -53,28 +55,28 @@ namespace KeithsFunFunPantry
         }
         public void ListIngredients(ObservableCollection<Ingredient> displayList)
         {
-            StackPanel_PantryView.Children.Clear();
+            //StackPanel_PantryView.Children.Clear();
 
             
-            foreach (Ingredient ingredient in displayList)
-            {
-                PantryViewItem pvi = new PantryViewItem();
-                pvi.DataContext = ingredient;
-                StackPanel_PantryView.Children.Add(pvi);
-            }
+            //foreach (Ingredient ingredient in displayList)
+            //{
+            //    PantryViewItem pvi = new PantryViewItem();
+            //    pvi.DataContext = ingredient;
+            //    //StackPanel_PantryView.Children.Add(pvi);
+            //}
             
-            if (displayList.Count == 0)
-            {
-                Label noResults = new Label();
-                noResults.Content = "No results found";
-                StackPanel_PantryView.Children.Add(noResults);
-            }
+            //if (displayList.Count == 0)
+            //{
+            //    Label noResults = new Label();
+            //    noResults.Content = "No results found";
+            //   // StackPanel_PantryView.Children.Add(noResults);
+            //}
 
         }
 
         private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
         {
-            StackPanel_PantryView.Children.Clear();
+            //StackPanel_PantryView.Children.Clear();
             string query = TextBox_PantrySearch.Text.ToLower();
             if (!query.Equals("search ingredients"))
             {
