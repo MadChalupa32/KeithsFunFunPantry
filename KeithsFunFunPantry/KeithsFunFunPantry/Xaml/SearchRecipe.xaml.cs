@@ -27,7 +27,7 @@ namespace KeithsFunFunPantry
             TextBoxOptions();
 
 			RecipeBook book = RecipeBook.Instance;
-			//ListRecipes(book.Recipes);
+            //ListRecipes(book.Recipes);
 
             ListBox_EditRecipe.ItemsSource = RecipeBook.Instance.Recipes;
         }
