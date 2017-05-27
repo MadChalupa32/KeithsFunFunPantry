@@ -8,7 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="621" d:DesignWidth="1242"
       Title="RecipeView">
-    <Grid>
+    <Grid x:Name="RecipeView_Grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="30"/>
@@ -123,6 +123,7 @@
                 FontSize="24"
                 Margin="10"
                 HorizontalAlignment="Right"/>
+        
         <Popup Name="MyPopup"
                Placement="Mouse"
                HorizontalOffset="-250"
@@ -148,7 +149,7 @@
                 </Grid.ColumnDefinitions>
                 <Label x:Name="RecipeName"
                        Background="#E5C698"
-                       Content="{Binding ElementName=RecipeName_L, Path=Content}"
+                       Content="{Binding DataContext, ElementName=MyPopup}"
                        Grid.ColumnSpan="4"
                        VerticalAlignment="Top"
                        FontSize="15"
@@ -156,7 +157,9 @@
                        Panel.ZIndex="1"
                        Margin="5,5,4.5,0"
                        HorizontalContentAlignment="Center"/>
-                <TextBlock x:Name="RecipeIngredients"
+                <TextBox x:Name="RecipeIngredients"
+                         Background="Transparent"
+                         IsReadOnly="True"
                            Margin="10,0,10,14"
                            TextWrapping="Wrap"
                            MaxHeight="187"
@@ -167,10 +170,13 @@
                            FontFamily="Georgia"
                            FontSize="15"
                            Grid.RowSpan="3"/>
-                <TextBlock x:Name="RecipeInstructions"
+                <TextBox x:Name="RecipeInstructions"
+                         Background="Transparent"
+                         IsReadOnly="True"
                        Text="1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown. Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown.Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining"
                        Panel.ZIndex="1"
                        TextWrapping="Wrap"
+                       
                        Grid.Row="4"
                        MaxHeight="180"
                        Grid.RowSpan="3"
@@ -210,30 +216,44 @@
                        Grid.RowSpan="9"
                        Background="#A3CC72" Margin="-1,0,1,0"/>
                 <Button Content="Exit"
-                        Margin="5"
+                        Width="70"
+                        Height="40"
+                        Margin="5,5,5,10"
                         Grid.Row="8"
                         Grid.ColumnSpan="2"
                         VerticalAlignment="Center"
                         HorizontalAlignment="Center"
-                        
-                        />
-                <!--<Button Content="Save"
-                        Margin="5"
-                        Grid.Row="8"
-                        Grid.ColumnSpan="4"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        Panel.ZIndex="1"
+                        FontSize="24"
+                        FontWeight="Black"
+                        FontFamily="Georgia"
+                        Click="HidePopUp_Click"/>
+                <Button Content="Save"
                         Width="70"
                         Height="40"
-                        Background="Black"
-                        Foreground="White"
+                        Margin="5,5,5,10"
+                        Grid.Row="8"
+                        Grid.Column="1"
+                        Grid.ColumnSpan="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
                         FontSize="24"
-                        FontFamily="Georgia"
                         FontWeight="Bold"
-                        Click="HidePopUp_Click"/>
+                        FontFamily="Georgia"
+                        Click="SaveButton_Click"/>
                 <Button Content="Edit"
-                        Margin="5"/>-->
+                        BorderThickness="2"
+                        Width="70"
+                        Height="40"
+                        Margin="5,5,5,10"
+                        Grid.Row="8"
+                        Grid.Column="2"
+                        Grid.ColumnSpan="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        FontSize="24"
+                        FontWeight="Bold"
+                        FontFamily="Georgia"
+                        Click="EditButton_Click"/>
                 <Label/>
             </Grid>
         </Popup>
