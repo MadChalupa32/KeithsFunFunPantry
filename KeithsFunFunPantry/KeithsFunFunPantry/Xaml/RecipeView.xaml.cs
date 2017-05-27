@@ -117,9 +117,8 @@ namespace KeithsFunFunPantry
         }
         private void ListBox_RecipeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            Windoes3.Show();
-             MyPopup.IsOpen = true;
-
+            MyPopup.IsOpen = true;
+            RecipeView_Grid.DataContext = ListBox_RecipeView.SelectedItem;
         }
 
         private void HidePopUp_Click(object sender, RoutedEventArgs e)
