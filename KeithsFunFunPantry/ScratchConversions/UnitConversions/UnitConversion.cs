@@ -617,7 +617,8 @@ namespace ScratchConversions.UnitConversions
 					}
 				}
 			};
-			
+
+			conversions[Unit.Cup][Unit.Gallon].Invoke(12);
 		}
 	}
 }
