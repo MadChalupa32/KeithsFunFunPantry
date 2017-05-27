@@ -123,8 +123,7 @@
                 FontSize="24"
                 Margin="10"
                 HorizontalAlignment="Right"/>
-        <Window x:Name="Windoes3"
-                 Background="Bisque"/>
+        
         <Popup Name="MyPopup"
                Placement="Mouse"
                HorizontalOffset="-250"
