@@ -59,49 +59,116 @@ namespace ScratchConversions.UnitConversions
 			return convertedAmount;
 		}
 
-		//Private methods for each conversion
-		#region Dry
-		private static float TablespoonToTeaspoon(float amount)
-		{
-			return (float)(amount * 3);
-		}
+        //Private methods for each conversion
+        #region Dry
+        private static float TablespoonToTeaspoon(float amount)
+        {
+            return (float)(amount * 3);
+        }
 
-		private static float CupToTeaspoon(float amount)
-		{
-			return (float)(amount * 48);
-		}
+        private static float CupToTeaspoon(float amount)
+        {
+            return (float)(amount * 48);
+        }
 
-		private static float OunceToTeaspoon(float amount)
-		{
-			return (float)(amount * 6);
-		}
+        private static float OunceToTeaspoon(float amount)
+        {
+            return (float)(amount * 6);
+        }
 
-		private static float PoundToTeaspoon(float amount)
-		{
-			return (float)(amount * 96);
-		}
+        private static float PoundToTeaspoon(float amount)
+        {
+            return (float)(amount * 96);
+        }
 
-		private static float TeaspoonToTablespoon(float amount)
-		{
-			return (float)(amount / 3);
-		}
 
-		private static float TeaspoonToCup(float amount)
-		{
-			return (float)(amount / 48);
-		}
+        private static float TeaspoonToTablespoon(float amount)
+        {
+            return (float)(amount / 3);
+        }
 
-		private static float TeaspoonToOunce(float amount)
-		{
-			return (float)(amount / 6);
-		}
+        private static float TeaspoonToCup(float amount)
+        {
+            return (float)(amount / 48);
+        }
 
-		private static float TeaspoonToPound(float amount)
-		{
-			return (float)(amount / 96);
-		}
+        private static float TeaspoonToOunce(float amount)
+        {
+            return (float)(amount / 6);
+        }
 
-		public static void DryConversionTest()
+        private static float TeaspoonToPound(float amount)
+        {
+            return (float)(amount / 96);
+        }
+
+
+        private static float CupToTablespoon(float amount)
+        {
+            return TeaspoonToTablespoon(CupToTeaspoon(amount));
+        }
+
+        private static float OunceToTablespoon(float amount)
+        {
+            return TeaspoonToTablespoon(OunceToTeaspoon(amount));
+        }
+
+        private static float PoundToTablespoon(float amount)
+        {
+            return TeaspoonToTablespoon(PoundToTeaspoon(amount));
+        }
+
+
+        private static float TablespoonToCup(float amount)
+        {
+            return TeaspoonToCup(TablespoonToTeaspoon(amount));
+        }
+
+        private static float TablespoonToOunce(float amount)
+        {
+            return TeaspoonToOunce(TablespoonToTeaspoon(amount));
+        }
+
+        private static float TablespoonToPound(float amount)
+        {
+            return TeaspoonToPound(TablespoonToTeaspoon(amount));
+        }
+
+
+        private static float OunceToCup(float amount)
+        {
+            return TeaspoonToCup(OunceToTeaspoon(amount));
+        }
+
+        private static float PoundToCup(float amount)
+        {
+            return TeaspoonToCup(PoundToTeaspoon(amount));
+        }
+
+
+        private static float CupToOunce(float amount)
+        {
+            return TeaspoonToOunce(CupToTeaspoon(amount));
+        }
+
+        private static float CupToPound(float amount)
+        {
+            return TeaspoonToPound(CupToTeaspoon(amount));
+        }
+
+
+        private static float PoundToOunce(float amount)
+        {
+            return TeaspoonToOunce(PoundToTeaspoon(amount));
+        }
+
+
+        private static float OunceToPound(float amount)
+        {
+            return TeaspoonToPound(OunceToTeaspoon(amount));
+        }
+
+        public static void DryConversionTest()
 		{
 			Console.WriteLine("Tablespoon to Teaspoon");
 			Console.WriteLine(TablespoonToTeaspoon(12f) == 36f ? "\tpassed" : "\t*failed*");
@@ -119,7 +186,14 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine(TeaspoonToOunce(120f) == 20f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Teaspoon to Pound");
 			Console.WriteLine(TeaspoonToPound(330f) == 3.4375f ? "\tpassed" : "\t*failed*");
-		}
+            Console.WriteLine("Tablespoon to Cup");
+            Console.WriteLine(TablespoonToCup(50f) == 3.125f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Tablespoon To Ounce")
+            Console.WriteLine(TablespoonToOunce(1f) == 0.5f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Tablespoon to Pound")
+            Console.WriteLine(TablespoonToPound(20f) == .625f ? "\tpassed" : "\t*failed*");
+            //Console.WriteLine("Ounce to Tablespoon)"
+        }
 		#endregion
 
 		#region Liquid
@@ -128,41 +202,108 @@ namespace ScratchConversions.UnitConversions
 			float cupAmt = fluidOunceAmt / 8;
 			return cupAmt;
 		}
-		private static float PintsToCups(float pintAmt)
-		{
-			float cupAmt = pintAmt * 2;
-			return cupAmt;
-		}
-		private static float QuartsToCups(float quartAmt)
-		{
-			float cupAmt = quartAmt * 4;
-			return cupAmt;
-		}
-		private static float GallonsToCups(float gallonAmt)
-		{
-			float cupAmt = gallonAmt * 16;
-			return cupAmt;
-		}
 		private static float CupsToFluidOunces(float cupAmt)
 		{
 			float fluidOunceAmt = cupAmt * 8;
 			return fluidOunceAmt;
+		}
+		private static float FluidOuncesToPints(float fluidOunceAmt)
+		{
+			float pintAmt = CupsToPints(FluidOuncesToCups(fluidOunceAmt));
+			return pintAmt;
+		}
+		private static float FluidOuncesToQuarts(float fluidOunceAmt)
+		{
+			float quartAmt = CupsToFluidOunces(QuartsToCups(fluidOunceAmt));
+			return quartAmt;
+		}
+		private static float FluidOuncesToGallons(float fluidOunceAmt)
+		{
+			float gallonAmt = CupsToFluidOunces(GallonsToCups(fluidOunceAmt));
+			return gallonAmt;
+		}
+
+
+		private static float PintsToFluidOunces(float pintAmt)
+		{
+			float fluidOunceAmt = CupsToFluidOunces(PintsToCups(pintAmt));
+			return fluidOunceAmt;
+		}
+		private static float PintsToCups(float pintAmt)
+		{
+			float cupAmt = pintAmt * 2;
+			return cupAmt;
 		}
 		private static float CupsToPints(float cupAmt)
 		{
 			float pintAmt = cupAmt / 2;
 			return pintAmt;
 		}
+		private static float PintsToQuarts(float pintAmt)
+		{
+			float quartAmt = CupsToQuarts(PintsToCups(pintAmt));
+			return quartAmt;
+		}
+		private static float PintsToGallons(float pintAmt)
+		{
+			float gallonAmt = CupsToGallons(PintsToCups(pintAmt));
+			return gallonAmt;
+		}
+
+
+		private static float QuartsToFluidOunces(float quartAmt)
+		{
+			float fluidOunceAmt = CupsToFluidOunces(QuartsToCups(quartAmt));
+			return fluidOunceAmt;
+		}
+		private static float QuartsToCups(float quartAmt)
+		{
+			float cupAmt = quartAmt * 4;
+			return cupAmt;
+		}
 		private static float CupsToQuarts(float cupAmt)
 		{
 			float quartAmt = cupAmt / 4;
 			return quartAmt;
+		}
+		private static float QuartsToPints(float quartAmt)
+		{
+			float pintAmt = CupsToPints(QuartsToCups(quartAmt));
+			return pintAmt;
+		}
+		private static float QuartsToGallons(float quartAmt)
+		{
+			float gallonAmt = CupsToGallons(QuartsToCups(quartAmt));
+			return gallonAmt;
+		}
+
+
+		private static float GallonsToFluidOunces(float gallonAmt)
+		{
+			float fluidOunceAmt = CupsToFluidOunces(GallonsToCups(gallonAmt));
+			return fluidOunceAmt;
+		}
+		private static float GallonsToCups(float gallonAmt)
+		{
+			float cupAmt = gallonAmt * 16;
+			return cupAmt;
 		}
 		private static float CupsToGallons(float cupAmt)
 		{
 			float gallonAmt = cupAmt / 16;
 			return gallonAmt;
 		}
+		private static float GallonsToPints(float gallonAmt)
+		{
+			float pintAmt = CupsToPints(GallonsToCups(gallonAmt));
+			return pintAmt;
+		}
+		private static float GallonsToQuarts(float gallonAmt)
+		{
+			float quartAmt = CupsToQuarts(GallonsToCups(gallonAmt));
+			return quartAmt;
+		}
+		
 
 		public static void LiquidConversionTest()
 		{
@@ -327,125 +468,127 @@ namespace ScratchConversions.UnitConversions
 		#endregion
 
 
-		public static void ValidateStuffs(this Measurement originalMeasure, Unit targetUnit)
-		{
-			Dictionary<Unit, Dictionary<Unit, Func<float, float>>> conversions = new Dictionary<Unit, Dictionary<Unit, Func<float, float>>>()
-			{
-				{
-					//Target unit is Cup
-					Unit.Cup,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						//Original measure is in Fluid Ounces
-						{ Unit.FluidOunce, FluidOuncesToCups },
-						//Original measure is in Pints
-						{ Unit.Pint, PintsToCups },
-						//Original measure is in Quarts
-						{ Unit.Quart, QuartsToCups },
-						//Original measure is in Gallons
-						{ Unit.Gallon, GallonsToCups },
-						//Original measure is in Teaspoon
-						{ Unit.Teaspoon, TeaspoonToCup }
-					}
-				},
-				{
-					//Target unit is Fluid Ounce
-					Unit.FluidOunce,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit, /*method*/ }
-					}
-				},
-				{
-					//Target unit is Gallon
-					Unit.Gallon,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Gram
-					Unit.Gram,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Kilogram
-					Unit.Kilogram,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Liter
-					Unit.Liter,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Milliliter
-					Unit.Milliliter,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Ounce
-					Unit.Ounce,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Pint
-					Unit.Pint,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Pound
-					Unit.Pound,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Quart
-					Unit.Quart,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Tablespoon
-					Unit.Tablespoon,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				},
-				{
-					//Target unit is Teaspoon
-					Unit.Teaspoon,
-					new Dictionary<Unit, Func<float,float>>()
-					{
-						{ Unit,  }
-					}
-				}
-			};
-
+		//public static void ValidateStuffs(this Measurement originalMeasure, Unit targetUnit)
+		//{
+		//	Dictionary<Unit, Dictionary<Unit, Func<float, float>>> conversions = new Dictionary<Unit, Dictionary<Unit, Func<float, float>>>()
+		//	{
+		//		{
+		//			//Target unit is Cup
+		//			Unit.Cup,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				//Original measure is in Fluid Ounces
+		//				{ Unit.FluidOunce, FluidOuncesToCups },
+		//				//Original measure is in Pints
+		//				{ Unit.Pint, PintsToCups },
+		//				//Original measure is in Quarts
+		//				{ Unit.Quart, QuartsToCups },
+		//				//Original measure is in Gallons
+		//				{ Unit.Gallon, GallonsToCups },
+		//				//Original measure is in Teaspoon
+		//				{ Unit.Teaspoon, TeaspoonToCup }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Fluid Ounce
+		//			Unit.FluidOunce,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit.Cup, CupsToFluidOunces },
+		//				{ Unit.Pint, (origAmt)=>{ float retVal = CupsToFluidOunces(PintsToCups(origAmt)); return retVal; } }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Gallon
+		//			Unit.Gallon,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Gram
+		//			Unit.Gram,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Kilogram
+		//			Unit.Kilogram,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Liter
+		//			Unit.Liter,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Milliliter
+		//			Unit.Milliliter,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Ounce
+		//			Unit.Ounce,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Pint
+		//			Unit.Pint,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Pound
+		//			Unit.Pound,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Quart
+		//			Unit.Quart,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Tablespoon
+		//			Unit.Tablespoon,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		},
+		//		{
+		//			//Target unit is Teaspoon
+		//			Unit.Teaspoon,
+		//			new Dictionary<Unit, Func<float,float>>()
+		//			{
+		//				{ Unit,  }
+		//			}
+		//		}
+		//	};
+			
 		}
+	
 	}
 }

@@ -125,10 +125,9 @@
                 HorizontalAlignment="Right"/>
         <Popup Name="MyPopup"
                Placement="Mouse"
-               HorizontalOffset="300"
-               VerticalOffset="-100"
-               AllowsTransparency="False"
-               DataContext="{Binding Title}">
+               HorizontalOffset="-250"
+               VerticalOffset="-250"
+               AllowsTransparency="False">
             <Grid Width="550" Height="550">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="32"/>
@@ -210,8 +209,16 @@
                        Grid.ColumnSpan="4"
                        Grid.RowSpan="9"
                        Background="#A3CC72" Margin="-1,0,1,0"/>
-                <Button Content="Save"
-                        Margin="5,0,5,4.5"
+                <Button Content="Exit"
+                        Margin="5"
+                        Grid.Row="8"
+                        Grid.ColumnSpan="2"
+                        VerticalAlignment="Center"
+                        HorizontalAlignment="Center"
+                        
+                        />
+                <!--<Button Content="Save"
+                        Margin="5"
                         Grid.Row="8"
                         Grid.ColumnSpan="4"
                         VerticalAlignment="Center"
@@ -225,6 +232,8 @@
                         FontFamily="Georgia"
                         FontWeight="Bold"
                         Click="HidePopUp_Click"/>
+                <Button Content="Edit"
+                        Margin="5"/>-->
                 <Label/>
             </Grid>
         </Popup>

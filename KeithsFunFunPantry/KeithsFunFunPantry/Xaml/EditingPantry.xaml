@@ -155,7 +155,8 @@
                  Grid.ColumnSpan="3"
                  Margin="20"
                  SelectionMode="Single"
-                 HorizontalContentAlignment="Stretch">
+                 HorizontalContentAlignment="Stretch"
+                 MouseDoubleClick="ListBox_EditPantry_MouseDoubleClick">
 
             <ListBox.ItemTemplate>
                 <DataTemplate>
@@ -169,6 +170,15 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-       
+        <Popup x:Name="myPopup2"
+               Placement="Mouse"
+               AllowsTransparency="False"
+                HorizontalOffset="-150"
+               VerticalOffset="-250">
+            <Grid Width="500" Height="300" Background="Green">
+                <AC:EditIngredient/>
+            </Grid>
+
+        </Popup>
     </Grid>
 </Page>
