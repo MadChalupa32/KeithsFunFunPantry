@@ -188,9 +188,9 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine(TeaspoonToPound(330f) == 3.4375f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Tablespoon to Cup");
             Console.WriteLine(TablespoonToCup(50f) == 3.125f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Tablespoon To Ounce")
+            Console.WriteLine("Tablespoon To Ounce");
             Console.WriteLine(TablespoonToOunce(1f) == 0.5f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Tablespoon to Pound")
+            Console.WriteLine("Tablespoon to Pound");
             Console.WriteLine(TablespoonToPound(20f) == .625f ? "\tpassed" : "\t*failed*");
             //Console.WriteLine("Ounce to Tablespoon)"
         }
