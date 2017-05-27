@@ -149,7 +149,7 @@
                 </Grid.ColumnDefinitions>
                 <Label x:Name="RecipeName"
                        Background="#E5C698"
-                       Content="{Binding DataContext, ElementName=MyPopup}"
+                       Content="{Binding Title}"
                        Grid.ColumnSpan="4"
                        VerticalAlignment="Top"
                        FontSize="15"
@@ -163,7 +163,7 @@
                            Margin="10,0,10,14"
                            TextWrapping="Wrap"
                            MaxHeight="187"
-                           Text="Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown. Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown.Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining "
+                           Text="{Binding IngredientList}"
                            Grid.Row="1"
                            Grid.ColumnSpan="4"
                            Panel.ZIndex="1" 
@@ -173,7 +173,7 @@
                 <TextBox x:Name="RecipeInstructions"
                          Background="Transparent"
                          IsReadOnly="True"
-                       Text="1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown. Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining tablespoon of butter, turn the sandwich over, and brown.Put the cheese between the slices of bread. Heat 1 tablespoon of the butter in a skillet or grill and when melted add the sandwich. Gently press down with a spatula once or twice during the grilling. When one side is golden, add the remaining"
+                       Text="{Binding Directions}"
                        Panel.ZIndex="1"
                        TextWrapping="Wrap"
                        

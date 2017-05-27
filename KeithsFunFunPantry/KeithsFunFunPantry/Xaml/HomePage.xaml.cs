@@ -60,7 +60,7 @@ namespace KeithsFunFunPantry
         }
         private void Sandbox_Click(object sender, RoutedEventArgs e)
         {
-            Frame_HomePage.Content = new SandboxView();
+            Frame_HomePage.Content = new AboutView();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
