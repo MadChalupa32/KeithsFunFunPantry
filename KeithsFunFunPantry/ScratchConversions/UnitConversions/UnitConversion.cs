@@ -188,11 +188,18 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine(TeaspoonToPound(330f) == 3.4375f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Tablespoon to Cup");
             Console.WriteLine(TablespoonToCup(50f) == 3.125f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Tablespoon To Ounce")
+            Console.WriteLine("Tablespoon To Ounce");
             Console.WriteLine(TablespoonToOunce(1f) == 0.5f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Tablespoon to Pound")
+            Console.WriteLine("Tablespoon to Pound");
             Console.WriteLine(TablespoonToPound(20f) == .625f ? "\tpassed" : "\t*failed*");
-            //Console.WriteLine("Ounce to Tablespoon)"
+            Console.WriteLine("Ounce to Tablespoon");
+            Console.WriteLine(OunceToTablespoon(20f) == 40f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Ounce To Pound");
+            Console.WriteLine(OunceToPound(20f) == 1.25f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Ounce To Cup");
+            Console.WriteLine(OunceToCup(20f) == 2.5f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Pound To Tablespoon");
+            Console.WriteLine()
         }
 		#endregion
 
@@ -360,11 +367,11 @@ namespace ScratchConversions.UnitConversions
 			return (float)(amount * 3.8);
 		}
 
-		private static float OunceToGrams(float amount)
+		private static float OunceToGram(float amount)
 		{
 			return (float)(amount * 28);
 		}
-		private static float PoundToGrams(float amount)
+		private static float PoundToGram(float amount)
 		{
 			return (float)(amount * 454);
 		}
@@ -396,7 +403,7 @@ namespace ScratchConversions.UnitConversions
 		{
 			return (float)(amount * 2.1);
 		}
-		private static float LiterToQuarts(float amount)
+		private static float LiterToQuart(float amount)
 		{
 			return (float)(amount * 1.06);
 		}
@@ -416,12 +423,18 @@ namespace ScratchConversions.UnitConversions
 		{
 			return (float)(amount * 35);
 		}
-		private static float KilogramToPounds(float amount)
+		private static float KilogramToPound(float amount)
 		{
 			return (float)(amount * 2.205);
 		}
+        private static float KilogramToGram(float amount)
+        {
+            return (float)(amount * 1000);
+        }
 		public static void MetricConversionTest()
 		{
+            Console.WriteLine("Kilogram To Gram");
+            Console.WriteLine(KilogramToGram(1f) == 1000f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Teaspoon to Milliliter");
 			Console.WriteLine(TeaspoonToMilliliter(5f) == 25f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Tablespoon to Milliliter");
@@ -437,9 +450,9 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine("Gallon to Liters");
 			Console.WriteLine(GallonToLiter(6f) == 22.8f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Ounce to Grams");
-			Console.WriteLine(OunceToGrams(2f) == 56f ? "\tpassed" : "\t*failed*");
+			Console.WriteLine(OunceToGram(2f) == 56f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Pound to Grams");
-			Console.WriteLine(PoundToGrams(5f) == 2270f ? "\tpassed" : "\t*failed*");
+			Console.WriteLine(PoundToGram(5f) == 2270f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Milliliter to Teaspoon");
 			Console.WriteLine(MilliliterToTeaspoon(2f) == .4f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Milliliter to Tablespoon");
@@ -455,7 +468,7 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine("Liter to Gallons");
 			Console.WriteLine(LiterToGallon(2f) == .52f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Liter to Quarts");
-			Console.WriteLine(LiterToQuarts(3f) == 3.18f ? "\tpassed" : "\t*failed*");
+			Console.WriteLine(LiterToQuart(3f) == 3.18f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Gram to Ounce");
 			Console.WriteLine(GramToOunce(9f) == .315f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Gram to Pounds");
@@ -463,7 +476,7 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine("Kilogram to Ounce");
 			Console.WriteLine(KilogramToOunce(6f) == 210f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Kilogram to Pounds");
-			Console.WriteLine(KilogramToPounds(9f) == 19.845f ? "\tpassed" : "\t*failed*");
+			Console.WriteLine(KilogramToPound(9f) == 19.845f ? "\tpassed" : "\t*failed*");
 		}
 		#endregion
 
@@ -591,4 +604,4 @@ namespace ScratchConversions.UnitConversions
 		}
 	
 	}
-}
+
