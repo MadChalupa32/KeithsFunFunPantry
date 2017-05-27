@@ -19,7 +19,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="30*"/>
             <ColumnDefinition Width="200*"/>
-            <ColumnDefinition Width="70*"/>
+            <ColumnDefinition Width="60*"/>
             <ColumnDefinition Width="85*"/>
             <ColumnDefinition Width="80*"/>
             <ColumnDefinition Width="80*"/>
@@ -34,7 +34,7 @@
                  VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Left"
                  Margin="5,0"/>
-        <TextBox Text="999"
+        <TextBox 
                  IsReadOnly="true"
                  Grid.Row="1"
                  Grid.Column="3"
@@ -87,6 +87,14 @@
                  FontSize="16"
                  FontFamily="Georgia"
                  FontWeight="Bold"/>
+        <Button x:Name="Exit_Button"
+                Content="Exit"
+                FontSize="20"
+                Grid.Row="6"
+                Grid.Column="1"
+                HorizontalAlignment="Left"
+                Width="50"
+                Click="Exit_Button_Click"/>
         <TextBox x:Name="TextBox_Subtract"
                  MaxLength="3"
                  Grid.Row="5"
@@ -97,7 +105,6 @@
                  FontSize="16"
                  FontFamily="Georgia"
                  FontWeight="Bold"/>
-        <!--copyLabel-->
         <Label x:Name="Label_2"
                Content="{Binding ElementName=ComboBox_1, Path=Text, Mode=TwoWay}"
                Grid.Row="3"
@@ -121,15 +128,5 @@
                BorderThickness="3"
                BorderBrush="Gray"
                Margin="5,0"/>
-        <!--<ComboBox x:Name="ComboBox_2"
-                  Grid.Row="3"
-                  Grid.Column="4"
-                  Grid.ColumnSpan="2"
-                  Margin="5,0"/>
-        <ComboBox x:Name="ComboBox_3"
-                  Grid.Row="5"
-                  Grid.Column="4"
-                  Grid.ColumnSpan="2"
-                  Margin="5,0"/>-->
     </Grid>
 </UserControl>
