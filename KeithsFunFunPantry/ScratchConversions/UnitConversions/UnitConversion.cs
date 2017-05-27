@@ -188,9 +188,9 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine(TeaspoonToPound(330f) == 3.4375f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Tablespoon to Cup");
             Console.WriteLine(TablespoonToCup(50f) == 3.125f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Tablespoon To Ounce")
+			Console.WriteLine("Tablespoon To Ounce");
             Console.WriteLine(TablespoonToOunce(1f) == 0.5f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Tablespoon to Pound")
+			Console.WriteLine("Tablespoon to Pound");
             Console.WriteLine(TablespoonToPound(20f) == .625f ? "\tpassed" : "\t*failed*");
             //Console.WriteLine("Ounce to Tablespoon)"
         }
@@ -483,8 +483,9 @@ namespace ScratchConversions.UnitConversions
 						{ Unit.Gallon, GallonsToCups },
 						{ Unit.Teaspoon, TeaspoonToCup },
 						{ Unit.Tablespoon, TablespoonToCup },
-						{ Unit.Ounce, CupToCup },
-						{ Unit.Pound, PoundToCup }
+						{ Unit.Ounce, OunceToCup },
+						{ Unit.Pound, PoundToCup },
+						{ Unit.Liter, LiterToCup }
 					}
 				},
 				{
@@ -514,7 +515,9 @@ namespace ScratchConversions.UnitConversions
 					Unit.Gram,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.Kilogram,  },
+						{ Unit.Ounce, OunceToGrams },
+						{ Unit.Pound, PoundToGrams }
 					}
 				},
 				{
@@ -522,7 +525,9 @@ namespace ScratchConversions.UnitConversions
 					Unit.Kilogram,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.Gram,  },
+						{ Unit.Ounce,  },
+						{ Unit.Pound, PoundToGrams }
 					}
 				},
 				{
@@ -530,7 +535,11 @@ namespace ScratchConversions.UnitConversions
 					Unit.Liter,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.Cup,  },
+						{ Unit.Pint,  },
+						{ Unit.Quart,  },
+						{ Unit.Gallon,  },
+						{ Unit.Ounce,  }
 					}
 				},
 				{
