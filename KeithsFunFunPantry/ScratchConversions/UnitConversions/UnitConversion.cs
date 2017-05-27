@@ -8,56 +8,56 @@ using System.Windows;
 
 namespace ScratchConversions.UnitConversions
 {
-	public static class UnitConversion
-	{
-		public static void Convert(this Measurement original, Unit unit)
-		{
-			//Validation
-			//Conversion
-			float convertedAmount = Validation(original, unit);
-			//Truncate the Amount measurement to three places
+    public static class UnitConversion
+    {
+        public static void Convert(this Measurement original, Unit unit)
+        {
+            //Validation
+            //Conversion
+            float convertedAmount = Validation(original, unit);
+            //Truncate the Amount measurement to three places
 
-			//Change the original measurement
-			original.Amount = convertedAmount;
-			original.UnitOfMeasurement = unit;
-		}
+            //Change the original measurement
+            original.Amount = convertedAmount;
+            original.UnitOfMeasurement = unit;
+        }
 
-		private static float Validation(Measurement original, Unit targetUnit)
-		{
-			float convertedAmount = 0;
+        private static float Validation(Measurement original, Unit targetUnit)
+        {
+            float convertedAmount = 0;
 
-			//If the measurement is not already in the target unit
-			if (original.UnitOfMeasurement != targetUnit)
-			{
-				/* Lists of units contained in each Conversion type
+            //If the measurement is not already in the target unit
+            if (original.UnitOfMeasurement != targetUnit)
+            {
+                /* Lists of units contained in each Conversion type
                  * IF both the target & source unit are within the List, continue into the if statement
                  *      then have the individual If statements for each of the conversion types
                  */
-				List<Unit> dryUnits = new List<Unit>() { Unit.Teaspoon, Unit.Tablespoon, Unit.Cup, Unit.Ounce, Unit.Pound };
-				List<Unit> liquidUnits = new List<Unit>() { Unit.Cup, Unit.FluidOunce, Unit.Pint, Unit.Quart, Unit.Gallon };
-				List<Unit> metricUnits = new List<Unit>() { Unit.Cup, Unit.FluidOunce, Unit.Gallon, Unit.Gram, Unit.Kilogram, Unit.Liter, Unit.Milliliter, Unit.Ounce, Unit.Pint, Unit.Pound, Unit.Quart, Unit.Tablespoon, Unit.Teaspoon };
+                List<Unit> dryUnits = new List<Unit>() { Unit.Teaspoon, Unit.Tablespoon, Unit.Cup, Unit.Ounce, Unit.Pound };
+                List<Unit> liquidUnits = new List<Unit>() { Unit.Cup, Unit.FluidOunce, Unit.Pint, Unit.Quart, Unit.Gallon };
+                List<Unit> metricUnits = new List<Unit>() { Unit.Cup, Unit.FluidOunce, Unit.Gallon, Unit.Gram, Unit.Kilogram, Unit.Liter, Unit.Milliliter, Unit.Ounce, Unit.Pint, Unit.Pound, Unit.Quart, Unit.Tablespoon, Unit.Teaspoon };
 
-				float origAmt = original.Amount;
-				//If the measurement can be translated into the target 
-				if (dryUnits.Contains(original.UnitOfMeasurement) && dryUnits.Contains(targetUnit))
-				{
+                float origAmt = original.Amount;
+                //If the measurement can be translated into the target 
+                if (dryUnits.Contains(original.UnitOfMeasurement) && dryUnits.Contains(targetUnit))
+                {
 
-				} else if (liquidUnits.Contains(original.UnitOfMeasurement) && liquidUnits.Contains(targetUnit))
-				{
+                } else if (liquidUnits.Contains(original.UnitOfMeasurement) && liquidUnits.Contains(targetUnit))
+                {
 
-				} else if (metricUnits.Contains(original.UnitOfMeasurement) && metricUnits.Contains(targetUnit))
-				{
+                } else if (metricUnits.Contains(original.UnitOfMeasurement) && metricUnits.Contains(targetUnit))
+                {
 
-				}
-			}
-			else
-			//If the measurement's Unit already IS the target unit
-			{
-				MessageBox.Show("Source Unit and Target Unit are the same.");
-			}
+                }
+            }
+            else
+            //If the measurement's Unit already IS the target unit
+            {
+                MessageBox.Show("Source Unit and Target Unit are the same.");
+            }
 
-			return convertedAmount;
-		}
+            return convertedAmount;
+        }
 
         //Private methods for each conversion
         #region Dry
@@ -169,23 +169,23 @@ namespace ScratchConversions.UnitConversions
         }
 
         public static void DryConversionTest()
-		{
-			Console.WriteLine("Tablespoon to Teaspoon");
-			Console.WriteLine(TablespoonToTeaspoon(12f) == 36f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Cup to Teaspoon");
-			Console.WriteLine(CupToTeaspoon(5f) == 240f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Ounce to Teaspoon");
-			Console.WriteLine(OunceToTeaspoon(16f) == 96f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Pound to Teaspoon");
-			Console.WriteLine(PoundToTeaspoon(3f) == 288f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Teaspoon to Tablespoon");
-			Console.WriteLine(TeaspoonToTablespoon(45f) == 15f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Teaspoon to Cup");
-			Console.WriteLine(TeaspoonToCup(705f) == 14.6875f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Teaspoon to Ounce");
-			Console.WriteLine(TeaspoonToOunce(120f) == 20f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Teaspoon to Pound");
-			Console.WriteLine(TeaspoonToPound(330f) == 3.4375f ? "\tpassed" : "\t*failed*");
+        {
+            Console.WriteLine("Tablespoon to Teaspoon");
+            Console.WriteLine(TablespoonToTeaspoon(12f) == 36f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Cup to Teaspoon");
+            Console.WriteLine(CupToTeaspoon(5f) == 240f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Ounce to Teaspoon");
+            Console.WriteLine(OunceToTeaspoon(16f) == 96f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Pound to Teaspoon");
+            Console.WriteLine(PoundToTeaspoon(3f) == 288f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Teaspoon to Tablespoon");
+            Console.WriteLine(TeaspoonToTablespoon(45f) == 15f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Teaspoon to Cup");
+            Console.WriteLine(TeaspoonToCup(705f) == 14.6875f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Teaspoon to Ounce");
+            Console.WriteLine(TeaspoonToOunce(120f) == 20f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Teaspoon to Pound");
+            Console.WriteLine(TeaspoonToPound(330f) == 3.4375f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Tablespoon to Cup");
             Console.WriteLine(TablespoonToCup(50f) == 3.125f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Tablespoon To Ounce");
@@ -210,171 +210,171 @@ namespace ScratchConversions.UnitConversions
             Console.WriteLine(CupToPound(20f) == 10f ? "\tpassed" : "\t*failed*");
 
         }
-		#endregion
+        #endregion
 
-		#region Liquid
-		private static float FluidOuncesToCups(float fluidOunceAmt)
-		{
-			float cupAmt = fluidOunceAmt / 8;
-			return cupAmt;
-		}
-		private static float CupsToFluidOunces(float cupAmt)
-		{
-			float fluidOunceAmt = cupAmt * 8;
-			return fluidOunceAmt;
-		}
-		private static float FluidOuncesToPints(float fluidOunceAmt)
-		{
-			float pintAmt = CupsToPints(FluidOuncesToCups(fluidOunceAmt));
-			return pintAmt;
-		}
-		private static float FluidOuncesToQuarts(float fluidOunceAmt)
-		{
-			float quartAmt = CupsToFluidOunces(QuartsToCups(fluidOunceAmt));
-			return quartAmt;
-		}
-		private static float FluidOuncesToGallons(float fluidOunceAmt)
-		{
-			float gallonAmt = CupsToFluidOunces(GallonsToCups(fluidOunceAmt));
-			return gallonAmt;
-		}
-
-
-		private static float PintsToFluidOunces(float pintAmt)
-		{
-			float fluidOunceAmt = CupsToFluidOunces(PintsToCups(pintAmt));
-			return fluidOunceAmt;
-		}
-		private static float PintsToCups(float pintAmt)
-		{
-			float cupAmt = pintAmt * 2;
-			return cupAmt;
-		}
-		private static float CupsToPints(float cupAmt)
-		{
-			float pintAmt = cupAmt / 2;
-			return pintAmt;
-		}
-		private static float PintsToQuarts(float pintAmt)
-		{
-			float quartAmt = CupsToQuarts(PintsToCups(pintAmt));
-			return quartAmt;
-		}
-		private static float PintsToGallons(float pintAmt)
-		{
-			float gallonAmt = CupsToGallons(PintsToCups(pintAmt));
-			return gallonAmt;
-		}
+        #region Liquid
+        private static float FluidOuncesToCups(float fluidOunceAmt)
+        {
+            float cupAmt = fluidOunceAmt / 8;
+            return cupAmt;
+        }
+        private static float CupsToFluidOunces(float cupAmt)
+        {
+            float fluidOunceAmt = cupAmt * 8;
+            return fluidOunceAmt;
+        }
+        private static float FluidOuncesToPints(float fluidOunceAmt)
+        {
+            float pintAmt = CupsToPints(FluidOuncesToCups(fluidOunceAmt));
+            return pintAmt;
+        }
+        private static float FluidOuncesToQuarts(float fluidOunceAmt)
+        {
+            float quartAmt = CupsToFluidOunces(QuartsToCups(fluidOunceAmt));
+            return quartAmt;
+        }
+        private static float FluidOuncesToGallons(float fluidOunceAmt)
+        {
+            float gallonAmt = CupsToFluidOunces(GallonsToCups(fluidOunceAmt));
+            return gallonAmt;
+        }
 
 
-		private static float QuartsToFluidOunces(float quartAmt)
-		{
-			float fluidOunceAmt = CupsToFluidOunces(QuartsToCups(quartAmt));
-			return fluidOunceAmt;
-		}
-		private static float QuartsToCups(float quartAmt)
-		{
-			float cupAmt = quartAmt * 4;
-			return cupAmt;
-		}
-		private static float CupsToQuarts(float cupAmt)
-		{
-			float quartAmt = cupAmt / 4;
-			return quartAmt;
-		}
-		private static float QuartsToPints(float quartAmt)
-		{
-			float pintAmt = CupsToPints(QuartsToCups(quartAmt));
-			return pintAmt;
-		}
-		private static float QuartsToGallons(float quartAmt)
-		{
-			float gallonAmt = CupsToGallons(QuartsToCups(quartAmt));
-			return gallonAmt;
-		}
+        private static float PintsToFluidOunces(float pintAmt)
+        {
+            float fluidOunceAmt = CupsToFluidOunces(PintsToCups(pintAmt));
+            return fluidOunceAmt;
+        }
+        private static float PintsToCups(float pintAmt)
+        {
+            float cupAmt = pintAmt * 2;
+            return cupAmt;
+        }
+        private static float CupsToPints(float cupAmt)
+        {
+            float pintAmt = cupAmt / 2;
+            return pintAmt;
+        }
+        private static float PintsToQuarts(float pintAmt)
+        {
+            float quartAmt = CupsToQuarts(PintsToCups(pintAmt));
+            return quartAmt;
+        }
+        private static float PintsToGallons(float pintAmt)
+        {
+            float gallonAmt = CupsToGallons(PintsToCups(pintAmt));
+            return gallonAmt;
+        }
 
 
-		private static float GallonsToFluidOunces(float gallonAmt)
-		{
-			float fluidOunceAmt = CupsToFluidOunces(GallonsToCups(gallonAmt));
-			return fluidOunceAmt;
-		}
-		private static float GallonsToCups(float gallonAmt)
-		{
-			float cupAmt = gallonAmt * 16;
-			return cupAmt;
-		}
-		private static float CupsToGallons(float cupAmt)
-		{
-			float gallonAmt = cupAmt / 16;
-			return gallonAmt;
-		}
-		private static float GallonsToPints(float gallonAmt)
-		{
-			float pintAmt = CupsToPints(GallonsToCups(gallonAmt));
-			return pintAmt;
-		}
-		private static float GallonsToQuarts(float gallonAmt)
-		{
-			float quartAmt = CupsToQuarts(GallonsToCups(gallonAmt));
-			return quartAmt;
-		}
-		
+        private static float QuartsToFluidOunces(float quartAmt)
+        {
+            float fluidOunceAmt = CupsToFluidOunces(QuartsToCups(quartAmt));
+            return fluidOunceAmt;
+        }
+        private static float QuartsToCups(float quartAmt)
+        {
+            float cupAmt = quartAmt * 4;
+            return cupAmt;
+        }
+        private static float CupsToQuarts(float cupAmt)
+        {
+            float quartAmt = cupAmt / 4;
+            return quartAmt;
+        }
+        private static float QuartsToPints(float quartAmt)
+        {
+            float pintAmt = CupsToPints(QuartsToCups(quartAmt));
+            return pintAmt;
+        }
+        private static float QuartsToGallons(float quartAmt)
+        {
+            float gallonAmt = CupsToGallons(QuartsToCups(quartAmt));
+            return gallonAmt;
+        }
 
-		public static void LiquidConversionTest()
-		{
-			Console.WriteLine("Fluid Ounces to Cups");
-			Console.WriteLine(FluidOuncesToCups(33f) == 4.125f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Pints to Cups");
-			Console.WriteLine(PintsToCups(33f) == 66f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Quarts to Cups");
-			Console.WriteLine(QuartsToCups(23f) == 92f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Gallons to Cups");
-			Console.WriteLine(GallonsToCups(13f) == 208f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Cups to Fluid Ounces");
-			Console.WriteLine(CupsToFluidOunces(13f) == 104f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Cups to Pints");
-			Console.WriteLine(CupsToPints(23f) == 11.5f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Cups to Quarts");
-			Console.WriteLine(CupsToQuarts(23f) == 5.75f ? "\tpassed" : "\t*failed*");
-			Console.WriteLine("Cups to Gallons");
-			Console.WriteLine(CupsToGallons(33f) == 2.0625f ? "\tpassed" : "\t*failed*");
 
-		}
-		#endregion
+        private static float GallonsToFluidOunces(float gallonAmt)
+        {
+            float fluidOunceAmt = CupsToFluidOunces(GallonsToCups(gallonAmt));
+            return fluidOunceAmt;
+        }
+        private static float GallonsToCups(float gallonAmt)
+        {
+            float cupAmt = gallonAmt * 16;
+            return cupAmt;
+        }
+        private static float CupsToGallons(float cupAmt)
+        {
+            float gallonAmt = cupAmt / 16;
+            return gallonAmt;
+        }
+        private static float GallonsToPints(float gallonAmt)
+        {
+            float pintAmt = CupsToPints(GallonsToCups(gallonAmt));
+            return pintAmt;
+        }
+        private static float GallonsToQuarts(float gallonAmt)
+        {
+            float quartAmt = CupsToQuarts(GallonsToCups(gallonAmt));
+            return quartAmt;
+        }
 
-		#region Metric
 
-		private static float TeaspoonToMilliliter(float amount)
-		{
-			return (float)(amount * 5);
-		}
+        public static void LiquidConversionTest()
+        {
+            Console.WriteLine("Fluid Ounces to Cups");
+            Console.WriteLine(FluidOuncesToCups(33f) == 4.125f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Pints to Cups");
+            Console.WriteLine(PintsToCups(33f) == 66f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Quarts to Cups");
+            Console.WriteLine(QuartsToCups(23f) == 92f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Gallons to Cups");
+            Console.WriteLine(GallonsToCups(13f) == 208f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Cups to Fluid Ounces");
+            Console.WriteLine(CupsToFluidOunces(13f) == 104f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Cups to Pints");
+            Console.WriteLine(CupsToPints(23f) == 11.5f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Cups to Quarts");
+            Console.WriteLine(CupsToQuarts(23f) == 5.75f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Cups to Gallons");
+            Console.WriteLine(CupsToGallons(33f) == 2.0625f ? "\tpassed" : "\t*failed*");
 
-		private static float TableSpoonToMilliliter(float amount)
-		{
-			return (float)(amount * 15);
-		}
-		private static float FluidOunceToMilliliter(float amount)
-		{
-			return (float)(amount * 30);
-		}
-		private static float CupToMilliliter(float amount)
-		{
-			return (float)(amount * 240);
-		}
-		private static float PintToMilliliter(float amount)
-		{
-			return (float)(amount * 470);
-		}
+        }
+        #endregion
 
-		private static float QuartToLiter(float amount)
-		{
-			return (float)(amount * .95);
-		}
-		private static float GallonToLiter(float amount)
-		{
-			return (float)(amount * 3.8);
-		}
+        #region Metric
+
+        private static float TeaspoonToMilliliter(float amount)
+        {
+            return (float)(amount * 5);
+        }
+
+        private static float TableSpoonToMilliliter(float amount)
+        {
+            return (float)(amount * 15);
+        }
+        private static float FluidOunceToMilliliter(float amount)
+        {
+            return (float)(amount * 30);
+        }
+        private static float CupToMilliliter(float amount)
+        {
+            return (float)(amount * 240);
+        }
+        private static float PintToMilliliter(float amount)
+        {
+            return (float)(amount * 470);
+        }
+
+        private static float QuartToLiter(float amount)
+        {
+            return (float)(amount * .95);
+        }
+        private static float GallonToLiter(float amount)
+        {
+            return (float)(amount * 3.8);
+        }
 
 		private static float OunceToGram(float amount)
 		{
@@ -639,7 +639,8 @@ namespace ScratchConversions.UnitConversions
 					}
 				}
 			};
-			
+
+			conversions[Unit.Cup][Unit.Gallon].Invoke(12);
 		}
 	}
 
