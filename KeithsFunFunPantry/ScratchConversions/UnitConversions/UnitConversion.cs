@@ -198,8 +198,17 @@ namespace ScratchConversions.UnitConversions
             Console.WriteLine(OunceToPound(20f) == 1.25f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Ounce To Cup");
             Console.WriteLine(OunceToCup(20f) == 2.5f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Pound to Ounce");
+            Console.WriteLine(PoundToOunce(20f) == 320f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Pound To Tablespoon");
-            Console.WriteLine()
+            Console.WriteLine(PoundToTablespoon(20f) == 640f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Pound To Cup");
+            Console.WriteLine(PoundToCup(20f) == 40f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Cup to Ounce");
+            Console.WriteLine(CupToOunce(20f) == 160f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Cup To Pound");
+            Console.WriteLine(CupToPound(20f) == 10f ? "\tpassed" : "\t*failed*");
+
         }
 		#endregion
 
