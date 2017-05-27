@@ -15,9 +15,10 @@
             <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="95"/>
             <ColumnDefinition Width="25"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="347*"/>
+            <ColumnDefinition Width="347*"/>
+            <ColumnDefinition Width="338*"/>
+            <ColumnDefinition Width="9*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -72,14 +73,14 @@
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 FontFamily ="Georgia"
-                Click="SearchButton_ClickHandler"/> 
+                Click="SearchButton_ClickHandler"/>
         <Label Content="Edit Pantry" 
                FontSize="30" 
                FontFamily="Georgia"
-               Grid.ColumnSpan="5"
-               Margin="60,0,0,0" 
+               Grid.ColumnSpan="3"
+               Margin="30,0,0,0" 
                VerticalAlignment="Top"
-               HorizontalAlignment="Left" Grid.Column="1"/>
+               HorizontalAlignment="Left" Grid.Column="2"/>
         <!--
         <Button Content="Save Pantry" 
                 Grid.Column="6" 
@@ -101,51 +102,50 @@
                FontFamily="Georgia"
                FontWeight="Bold"/>
         <TextBox x:Name="TextBox_Name" 
-                 Grid.Row="5" 
+                 Grid.Row="4" 
                  Grid.Column="1"
-                 Grid.ColumnSpan="3"
+                 Grid.ColumnSpan="4"
                  Padding="5" 
                  BorderThickness="3" 
-                 BorderBrush="Black"/>
+                 BorderBrush="Black" Margin="0.4,19.6,346.2,9.4" Grid.RowSpan="3"/>
         <TextBox x:Name="TextBox_Amount" 
-                 Grid.Row="7" 
+                 Grid.Row="6" 
                  Grid.Column="1" 
-                 Grid.ColumnSpan="3" 
+                 Grid.ColumnSpan="4" 
                  Padding="5" 
                  BorderThickness="3" 
-                 BorderBrush="#7EB4EA"/>
+                 BorderBrush="#7EB4EA" Margin="0.4,9.2,346.2,9.4" Grid.RowSpan="3"/>
         <ComboBox x:Name="ComboBox_Units"
                   IsEditable="True"
                   IsReadOnly="True"
                   Text="Unit"
                   BorderThickness="3"
                   BorderBrush="Black"
-                  Grid.Row="9"
+                  Grid.Row="8"
                   Grid.Column="1"
-                  Grid.ColumnSpan="3">
+                  Grid.ColumnSpan="3" Margin="0.4,9.2,0,19.8" Grid.RowSpan="3">
         </ComboBox>
 
         <Button Content="Add" 
                 Grid.Row="10" 
-                Grid.RowSpan="3" 
+                Grid.RowSpan="2" 
                 Grid.Column="2" 
                 Grid.ColumnSpan="2" 
                 Width="50" 
                 Height="25" 
-                Margin="0,10,15,0" 
+                Margin="0,10.2,15,0" 
                 VerticalAlignment="Top" 
                 HorizontalAlignment="Right"
                 Click="AddIngredient_Click"/>
         <Label Content="Pantry Items"
                Grid.Row="2"
                Grid.RowSpan="2"
-               Grid.Column="4"
+               Grid.Column="5"
                FontFamily="Georgia"
-               Grid.ColumnSpan="3"
                VerticalAlignment="Center"
                HorizontalAlignment="Center"
                FontSize="20"
-               FontWeight="Bold"/>
+               FontWeight="Bold" Margin="101.8,3.6,101.4,4.4"/>
 
         <ListBox x:Name="ListBox_EditPantry"
                  Background="#E5C698"
@@ -153,7 +153,7 @@
                  Grid.RowSpan="10"
                  Grid.Column="4"
                  Grid.ColumnSpan="3"
-                 Margin="20"
+                 Margin="20,19.6,10.4,19.8"
                  SelectionMode="Single"
                  HorizontalContentAlignment="Stretch"
                  MouseDoubleClick="ListBox_EditPantry_MouseDoubleClick">
@@ -174,7 +174,7 @@
                Placement="Mouse"
                AllowsTransparency="False"
                 HorizontalOffset="-150"
-               VerticalOffset="-250">
+               VerticalOffset="-250" Grid.ColumnSpan="2" Margin="0,0,30,0">
             <Grid Width="500" Height="300" Background="Green">
                 <AC:EditIngredient/>
             </Grid>
