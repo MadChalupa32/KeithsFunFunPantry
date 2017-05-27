@@ -88,6 +88,9 @@
     <Compile Include="AppControls\SR_RecipeItem.xaml.cs">
       <DependentUpon>SR_RecipeItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Xaml\AboutView.xaml.cs">
+      <DependentUpon>AboutView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Xaml\EditingPantry.xaml.cs" />
     <Compile Include="CS\Measurement.cs" />
     <Compile Include="CS\Unit.cs" />
@@ -105,9 +108,6 @@
     <Compile Include="CS\Recipe.cs" />
     <Compile Include="Xaml\RecipeView.xaml.cs">
       <DependentUpon>RecipeView.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Xaml\SandboxView.xaml.cs">
-      <DependentUpon>SandboxView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Xaml\SearchIngredient.xaml.cs">
       <DependentUpon>SearchIngredient.xaml</DependentUpon>
@@ -162,6 +162,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Xaml\AboutView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Xaml\EditingPantry.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -179,10 +183,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Xaml\RecipeView.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Xaml\SandboxView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
