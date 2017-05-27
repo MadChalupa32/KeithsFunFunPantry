@@ -229,12 +229,12 @@ namespace KeithsFunFunPantry
 
         private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            myPopup2.IsOpen = true;
+            //myPopup2.IsOpen = true;
         }
 
         private void HidePopUp_Click(object sender, RoutedEventArgs e)
         {
-            myPopup2.IsOpen = false;
+            //myPopup2.IsOpen = false;
         }
     }
 }

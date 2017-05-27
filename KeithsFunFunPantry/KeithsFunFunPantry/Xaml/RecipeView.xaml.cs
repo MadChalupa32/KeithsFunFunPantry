@@ -128,6 +128,7 @@ namespace KeithsFunFunPantry
 
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
+            MessageBox.Show("You can now Edit.");
             RecipeIngredients.IsReadOnly = false;
             RecipeInstructions.IsReadOnly = false;
         }
