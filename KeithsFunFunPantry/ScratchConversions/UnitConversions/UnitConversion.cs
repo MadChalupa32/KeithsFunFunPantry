@@ -403,16 +403,14 @@ namespace ScratchConversions.UnitConversions
 					Unit.Cup,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						//Original measure is in Fluid Ounces
 						{ Unit.FluidOunce, FluidOuncesToCups },
-						//Original measure is in Pints
 						{ Unit.Pint, PintsToCups },
-						//Original measure is in Quarts
 						{ Unit.Quart, QuartsToCups },
-						//Original measure is in Gallons
 						{ Unit.Gallon, GallonsToCups },
-						//Original measure is in Teaspoon
-						{ Unit.Teaspoon, TeaspoonToCup }
+						{ Unit.Teaspoon, TeaspoonToCup },
+						{ Unit.Tablespoon, TablespoonToCup },
+						{ Unit.Ounce, CupToCup },
+						{ Unit.Pound, PoundToCup }
 					}
 				},
 				{
@@ -421,7 +419,9 @@ namespace ScratchConversions.UnitConversions
 					new Dictionary<Unit, Func<float,float>>()
 					{
 						{ Unit.Cup, CupsToFluidOunces },
-						{ Unit.Pint, (origAmt)=>{ float retVal = CupsToFluidOunces(PintsToCups(origAmt)); return retVal; } }
+						{ Unit.Pint, PintsToFluidOunces },
+						{ Unit.Quart, QuartsToFluidOunces },
+						{ Unit.Gallon, GallonsToFluidOunces }
 					}
 				},
 				{
@@ -429,7 +429,10 @@ namespace ScratchConversions.UnitConversions
 					Unit.Gallon,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.FluidOunce, FluidOuncesToGallons },
+						{ Unit.Cup, CupsToGallons },
+						{ Unit.Pint, PintsToGallons },
+						{ Unit.Quart, QuartsToGallons }
 					}
 				},
 				{
@@ -469,7 +472,10 @@ namespace ScratchConversions.UnitConversions
 					Unit.Ounce,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.Teaspoon, TeaspoonToOunce },
+						{ Unit.Tablespoon, TablespoonToOunce },
+						{ Unit.Cup, CupToOunce },
+						{ Unit.Pound, PoundToOunce }
 					}
 				},
 				{
@@ -477,7 +483,10 @@ namespace ScratchConversions.UnitConversions
 					Unit.Pint,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.FluidOunce, FluidOuncesToPints },
+						{ Unit.Cup, CupsToPints },
+						{ Unit.Quart, QuartsToPints },
+						{ Unit.Gallon, GallonsToPints }
 					}
 				},
 				{
@@ -485,7 +494,10 @@ namespace ScratchConversions.UnitConversions
 					Unit.Pound,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.Teaspoon, TeaspoonToPound },
+						{ Unit.Tablespoon, TablespoonToPound },
+						{ Unit.Cup, CupToPound },
+						{ Unit.Ounce, OunceToPound }
 					}
 				},
 				{
@@ -493,7 +505,10 @@ namespace ScratchConversions.UnitConversions
 					Unit.Quart,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.FluidOunce, FluidOuncesToQuarts },
+						{ Unit.Cup, CupsToQuarts },
+						{ Unit.Pint, PintsToQuarts },
+						{ Unit.Gallon, GallonsToQuarts }
 					}
 				},
 				{
@@ -501,7 +516,10 @@ namespace ScratchConversions.UnitConversions
 					Unit.Tablespoon,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.Teaspoon, TeaspoonToTablespoon },
+						{ Unit.Cup, CupToTablespoon },
+						{ Unit.Ounce, OunceToTablespoon },
+						{ Unit.Pound, PoundToTablespoon }
 					}
 				},
 				{
@@ -509,7 +527,10 @@ namespace ScratchConversions.UnitConversions
 					Unit.Teaspoon,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						{ Unit,  }
+						{ Unit.Tablespoon, TablespoonToTeaspoon },
+						{ Unit.Cup, CupToTeaspoon },
+						{ Unit.Ounce, OunceToTeaspoon },
+						{ Unit.Pound, PoundToTeaspoon }
 					}
 				}
 			};
