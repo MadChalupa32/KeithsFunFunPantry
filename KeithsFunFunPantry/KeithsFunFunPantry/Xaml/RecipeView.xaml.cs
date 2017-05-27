@@ -101,11 +101,10 @@ namespace KeithsFunFunPantry
         private void RecipeViewItem_KeyDown(object sender, KeyEventArgs e)
         {
 
-
-
-            MessageBox.Show(e.Key.ToString());
-            if(e.Key == Key.Enter)
+            if (e.Key == Key.Enter)
             {
+                
+
                 Window w = new Window();
                 w.Height = 400;
                 w.Width = 500;

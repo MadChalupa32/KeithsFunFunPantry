@@ -90,7 +90,8 @@
                  Grid.ColumnSpan="3"
                  Grid.Row="4"
                  Grid.RowSpan="7"
-                 HorizontalContentAlignment="Stretch">
+                 HorizontalContentAlignment="Stretch"
+                 KeyDown="RecipeViewItem_KeyDown">
             
             <ListBox.ItemTemplate>
                 
