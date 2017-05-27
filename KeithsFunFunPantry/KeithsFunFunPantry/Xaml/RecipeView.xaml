@@ -8,7 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="621" d:DesignWidth="1242"
       Title="RecipeView">
-    <Grid>
+    <Grid x:Name="RecipeView_Grid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="30"/>
@@ -127,7 +127,8 @@
                Placement="Mouse"
                HorizontalOffset="300"
                VerticalOffset="-100"
-               AllowsTransparency="False">
+               AllowsTransparency="False"
+               DataContext="{Binding Title}">
             <Grid Width="550" Height="550">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="32"/>
@@ -148,7 +149,7 @@
                 </Grid.ColumnDefinitions>
                 <Label x:Name="RecipeName"
                        Background="#E5C698"
-                       Content="{Binding ElementName=RecipeName_L, Path=Content}"
+                       Content="{Binding DataContext, ElementName=MyPopup}"
                        Grid.ColumnSpan="4"
                        VerticalAlignment="Top"
                        FontSize="15"
