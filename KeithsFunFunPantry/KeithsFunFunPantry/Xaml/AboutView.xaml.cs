@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace KeithsFunFunPantry.Xaml
 {
     /// <summary>
-    /// Interaction logic for SandboxView.xaml
+    /// Interaction logic for AboutView.xaml
     /// </summary>
-    public partial class SandboxView : Page
+    public partial class AboutView : Page
     {
-        public SandboxView()
+        public AboutView()
         {
             InitializeComponent();
         }
