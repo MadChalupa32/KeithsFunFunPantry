@@ -14,7 +14,7 @@
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="120"/>
-            <ColumnDefinition Width="347"/>
+            <ColumnDefinition Width="345"/>
             <ColumnDefinition Width="76"/>
             <ColumnDefinition Width="166*"/>
             <ColumnDefinition Width="143*"/>
@@ -40,7 +40,7 @@
                 BorderThickness="2" 
                 BorderBrush="LightGray" 
                 UseLayoutRounding='True' 
-                Background="White" Margin="0.4,0,10.2,0.4">
+                Background="White">
             <TextBox x:Name="TextBox_ByRecipeSearch" 
                      Background="Transparent" 
                      BorderThickness="0" 
@@ -71,16 +71,16 @@
                 Click="SearchButton_ClickHandler"/>
         <Label Content="Search by Recipe" FontSize="30" FontFamily="Georgia" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
         <Label Content="List of Recipes"
-               Grid.Row="1"
+               Grid.Row="2"
                Grid.RowSpan="3"
                Grid.Column="3"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
                FontFamily="Georgia"
                FontSize="20"
-               FontWeight="Bold" Height="37" Margin="61,30,95.2,0" Width="191"/>
+               FontWeight="Bold"/>
         <Label Content="Pantry ingredients"
-               Grid.Row="1"
+               Grid.Row="2"
                Grid.RowSpan="3"
                Grid.Column="5"
                Grid.ColumnSpan="2"
@@ -88,7 +88,7 @@
                HorizontalAlignment="Center"
                FontFamily="Georgia"
                FontSize="20"
-               FontWeight="Bold" Height="37" Margin="196.8,30,186.6,0" Width="235"/>
+               FontWeight="Bold"/>
         <ListBox x:Name="ListBox_EditRecipe"
                  Background="#E5C698"
                  Grid.Row="3"
@@ -99,54 +99,28 @@
                  HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="{Binding Color}"
-                        BorderThickness="2"
-                        CornerRadius="15">
                         <StackPanel>
                             <AC:SR_RecipeItem/>
                         </StackPanel>
-                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-
         </ListBox>
-        <!--<ScrollViewer Background="#E5C698"
-                      Opacity=".7"
-                      Grid.Row="3" 
-                      Grid.RowSpan="7" 
-                      Grid.Column="1" 
-                      Grid.ColumnSpan="5" 
-                      Margin="20,20,261,20"
-                      VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="RecipeList" 
-                        Margin="20">
-            </StackPanel>
-        </ScrollViewer>-->
         <ListBox x:Name="ListBox_PantryList"
-                 HorizontalContentAlignment="Stretch"
                  Background="#E5C698"
                  Grid.Row="3"
                  Grid.RowSpan="7"
                  Grid.Column="5"
                  Grid.ColumnSpan="2"
+                 HorizontalContentAlignment="Stretch"
                  Margin="100,20,20,20">
-            <StackPanel>
-                <AC:SR_PantryItem/>
-            </StackPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <AC:SR_PantryItem/>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
             
         </ListBox>
-        <!--<ScrollViewer Background="#E5C698"
-                      Opacity=".7"
-                      Grid.Row="3"
-                      Grid.RowSpan="7"
-                      Grid.Column="5"
-                      Grid.ColumnSpan="2"
-                      Margin="100,20,20,20"
-                      VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="PantryList"
-                        Margin="20">
-                
-            </StackPanel>
-        </ScrollViewer>-->
     </Grid>
 </Page>

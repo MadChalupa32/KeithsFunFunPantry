@@ -85,24 +85,17 @@
         <ListBox x:Name="ListBox_RecipeView"
                  Margin="20, 0, 20, 20"
                  Background="#E5C698"
-                 Opacity=".7"
                  Grid.Column="3"
                  Grid.ColumnSpan="3"
                  Grid.Row="4"
                  Grid.RowSpan="7"
                  HorizontalContentAlignment="Stretch"
                  KeyDown="RecipeViewItem_KeyDown">
-            
             <ListBox.ItemTemplate>
-                
                 <DataTemplate>
-                    <Border BorderBrush="{Binding Color}"
-                            BorderThickness="2"
-                            CornerRadius="15">
                         <StackPanel>
                             <AC:RecipeViewItem KeyDown="RecipeViewItem_KeyDown"/>
                         </StackPanel>
-                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -123,6 +116,5 @@
                 FontSize="24"
                 Margin="10"
                 HorizontalAlignment="Right"/>
-        
     </Grid>
 </Page>

@@ -84,10 +84,6 @@ namespace KeithsFunFunPantry
             w.Content = sp;
             sp.Children.Add(new AddRecipeWindow(this));
             w.Show();
-
-
-            //StackPanel_RecipeView.Children.Add(p);
-
         }
 
         private void RecipeRemoveButton_Click(object sender, RoutedEventArgs e)
@@ -103,8 +99,6 @@ namespace KeithsFunFunPantry
 
             if (e.Key == Key.Enter)
             {
-                
-
                 Window w = new Window();
                 w.Height = 400;
                 w.Width = 500;

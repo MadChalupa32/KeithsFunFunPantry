@@ -26,7 +26,6 @@ namespace KeithsFunFunPantry
         {
             InitializeComponent();
             TextBoxOptions();
-            //ListIngredients(Pantry.Ingredients);
             ListBox_PantryView.ItemsSource = Pantry.Ingredients;
             
         }
@@ -55,21 +54,18 @@ namespace KeithsFunFunPantry
         }
         public void ListIngredients(ObservableCollection<Ingredient> displayList)
         {
-            //StackPanel_PantryView.Children.Clear();
 
             
             //foreach (Ingredient ingredient in displayList)
             //{
             //    PantryViewItem pvi = new PantryViewItem();
             //    pvi.DataContext = ingredient;
-            //    //StackPanel_PantryView.Children.Add(pvi);
             //}
             
             //if (displayList.Count == 0)
             //{
             //    Label noResults = new Label();
             //    noResults.Content = "No results found";
-            //   // StackPanel_PantryView.Children.Add(noResults);
             //}
 
         }

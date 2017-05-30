@@ -5,42 +5,23 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
              mc:Ignorable="d" 
-             d:DesignHeight="150" d:DesignWidth="900">
+             d:DesignHeight="100" d:DesignWidth="500">
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <!--<Label VerticalAlignment="Center" 
-               HorizontalAlignment="Center"
-               Margin="20">
-            <Image Source="../Images/ListItem.png"/>
-        </Label>
-        <Border CornerRadius="5"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                Width="50"
-                Height="50">
-            <Button Background="Transparent"
-                    BorderThickness="0"
-                    Opacity=".2"
-                    OpacityMask="LightBlue"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Width="50"
-                    Height="50"
-                    Click="Button_Click"/>
-        </Border>-->
         <Border CornerRadius="15"
                 BorderBrush="#A3CC72"
                 BorderThickness="5"
                 Margin="5"
-                Grid.Column="1">
+                Grid.Column="1"
+                Height="75">
             <Grid Margin="5">
                 <Grid.RowDefinitions>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                <Label Content="Recipe Name"
+                <Label Content="{Binding Path=Title, Mode=OneWay}"
                        FontFamily="Georgia"
                        FontSize="30"
                        FontWeight="Bold"

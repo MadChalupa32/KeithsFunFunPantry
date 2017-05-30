@@ -87,14 +87,6 @@
                  FontSize="16"
                  FontFamily="Georgia"
                  FontWeight="Bold"/>
-        <Button x:Name="Exit_Button"
-                Content="Exit"
-                FontSize="20"
-                Grid.Row="6"
-                Grid.Column="1"
-                HorizontalAlignment="Left"
-                Width="50"
-                Click="Exit_Button_Click"/>
         <TextBox x:Name="TextBox_Subtract"
                  MaxLength="3"
                  Grid.Row="5"

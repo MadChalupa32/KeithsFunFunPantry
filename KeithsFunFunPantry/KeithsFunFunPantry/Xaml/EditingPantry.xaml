@@ -45,7 +45,7 @@
                 BorderThickness="2" 
                 BorderBrush="LightGray" 
                 UseLayoutRounding='True' 
-                Background="White" Margin="0.4,0,0.2,0.4">
+                Background="White">
             <TextBox x:Name="TextBox_IngredientSearch" 
                      Background="Transparent" 
                      BorderThickness="0"
@@ -55,13 +55,14 @@
         <Label VerticalAlignment="Center" 
                HorizontalAlignment="Left"
                Background="Transparent"
-               Margin="3.4,1,0,0.4"
+               Margin="3,1,0,0"
                Grid.Row="1"
                Grid.Column="1"
                Grid.ColumnSpan="2">
             <Image Source="../Images/Search.png"/>
         </Label>
-        <Button Background="Transparent"
+        <Button x:Name="recipeSearchButton"
+                Background="Transparent"
                 Grid.Column="1"
                 Grid.Row="1"
                 BorderThickness="0"
@@ -69,18 +70,18 @@
                 OpacityMask="Transparent"
                 Width="20"
                 Height="20"
-                Margin="7.4,6,0,4.4"
+                Margin="7,6,0,5"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
-                FontFamily ="Georgia"
-                Click="SearchButton_ClickHandler"/>
+                Click="SearchButton_ClickHandler">
+        </Button>
         <Label Content="Edit Pantry" 
                FontSize="30" 
                FontFamily="Georgia"
-               Grid.ColumnSpan="3"
-               Margin="30,0,0,0" 
+               Grid.ColumnSpan="5"
+               Margin="60,0,0,0" 
                VerticalAlignment="Top"
-               HorizontalAlignment="Left" Grid.Column="2"/>
+               HorizontalAlignment="Left"/>
         <!--
         <Button Content="Save Pantry" 
                 Grid.Column="6" 
@@ -102,28 +103,28 @@
                FontFamily="Georgia"
                FontWeight="Bold"/>
         <TextBox x:Name="TextBox_Name" 
-                 Grid.Row="4" 
+                 Grid.Row="5" 
                  Grid.Column="1"
-                 Grid.ColumnSpan="4"
+                 Grid.ColumnSpan="3"
                  Padding="5" 
                  BorderThickness="3" 
-                 BorderBrush="Black" Margin="0.4,19.6,346.2,9.4" Grid.RowSpan="3"/>
+                 BorderBrush="Black"/>
         <TextBox x:Name="TextBox_Amount" 
-                 Grid.Row="6" 
+                 Grid.Row="7" 
                  Grid.Column="1" 
-                 Grid.ColumnSpan="4" 
+                 Grid.ColumnSpan="3" 
                  Padding="5" 
                  BorderThickness="3" 
-                 BorderBrush="#7EB4EA" Margin="0.4,9.2,346.2,9.4" Grid.RowSpan="3"/>
+                 BorderBrush="#7EB4EA"/>
         <ComboBox x:Name="ComboBox_Units"
                   IsEditable="True"
                   IsReadOnly="True"
                   Text="Unit"
                   BorderThickness="3"
                   BorderBrush="Black"
-                  Grid.Row="8"
+                  Grid.Row="9"
                   Grid.Column="1"
-                  Grid.ColumnSpan="3" Margin="0.4,9.2,0,19.8" Grid.RowSpan="3">
+                  Grid.ColumnSpan="3">
         </ComboBox>
 
         <Button Content="Add" 
@@ -145,40 +146,56 @@
                VerticalAlignment="Center"
                HorizontalAlignment="Center"
                FontSize="20"
-               FontWeight="Bold" Margin="101.8,3.6,101.4,4.4"/>
+               FontWeight="Bold"/>
 
         <ListBox x:Name="ListBox_EditPantry"
                  Background="#E5C698"
-                 Grid.Row="4"
-                 Grid.RowSpan="10"
+                 Grid.Row="3"
+                 Grid.RowSpan="11"
                  Grid.Column="4"
                  Grid.ColumnSpan="3"
-                 Margin="20,19.6,10.4,19.8"
+                 Margin="20,20,10,20"
                  SelectionMode="Single"
                  HorizontalContentAlignment="Stretch"
                  MouseDoubleClick="ListBox_EditPantry_MouseDoubleClick">
-
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <Border BorderBrush="{Binding Color}"
-                            BorderThickness="2"
-                            CornerRadius="15">
                         <StackPanel>
                             <AC:PantryEdit/>
                         </StackPanel>
-                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
         <Popup x:Name="myPopup2"
                Placement="Mouse"
                AllowsTransparency="False"
-                HorizontalOffset="-150"
-               VerticalOffset="-250" Grid.ColumnSpan="2" Margin="0,0,30,0">
-            <Grid Width="600" Height="350" Background="Green">
-                <AC:EditIngredient/>
+               HorizontalOffset="-300"
+               VerticalOffset="-200">
+            <Grid Width="600" 
+                  Height="350" 
+                  Background="Green">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="39*"/>
+                    <ColumnDefinition Width="46*"/>
+                    <ColumnDefinition Width="515*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="59*"/>
+                    <RowDefinition Height="11*"/>
+                </Grid.RowDefinitions>
+                <Border BorderBrush="Black"
+                        BorderThickness="5" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="0,0,0,0.4">
+                    <AC:EditIngredient/>
+                </Border>
+                <Button x:Name="Exit_Click"
+                        Content="Exit"
+                        FontWeight="Bold"
+                        FontFamily="Georgia"
+                        Grid.Row="1"
+                        Grid.Column="1"
+                        Margin="5,10"
+                        Click="HidePopUp_Click"/>
             </Grid>
-
         </Popup>
     </Grid>
 </Page>
