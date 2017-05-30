@@ -5,9 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeithsFunFunPantry"
         mc:Ignorable="d"
-        Title="Keith's Fun Fun Pantry" Height="750" Width="1250" Icon="../Images/AppIcon.ico"
-        Closing="Window_Closing"
-        >
+        Title="Keith's Fun Fun Pantry" Height="750" Width="1250" Icon="../Images/AppIcon.ico" Closing="Window_Closing">
     <Grid>
         <Image Source="../Images/BackgroundLogo.png"
                VerticalAlignment="Center"
@@ -64,12 +62,12 @@
                     MinWidth="50"
                     Margin="10,0,0,0"
                     Click="EditPantry_Click"/>
-            <Button Content="Sandbox" 
+            <Button Content="About" 
                     FontFamily="Georgia"
                     FontSize="15"
                     MinWidth="50"
                     Margin="10,0,0,0"
-                    Click="Sandbox_Click"/>
+                    Click="About_Click"/>
         </StackPanel>
         <Frame x:Name="Frame_HomePage" Margin="0, 35, 0, 0" NavigationUIVisibility="Hidden" />
     </Grid>

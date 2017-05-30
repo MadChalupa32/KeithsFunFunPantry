@@ -3,8 +3,12 @@
     "",
     "\\KeithsFunFunPantry",
     "\\KeithsFunFunPantry\\KeithsFunFunPantry",
-    "\\KeithsFunFunPantry\\KeithsFunFunPantry\\Xaml"
+    "\\KeithsFunFunPantry\\KeithsFunFunPantry\\CS",
+    "\\KeithsFunFunPantry\\packages",
+    "\\KeithsFunFunPantry\\ScratchConversions",
+    "\\KeithsFunFunPantry\\ScratchConversions\\US Dry",
+    "\\KeithsFunFunPantry\\ScratchConversions\\US Liquid"
   ],
-  "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry.sln",
+  "SelectedNode": "\\KeithsFunFunPantry\\ScratchConversions\\US Dry\\DryConversions.cs",
   "PreviewInSolutionExplorer": false
 }

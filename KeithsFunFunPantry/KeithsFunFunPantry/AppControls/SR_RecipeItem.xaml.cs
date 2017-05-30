@@ -26,14 +26,14 @@ namespace KeithsFunFunPantry.AppControls
             InitializeComponent();
         }
 
-        private void Show_Click(object sender, RoutedEventArgs e)
-        {
-            MyPopup.IsOpen = true;
-        }
+        //private void Show_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MyPopup.IsOpen = true;
+        //}
 
-        private void HidePopUp_Click(object sender, RoutedEventArgs e)
-        {
-            MyPopup.IsOpen = false;
-        }
+        //private void HidePopUp_Click(object sender, RoutedEventArgs e)
+        //{
+        //    MyPopup.IsOpen = false;
+        //}
     }
 }

@@ -5,10 +5,36 @@
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:KeithsFunFunPantry.Xaml"
       mc:Ignorable="d" 
-      d:DesignHeight="300" d:DesignWidth="300"
+      d:DesignHeight="621" d:DesignWidth="1242"
       Title="AboutView">
-
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="50"/>
+            <ColumnDefinition Width="30"/>
+            <ColumnDefinition Width="120"/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="20"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+       
+        <Label Content="About" 
+               FontSize="30" 
+               FontFamily="Georgia"
+               Grid.ColumnSpan="4" 
+               Margin="60,0,0,0" 
+               VerticalAlignment="Top" 
+               HorizontalAlignment="Left"/>
     </Grid>
 </Page>
