@@ -24,7 +24,6 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class EditingPantry : Page
     {
-
         private string searchTB = "Search Ingredient";
         private string amountTB = "Amount";
         private string nameTB = "Name";
@@ -253,6 +252,12 @@ namespace KeithsFunFunPantry
         private void HidePopUp_Click(object sender, RoutedEventArgs e)
         {
             myPopup2.IsOpen = false;
+        }
+
+        public void ListBox_EditPantry_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            string p = ListBox_EditPantry.Name;
+
         }
     }
 }
