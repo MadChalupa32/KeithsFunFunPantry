@@ -130,19 +130,6 @@ namespace KeithsFunFunPantry
             }
         }
 
-        private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
-        {
-            string query = TextBox_IngredientSearch.Text.ToLower();
-            if (!query.Equals("search ingredient"))
-            {
-                ListBox_EditPantry.ItemsSource = Pantry.IngredientSearchController(query);
-            }
-            else
-            {
-                 ListBox_EditPantry.ItemsSource = Pantry.Ingredients;
-            }
-        }
-
         //Logic for the Add Button (eventually adds the ingredient to the pantry list
         private void AddIngredient_Click(object sender, RoutedEventArgs e)
         {
@@ -254,10 +241,29 @@ namespace KeithsFunFunPantry
             myPopup2.IsOpen = false;
         }
 
-        public void ListBox_EditPantry_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Search()
         {
-            string p = ListBox_EditPantry.Name;
+            string query = TextBox_IngredientSearch.Text.ToLower();
+            if (!query.Equals("search ingredient"))
+            {
+                ListBox_EditPantry.ItemsSource = Pantry.IngredientSearchController(query);
+            }
+            else
+            {
+                ListBox_EditPantry.ItemsSource = Pantry.Ingredients;
+            }
 
+        }
+        private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
+        {
+            Search();
+        }
+        private void TextBox_IngredientSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                Search();
+            }
         }
     }
 }
