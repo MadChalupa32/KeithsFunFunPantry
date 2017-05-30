@@ -5,29 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
              mc:Ignorable="d" 
-             d:DesignHeight="150" Width="400">
+             d:DesignHeight="150" Width="420">
     <Grid>
-        
-        <!--<Label VerticalAlignment="Center" 
-               HorizontalAlignment="Center"
-               Margin="20">
-            <Image Source="../Images/ListItem.png"/>
-        </Label>
-        <Border CornerRadius="5"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                Width="50"
-                Height="50">
-            <Button Background="Transparent"
-                    BorderThickness="0"
-                    Opacity=".2"
-                    OpacityMask="LightBlue"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Width="50"
-                    Height="50"
-                    Click="Button_Click"/>
-        </Border>-->
         <Border CornerRadius="15"
                 BorderBrush="#A3CC72"
                 BorderThickness="5"
@@ -39,7 +18,6 @@
                     <RowDefinition/>
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
-
                     <ColumnDefinition/>
                     <ColumnDefinition Width="1.5*"/>
                 </Grid.ColumnDefinitions>
@@ -57,14 +35,14 @@
                        FontFamily="Georgia"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Right"/>
-                <Label Content="Eggs"
+                <Label Content="{Binding Name}"
                        Grid.Column="1"
                        FontSize="30"
                        FontWeight="Bold"
                        FontFamily="Georgia"
                        VerticalAlignment="Top"
                        HorizontalAlignment="Left"/>
-                <Label Content="2"
+                <Label Content="{Binding IngredientMeasurement}"
                        Grid.Row="1"
                        Grid.Column="1"
                        FontSize="30"

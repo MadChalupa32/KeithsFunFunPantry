@@ -140,7 +140,7 @@ namespace KeithsFunFunPantry
             }
             else
             {
-                ListBox_EditPantry.ItemsSource = Pantry.Ingredients;
+                 ListBox_EditPantry.ItemsSource = Pantry.Ingredients;
             }
         }
 
@@ -149,52 +149,70 @@ namespace KeithsFunFunPantry
         {
             string name = (string)TextBox_Name.Text;
             float amount;
-            float.TryParse(TextBox_Amount.Text, out amount);
-            string unit = ComboBox_Units.Text.ToLower();
-            switch (unit)
+            if((TextBox_Name.Text.Equals("Name") && TextBox_Amount.Text.Equals("Amount")))
             {
-                case "teaspoon":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Teaspoon));
-                    break;
-                case "tablespoon":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Tablespoon));
-                    break;
-                case "cup":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Cup));
-                    break;
-                case "ounce":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Ounce));
-                    break;
-                case "fluid ounce":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.FluidOunce));
-                    break;
-                case "pound":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Pound));
-                    break;
-                case "pint":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Pint));
-                    break;
-                case "quart":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Quart));
-                    break;
-                case "gallon":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Gallon));
-                    break;
-                case "milliliter":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Milliliter));
-                    break;
-                case "liter":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Liter));
-                    break;
-                case "gram":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Gram));
-                    break;
-                case "kilogram":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Kilogram));
-                    break;
-                case "count":
-                    Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Count));
-                    break;
+                MessageBox.Show("Enter a Name and an Amount");
+            }
+            else if (TextBox_Name.Text.Equals("Name"))
+            {
+                MessageBox.Show("Enter a Name");
+            }
+            else if (TextBox_Amount.Text.Equals("Amount"))
+            {
+                MessageBox.Show("Enter an Amount");
+            }
+            else if(ComboBox_Units.Text.Equals("Unit"))
+            {
+                MessageBox.Show("Choose a Unit");
+            }
+            else if (float.TryParse(TextBox_Amount.Text, out amount))
+            {
+                string unit = ComboBox_Units.Text.ToLower();
+                switch (unit)
+                {
+                    case "teaspoon":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Teaspoon));
+                        break;
+                    case "tablespoon":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Tablespoon));
+                        break;
+                    case "cup":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Cup));
+                        break;
+                    case "ounce":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Ounce));
+                        break;
+                    case "fluid ounce":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.FluidOunce));
+                        break;
+                    case "pound":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Pound));
+                        break;
+                    case "pint":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Pint));
+                        break;
+                    case "quart":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Quart));
+                        break;
+                    case "gallon":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Gallon));
+                        break;
+                    case "milliliter":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Milliliter));
+                        break;
+                    case "liter":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Liter));
+                        break;
+                    case "gram":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Gram));
+                        break;
+                    case "kilogram":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Kilogram));
+                        break;
+                    case "count":
+                        Pantry.AddNewIngredient(name, new Measurement(amount, Unit.Count));
+                        break;
+                }
             }
             ListIngredients(Pantry.Ingredients);
 
@@ -229,12 +247,12 @@ namespace KeithsFunFunPantry
 
         private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            //myPopup2.IsOpen = true;
+            myPopup2.IsOpen = true;
         }
 
         private void HidePopUp_Click(object sender, RoutedEventArgs e)
         {
-            //myPopup2.IsOpen = false;
+            myPopup2.IsOpen = false;
         }
     }
 }

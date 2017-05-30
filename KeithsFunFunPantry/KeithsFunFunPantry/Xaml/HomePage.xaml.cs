@@ -12,9 +12,6 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
-using KeithsFunFunPantry.CS;
-using KeithsFunFunPantry.Xaml;
-
 namespace KeithsFunFunPantry
 {
     /// <summary>
@@ -22,8 +19,6 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class HomePage : Window
     {
-        private PantryView pantryView = new PantryView();
-
         public HomePage()
         {
             InitializeComponent();
@@ -58,9 +53,9 @@ namespace KeithsFunFunPantry
         {
             Frame_HomePage.Content = new EditingPantry();
         }
-        private void Sandbox_Click(object sender, RoutedEventArgs e)
+        private void About_Click(object sender, RoutedEventArgs e)
         {
-            Frame_HomePage.Content = new AboutView();
+            Frame_HomePage.Content = new Xaml.AboutView();
         }
 
         private void BackButton_Click(object sender, RoutedEventArgs e)
@@ -80,7 +75,7 @@ namespace KeithsFunFunPantry
 
     private void HomePage_Click(object sender, RoutedEventArgs e)
         {
-            Frame_HomePage.Content = new MainPage();
+            Frame_HomePage.Content = new Xaml.MainPage();
         }
     private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
         {

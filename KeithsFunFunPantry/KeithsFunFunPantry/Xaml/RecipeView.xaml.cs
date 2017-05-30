@@ -84,10 +84,6 @@ namespace KeithsFunFunPantry
             w.Content = sp;
             sp.Children.Add(new AddRecipeWindow(this));
             w.Show();
-
-
-            //StackPanel_RecipeView.Children.Add(p);
-
         }
 
         private void RecipeRemoveButton_Click(object sender, RoutedEventArgs e)
@@ -101,9 +97,6 @@ namespace KeithsFunFunPantry
         private void RecipeViewItem_KeyDown(object sender, KeyEventArgs e)
         {
 
-
-
-            MessageBox.Show(e.Key.ToString());
             if (e.Key == Key.Enter)
             {
                 Window w = new Window();
@@ -115,29 +108,7 @@ namespace KeithsFunFunPantry
                 w.Show();
             }
         }
-        private void ListBox_RecipeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
-        {
-            MyPopup.IsOpen = true;
-            RecipeView_Grid.DataContext = ListBox_RecipeView.SelectedItem;
-        }
 
-        private void HidePopUp_Click(object sender, RoutedEventArgs e)
-        {
-            MyPopup.IsOpen = false;
-        }
-
-        private void EditButton_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show("You can now Edit.");
-            RecipeIngredients.IsReadOnly = false;
-            RecipeInstructions.IsReadOnly = false;
-        }
-
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
-        {
-            RecipeIngredients.IsReadOnly = true;
-            RecipeInstructions.IsReadOnly = true;
-
-        }
+        
     }
 }

@@ -8,7 +8,7 @@
       mc:Ignorable="d" 
       d:DesignHeight="621" d:DesignWidth="1242"
       Title="RecipeView">
-    <Grid x:Name="RecipeView_Grid">
+    <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="30"/>
@@ -85,24 +85,17 @@
         <ListBox x:Name="ListBox_RecipeView"
                  Margin="20, 0, 20, 20"
                  Background="#E5C698"
-                 Opacity=".7"
                  Grid.Column="3"
                  Grid.ColumnSpan="3"
                  Grid.Row="4"
                  Grid.RowSpan="7"
                  HorizontalContentAlignment="Stretch"
-                 MouseDoubleClick="ListBox_RecipeView_MouseDoubleClick">
-            
+                 KeyDown="RecipeViewItem_KeyDown">
             <ListBox.ItemTemplate>
-                
                 <DataTemplate>
-                    <Border BorderBrush="{Binding Color}"
-                            BorderThickness="2"
-                            CornerRadius="15">
                         <StackPanel>
                             <AC:RecipeViewItem KeyDown="RecipeViewItem_KeyDown"/>
                         </StackPanel>
-                    </Border>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -123,140 +116,5 @@
                 FontSize="24"
                 Margin="10"
                 HorizontalAlignment="Right"/>
-        
-        <Popup Name="MyPopup"
-               Placement="Mouse"
-               HorizontalOffset="-250"
-               VerticalOffset="-250"
-               AllowsTransparency="False">
-            <Grid Width="550" Height="550">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="32"/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition/>
-                    <RowDefinition Height="50"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                    <ColumnDefinition/>
-                </Grid.ColumnDefinitions>
-                <Label x:Name="RecipeName"
-                       Background="#E5C698"
-                       Content="{Binding Title}"
-                       Grid.ColumnSpan="4"
-                       VerticalAlignment="Top"
-                       FontSize="15"
-                       FontWeight="Bold"
-                       Panel.ZIndex="1"
-                       Margin="5,5,4.5,0"
-                       HorizontalContentAlignment="Center"/>
-                <TextBox x:Name="RecipeIngredients"
-                         Background="Transparent"
-                         IsReadOnly="True"
-                           Margin="10,0,10,14"
-                           TextWrapping="Wrap"
-                           MaxHeight="187"
-                           Text="{Binding IngredientList}"
-                           Grid.Row="1"
-                           Grid.ColumnSpan="4"
-                           Panel.ZIndex="1" 
-                           FontFamily="Georgia"
-                           FontSize="15"
-                           Grid.RowSpan="3"/>
-                <TextBox x:Name="RecipeInstructions"
-                         Background="Transparent"
-                         IsReadOnly="True"
-                       Text="{Binding Directions}"
-                       Panel.ZIndex="1"
-                       TextWrapping="Wrap"
-                       
-                       Grid.Row="4"
-                       MaxHeight="180"
-                       Grid.RowSpan="3"
-                       Grid.ColumnSpan="4"
-                       FontFamily="Georgia"
-                       FontSize="15"
-                       Margin="10,0,10,20"/>
-                <Rectangle Fill="Black" 
-                           Panel.ZIndex="1" 
-                           Grid.Row="3" 
-                           Grid.ColumnSpan="4"
-                           VerticalAlignment="Bottom"
-                           Height="4"/>
-                <Rectangle Fill="Black" 
-                           Panel.ZIndex="1" 
-                           Grid.Row="6" 
-                           Grid.ColumnSpan="4"
-                           Margin="0,0,0,-30"
-                           Height="4"/>
-                <TextBox x:Name="RecipeNotes"
-                         Background="LightGray"
-                         Grid.Row="7"
-                         Panel.ZIndex="1"
-                         Grid.ColumnSpan="4"
-                         Padding="5"
-                         Margin="5,0,4.5,0"/>
-                <Label Content="Notes:"
-                       Grid.Row="6"
-                       FontWeight="Bold"
-                       FontSize="15"
-                       VerticalAlignment="Bottom"
-                       Margin="-1,0,1,59"
-                       Panel.ZIndex="1" Grid.RowSpan="2"/>
-                <Label BorderThickness="5"
-                       BorderBrush="Black"
-                       Grid.ColumnSpan="4"
-                       Grid.RowSpan="9"
-                       Background="#A3CC72" Margin="-1,0,1,0"/>
-                <Button Content="Exit"
-                        Width="70"
-                        Height="40"
-                        Margin="5,5,5,10"
-                        Grid.Row="8"
-                        Grid.ColumnSpan="2"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        FontSize="24"
-                        FontWeight="Black"
-                        FontFamily="Georgia"
-                        Click="HidePopUp_Click"/>
-                <Button Content="Save"
-                        Width="70"
-                        Height="40"
-                        Margin="5,5,5,10"
-                        Grid.Row="8"
-                        Grid.Column="1"
-                        Grid.ColumnSpan="2"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        FontSize="24"
-                        FontWeight="Bold"
-                        FontFamily="Georgia"
-                        Click="SaveButton_Click"/>
-                <Button Content="Edit"
-                        BorderThickness="2"
-                        Width="70"
-                        Height="40"
-                        Margin="5,5,5,10"
-                        Grid.Row="8"
-                        Grid.Column="2"
-                        Grid.ColumnSpan="2"
-                        VerticalAlignment="Center"
-                        HorizontalAlignment="Center"
-                        FontSize="24"
-                        FontWeight="Bold"
-                        FontFamily="Georgia"
-                        Click="EditButton_Click"/>
-                <Label/>
-            </Grid>
-        </Popup>
-
     </Grid>
 </Page>
