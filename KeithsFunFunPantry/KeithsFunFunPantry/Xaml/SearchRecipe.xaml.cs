@@ -80,24 +80,41 @@ namespace KeithsFunFunPantry
 		/// </summary>
 		/// <param name="sender"></param>
 		/// <param name="e"></param>
+        /// 
+
+
+        private void Search()
+        {
+            
+            string query = TextBox_ByRecipeSearch.Text.ToLower();
+
+            //Compile a list<string> of the check box values (advanced searching)
+
+            RecipeBook book = RecipeBook.Instance;
+
+
+            if (!query.Equals("search recipes"))
+            {
+
+                ListBox_EditRecipe.ItemsSource = book.RecipeSearchController(query);
+
+            }
+            else
+            {
+                ListBox_EditRecipe.ItemsSource = book.Recipes;
+            }
+        }
 		public void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
 		{
-			string query = TextBox_ByRecipeSearch.Text.ToLower();
-
-			//Compile a list<string> of the check box values (advanced searching)
-
-			RecipeBook book = RecipeBook.Instance;
-			book.RecipeSearchController(query);
-
-			//RecipeList.Children.Clear();
-			if (!query.Equals("search by recipe"))
-			{
-				ListRecipes(book.RecipeSearchController(query));
-			}
-			else
-			{
-				ListRecipes(book.Recipes);
-			}
+            Search();
 		}
+
+        private void TextBox_ByRecipeSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                Search();
+            }
+        }
     }
 }

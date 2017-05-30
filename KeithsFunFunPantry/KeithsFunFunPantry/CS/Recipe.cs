@@ -15,6 +15,7 @@ namespace KeithsFunFunPantry
             IngredientList = ingredientList;
             Directions = directions;
             Title = title;
+            Notes = notes;
         }
 
         private List<Ingredient> ingredientList;
