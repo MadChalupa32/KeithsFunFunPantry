@@ -37,14 +37,11 @@ namespace KeithsFunFunPantry.AppControls
             {
                 selectedIngredients.Add((Ingredient)obj);
             }
-            Recipe r = new Recipe(selectedIngredients,TitleEntryTB.Text,DirectionsEntryTB.Text,NotesEntryTB.Text);
+            Recipe r = new Recipe(selectedIngredients,TitleEntryTB.Text,DirectionsEntryTB.Text, NotesEntryTB.Text);
             RecipeBook book = RecipeBook.Instance;
             book.Recipes.Add(r);
             rv.ListBox_RecipeView.ItemsSource = null;
             rv.ListBox_RecipeView.ItemsSource = book.Recipes;
-
-
-
             Application.Current.Windows[1].Close();
         }
 
