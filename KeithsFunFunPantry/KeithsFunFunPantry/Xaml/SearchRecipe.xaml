@@ -96,7 +96,8 @@
                  Grid.Column="1"
                  Grid.ColumnSpan="5"
                  Margin="20,20,261,20"
-                 HorizontalContentAlignment="Stretch">
+                 HorizontalContentAlignment="Stretch"
+                 SelectionChanged="ListBox_EditRecipe_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                         <StackPanel>
