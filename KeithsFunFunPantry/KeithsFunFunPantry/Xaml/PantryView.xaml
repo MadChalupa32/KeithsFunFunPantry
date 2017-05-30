@@ -44,7 +44,8 @@
                      Background="Transparent" 
                      BorderThickness="0"
                      FontFamily="Georgia"
-                     Margin="28,0,0,0"/>
+                     Margin="28,0,0,0"
+                     Keyboard.KeyDown="TextBox_PantrySearch_KeyDown"/>
         </Border>
         <Label Content="Ingredient Name"
                Grid.Row="2"
