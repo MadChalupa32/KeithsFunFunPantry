@@ -24,7 +24,6 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class EditingPantry : Page
     {
-
         private string searchTB = "Search Ingredient";
         private string amountTB = "Amount";
         private string nameTB = "Name";
@@ -128,19 +127,6 @@ namespace KeithsFunFunPantry
             foreach (Unit units in Unit.TotalUnits)
             {
                 ComboBox_Units.Items.Add(units.LongHand);
-            }
-        }
-
-        private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
-        {
-            string query = TextBox_IngredientSearch.Text.ToLower();
-            if (!query.Equals("search ingredient"))
-            {
-                ListBox_EditPantry.ItemsSource = Pantry.IngredientSearchController(query);
-            }
-            else
-            {
-                 ListBox_EditPantry.ItemsSource = Pantry.Ingredients;
             }
         }
 
@@ -253,6 +239,31 @@ namespace KeithsFunFunPantry
         private void HidePopUp_Click(object sender, RoutedEventArgs e)
         {
             myPopup2.IsOpen = false;
+        }
+
+        private void Search()
+        {
+            string query = TextBox_IngredientSearch.Text.ToLower();
+            if (!query.Equals("search ingredient"))
+            {
+                ListBox_EditPantry.ItemsSource = Pantry.IngredientSearchController(query);
+            }
+            else
+            {
+                ListBox_EditPantry.ItemsSource = Pantry.Ingredients;
+            }
+
+        }
+        private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
+        {
+            Search();
+        }
+        private void TextBox_IngredientSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                Search();
+            }
         }
     }
 }

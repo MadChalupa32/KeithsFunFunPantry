@@ -43,7 +43,8 @@
                      Background="Transparent" 
                      BorderThickness="0"
                      FontFamily="Georgia"
-                     Margin="28,0,0,0"/>
+                     Margin="28,0,0,0"
+                     Keyboard.KeyDown="SearchButton_KeyDown"/>
         </Border>
         <Label VerticalAlignment="Center" 
                HorizontalAlignment="Left"
@@ -67,10 +68,10 @@
                 HorizontalAlignment="Left"
                 Click="SearchButton_ClickHandler"/>
         <Label Content="Recipe" FontFamily="Georgia" FontSize="30" Grid.ColumnSpan="4" Margin="60,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left"/>
-        <CheckBox Content="Vegan" FontFamily="Georgia" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
+        <!--<CheckBox Content="Vegan" FontFamily="Georgia" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
         <CheckBox Content="Quick and Easy" FontFamily="Georgia" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
         <CheckBox Content="Fruits" FontFamily="Georgia" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
-        <CheckBox Content="Vegetables" FontFamily="Georgia" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
+        <CheckBox Content="Vegetables" FontFamily="Georgia" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>-->
         <Label Content="Recipes"
                Grid.Row="2"
                Grid.RowSpan="2"
