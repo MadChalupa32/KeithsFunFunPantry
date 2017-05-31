@@ -9,7 +9,7 @@
              d:DesignHeight="300" d:DesignWidth="500">
     <Grid>
         <Grid.Resources>
-            
+
         </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
@@ -65,7 +65,8 @@
                   Grid.ColumnSpan="3"
                   VerticalContentAlignment="Center"
                   HorizontalContentAlignment="Left"
-                  Margin="5,0"/>
+                  Margin="5,0"
+                  SelectionChanged="ComboBox_1_SelectionChanged"/>
         <Button Content="Add"
                 FontSize="20"
                 FontWeight="Bold"
