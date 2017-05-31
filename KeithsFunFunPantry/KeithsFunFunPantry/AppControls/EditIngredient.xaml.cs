@@ -32,12 +32,11 @@ namespace KeithsFunFunPantry.AppControls
         }
         private void FillUnits()
         {
-            foreach (Unit units in Unit.TotalUnits)
-            {
-
-                ComboBox_1.Items.Add(units.LongHand);
-            }
-        }
+			foreach (Unit units in Unit.TotalUnits)
+			{
+				ComboBox_1.Items.Add(units.LongHand);
+			}
+		}
 
         private void TextBoxAdd()
         {
@@ -112,7 +111,7 @@ namespace KeithsFunFunPantry.AppControls
         {
             //Unit targetUnit = ComboBox_1.SelectedItem as Unit;
             Unit targetUnit = null;
-            switch (ComboBox_1.SelectedItem.ToString().ToLower())
+            switch ((ComboBox_1.SelectedItem as String).ToLower())
             {
                 case "teaspoon":
                     targetUnit = Unit.Teaspoon;
@@ -158,7 +157,7 @@ namespace KeithsFunFunPantry.AppControls
                     break;
             }
 
-            Ingredient targetIngredient = (Ingredient)this.DataContext;
+            Ingredient targetIngredient = DataContext as Ingredient;
             
             targetIngredient.IngredientMeasurement.Convert(targetUnit);
         }

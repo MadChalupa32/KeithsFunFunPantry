@@ -99,5 +99,11 @@ namespace KeithsFunFunPantry.CS
         {
         }
 
-    }
+		public override bool Equals(object obj)
+		{
+			bool same = LongHand == (obj as Unit).LongHand;
+			return same;
+		}
+
+	}
 }
