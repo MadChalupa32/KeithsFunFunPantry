@@ -90,6 +90,8 @@ namespace KeithsFunFunPantry.AppControls
                     Pantry.Ingredients[x].IngredientMeasurement.Amount += addAmount;
                 }
             }
+            TextBox_Add.Text = "";
+            TextBoxAdd();
         }
         private void ButtonSubtract_Click(object sender, EventArgs e)
         {
@@ -102,6 +104,8 @@ namespace KeithsFunFunPantry.AppControls
                     Pantry.Ingredients[x].IngredientMeasurement.Amount -= subAmount;
                 }
             }
+            TextBox_Subtract.Text = "";
+            TextBoxSubtract();
         }
     }
 

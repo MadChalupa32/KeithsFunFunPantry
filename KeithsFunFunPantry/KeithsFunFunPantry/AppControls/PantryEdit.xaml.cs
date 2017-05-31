@@ -23,7 +23,6 @@ namespace KeithsFunFunPantry.AppControls
         public PantryEdit()
         {
             InitializeComponent();
-            
         }
 
         private void RemoveIngredient_Click(object sender, RoutedEventArgs e)
