@@ -172,6 +172,9 @@
                AllowsTransparency="False"
                HorizontalOffset="-300"
                VerticalOffset="-200">
+            <Popup.DataContext>
+                <AC:EditIngredient x:Name="PopUp2"/>
+            </Popup.DataContext>
             <Grid Width="600" 
                   Height="350" 
                   Background="Green">

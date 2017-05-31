@@ -161,7 +161,11 @@ namespace KeithsFunFunPantry.CS
 			//Validation & Conversion
 			try
 			{
-				if (original.UnitOfMeasurement == targetUnit)
+                Unit u1 = Unit.Count;
+                Unit u2 = Unit.Count;
+                bool same = u1 == u2;
+
+				if (original.UnitOfMeasurement.Equals(targetUnit))
 					throw new ArgumentException("The units are the same!");
 
 				//Attempt to convert the measurement into the target unit

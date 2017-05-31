@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using KeithsFunFunPantry.Xaml;
 
 namespace KeithsFunFunPantry.AppControls
 {
@@ -109,10 +110,57 @@ namespace KeithsFunFunPantry.AppControls
 
         private void ComboBox_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            Unit targetUnit = (Unit)ComboBox_1.SelectedItem;
-            Ingredient targetIngredient = (Ingredient)sender;
+            //Unit targetUnit = ComboBox_1.SelectedItem as Unit;
+            Unit targetUnit = null;
+            switch (ComboBox_1.SelectedItem.ToString().ToLower())
+            {
+                case "teaspoon":
+                    targetUnit = Unit.Teaspoon;
+                    break;
+                case "tablespoon":
+                    targetUnit = Unit.Tablespoon;
+                    break;
+                case "cup":
+                    targetUnit = Unit.Cup;
+                    break;
+                case "ounce":
+                    targetUnit = Unit.Ounce;
+                    break;
+                case "fluid ounce":
+                    targetUnit = Unit.FluidOunce;
+                    break;
+                case "pound":
+                    targetUnit = Unit.Pound;
+                    break;
+                case "pint":
+                    targetUnit = Unit.Pint;
+                    break;
+                case "quart":
+                    targetUnit = Unit.Quart;
+                    break;
+                case "gallon":
+                    targetUnit = Unit.Gallon;
+                    break;
+                case "milliliter":
+                    targetUnit = Unit.Milliliter;
+                    break;
+                case "liter":
+                    targetUnit = Unit.Liter;
+                    break;
+                case "gram":
+                    targetUnit = Unit.Gram;
+                    break;
+                case "kilogram":
+                    targetUnit = Unit.Kilogram;
+                    break;
+                case "count":
+                    targetUnit = Unit.Count;
+                    break;
+            }
 
-           
+            Ingredient targetIngredient = (Ingredient)this.DataContext;
+            
+            targetIngredient.IngredientMeasurement.Convert(targetUnit);
         }
     }
 

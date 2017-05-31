@@ -54,7 +54,7 @@
                  FontWeight="Bold"
                  Margin="5,0"/>
         <ComboBox x:Name="ComboBox_1"
-                  Text="Unit"
+                  Text="{Binding Path=IngredientMeasure.UnitOfMeasurement}"
                   IsEditable="True"
                   IsReadOnly="True"
                   BorderThickness="3"
