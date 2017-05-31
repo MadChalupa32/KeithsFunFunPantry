@@ -12,7 +12,7 @@
                Stretch="Fill"
                Opacity=".2"/>
         <StackPanel Orientation="Horizontal" Height="35" VerticalAlignment="Top">
-            <Button Background="Transparent" BorderThickness="0" Click="BackButton_Click">
+            <Button  Background="Transparent" BorderThickness="0" Click="BackButton_Click">
                 <Image Margin="10,9" >
                     <Image.Source>
                         <BitmapImage  UriSource="../Images/Left.png" />

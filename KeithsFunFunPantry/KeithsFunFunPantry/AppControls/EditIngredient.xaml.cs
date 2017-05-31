@@ -28,8 +28,6 @@ namespace KeithsFunFunPantry.AppControls
             FillUnits();
             TextBoxAdd();
             TextBoxSubtract();
-            //TextBox_Ingredient.DataContext = ListBox_SearchIngredient.SelectedItem;
-
         }
         private void FillUnits()
         {
