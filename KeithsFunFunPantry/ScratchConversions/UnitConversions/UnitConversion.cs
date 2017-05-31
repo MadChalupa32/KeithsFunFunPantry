@@ -65,9 +65,9 @@ namespace ScratchConversions.UnitConversions
 				Unit.Kilogram,
 				new Dictionary<Unit, Func<float,float>>()
 				{
-					//{ Unit.Gram,  },
-					//{ Unit.Ounce,  },
-					{ Unit.Pound, Po}
+					{ Unit.Gram, GramToKilogram },
+					{ Unit.Ounce, OunceToKilogram  },
+					{ Unit.Pound, PoundToKilogram}
 				}
 			},
 			{
@@ -87,7 +87,11 @@ namespace ScratchConversions.UnitConversions
 				Unit.Milliliter,
 				new Dictionary<Unit, Func<float,float>>()
 				{
-					//{ Unit,  }
+					{ Unit.Cup, CupToMilliliter},
+                        { Unit.Tablespoon, TableSpoonToMilliliter},
+                        { Unit.FluidOunce, FluidOunceToMilliliter},
+                        { Unit.Teaspoon, TeaspoonToMilliliter},
+                        { Unit.Pint, PintToMilliliter}
 				}
 			},
 			{
