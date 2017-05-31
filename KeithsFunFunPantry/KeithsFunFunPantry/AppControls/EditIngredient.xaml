@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
+             xmlns:CS="clr-namespace:KeithsFunFunPantry.CS"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="500">
     <Grid>
+        <Grid.Resources>
+            
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
             <RowDefinition Height="30*"/>
@@ -33,6 +37,7 @@
                  Grid.Column="1"
                  Grid.ColumnSpan="2"
                  FontSize="16"
+                 Text="{Binding Path=Name, Mode=OneWay}"
                  VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Left"
                  Margin="5,0"/>

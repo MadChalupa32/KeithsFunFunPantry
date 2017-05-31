@@ -29,8 +29,8 @@
                     HorizontalAlignment="Center"
                     Width="50"
                     Height="50"
-            Click="Show_Click"/>
-        </Border>-->
+                    Click="Show_Click"/>
+        </Border>
         <Border CornerRadius="15"
                 BorderBrush="#A3CC72"
                 BorderThickness="5"

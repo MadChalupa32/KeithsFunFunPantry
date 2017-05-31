@@ -28,6 +28,7 @@ namespace KeithsFunFunPantry.AppControls
             FillUnits();
             TextBoxAdd();
             TextBoxSubtract();
+            //TextBox_Ingredient.DataContext = ListBox_SearchIngredient.SelectedItem;
 
         }
         private void FillUnits()
@@ -35,6 +36,7 @@ namespace KeithsFunFunPantry.AppControls
             ComboBox_1.Text = "Unit";
             foreach (Unit units in Unit.TotalUnits)
             {
+
                 ComboBox_1.Items.Add(units.LongHand);
             }
         }
