@@ -56,8 +56,8 @@ namespace ScratchConversions.UnitConversions
 				new Dictionary<Unit, Func<float,float>>()
 				{
 					{ Unit.Kilogram, KilogramToGram },
-					//{ Unit.Ounce, OunceToGrams },
-					//{ Unit.Pound, PoundToGrams }
+					{ Unit.Ounce, OunceToGrams },
+					{ Unit.Pound, PoundToGrams }
 				}
 			},
 			{
@@ -67,7 +67,7 @@ namespace ScratchConversions.UnitConversions
 				{
 					//{ Unit.Gram,  },
 					//{ Unit.Ounce,  },
-					{ Unit.Pound, PoundToGram }
+					{ Unit.Pound, Po}
 				}
 			},
 			{
@@ -75,11 +75,11 @@ namespace ScratchConversions.UnitConversions
 				Unit.Liter,
 				new Dictionary<Unit, Func<float,float>>()
 				{
-					//{ Unit.Cup,  },
-					//{ Unit.Pint,  },
-					//{ Unit.Quart,  },
-					//{ Unit.Gallon,  },
-					//{ Unit.Ounce,  }
+					{ Unit.Cup, CupToLiter},
+					{ Unit.Pint, PintToLiter },
+				    { Unit.Quart, QuartToLiter },
+					{ Unit.Gallon, GallonToLiter  }
+					
 				}
 			},
 			{
@@ -577,14 +577,6 @@ namespace ScratchConversions.UnitConversions
 		{
 			return (float)(amount * .473);
 		}
-        private static float QuartToLiter(float amount)
-		{
-			return (float)(amount * .946);
-		}
-        private static float GallonToLiter(float amount)
-		{
-			return (float)(amount * 3.78);
-		}
         private static float GramToKilogram(float amount)
 		{
 			return (float)(amount * .001);
@@ -593,9 +585,13 @@ namespace ScratchConversions.UnitConversions
 		{
 			return (float)(amount * .028);
 		}
-         private static float PoundToKilogram(float amount)
+        private static float PoundToKilogram(float amount)
 		{
-			return (float)(amount * .453);
+		   	return (float)(amount * .453);
+		}
+         private static float OunceToLiter(float amount)
+		{
+		   	return (float)(amount * .029);
 		}
 
 		public static void MetricConversionTest()
@@ -648,16 +644,12 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine(CupToLiter(1f) == .236f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Pint To Liter");
 			Console.WriteLine(PintToLiter(1f) == .473f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Quart to Liter");
-			Console.WriteLine(QuartToLiter(1f) == .946f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Gallon To Liter");
-			Console.WriteLine(GallonToLiter(1f) == 3.78f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Ounce To Liter");
-			Console.WriteLine(GallonToLiter(1f) == .029f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Gram To Kilogram");
 			Console.WriteLine(GramToKilogram(1f) == .001f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Ounce To Kilogram");
 			Console.WriteLine(OunceToKilogram(2f) == .906f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Ounce To Liter");
+			Console.WriteLine(OunceToKilogram(2f) == .058f ? "\tpassed" : "\t*failed*");
 
 		}
 		#endregion
@@ -711,8 +703,8 @@ namespace ScratchConversions.UnitConversions
 					new Dictionary<Unit, Func<float,float>>()
 					{
 						{ Unit.Kilogram, KilogramToGram },
-						//{ Unit.Ounce, OunceToGrams },
-						//{ Unit.Pound, PoundToGrams }
+						{ Unit.Ounce, OunceToGrams },
+						{ Unit.Pound, PoundToGrams }
 					}
 				},
 				{
@@ -720,9 +712,9 @@ namespace ScratchConversions.UnitConversions
 					Unit.Kilogram,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						//{ Unit.Gram,  },
-						//{ Unit.Ounce,  },
-						{ Unit.Pound, PoundToGram }
+						{ Unit.Gram, GramToKilogram },
+						{ Unit.Ounce, OunceToKilogram  },
+						{ Unit.Pound, PoundToKilogram}
 					}
 				},
 				{
@@ -730,11 +722,11 @@ namespace ScratchConversions.UnitConversions
 					Unit.Liter,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						//{ Unit.Cup,  },
-						//{ Unit.Pint,  },
-						//{ Unit.Quart,  },
-						//{ Unit.Gallon,  },
-						//{ Unit.Ounce,  }
+						{ Unit.Cup, CupToLiter},
+						{ Unit.Pint, PintToLiter  },
+						{ Unit.Quart, QuartToLiter  },
+						{ Unit.Gallon, GallonToLiter },
+						{ Unit.Ounce, OunceToLiter }
 					}
 				},
 				{
@@ -742,7 +734,11 @@ namespace ScratchConversions.UnitConversions
 					Unit.Milliliter,
 					new Dictionary<Unit, Func<float,float>>()
 					{
-						//{ Unit,  }
+						{ Unit.Cup, CupToMilliliter},
+                        { Unit.Tablespoon, TableSpoonToMilliliter},
+                        { Unit.FluidOunce, FluidOunceToMilliliter},
+                        { Unit.Teaspoon, TeaspoonToMilliliter},
+                        { Unit.Pint, PintToMilliliter}
 					}
 				},
 				{
@@ -812,10 +808,6 @@ namespace ScratchConversions.UnitConversions
 					}
 				}
 			};
-            
-
-
-
 			conversions[Unit.Cup][Unit.Gallon].Invoke(12);
 		}
 	}
