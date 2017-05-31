@@ -11,7 +11,7 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <Label VerticalAlignment="Center" 
+        <!--<Label VerticalAlignment="Center" 
                HorizontalAlignment="Center"
                Margin="20">
             <Image Source="../Images/ListItem.png"/>
@@ -35,7 +35,7 @@
                 BorderBrush="#A3CC72"
                 BorderThickness="5"
                 Margin="5"
-                Grid.Column="1"
+                Grid.ColumnSpan="2"
                 Height="75">
             <Grid Margin="5">
                 <Label x:Name="RecipeName_L"

@@ -26,7 +26,6 @@ namespace KeithsFunFunPantry.AppControls
         {
             InitializeComponent();
             FillUnits();
-            //TextBoxIngredient();
             TextBoxAdd();
             TextBoxSubtract();
             //TextBox_Ingredient.DataContext = ListBox_SearchIngredient.SelectedItem;
@@ -34,13 +33,13 @@ namespace KeithsFunFunPantry.AppControls
         }
         private void FillUnits()
         {
+            ComboBox_1.Text = "Unit";
             foreach (Unit units in Unit.TotalUnits)
             {
 
                 ComboBox_1.Items.Add(units.LongHand);
             }
         }
-
 
         private void TextBoxAdd()
         {
@@ -54,13 +53,6 @@ namespace KeithsFunFunPantry.AppControls
             TextBox_Subtract.LostFocus += AddSubtractText;
             TextBox_Subtract.Text = addSubTB;
         }
-        //private void RemoveIngredientText(object sender, EventArgs e)
-        //{
-        //    if (TextBox_Ingredient.Text == ingredientTB)
-        //    {
-        //        TextBox_Ingredient.Text = "";
-        //    }
-        //}
         private void RemoveAddText(object sender, EventArgs e)
         {
             if (TextBox_Add.Text == addSubTB)
@@ -75,13 +67,6 @@ namespace KeithsFunFunPantry.AppControls
                 TextBox_Subtract.Text = "";
             }
         }
-        //private void AddIngredientText(object sender, EventArgs e)
-        //{
-        //    if (String.IsNullOrWhiteSpace(TextBox_Ingredient.Text))
-        //    {
-        //        TextBox_Ingredient.Text = ingredientTB;
-        //    }
-        //}
         private void AddAddText(object sender, EventArgs e)
         {
             if (String.IsNullOrWhiteSpace(TextBox_Add.Text))

@@ -92,7 +92,16 @@ namespace KeithsFunFunPantry
 
             RecipeBook book = RecipeBook.Instance;
 
-
+			//RecipeList.Children.Clear();
+			if (!query.Equals("search by recipe"))
+			{
+				ListRecipes(book.RecipeSearchController(query));
+			}
+			else
+			{
+				ListRecipes(book.Recipes);
+			}
+		
             if (!query.Equals("search recipes"))
             {
 
@@ -115,6 +124,13 @@ namespace KeithsFunFunPantry
             {
                 Search();
             }
+        }
+
+        private void ListBox_EditRecipe_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Recipe selectedRecipe = (Recipe)ListBox_EditRecipe.SelectedItem;
+
+            ListBox_PantryList.ItemsSource = Pantry.Ingredients.Where(i => selectedRecipe.IngredientList.Contains(i));
         }
     }
 }

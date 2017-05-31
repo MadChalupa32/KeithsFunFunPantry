@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Linq;
-using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -12,53 +10,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace KeithsFunFunPantry.AppControls
+namespace KeithsFunFunPantry.Windows
 {
     /// <summary>
-    /// Interaction logic for AddRecipeWindow.xaml
+    /// Interaction logic for AddRecipeWinodw.xaml
     /// </summary>
-    public partial class ViewAndEditRecipe : UserControl, INotifyPropertyChanged
+    public partial class AddRecipeWinodw : Window
     {
         RecipeView rv;
-        public event PropertyChangedEventHandler PropertyChanged;
-        private bool enabled = true;
-
-        public bool Enabled
-        {
-            get { return enabled; }
-            set { enabled = value; FieldChanged(); }
-        }
-
-        public ViewAndEditRecipe(RecipeView rv)
+        public AddRecipeWinodw(RecipeView rv)
         {
             InitializeComponent();
-            TextBoxOptions();
-            ParentPanel.DataContext = this;
             IngredientDisplayer.ItemsSource = Pantry.Ingredients;
-            foreach(Object obj in IngredientDisplayer.Items)
-            {
-                foreach (Ingredient i in ((rv.ListBox_RecipeView.SelectedItem as Recipe).IngredientList))
-                {
-                    if ( i.Name == ((Ingredient)obj).Name)
-                    {
-                        IngredientDisplayer.SelectedItems.Add(obj);
-
-                    }
-                }
-            }
-            IngredientDisplayer.SelectedItems.Add(IngredientDisplayer.Items);
-            TitleEntryTB.Text = ((Recipe)rv.ListBox_RecipeView.SelectedItem).Title;
-            DirectionsEntryTB.Text = ((Recipe)rv.ListBox_RecipeView.SelectedItem).Directions;
-            NotesEntryTB.Text = ((Recipe)rv.ListBox_RecipeView.SelectedItem).Notes;
             this.rv = rv;
-            Enabled = false;
-        }
-        public void FieldChanged([CallerMemberName] string fieldName = "")
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(fieldName));
+            TextBoxOptions();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -70,22 +37,10 @@ namespace KeithsFunFunPantry.AppControls
             }
             Recipe r = new Recipe(selectedIngredients, TitleEntryTB.Text, DirectionsEntryTB.Text, NotesEntryTB.Text);
             RecipeBook book = RecipeBook.Instance;
-            foreach (Recipe rec in book.Recipes)
-            {
-                if (rv.ListBox_RecipeView.SelectedItem == rec)
-                {
-                    book.Recipes.Remove(rec);
-                }
-
-            }
             book.Recipes.Add(r);
-            rv.ListBox_RecipeView.SelectedItem = r;
             rv.ListBox_RecipeView.ItemsSource = null;
             rv.ListBox_RecipeView.ItemsSource = book.Recipes;
-
-
-
-            Application.Current.Windows[1].Close();
+            this.Close();
         }
 
 
@@ -93,8 +48,6 @@ namespace KeithsFunFunPantry.AppControls
         private string TitleDefault = "Example Title";
         private string DirectionsDefault = "Please Enter Directions";
         private string NotesDefault = "Please enter notes and/or ingredient quantities";
-
-
         private void TextBoxOptions()
         {
             TitleEntryTB.GotFocus += RemoveTitleText;
@@ -150,15 +103,5 @@ namespace KeithsFunFunPantry.AppControls
             }
         }
 
-        private void EnableEditButton_Click(object sender, RoutedEventArgs e)
-        {
-            Enabled = !Enabled;
-        }
-
-        private void CloseButton_Click(object sender, RoutedEventArgs e)
-        {
-
-            Application.Current.Windows[1].Close();
-        }
     }
 }

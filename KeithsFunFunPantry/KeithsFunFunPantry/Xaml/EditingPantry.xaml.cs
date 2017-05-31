@@ -24,7 +24,6 @@ namespace KeithsFunFunPantry
     /// </summary>
     public partial class EditingPantry : Page
     {
-
         private string searchTB = "Search Ingredient";
         private string amountTB = "Amount";
         private string nameTB = "Name";
