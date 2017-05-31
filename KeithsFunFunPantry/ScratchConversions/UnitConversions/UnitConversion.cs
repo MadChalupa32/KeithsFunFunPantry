@@ -569,6 +569,35 @@ namespace ScratchConversions.UnitConversions
 		{
 			return (float)(amount * 1000);
 		}
+        private static float CupToLiter(float amount)
+		{
+			return (float)(amount * .236);
+		}
+        private static float PintToLiter(float amount)
+		{
+			return (float)(amount * .473);
+		}
+        private static float QuartToLiter(float amount)
+		{
+			return (float)(amount * .946);
+		}
+        private static float GallonToLiter(float amount)
+		{
+			return (float)(amount * 3.78);
+		}
+        private static float GramToKilogram(float amount)
+		{
+			return (float)(amount * .001);
+		}
+        private static float OunceToKilogram(float amount)
+		{
+			return (float)(amount * .028);
+		}
+         private static float PoundToKilogram(float amount)
+		{
+			return (float)(amount * .453);
+		}
+
 		public static void MetricConversionTest()
 		{
 			Console.WriteLine("Kilogram To Gram");
@@ -615,10 +644,177 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine(KilogramToOunce(6f) == 210f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Kilogram to Pounds");
 			Console.WriteLine(KilogramToPound(9f) == 19.845f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Cup To Liter");
+			Console.WriteLine(CupToLiter(1f) == .236f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Pint To Liter");
+			Console.WriteLine(PintToLiter(1f) == .473f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Quart to Liter");
+			Console.WriteLine(QuartToLiter(1f) == .946f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Gallon To Liter");
+			Console.WriteLine(GallonToLiter(1f) == 3.78f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Ounce To Liter");
+			Console.WriteLine(GallonToLiter(1f) == .029f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Gram To Kilogram");
+			Console.WriteLine(GramToKilogram(1f) == .001f ? "\tpassed" : "\t*failed*");
+            Console.WriteLine("Ounce To Kilogram");
+			Console.WriteLine(OunceToKilogram(2f) == .906f ? "\tpassed" : "\t*failed*");
+
 		}
 		#endregion
 
 
+		public static void ValidateStuffs(this Measurement originalMeasure, Unit targetUnit)
+		{
+			Dictionary<Unit, Dictionary<Unit, Func<float, float>>> conversions = new Dictionary<Unit, Dictionary<Unit, Func<float, float>>>()
+			{
+				{
+					//Target unit is Cup
+					Unit.Cup,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.FluidOunce, FluidOuncesToCups },
+						{ Unit.Pint, PintsToCups },
+						{ Unit.Quart, QuartsToCups },
+						{ Unit.Gallon, GallonsToCups },
+						{ Unit.Teaspoon, TeaspoonToCup },
+						{ Unit.Tablespoon, TablespoonToCup },
+						{ Unit.Ounce, OunceToCup },
+						{ Unit.Pound, PoundToCup },
+						{ Unit.Liter, LiterToCup }
+					}
+				},
+				{
+					//Target unit is Fluid Ounce
+					Unit.FluidOunce,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.Cup, CupsToFluidOunces },
+						{ Unit.Pint, PintsToFluidOunces },
+						{ Unit.Quart, QuartsToFluidOunces },
+						{ Unit.Gallon, GallonsToFluidOunces }
+					}
+				},
+				{
+					//Target unit is Gallon
+					Unit.Gallon,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.FluidOunce, FluidOuncesToGallons },
+						{ Unit.Cup, CupsToGallons },
+						{ Unit.Pint, PintsToGallons },
+						{ Unit.Quart, QuartsToGallons }
+					}
+				},
+				{
+					//Target unit is Gram
+					Unit.Gram,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.Kilogram, KilogramToGram },
+						//{ Unit.Ounce, OunceToGrams },
+						//{ Unit.Pound, PoundToGrams }
+					}
+				},
+				{
+					//Target unit is Kilogram
+					Unit.Kilogram,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						//{ Unit.Gram,  },
+						//{ Unit.Ounce,  },
+						{ Unit.Pound, PoundToGram }
+					}
+				},
+				{
+					//Target unit is Liter
+					Unit.Liter,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						//{ Unit.Cup,  },
+						//{ Unit.Pint,  },
+						//{ Unit.Quart,  },
+						//{ Unit.Gallon,  },
+						//{ Unit.Ounce,  }
+					}
+				},
+				{
+					//Target unit is Milliliter
+					Unit.Milliliter,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						//{ Unit,  }
+					}
+				},
+				{
+					//Target unit is Ounce
+					Unit.Ounce,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.Teaspoon, TeaspoonToOunce },
+						{ Unit.Tablespoon, TablespoonToOunce },
+						{ Unit.Cup, CupToOunce },
+						{ Unit.Pound, PoundToOunce }
+					}
+				},
+				{
+					//Target unit is Pint
+					Unit.Pint,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.FluidOunce, FluidOuncesToPints },
+						{ Unit.Cup, CupsToPints },
+						{ Unit.Quart, QuartsToPints },
+						{ Unit.Gallon, GallonsToPints }
+					}
+				},
+				{
+					//Target unit is Pound
+					Unit.Pound,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.Teaspoon, TeaspoonToPound },
+						{ Unit.Tablespoon, TablespoonToPound },
+						{ Unit.Cup, CupToPound },
+						{ Unit.Ounce, OunceToPound }
+					}
+				},
+				{
+					//Target unit is Quart
+					Unit.Quart,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.FluidOunce, FluidOuncesToQuarts },
+						{ Unit.Cup, CupsToQuarts },
+						{ Unit.Pint, PintsToQuarts },
+						{ Unit.Gallon, GallonsToQuarts }
+					}
+				},
+				{
+					//Target unit is Tablespoon
+					Unit.Tablespoon,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.Teaspoon, TeaspoonToTablespoon },
+						{ Unit.Cup, CupToTablespoon },
+						{ Unit.Ounce, OunceToTablespoon },
+						{ Unit.Pound, PoundToTablespoon }
+					}
+				},
+				{
+					//Target unit is Teaspoon
+					Unit.Teaspoon,
+					new Dictionary<Unit, Func<float,float>>()
+					{
+						{ Unit.Tablespoon, TablespoonToTeaspoon },
+						{ Unit.Cup, CupToTeaspoon },
+						{ Unit.Ounce, OunceToTeaspoon },
+						{ Unit.Pound, PoundToTeaspoon }
+					}
+				}
+			};
+
+			conversions[Unit.Cup][Unit.Gallon].Invoke(12);
+		}
 	}
 }
 

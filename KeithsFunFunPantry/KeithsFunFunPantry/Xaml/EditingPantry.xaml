@@ -50,7 +50,8 @@
                      Background="Transparent" 
                      BorderThickness="0"
                      FontFamily="Georgia"
-                     Margin="28,0,0,0"/>
+                     Margin="28,0,0,0"
+                     Keyboard.KeyDown="TextBox_IngredientSearch_KeyDown"/>
         </Border>
         <Label VerticalAlignment="Center" 
                HorizontalAlignment="Left"
@@ -160,9 +161,9 @@
                  MouseDoubleClick="ListBox_EditPantry_MouseDoubleClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                        <StackPanel>
-                            <AC:PantryEdit/>
-                        </StackPanel>
+                    <StackPanel>
+                        <AC:PantryEdit/>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
@@ -180,20 +181,23 @@
                     <ColumnDefinition Width="515*"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="59*"/>
-                    <RowDefinition Height="11*"/>
+                    <RowDefinition Height="54*"/>
+                    <RowDefinition Height="40*"/>
+                    <RowDefinition Height="201*"/>
+                    <RowDefinition Height="55*"/>
                 </Grid.RowDefinitions>
                 <Border BorderBrush="Black"
-                        BorderThickness="5" Grid.RowSpan="2" Grid.ColumnSpan="3" Margin="0,0,0,0.4">
+                        BorderThickness="5" Grid.RowSpan="4" Grid.ColumnSpan="3" Margin="0,0,0.2,0.4">
                     <AC:EditIngredient/>
                 </Border>
+
                 <Button x:Name="Exit_Click"
                         Content="Exit"
                         FontWeight="Bold"
                         FontFamily="Georgia"
-                        Grid.Row="1"
+                        Grid.Row="3"
                         Grid.Column="1"
-                        Margin="5,10"
+                        Margin="5,9.8,3,10.4"
                         Click="HidePopUp_Click"/>
             </Grid>
         </Popup>

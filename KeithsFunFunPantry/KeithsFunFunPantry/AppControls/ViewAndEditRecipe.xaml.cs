@@ -53,7 +53,6 @@ namespace KeithsFunFunPantry.AppControls
             TitleEntryTB.Text = ((Recipe)rv.ListBox_RecipeView.SelectedItem).Title;
             DirectionsEntryTB.Text = ((Recipe)rv.ListBox_RecipeView.SelectedItem).Directions;
             NotesEntryTB.Text = ((Recipe)rv.ListBox_RecipeView.SelectedItem).Notes;
-            MessageBox.Show(((Recipe)rv.ListBox_RecipeView.SelectedItem).Notes);
             this.rv = rv;
             Enabled = false;
         }

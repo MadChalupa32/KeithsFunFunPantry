@@ -45,7 +45,8 @@
                      Background="Transparent" 
                      BorderThickness="0" 
                      FontFamily="Georgia"
-                     Margin="28,0,0,0"/>
+                     Margin="28,0,0,0"
+                     Keyboard.KeyDown="TextBox_ByRecipeSearch_KeyDown"/>
         </Border>
         <Label VerticalAlignment="Center" 
                HorizontalAlignment="Left"
@@ -96,7 +97,8 @@
                  Grid.Column="1"
                  Grid.ColumnSpan="5"
                  Margin="20,20,261,20"
-                 HorizontalContentAlignment="Stretch">
+                 HorizontalContentAlignment="Stretch"
+                 SelectionChanged="ListBox_EditRecipe_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                         <StackPanel>

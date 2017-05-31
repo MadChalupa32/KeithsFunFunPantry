@@ -54,34 +54,48 @@ namespace KeithsFunFunPantry
         }
         public void ListIngredients(ObservableCollection<Ingredient> displayList)
         {
+            ListBox_PantryView.ItemsSource = null;
+            ListBox_PantryView.ItemsSource = displayList;
+            foreach (Ingredient ingredient in ListBox_PantryView.Items)
+            {
+                PantryViewItem pvi = new PantryViewItem();
+                pvi.DataContext = ingredient;
+            }
 
-            
-            //foreach (Ingredient ingredient in displayList)
-            //{
-            //    PantryViewItem pvi = new PantryViewItem();
-            //    pvi.DataContext = ingredient;
-            //}
-            
-            //if (displayList.Count == 0)
-            //{
-            //    Label noResults = new Label();
-            //    noResults.Content = "No results found";
-            //}
+
+            if (displayList.Count == 0)
+            {
+                Label noResults = new Label();
+                noResults.Content = "No results found";
+            }
 
         }
 
-        private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
+        private void Search()
         {
             //StackPanel_PantryView.Children.Clear();
             string query = TextBox_PantrySearch.Text.ToLower();
             if (!query.Equals("search ingredients"))
             {
-                ListIngredients(Pantry.IngredientSearchController(query));   
+                ListIngredients(Pantry.IngredientSearchController(query));
             }
             else
             {
                 ListIngredients(Pantry.Ingredients);
             }
+        }
+
+        private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
+        {
+            Search();
 		}
+
+        private void TextBox_PantrySearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Key == Key.Enter)
+            {
+                Search();
+            }
+        }
     }
 }
