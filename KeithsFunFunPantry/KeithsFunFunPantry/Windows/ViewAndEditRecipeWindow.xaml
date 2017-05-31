@@ -1,11 +1,11 @@
-﻿<UserControl x:Class="KeithsFunFunPantry.AppControls.ViewAndEditRecipe"
-             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
-             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
-             mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="300">
+﻿<Window x:Class="KeithsFunFunPantry.Windows.ViewAndEditRecipeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:KeithsFunFunPantry.Windows"
+        mc:Ignorable="d"
+        Title="ViewAndEditRecipeWindow" Height="300" Width="300">
     <StackPanel x:Name="ParentPanel">
 
         <Label x:Name="Header"
@@ -54,10 +54,8 @@
                     Margin="10"
                     Width="100"
                     Content="Close"/>
-            
+
 
         </WrapPanel>
     </StackPanel>
-
-
-</UserControl>
+</Window>
