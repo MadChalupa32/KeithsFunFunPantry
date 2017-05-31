@@ -1,12 +1,10 @@
-﻿using KeithsFunFunPantry.CS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows;
 
-namespace ScratchConversions.UnitConversions
+namespace KeithsFunFunPantry.CS
 {
 	public static class UnitConversion
 	{
@@ -170,7 +168,7 @@ namespace ScratchConversions.UnitConversions
 				float convertedAmount = conversions[targetUnit][original.UnitOfMeasurement].Invoke(original.Amount);
 
 				//Truncate the Amount measurement to three places
-				convertedAmount = (float)Math.Truncate(convertedAmount);
+				convertedAmount = (float)Math.Truncate(convertedAmount * 1000) / 1000;
 				//Change original measurement
 				original.Amount = convertedAmount;
 				original.UnitOfMeasurement = targetUnit;
@@ -569,23 +567,23 @@ namespace ScratchConversions.UnitConversions
 		{
 			return (float)(amount * 1000);
 		}
-        private static float CupToLiter(float amount)
+		private static float CupToLiter(float amount)
 		{
 			return (float)(amount * .236);
 		}
-        private static float PintToLiter(float amount)
+		private static float PintToLiter(float amount)
 		{
 			return (float)(amount * .473);
 		}
-        private static float GramToKilogram(float amount)
+		private static float GramToKilogram(float amount)
 		{
 			return (float)(amount * .001);
 		}
-        private static float OunceToKilogram(float amount)
+		private static float OunceToKilogram(float amount)
 		{
 			return (float)(amount * .028);
 		}
-         private static float PoundToKilogram(float amount)
+		private static float PoundToKilogram(float amount)
 		{
 			return (float)(amount * .453);
 		}
@@ -636,19 +634,19 @@ namespace ScratchConversions.UnitConversions
 			Console.WriteLine(KilogramToOunce(6f) == 210f ? "\tpassed" : "\t*failed*");
 			Console.WriteLine("Kilogram to Pounds");
 			Console.WriteLine(KilogramToPound(9f) == 19.845f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Cup To Liter");
+			Console.WriteLine("Cup To Liter");
 			Console.WriteLine(CupToLiter(1f) == .236f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Pint To Liter");
+			Console.WriteLine("Pint To Liter");
 			Console.WriteLine(PintToLiter(1f) == .473f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Quart to Liter");
+			Console.WriteLine("Quart to Liter");
 			Console.WriteLine(QuartToLiter(1f) == .946f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Gallon To Liter");
+			Console.WriteLine("Gallon To Liter");
 			Console.WriteLine(GallonToLiter(1f) == 3.78f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Ounce To Liter");
+			Console.WriteLine("Ounce To Liter");
 			Console.WriteLine(GallonToLiter(1f) == .029f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Gram To Kilogram");
+			Console.WriteLine("Gram To Kilogram");
 			Console.WriteLine(GramToKilogram(1f) == .001f ? "\tpassed" : "\t*failed*");
-            Console.WriteLine("Ounce To Kilogram");
+			Console.WriteLine("Ounce To Kilogram");
 			Console.WriteLine(OunceToKilogram(2f) == .906f ? "\tpassed" : "\t*failed*");
 
 		}
@@ -656,4 +654,3 @@ namespace ScratchConversions.UnitConversions
 
 	}
 }
-
