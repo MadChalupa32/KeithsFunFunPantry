@@ -8,7 +8,7 @@ Cristian Bravo
 	5/23 I helped brian on work on the remove ingredient part of the project
 
 Randal McClure
-	5/23	I helped figure out how to convert between units in the measurement class. This includes where and how we wanted to structure the conversion class/methods. 
+	5/30	I finished the unit conversion dictionaries and finished the conversion validation. 
 
 Tyler Wharton
 
