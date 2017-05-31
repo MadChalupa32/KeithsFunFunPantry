@@ -24,8 +24,10 @@
                        FontFamily="Georgia"
                        FontSize="30"
                        FontWeight="Bold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Center"/>
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Stretch"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center"/>
             </Grid>
         </Border>
     </Grid>
