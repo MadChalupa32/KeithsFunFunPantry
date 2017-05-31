@@ -108,6 +108,14 @@ namespace KeithsFunFunPantry.AppControls
             TextBox_Subtract.Text = "";
             TextBoxSubtract();
         }
+
+        private void ComboBox_1_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Unit targetUnit = (Unit)ComboBox_1.SelectedItem;
+            Ingredient targetIngredient = (Ingredient)sender;
+
+           
+        }
     }
 
 }
