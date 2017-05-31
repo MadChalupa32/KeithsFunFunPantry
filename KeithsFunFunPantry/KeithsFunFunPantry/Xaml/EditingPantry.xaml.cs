@@ -239,6 +239,7 @@ namespace KeithsFunFunPantry
 
         private void HidePopUp_Click(object sender, RoutedEventArgs e)
         {
+            ListBox_EditPantry.Items.Refresh();
             myPopup2.IsOpen = false;
         }
 
@@ -266,5 +267,6 @@ namespace KeithsFunFunPantry
                 Search();
             }
         }
+        
     }
 }
