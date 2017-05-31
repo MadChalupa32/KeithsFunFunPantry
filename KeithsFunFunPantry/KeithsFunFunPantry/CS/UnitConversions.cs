@@ -361,12 +361,12 @@ namespace KeithsFunFunPantry.CS
 		}
 		private static float FluidOuncesToQuarts(float fluidOunceAmt)
 		{
-			float quartAmt = CupsToFluidOunces(QuartsToCups(fluidOunceAmt));
+			float quartAmt = CupsToQuarts(FluidOuncesToCups(fluidOunceAmt));
 			return quartAmt;
 		}
 		private static float FluidOuncesToGallons(float fluidOunceAmt)
 		{
-			float gallonAmt = CupsToFluidOunces(GallonsToCups(fluidOunceAmt));
+			float gallonAmt = CupsToGallons(FluidOuncesToCups(fluidOunceAmt));
 			return gallonAmt;
 		}
 

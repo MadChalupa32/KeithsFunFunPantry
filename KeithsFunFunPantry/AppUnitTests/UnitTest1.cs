@@ -118,9 +118,8 @@ namespace AppUnitTests
 
 
 
-		#region Conversion Tests
 		[TestMethod]
-		public void LiquidConversionTest()
+		public void ConversionTest()
 		{
 			Measurement m = new Measurement(33f, Unit.FluidOunce);
 			m.Convert(Unit.Cup);
@@ -155,17 +154,40 @@ namespace AppUnitTests
 			Assert.AreEqual(2.062f, m.Amount);
 
 			m = new Measurement(33f, Unit.FluidOunce);
+			m.Convert(Unit.Pint);
+			Assert.AreEqual(2.062f, m.Amount);
+
+			m = new Measurement(33f, Unit.FluidOunce);
 			m.Convert(Unit.Quart);
 			Assert.AreEqual(1.031f, m.Amount);
+
+			m = new Measurement(128f, Unit.FluidOunce);
+			m.Convert(Unit.Gallon);
+			Assert.AreEqual(1f, m.Amount);
 		}
 		[TestMethod]
-		public void InvalidLiquidConversionTest()
+		public void InvalidConversionTest()
 		{
 			Measurement m = new Measurement(1f, Unit.Cup);
 			Measurement c = new Measurement(1f, Unit.Cup);
+
+			//Same units
 			m.Convert(Unit.Cup);
 			Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+
+			m = new Measurement(1f, Unit.Gallon);
+			c = new Measurement(1f, Unit.Gallon);
+			m.Convert(Unit.Gallon);
+			Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+
+			//Invalid conversions
+			m.Convert(Unit.Count);
+			Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+
+			m = new Measurement(1f, Unit.Count);
+			c = new Measurement(1f, Unit.Count);
+			m.Convert(Unit.FluidOunce);
+			Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
 		}
-		#endregion
 	}
 }
