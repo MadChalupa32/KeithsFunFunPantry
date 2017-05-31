@@ -44,7 +44,8 @@
                        TextWrapping="Wrap"
                        Margin="20"
                        FontSize="16"
-                       FontWeight="Bold">
+                       FontWeight="Bold"
+                       FontFamily="Georgia">
                 Instructions: <LineBreak/>
                 1) Pantry Page <LineBreak/>
                 The Pantry page is where you can find the list of ingredients that are currently in your Pantry along with the amount of the ingredient.  You can also search through the list of ingredients by typing the name in the search bar at the top of the screen. <LineBreak/>
