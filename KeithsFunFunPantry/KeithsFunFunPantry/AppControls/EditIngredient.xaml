@@ -54,7 +54,7 @@
                  FontWeight="Bold"
                  Margin="5,0"/>
         <ComboBox x:Name="ComboBox_1"
-                  Text="{Binding Path=Measurement.UnitOfMeasurement}"
+                  Text="{Binding Path=IngredientMeasure.UnitOfMeasurement}"
                   IsEditable="True"
                   IsReadOnly="True"
                   BorderThickness="3"
@@ -65,7 +65,8 @@
                   Grid.ColumnSpan="3"
                   VerticalContentAlignment="Center"
                   HorizontalContentAlignment="Left"
-                  Margin="5,0"/>
+                  Margin="5,0"
+                  SelectionChanged="ComboBox_1_SelectionChanged"/>
         <Button Content="Add"
                 FontSize="20"
                 FontWeight="Bold"

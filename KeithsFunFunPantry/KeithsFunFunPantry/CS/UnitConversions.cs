@@ -161,7 +161,7 @@ namespace KeithsFunFunPantry.CS
 			//Validation & Conversion
 			try
 			{
-				if (original.UnitOfMeasurement == targetUnit)
+				if (original.UnitOfMeasurement.Equals(targetUnit))
 					throw new ArgumentException("The units are the same!");
 
 				//Attempt to convert the measurement into the target unit
@@ -357,12 +357,12 @@ namespace KeithsFunFunPantry.CS
 		}
 		private static float FluidOuncesToQuarts(float fluidOunceAmt)
 		{
-			float quartAmt = CupsToFluidOunces(QuartsToCups(fluidOunceAmt));
+			float quartAmt = CupsToQuarts(FluidOuncesToCups(fluidOunceAmt));
 			return quartAmt;
 		}
 		private static float FluidOuncesToGallons(float fluidOunceAmt)
 		{
-			float gallonAmt = CupsToFluidOunces(GallonsToCups(fluidOunceAmt));
+			float gallonAmt = CupsToGallons(FluidOuncesToCups(fluidOunceAmt));
 			return gallonAmt;
 		}
 

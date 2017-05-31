@@ -124,7 +124,11 @@ namespace KeithsFunFunPantry
         //Fills the ComboBox with the list of Units
         private void FillUnits()
         {
-            ComboBox_Units.ItemsSource = Unit.TotalUnits;
+            //ComboBox_Units.ItemsSource = Unit.TotalUnits;
+			foreach(Unit unit in Unit.TotalUnits)
+			{
+				ComboBox_Units.Items.Add(unit.LongHand);
+			}
         }
 
         //Logic for the Add Button (eventually adds the ingredient to the pantry list
