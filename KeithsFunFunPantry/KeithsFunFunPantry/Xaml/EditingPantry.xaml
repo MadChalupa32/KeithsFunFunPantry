@@ -83,17 +83,6 @@
                Margin="60,0,0,0" 
                VerticalAlignment="Top"
                HorizontalAlignment="Left"/>
-        <!--
-        <Button Content="Save Pantry" 
-                Grid.Column="6" 
-                FontFamily="Georgia"
-                Width="70" 
-                Margin="0,20,59.6,0" 
-                Height="25" 
-                VerticalAlignment="Top" 
-                HorizontalAlignment="Right"
-                Click="SavePantry_Click"/>
-        -->
         <Label Content="Add Ingredient:" 
                Grid.Row="3" 
                Grid.RowSpan="2"
@@ -202,6 +191,15 @@
                         Grid.Column="1"
                         Margin="5,9.8,3,10.4"
                         Click="HidePopUp_Click"/>
+                <Button Content="X"
+                        Foreground="White"
+                        Background="Red"
+                        VerticalAlignment="Top"
+                        HorizontalAlignment="Right" 
+                        Margin="0,5,5,0" 
+                        Width="44" 
+                        Grid.Column="2"
+                        Click="HidePopUp_Click" Height="27"/>
             </Grid>
         </Popup>
     </Grid>
