@@ -82,7 +82,7 @@
                FontWeight="Bold"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"/>
-        
+
         <ListBox x:Name="ListBox_RecipeView"
                  Margin="20, 0, 20, 20"
                  Background="#E5C698"
@@ -90,12 +90,12 @@
                  Grid.ColumnSpan="3"
                  Grid.Row="4"
                  Grid.RowSpan="7"
-                 HorizontalContentAlignment="Stretch"
-                 KeyDown="RecipeViewItem_KeyDown">
+                 HorizontalContentAlignment="Stretch">
+            <!--KeyDown="RecipeViewItem_KeyDown">-->
             <ListBox.ItemTemplate>
                 <DataTemplate>
                         <StackPanel>
-                            <AC:RecipeViewItem KeyDown="RecipeViewItem_KeyDown"/>
+                            <AC:RecipeViewItem MouseDoubleClick="ListBox_RecipeView_MouseDoubleClick"/>
                         </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>

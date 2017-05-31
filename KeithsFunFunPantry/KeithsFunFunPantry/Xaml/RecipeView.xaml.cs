@@ -102,18 +102,22 @@ namespace KeithsFunFunPantry
         }
 
 
-        private void RecipeViewItem_KeyDown(object sender, KeyEventArgs e)
+        //private void RecipeViewItem_KeyDown(object sender, KeyEventArgs e)
+        //{
+
+        //    ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
+        //    w.Height = 400;
+        //    w.Width = 500;
+        //    w.Show();
+        //}
+
+        private void ListBox_RecipeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-
-            if (e.Key == Key.Enter)
-            {
-                ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
-                w.Height = 400;
-                w.Width = 500;
-                w.Show();
-            }
+            ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
+            w.Topmost = true;
+            w.Height = 400;
+            w.Width = 500;
+            w.Show();
         }
-
-       
     }
 }
