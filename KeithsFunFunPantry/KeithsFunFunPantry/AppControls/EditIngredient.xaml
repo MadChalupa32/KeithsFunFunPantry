@@ -37,7 +37,6 @@
                  Grid.Column="1"
                  Grid.ColumnSpan="2"
                  FontSize="16"
-                 Text="{Binding Path=Name, Mode=OneWay}"
                  VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Left"
                  Margin="5,0"/>
