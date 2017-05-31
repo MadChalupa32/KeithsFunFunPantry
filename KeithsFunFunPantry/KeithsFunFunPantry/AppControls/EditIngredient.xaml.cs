@@ -33,7 +33,6 @@ namespace KeithsFunFunPantry.AppControls
         }
         private void FillUnits()
         {
-            ComboBox_1.Text = "Unit";
             foreach (Unit units in Unit.TotalUnits)
             {
 
