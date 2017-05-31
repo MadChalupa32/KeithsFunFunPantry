@@ -11,7 +11,7 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition />
         </Grid.ColumnDefinitions>
-        <!--<Label VerticalAlignment="Center" 
+        <Label VerticalAlignment="Center" 
                HorizontalAlignment="Center"
                Margin="20">
             <Image Source="../Images/ListItem.png"/>
