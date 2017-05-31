@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.CS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -31,6 +32,11 @@ namespace KeithsFunFunPantry.AppControls
         }
         private void FillUnits()
         {
+            ComboBox_1.Text = "Unit";
+            foreach (Unit units in Unit.TotalUnits)
+            {
+                ComboBox_1.Items.Add(units.LongHand);
+            }
         }
 
         private void TextBoxAdd()

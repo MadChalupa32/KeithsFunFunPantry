@@ -577,14 +577,6 @@ namespace ScratchConversions.UnitConversions
 		{
 			return (float)(amount * .473);
 		}
-        private static float QuartToLiter(float amount)
-		{
-			return (float)(amount * .946);
-		}
-        private static float GallonToLiter(float amount)
-		{
-			return (float)(amount * 3.78);
-		}
         private static float GramToKilogram(float amount)
 		{
 			return (float)(amount * .001);
