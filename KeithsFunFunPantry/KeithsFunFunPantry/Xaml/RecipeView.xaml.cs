@@ -1,4 +1,5 @@
 ﻿using KeithsFunFunPantry.AppControls;
+using KeithsFunFunPantry.Windows;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,14 +87,11 @@ namespace KeithsFunFunPantry
 
         private void RecipeAddButton_Click(object sender, RoutedEventArgs e)
         {
-            
-            Window w = new Window();
+            AddRecipeWinodw w = new AddRecipeWinodw(this);
             w.Height = 400;
             w.Width = 500;
-            StackPanel sp = new StackPanel();
-            w.Content = sp;
-            sp.Children.Add(new AddRecipeWindow(this));
             w.Show();
+            
         }
 
         private void RecipeRemoveButton_Click(object sender, RoutedEventArgs e)
@@ -109,12 +107,9 @@ namespace KeithsFunFunPantry
 
             if (e.Key == Key.Enter)
             {
-                Window w = new Window();
+                ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
                 w.Height = 400;
                 w.Width = 500;
-                StackPanel sp = new StackPanel();
-                w.Content = sp;
-                sp.Children.Add(new ViewAndEditRecipe(this));
                 w.Show();
             }
         }
