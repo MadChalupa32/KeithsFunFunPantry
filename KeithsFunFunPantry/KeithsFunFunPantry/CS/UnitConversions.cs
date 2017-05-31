@@ -54,8 +54,8 @@ namespace KeithsFunFunPantry.CS
 				new Dictionary<Unit, Func<float,float>>()
 				{
 					{ Unit.Kilogram, KilogramToGram },
-					//{ Unit.Ounce, OunceToGrams },
-					//{ Unit.Pound, PoundToGrams }
+					{ Unit.Ounce, OunceToGrams },
+					{ Unit.Pound, PoundToGrams }
 				}
 			},
 			{
@@ -63,8 +63,8 @@ namespace KeithsFunFunPantry.CS
 				Unit.Kilogram,
 				new Dictionary<Unit, Func<float,float>>()
 				{
-					//{ Unit.Gram,  },
-					//{ Unit.Ounce,  },
+					{ Unit.Gram, GramToKilogram },
+					{ Unit.Ounce, OunceToKilogram  },
 					{ Unit.Pound, PoundToGram }
 				}
 			},
@@ -73,11 +73,11 @@ namespace KeithsFunFunPantry.CS
 				Unit.Liter,
 				new Dictionary<Unit, Func<float,float>>()
 				{
-					//{ Unit.Cup,  },
-					//{ Unit.Pint,  },
-					//{ Unit.Quart,  },
-					//{ Unit.Gallon,  },
-					//{ Unit.Ounce,  }
+                    { Unit.Ounce, OunceToLiter},
+					{ Unit.Cup, CupToLiter},
+					{ Unit.Pint, PintToLiter },
+				    { Unit.Quart, QuartToLiter },
+					{ Unit.Gallon, GallonToLiter }
 				}
 			},
 			{
@@ -85,7 +85,11 @@ namespace KeithsFunFunPantry.CS
 				Unit.Milliliter,
 				new Dictionary<Unit, Func<float,float>>()
 				{
-					//{ Unit,  }
+				    { Unit.Cup, CupToMilliliter},
+                    { Unit.Tablespoon, TableSpoonToMilliliter},
+                    { Unit.FluidOunce, FluidOunceToMilliliter},
+                    { Unit.Teaspoon, TeaspoonToMilliliter},
+                    { Unit.Pint, PintToMilliliter}
 				}
 			},
 			{
@@ -587,6 +591,11 @@ namespace KeithsFunFunPantry.CS
 		{
 			return (float)(amount * .453);
 		}
+        private static float OunceToLiter(float amount)
+		{
+		   	return (float)(amount * .029);
+		}
+
 
 		public static void MetricConversionTest()
 		{
