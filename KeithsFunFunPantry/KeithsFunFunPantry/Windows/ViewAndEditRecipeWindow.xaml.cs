@@ -157,8 +157,9 @@ namespace KeithsFunFunPantry.Windows
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
         {
-
-            Application.Current.Windows[1].Close();
+            //fixed problem with closing window
+            this.Close();
+            //Application.Current.Windows[1].Close();
         }
     }
 }

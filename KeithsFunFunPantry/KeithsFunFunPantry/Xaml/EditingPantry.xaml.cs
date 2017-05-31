@@ -124,10 +124,7 @@ namespace KeithsFunFunPantry
         //Fills the ComboBox with the list of Units
         private void FillUnits()
         {
-            foreach (Unit units in Unit.TotalUnits)
-            {
-                ComboBox_Units.Items.Add(units.LongHand);
-            }
+            ComboBox_Units.ItemsSource = Unit.TotalUnits;
         }
 
         //Logic for the Add Button (eventually adds the ingredient to the pantry list
@@ -267,6 +264,5 @@ namespace KeithsFunFunPantry
                 Search();
             }
         }
-        
     }
 }
