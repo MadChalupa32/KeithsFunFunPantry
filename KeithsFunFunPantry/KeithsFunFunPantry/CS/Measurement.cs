@@ -54,5 +54,6 @@ namespace KeithsFunFunPantry.CS
                 PropertyChanged(this, new PropertyChangedEventArgs(field));
             }
         }
-    }
+
+	}
 }

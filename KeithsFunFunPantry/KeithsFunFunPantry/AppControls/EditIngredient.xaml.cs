@@ -1,5 +1,4 @@
-﻿using KeithsFunFunPantry.CS;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,31 +20,19 @@ namespace KeithsFunFunPantry.AppControls
     /// </summary>
     public partial class EditIngredient : UserControl
     {
-        string ingredientTB = "Enter Ingredient Name";
         string addSubTB = "Amount";
         public EditIngredient()
         {
             InitializeComponent();
             FillUnits();
-            TextBoxIngredient();
             TextBoxAdd();
             TextBoxSubtract();
 
         }
         private void FillUnits()
         {
-            foreach (Unit units in Unit.TotalUnits)
-            {
-                ComboBox_1.Items.Add(units.LongHand);
-            }
         }
 
-        private void TextBoxIngredient()
-        {
-            TextBox_Ingredient.GotFocus += RemoveIngredientText;
-            TextBox_Ingredient.LostFocus += AddIngredientText;
-            TextBox_Ingredient.Text = ingredientTB;
-        }
         private void TextBoxAdd()
         {
             TextBox_Add.GotFocus += RemoveAddText;
@@ -57,13 +44,6 @@ namespace KeithsFunFunPantry.AppControls
             TextBox_Subtract.GotFocus += RemoveSubText;
             TextBox_Subtract.LostFocus += AddSubtractText;
             TextBox_Subtract.Text = addSubTB;
-        }
-        private void RemoveIngredientText(object sender, EventArgs e)
-        {
-            if (TextBox_Ingredient.Text == ingredientTB)
-            {
-                TextBox_Ingredient.Text = "";
-            }
         }
         private void RemoveAddText(object sender, EventArgs e)
         {
@@ -77,13 +57,6 @@ namespace KeithsFunFunPantry.AppControls
             if (TextBox_Subtract.Text == addSubTB)
             {
                 TextBox_Subtract.Text = "";
-            }
-        }
-        private void AddIngredientText(object sender, EventArgs e)
-        {
-            if (String.IsNullOrWhiteSpace(TextBox_Ingredient.Text))
-            {
-                TextBox_Ingredient.Text = ingredientTB;
             }
         }
         private void AddAddText(object sender, EventArgs e)
