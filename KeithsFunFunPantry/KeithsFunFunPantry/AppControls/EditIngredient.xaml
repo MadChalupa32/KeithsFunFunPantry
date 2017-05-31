@@ -4,9 +4,13 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
+             xmlns:CS="clr-namespace:KeithsFunFunPantry.CS"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="500">
     <Grid>
+        <Grid.Resources>
+            
+        </Grid.Resources>
         <Grid.RowDefinitions>
             <RowDefinition Height="40*"/>
             <RowDefinition Height="30*"/>
@@ -26,6 +30,8 @@
         </Grid.ColumnDefinitions>
 
         <TextBox x:Name="TextBox_Ingredient"
+                 FontWeight="Bold"
+                 FontFamily="Georgia"
                  IsReadOnly="True"
                  Text="{Binding Name}"
                  Padding="5"
@@ -36,7 +42,7 @@
                  VerticalContentAlignment="Center"
                  HorizontalContentAlignment="Left"
                  Margin="5,0"/>
-        <TextBox Text="{Binding IngredientMeasurement}"
+        <TextBox Text="{Binding IngredientMeasurement.Amount}"
                  IsReadOnly="true"
                  Grid.Row="1"
                  Grid.Column="3"
@@ -48,6 +54,7 @@
                  FontWeight="Bold"
                  Margin="5,0"/>
         <ComboBox x:Name="ComboBox_1"
+                  Text="Unit"
                   IsEditable="True"
                   IsReadOnly="True"
                   BorderThickness="3"

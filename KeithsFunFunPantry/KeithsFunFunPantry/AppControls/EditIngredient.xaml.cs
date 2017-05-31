@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.CS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -27,10 +28,16 @@ namespace KeithsFunFunPantry.AppControls
             FillUnits();
             TextBoxAdd();
             TextBoxSubtract();
+            //TextBox_Ingredient.DataContext = ListBox_SearchIngredient.SelectedItem;
 
         }
         private void FillUnits()
         {
+            foreach (Unit units in Unit.TotalUnits)
+            {
+
+                ComboBox_1.Items.Add(units.LongHand);
+            }
         }
 
         private void TextBoxAdd()
@@ -84,6 +91,8 @@ namespace KeithsFunFunPantry.AppControls
                     Pantry.Ingredients[x].IngredientMeasurement.Amount += addAmount;
                 }
             }
+            TextBox_Add.Text = "";
+            TextBoxAdd();
         }
         private void ButtonSubtract_Click(object sender, EventArgs e)
         {
@@ -96,6 +105,8 @@ namespace KeithsFunFunPantry.AppControls
                     Pantry.Ingredients[x].IngredientMeasurement.Amount -= subAmount;
                 }
             }
+            TextBox_Subtract.Text = "";
+            TextBoxSubtract();
         }
     }
 
