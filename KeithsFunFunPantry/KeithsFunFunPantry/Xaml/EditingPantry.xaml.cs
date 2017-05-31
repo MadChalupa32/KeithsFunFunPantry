@@ -235,6 +235,7 @@ namespace KeithsFunFunPantry
         private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
             myPopup2.IsOpen = true;
+            myPopup2.DataContext = ListBox_EditPantry.SelectedItem;
         }
 
         private void HidePopUp_Click(object sender, RoutedEventArgs e)

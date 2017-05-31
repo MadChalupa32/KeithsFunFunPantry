@@ -72,11 +72,11 @@
                 Click="SearchButton_ClickHandler">
         </Button>
         <Label Content="Search by Ingredients" FontFamily="Georgia" FontSize="30" Grid.ColumnSpan="3" Margin="10.4,0,0,0" VerticalAlignment="Top" HorizontalAlignment="Left" Grid.Column="1" Height="45" Width="299"/>
-        <CheckBox Content="Only include chosen ingredients:" FontFamily="Georgia" Grid.Row="3" Grid.ColumnSpan="3" Margin="6,2.6,0.4,2.4"/>
+        <!--<CheckBox Content="Only include chosen ingredients:" FontFamily="Georgia" Grid.Row="3" Grid.ColumnSpan="3" Margin="6,2.6,0.4,2.4"/>
         <CheckBox Content="Chicken" FontFamily="Georgia" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="2" Margin="5.4,1.6,5.4,2.4"/>
         <CheckBox Content="Beef" FontFamily="Georgia" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5.4,1.6,5.4,2.4"/>
         <CheckBox Content="Pork" FontFamily="Georgia" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5.4,1.6,5.4,2.4"/>
-        <CheckBox Content="Rice" FontFamily="Georgia" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Margin="5.4,1.6,5.4,2.4"/>
+        <CheckBox Content="Rice" FontFamily="Georgia" Grid.Row="7" Grid.Column="1" Grid.ColumnSpan="2" Margin="5.4,1.6,5.4,2.4"/>-->
         <Label Content="Recipes"
                Grid.Row="1"
                Grid.RowSpan="3"
@@ -96,23 +96,11 @@
                  Margin="20,0,20,20">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                        <StackPanel>
-                            <AC:SearchIngredientItem/>
-                        </StackPanel>
+                    <StackPanel>
+                        <AC:SearchIngredientItem/>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <!--<ScrollViewer Background="#E5C698"
-                      Opacity=".7"
-                      Grid.Row="3"
-                      Grid.RowSpan="8"
-                      Grid.Column="3"
-                      Grid.ColumnSpan="3"
-                      Margin="20.6,19.6,19.6,19.8"
-                      VerticalScrollBarVisibility="Auto">
-            <StackPanel x:Name="StackPanel_SearchIngredients"
-                        Margin="20">
-            </StackPanel>
-        </ScrollViewer>-->
     </Grid>
 </Page>
