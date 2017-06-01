@@ -94,7 +94,8 @@ namespace KeithsFunFunPantry.CS
             ShortHand = "Count"
         };
 
-       public static Unit[] TotalUnits = { Teaspoon, Tablespoon, Cup, Ounce, FluidOunce, Pound, Pint, Quart, Gallon, Milliliter, Liter, Gram, Kilogram, Count };
+        public static Unit[] TotalUnits = { Teaspoon, Tablespoon, Cup, Ounce, FluidOunce, Pound, Pint, Quart, Gallon, Milliliter, Liter, Gram, Kilogram, Count };
+
         private Unit()
         {
         }
@@ -105,5 +106,9 @@ namespace KeithsFunFunPantry.CS
 			return same;
 		}
 
-	}
+        public override string ToString()
+        {
+            return LongHand;
+        }
+    }
 }
