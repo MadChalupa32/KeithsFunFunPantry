@@ -653,7 +653,7 @@ namespace ScratchConversions.UnitConversions
             Console.WriteLine("Ounce To Kilogram");
 			Console.WriteLine(OunceToKilogram(2f) == .906f ? "\tpassed" : "\t*failed*");
             Console.WriteLine("Ounce To Liter");
-			Console.WriteLine(OunceToKilogram(2f) == .058f ? "\tpassed" : "\t*failed*");
+			Console.WriteLine(OunceToLiter(2f) == .058f ? "\tpassed" : "\t*failed*");
 
 		}
 		#endregion
