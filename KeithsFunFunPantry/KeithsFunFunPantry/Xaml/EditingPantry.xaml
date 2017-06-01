@@ -31,7 +31,7 @@
             <RowDefinition Height="30"/>
             <RowDefinition Height="10"/>
             <RowDefinition Height="30"/>
-            <RowDefinition Height="20"/>
+            <RowDefinition Height="40"/>
             <RowDefinition Height="5*"/>
             <RowDefinition Height="20"/>
             <RowDefinition/>
@@ -128,6 +128,32 @@
                 VerticalAlignment="Top" 
                 HorizontalAlignment="Right"
                 Click="AddIngredient_Click"/>
+        <Border BorderBrush="Black"
+                BorderThickness="1"
+                Grid.Row="11"
+                Grid.RowSpan="3"
+                Grid.ColumnSpan="3"
+                Margin="5, 5, -39, 5">
+            <ScrollViewer Grid.Row="11"
+                       Grid.RowSpan="3"
+                       Grid.ColumnSpan="3"
+                       Margin="3,10,-30,10">
+                <TextBlock TextWrapping="Wrap">
+            Allowed Conversions: <LineBreak/>
+            Cups -> Fluid Ounces, Pints, Quarts, Gallons, Teaspoons, Tablespoons, Ounces, Pounds, Liters <LineBreak/>
+            Fluid Ounces -> Cups, Pints, Quarts, Gallons <LineBreak/>
+            Gallons -> Fluid Ounces, Cups, Pints, Quarts <LineBreak/>
+            Grams -> Kilograms <LineBreak/>
+            Kilograms -> Pounds<LineBreak/>
+            Ounces -> Teaspoons, Tablespoons, Cups, Pounds <LineBreak/>
+            Pints -> Fluid Ounces, Cups, Quarts, Gallons<LineBreak/>
+            Pounds -> Teaspoons, Tablespoons, Cups, Ounces
+            Quarts -> Fluid Ounces, Cups, Pints, Gallons <LineBreak/>
+            Tablespoons -> Teaspoons, Cups, Ounces, Pounds <LineBreak/>
+            Teaspoons -> Tablespoons, Cups, Ounces, Pounds<LineBreak/>
+                </TextBlock>
+            </ScrollViewer>
+        </Border>
         <Label Content="Pantry Items"
                Grid.Row="2"
                Grid.RowSpan="2"
@@ -164,7 +190,7 @@
             <Popup.DataContext>
                 <AC:EditIngredient x:Name="PopUp2"/>
             </Popup.DataContext>
-            <Grid Width="600" 
+            <Grid Width="600"
                   Height="350" 
                   Background="Green">
                 <Grid.ColumnDefinitions>
