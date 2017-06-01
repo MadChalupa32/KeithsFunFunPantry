@@ -82,6 +82,7 @@
     <Compile Include="AppControls\SR_RecipeItem.xaml.cs">
       <DependentUpon>SR_RecipeItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CS\Tag.cs" />
     <Compile Include="CS\UnitConversions.cs" />
     <Compile Include="Windows\AddRecipeWinodw.xaml.cs">
       <DependentUpon>AddRecipeWinodw.xaml</DependentUpon>
