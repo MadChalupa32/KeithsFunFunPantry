@@ -8,7 +8,7 @@ Cristian Bravo
 	5/23 I helped brian on work on the remove ingredient part of the project
 
 Randal McClure
-	5/30	I finished the unit conversion dictionaries and the conversion validation, wrote testing for the conversion method, and tried (and failed) to fix the conversion UI so that it works. The dictionary should be finding the function, but for some reason, it's throwing a KeyNotFoundException. I tried to override the Equals method, and it returns true, but the dictionary is still not finding the correct keys. Needless to say, that means the conversions don't work with the UI.
+	5/31	I fixed the conversion problems and added some missing conversion functions to the dictionary. I also fixed the double-click error in the deliverable.
 
 Tyler Wharton
 
