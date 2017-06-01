@@ -122,7 +122,8 @@ namespace KeithsFunFunPantry.CS
 					{ Unit.Teaspoon, TeaspoonToPound },
 					{ Unit.Tablespoon, TablespoonToPound },
 					{ Unit.Cup, CupToPound },
-					{ Unit.Ounce, OunceToPound }
+					{ Unit.Ounce, OunceToPound },
+					{ Unit.Kilogram, KilogramToPound }
 				}
 			},
 			{

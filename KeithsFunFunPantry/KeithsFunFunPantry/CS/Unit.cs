@@ -110,5 +110,22 @@ namespace KeithsFunFunPantry.CS
         {
             return LongHand;
         }
-    }
+
+		public override int GetHashCode()
+		{
+			int hash = 0;
+
+			foreach(char letter in LongHand)
+			{
+				hash += letter;
+			}
+
+			foreach(char letter in ShortHand)
+			{
+				hash += letter;
+			}
+
+			return hash;
+		}
+	}
 }
