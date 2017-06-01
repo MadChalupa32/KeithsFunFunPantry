@@ -129,15 +129,17 @@
                 HorizontalAlignment="Right"
                 Click="AddIngredient_Click"/>
         <Border BorderBrush="Black"
+                Background="White"
                 BorderThickness="1"
                 Grid.Row="11"
                 Grid.RowSpan="3"
                 Grid.ColumnSpan="3"
-                Margin="5, 5, -39, 5">
+                Margin="0, 0, -39, 5">
             <ScrollViewer Grid.Row="11"
                        Grid.RowSpan="3"
                        Grid.ColumnSpan="3"
-                       Margin="3,10,-30,10">
+                       Margin="5,0,0,5"
+                       VerticalScrollBarVisibility="Auto">
                 <TextBlock TextWrapping="Wrap">
             Allowed Conversions: <LineBreak/>
             Cups -> Fluid Ounces, Pints, Quarts, Gallons, Teaspoons, Tablespoons, Ounces, Pounds, Liters <LineBreak/>

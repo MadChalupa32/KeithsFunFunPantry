@@ -211,18 +211,6 @@ namespace KeithsFunFunPantry
 
         public void ListIngredients(ObservableCollection<Ingredient> displayList)
         {
-            //foreach (Ingredient ingredient in displayList)
-            //{
-            //    PantryEdit pvi = new PantryEdit();
-            //    pvi.DataContext = ingredient;
-            //    pvi.amountLabel.Content = ingredient.IngredientMeasurement.Amount;
-            //}
-
-            //if (displayList.Count == 0)
-            //{
-            //    Label noResults = new Label();
-            //    noResults.Content = "No results found";
-            //}
         }
 
         //Saves the Current pantry
