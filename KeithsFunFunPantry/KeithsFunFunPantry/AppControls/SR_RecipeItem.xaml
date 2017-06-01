@@ -7,30 +7,6 @@
              mc:Ignorable="d" 
              d:DesignHeight="100" Width="500">
     <Grid>
-        <!--<Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100"/>
-            <ColumnDefinition />
-        </Grid.ColumnDefinitions>
-        <Label VerticalAlignment="Center" 
-               HorizontalAlignment="Center"
-               Margin="20">
-            <Image Source="../Images/ListItem.png"/>
-        </Label>
-        <Border CornerRadius="5"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center"
-                Width="50"
-                Height="50">
-            <Button Background="Transparent"
-                    BorderThickness="0"
-                    Opacity=".2"
-                    OpacityMask="LightBlue"
-                    VerticalAlignment="Center"
-                    HorizontalAlignment="Center"
-                    Width="50"
-                    Height="50"
-                    Click="Show_Click"/>
-        </Border>-->
         <Border CornerRadius="15"
                 BorderBrush="#A3CC72"
                 BorderThickness="5"
