@@ -222,9 +222,12 @@ namespace KeithsFunFunPantry
 
         private void ListBox_EditPantry_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            myPopup2.IsOpen = true;
-            myPopup2.DataContext = ListBox_EditPantry.SelectedItem;
-			popupGrid.ComboBox_1.SelectedItem = (ListBox_EditPantry.SelectedItem as Ingredient).IngredientMeasurement.UnitOfMeasurement;
+			if (ListBox_EditPantry.SelectedItem != null)
+			{
+				myPopup2.IsOpen = true;
+				myPopup2.DataContext = ListBox_EditPantry.SelectedItem;
+				popupGrid.ComboBox_1.SelectedItem = (ListBox_EditPantry.SelectedItem as Ingredient).IngredientMeasurement.UnitOfMeasurement;
+			}
 		}
 
         private void HidePopUp_Click(object sender, RoutedEventArgs e)
