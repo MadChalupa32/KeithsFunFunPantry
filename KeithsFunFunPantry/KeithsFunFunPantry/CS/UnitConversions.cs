@@ -54,8 +54,8 @@ namespace KeithsFunFunPantry.CS
 				new Dictionary<Unit, Func<float,float>>()
 				{
 					{ Unit.Kilogram, KilogramToGram },
-					{ Unit.Ounce, OunceToGrams },
-					{ Unit.Pound, PoundToGrams }
+					{ Unit.Ounce, OunceToGram },
+					{ Unit.Pound, PoundToGram }
 				}
 			},
 			{
