@@ -45,7 +45,7 @@ namespace KeithsFunFunPantry
                             }
 
                         }
-                        catch (SerializationException e)
+                        catch (SerializationException)
                         {
 
                             instance = new RecipeBook();

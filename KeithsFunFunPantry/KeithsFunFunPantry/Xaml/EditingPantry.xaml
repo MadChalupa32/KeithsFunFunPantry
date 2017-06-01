@@ -208,7 +208,7 @@
                 </Grid.RowDefinitions>
                 <Border BorderBrush="Black"
                         BorderThickness="5" Grid.RowSpan="4" Grid.ColumnSpan="3" >
-                    <AC:EditIngredient/>
+                    <AC:EditIngredient x:Name="popupGrid"/>
                 </Border>
 
                 <Button x:Name="Exit_Click"
