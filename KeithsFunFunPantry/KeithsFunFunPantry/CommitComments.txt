@@ -8,7 +8,7 @@ Cristian Bravo
 	5/23 I helped brian on work on the remove ingredient part of the project
 
 Randal McClure
-	5/31	I fixed the conversion problems and added some missing conversion functions to the dictionary. I also fixed the double-click error in the deliverable.
+	6/1		I wrote the tag search logic for PantryView and RecipeView. It's all commented out as it requires a list box in the xaml in order to compile.
 
 Tyler Wharton
 
