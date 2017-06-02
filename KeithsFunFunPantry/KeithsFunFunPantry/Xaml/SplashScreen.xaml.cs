@@ -25,6 +25,8 @@ namespace KeithsFunFunPantry
         {
             Splash();
             InitializeComponent();
+            //Pantry.Ingredients = GenerateIngredients.ingredients();
+
         }
 
         DispatcherTimer timer = new DispatcherTimer();
