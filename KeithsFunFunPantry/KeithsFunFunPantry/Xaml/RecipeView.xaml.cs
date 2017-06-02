@@ -63,18 +63,18 @@ namespace KeithsFunFunPantry
 
             //Compile a list<string> of the check box values (advanced searching)
 
-            RecipeBook book = RecipeBook.Instance;
-
-
             if (!query.Equals("search recipes"))
             {
-
-                ListBox_RecipeView.ItemsSource = book.RecipeSearchController(query);
-
+				//List<Tag> tags = new List<CS.Tag>();
+				//if (tagSearchCheckBox.IsChecked)
+				//{
+				//	tags = tagSearchListBox.SelectedItems;
+				//}
+				ListBox_RecipeView.ItemsSource = RecipeBook.Instance.RecipeSearchController(query/*, tags*/);
             }
             else
             {
-                ListBox_RecipeView.ItemsSource = book.Recipes;
+                ListBox_RecipeView.ItemsSource = RecipeBook.Instance.Recipes;
             }
         }
 		private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)

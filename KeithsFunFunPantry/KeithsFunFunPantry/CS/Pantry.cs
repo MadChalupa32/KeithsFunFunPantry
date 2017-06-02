@@ -153,29 +153,43 @@ namespace KeithsFunFunPantry
         #region Search Function
 
         //Controls ingredient-specific search function
-        public static ObservableCollection<Ingredient> IngredientSearchController(string query/*, List<string> checkBoxValuesToFilter*/)
+        public static ObservableCollection<Ingredient> IngredientSearchController(string query/*, List<Tag> tags*/)
 		{
 			ObservableCollection<Ingredient> nameSearchResults = IngredientNameSearch(query);
             return nameSearchResults;
-            //Leave until check box search is ready to be implemented
-            //List<Ingredient> finalSearchResults = IngredientCheckBoxFilter(nameSearchResults, checkBoxValuesToFilter);
+
+            //ObservableCollection<Ingredient> finalSearchResults = tags.Count != 0 ? IngredientCheckBoxFilter(nameSearchResults, tags) : nameSearchResults;
+			//return finalSearchResults;
         }
 
 		//Executes name search and returns the results
 		public static ObservableCollection<Ingredient> IngredientNameSearch(string query)
 		{
             ObservableCollection<Ingredient> queryResults = new ObservableCollection<Ingredient>(Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query)));
-            //ObservableCollection<Ingredient> queryResults = Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query));
 			return queryResults;
 		}
-        /*
-		//Filters the given list based on the check box values and returns the filtered list
-			//Narrow down nameSearchResults based on check boxes
-		public static List<Ingredient> IngredientCheckBoxFilter(List<Ingredient> ingredientList, List<string> checkBoxValuesToFilter)
+
+		/*
+		//Filters the given list based on the tags and returns the filtered list
+		public static List<Ingredient> IngredientCheckBoxFilter(List<Ingredient> ingredientList, List<Tag> tags)
 		{
-			//for each String checkBoxValue, (linq) where ingredient.tags.contains(checkBoxValue)
-			
-			//Don't forget to check for duplicates
+			List<Ingredient> results = new List<Ingredient>();
+
+			//For each ingredient, itterate through the tags. 
+			//If the ingredient contains one of the requested tags, add the ingredient to the result list, break, and move on to the next ingredient
+			foreach(Ingredient ingredient in Ingredients)
+			{
+				foreach(Tag tag in tags)
+				{
+					if (ingredient.Tags.Contains(tag))
+					{
+						results.Add(ingredient);
+						break;
+					}
+				}
+			}
+
+			return results;
 		}
 		*/
         #endregion

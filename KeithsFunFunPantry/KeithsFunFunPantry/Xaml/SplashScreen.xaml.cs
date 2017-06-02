@@ -31,6 +31,8 @@ namespace KeithsFunFunPantry
             //RecipeBook.Instance.Recipes.Count == 0;
             //SETTING TO DEFAULT DATA
             //for both the RecipeBook & Pantry
+            //Pantry.Ingredients = GenerateIngredients.ingredients();
+
         }
 
         DispatcherTimer timer = new DispatcherTimer();
