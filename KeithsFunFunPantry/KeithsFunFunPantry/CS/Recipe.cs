@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace KeithsFunFunPantry
 {
     [Serializable]
-    public class Recipe
+    public class Recipe : IComparable<Recipe>, IEquatable<Recipe>
     {
         public Recipe(List<Ingredient> ingredientList, String title, string directions = "", string notes = "")
         {
@@ -47,6 +47,18 @@ namespace KeithsFunFunPantry
         {
             get { return ingredientList; }
             set { ingredientList = value; }
+        }
+
+        public int CompareTo(Recipe other)
+        {
+            if (this.Title == other.Title) return 0;
+            return this.Title.CompareTo(other.Title);            
+        }
+
+        public bool Equals(Recipe other)
+        {
+            if (this.Title.Equals(other.Title)) return true;
+            return false;            
         }
     }
 }

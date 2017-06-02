@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using System.Windows.Threading;
+using KeithsFunFunPantry.CS;
 
 namespace KeithsFunFunPantry
 {
@@ -25,6 +26,11 @@ namespace KeithsFunFunPantry
         {
             Splash();
             InitializeComponent();
+
+            //VALIDATION
+            //RecipeBook.Instance.Recipes.Count == 0;
+            //SETTING TO DEFAULT DATA
+            //for both the RecipeBook & Pantry
         }
 
         DispatcherTimer timer = new DispatcherTimer();

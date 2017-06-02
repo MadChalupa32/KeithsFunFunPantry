@@ -74,6 +74,7 @@
     <Compile Include="AppControls\SearchIngredientItem.xaml.cs">
       <DependentUpon>SearchIngredientItem.xaml</DependentUpon>
     </Compile>
+    <Compile Include="CS\GenerateIngredients.cs" />
     <Compile Include="CS\Logging.cs" />
     <Compile Include="CS\RecipeBook.cs" />
     <Compile Include="AppControls\SR_PantryItem.xaml.cs">
