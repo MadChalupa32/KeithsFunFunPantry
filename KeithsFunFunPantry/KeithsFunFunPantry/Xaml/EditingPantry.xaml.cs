@@ -48,6 +48,7 @@ namespace KeithsFunFunPantry
                 noResults.Content = "No results found";
             }
             ListBox_EditPantry.ItemsSource = Pantry.Ingredients;
+
         }
 
         //Removes text when it has focus, add text when it is empty and has lost focus (Search box)
@@ -202,7 +203,7 @@ namespace KeithsFunFunPantry
                 }
             }
             ListIngredients(Pantry.Ingredients);
-
+            Pantry.Ingredients.Sort();
             TextBox_Name.Text = "";
             TextBox_Amount.Text = "";
             TextBoxOptions1();

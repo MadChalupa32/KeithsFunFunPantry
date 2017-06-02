@@ -129,8 +129,20 @@ namespace KeithsFunFunPantry
         private void ListBox_EditRecipe_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Recipe selectedRecipe = (Recipe)ListBox_EditRecipe.SelectedItem;
+            List<Ingredient> ingres = new List<Ingredient>();
 
-            ListBox_PantryList.ItemsSource = Pantry.Ingredients.Where(i => selectedRecipe.IngredientList.Contains(i));
+            foreach(Ingredient i in Pantry.Ingredients)
+            {
+                foreach (Ingredient n in selectedRecipe.IngredientList)
+                {
+                    if(i.Name == n.Name)
+                    {
+                        ingres.Add(i);
+                    }
+                }
+            }
+
+            ListBox_PantryList.ItemsSource = ingres;
         }
     }
 }

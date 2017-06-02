@@ -41,6 +41,7 @@ namespace KeithsFunFunPantry.Windows
             rv.ListBox_RecipeView.ItemsSource = null;
             rv.ListBox_RecipeView.ItemsSource = book.Recipes;
             this.Close();
+            RecipeBook.Instance.Recipes.Sort();
         }
 
 

@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Serialization;
 using System.Runtime.Serialization.Formatters.Binary;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,31 @@ namespace KeithsFunFunPantry
         private static ObservableCollection<Ingredient> ingredients = new ObservableCollection<Ingredient>();
         public static ObservableCollection<Ingredient> Ingredients
         {
-            get { return ingredients; }
+            get
+            {
+                return ingredients;
+            }
             set
             {
                 ingredients = value;
+            }
+        }
+        public static void Sort<T>(this ObservableCollection<T> observable) where T: IComparable<T>, IEquatable<T>
+        {
+            List<T> sorted = observable.OrderBy(x => x).ToList();
+            int ptr = 0;
+            while (ptr < sorted.Count)
+            {
+                if (!observable[ptr].Equals(sorted[ptr]))
+                {
+                    T t = observable[ptr];
+                    observable.RemoveAt(ptr);
+                    observable.Insert(sorted.IndexOf(t), t);
+                }
+                else
+                {
+                    ptr++;
+                }
             }
         }
         public static void AddNewIngredient(string name, Measurement m)
@@ -103,6 +125,10 @@ namespace KeithsFunFunPantry
             {
                 Logging.WriteLog(LogLevel.Error, "File has failed to open or doesn't exist");
             }
+            catch (SerializationException)
+            {
+                Logging.WriteLog(LogLevel.Warning, "Filestream is empty");
+            }
         }
         public static void RemoveIngredients(string name)
         {
@@ -166,6 +192,6 @@ namespace KeithsFunFunPantry
 			return results;
 		}
 		*/
-		#endregion
-	}
+        #endregion
+    }
 }

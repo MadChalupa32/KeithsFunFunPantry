@@ -1,5 +1,6 @@
 ﻿using KeithsFunFunPantry.AppControls;
 using KeithsFunFunPantry.Windows;
+using KeithsFunFunPantry.CS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace KeithsFunFunPantry
 {
     /// <summary>
@@ -29,6 +31,8 @@ namespace KeithsFunFunPantry
             InitializeComponent();
             TextBoxOptions();
             ListBox_RecipeView.ItemsSource = book.Recipes;
+            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
+            
         }
 
         private string searchBar = "Search Recipes";
@@ -90,8 +94,7 @@ namespace KeithsFunFunPantry
             AddRecipeWinodw w = new AddRecipeWinodw(this);
             w.Height = 400;
             w.Width = 500;
-            w.Show();
-            
+            w.Show();            
         }
 
         private void RecipeRemoveButton_Click(object sender, RoutedEventArgs e)
@@ -102,14 +105,17 @@ namespace KeithsFunFunPantry
         }
 
 
-        //private void RecipeViewItem_KeyDown(object sender, KeyEventArgs e)
-        //{
+        private void RecipeViewItem_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
+                w.Height = 400;
+                w.Width = 500;
+                w.Show();
 
-        //    ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
-        //    w.Height = 400;
-        //    w.Width = 500;
-        //    w.Show();
-        //}
+            }
+        }
 
         private void ListBox_RecipeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
