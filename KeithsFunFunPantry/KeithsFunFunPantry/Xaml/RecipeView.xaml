@@ -117,23 +117,37 @@
                 FontSize="24"
                 Margin="10"
                 HorizontalAlignment="Right"/>
-        <StackPanel x:Name="VisibilityWrapPanel"
-                    Grid.Column="2"
-                    Grid.Row="3"
-                    Grid.RowSpan="6"
-                    Margin="10">
-            <Label Content="Tag Search"
-                   FontSize="14"
-                   Background="WhiteSmoke"
-                   Margin="10"/>
+
+        <WrapPanel  Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Grid.Row="1"
+                    Grid.RowSpan="3"
+                    Margin="10"
+                    VerticalAlignment="Bottom">
             <CheckBox x:Name="TagSearchVisibiltyCheckBox"
                       HorizontalAlignment="Center"
-                      Margin="10"/>
+                      Margin="10, 3"/>
+            
+            <Label Content="EnableTag Search"
+               FontSize="14"
+               HorizontalContentAlignment="Center"
+               VerticalAlignment="Bottom"/>
+            
+        </WrapPanel>
+            
+        <StackPanel x:Name="VisibilityWrapPanel"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="4"
+                    Grid.RowSpan="6"
+                    Margin="10">
             <ListBox x:Name="TagListBox"
                  Margin="10"
-                 MaxHeight="50"
+                 MaxHeight="200"
                  MinHeight="25"
-                 VerticalAlignment="Top"/>
+                 VerticalAlignment="Top"
+                 SelectionMode="Multiple"
+                 Visibility="{Binding IsChecked, ElementName=TagSearchVisibiltyCheckBox, Converter={StaticResource BoolToVis}}"/>
         </StackPanel>
     </Grid>
 </Page>

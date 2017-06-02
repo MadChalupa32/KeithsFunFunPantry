@@ -5,6 +5,6 @@
              StartupUri="Xaml/SplashScreen.xaml"
              Startup="Application_Startup">
     <Application.Resources>
-         
+        <BooleanToVisibilityConverter x:Key="BoolToVis"/>
     </Application.Resources>
 </Application>

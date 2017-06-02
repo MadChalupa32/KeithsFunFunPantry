@@ -1,5 +1,6 @@
 ﻿using KeithsFunFunPantry.AppControls;
 using KeithsFunFunPantry.Windows;
+using KeithsFunFunPantry.CS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -16,6 +17,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+
 namespace KeithsFunFunPantry
 {
     /// <summary>
@@ -29,6 +31,8 @@ namespace KeithsFunFunPantry
             InitializeComponent();
             TextBoxOptions();
             ListBox_RecipeView.ItemsSource = book.Recipes;
+            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
+            
         }
 
         private string searchBar = "Search Recipes";
