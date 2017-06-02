@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.CS;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -10,8 +11,9 @@ namespace KeithsFunFunPantry
     [Serializable]
     public class Recipe : IComparable<Recipe>, IEquatable<Recipe>
     {
-        public Recipe(List<Ingredient> ingredientList, String title, string directions = "", string notes = "")
+        public Recipe(List<Tag> tagList, List<Ingredient> ingredientList, String title, string directions = "", string notes = "")
         {
+            TagList = tagList;
             IngredientList = ingredientList;
             Directions = directions;
             Title = title;
@@ -22,6 +24,13 @@ namespace KeithsFunFunPantry
         private string directions;
         private string title;
         private string notes;
+        private List<Tag> tagList;
+
+        public List<Tag> TagList
+        {
+            get { return tagList; }
+            set { tagList = value; }
+        }
 
         public string Notes
         {

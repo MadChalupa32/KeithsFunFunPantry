@@ -2,13 +2,12 @@
   "ExpandedNodes": [
     "",
     "\\KeithsFunFunPantry",
-    "\\KeithsFunFunPantry\\AppUnitTests",
     "\\KeithsFunFunPantry\\KeithsFunFunPantry",
     "\\KeithsFunFunPantry\\KeithsFunFunPantry\\CS",
-    "\\KeithsFunFunPantry\\KeithsFunFunPantry\\Xaml",
+    "\\KeithsFunFunPantry\\packages",
     "\\KeithsFunFunPantry\\ScratchConversions",
     "\\KeithsFunFunPantry\\ScratchConversions\\UnitConversions"
   ],
-  "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry\\CS\\GenerateIngredients.cs",
+  "SelectedNode": "\\KeithsFunFunPantry\\KeithsFunFunPantry.sln",
   "PreviewInSolutionExplorer": false
 }

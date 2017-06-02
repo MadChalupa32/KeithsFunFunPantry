@@ -129,6 +129,10 @@ namespace KeithsFunFunPantry
             {
                 Logging.WriteLog(LogLevel.Warning, "Filestream is empty");
             }
+            catch (ArgumentException)
+            {
+                Logging.WriteLog(LogLevel.Warning, "Legacy Pantry prevented loading.");
+            }
         }
         public static void RemoveIngredients(string name)
         {
