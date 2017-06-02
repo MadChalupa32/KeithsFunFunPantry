@@ -77,7 +77,13 @@ namespace KeithsFunFunPantry
             string query = TextBox_PantrySearch.Text.ToLower();
             if (!query.Equals("search ingredients"))
             {
-                ListIngredients(Pantry.IngredientSearchController(query));
+				//List<Tag> tags = new List<CS.Tag>();
+				//if (tagSearchCheckBox.IsChecked)
+				//{
+				//	tags = tagSearchListBox.SelectedItems.ToList<Tag>();
+				//}
+
+                ListIngredients(Pantry.IngredientSearchController(query/*, tags*/));
             }
             else
             {

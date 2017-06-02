@@ -19,7 +19,7 @@ namespace KeithsFunFunPantry
         Regex nameValidation = new Regex(@"^[a-zA-Z/s]*$");
         private string name = "";
         private Measurement ingredientMeasurement;
-        private List<string> tags = new List<string>();
+        private List<Tag> tags = new List<Tag>();
 
         //Name of the ingredient
         public string Name
@@ -52,7 +52,7 @@ namespace KeithsFunFunPantry
         }
 
         //the List of Tags corresponding to the ingredient
-        public List<string> Tags
+        public List<Tag> Tags
         {
             get { return tags; }
             set
