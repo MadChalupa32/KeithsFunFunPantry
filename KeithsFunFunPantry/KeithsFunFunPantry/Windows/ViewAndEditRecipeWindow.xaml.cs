@@ -20,7 +20,7 @@ namespace KeithsFunFunPantry.Windows
     /// <summary>
     /// Interaction logic for ViewAndEditRecipeWindow.xaml
     /// </summary>
-    public partial class ViewAndEditRecipeWindow : Window
+    public partial class ViewAndEditRecipeWindow : Window, INotifyPropertyChanged
     {
         RecipeView rv;
         public event PropertyChangedEventHandler PropertyChanged;
@@ -44,7 +44,6 @@ namespace KeithsFunFunPantry.Windows
                     if (i.Name == ((Ingredient)obj).Name)
                     {
                         IngredientDisplayer.SelectedItems.Add(obj);
-
                     }
                 }
             }
@@ -70,7 +69,7 @@ namespace KeithsFunFunPantry.Windows
             }
             Recipe r = new Recipe(selectedIngredients, TitleEntryTB.Text, DirectionsEntryTB.Text, NotesEntryTB.Text);
             RecipeBook book = RecipeBook.Instance;
-            foreach (Recipe rec in book.Recipes)
+            foreach (Recipe rec in book.Recipes.ToList<Recipe>())
             {
                 if (rv.ListBox_RecipeView.SelectedItem == rec)
                 {
@@ -153,6 +152,7 @@ namespace KeithsFunFunPantry.Windows
         private void EnableEditButton_Click(object sender, RoutedEventArgs e)
         {
             Enabled = !Enabled;
+
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)

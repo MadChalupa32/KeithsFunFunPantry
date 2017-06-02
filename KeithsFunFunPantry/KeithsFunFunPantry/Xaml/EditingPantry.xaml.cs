@@ -126,11 +126,11 @@ namespace KeithsFunFunPantry
         private void FillUnits()
         {
             //ComboBox_Units.ItemsSource = Unit.TotalUnits;
-			foreach(Unit unit in Unit.TotalUnits)
+			foreach (Unit unit in Unit.TotalUnits)
 			{
 				ComboBox_Units.Items.Add(unit.LongHand);
 			}
-        }
+		}
 
         //Logic for the Add Button (eventually adds the ingredient to the pantry list
         private void AddIngredient_Click(object sender, RoutedEventArgs e)
@@ -212,18 +212,6 @@ namespace KeithsFunFunPantry
 
         public void ListIngredients(ObservableCollection<Ingredient> displayList)
         {
-            //foreach (Ingredient ingredient in displayList)
-            //{
-            //    PantryEdit pvi = new PantryEdit();
-            //    pvi.DataContext = ingredient;
-            //    pvi.amountLabel.Content = ingredient.IngredientMeasurement.Amount;
-            //}
-
-            //if (displayList.Count == 0)
-            //{
-            //    Label noResults = new Label();
-            //    noResults.Content = "No results found";
-            //}
         }
 
         //Saves the Current pantry
@@ -237,7 +225,8 @@ namespace KeithsFunFunPantry
         {
             myPopup2.IsOpen = true;
             myPopup2.DataContext = ListBox_EditPantry.SelectedItem;
-        }
+			popupGrid.ComboBox_1.SelectedItem = (ListBox_EditPantry.SelectedItem as Ingredient).IngredientMeasurement.UnitOfMeasurement;
+		}
 
         private void HidePopUp_Click(object sender, RoutedEventArgs e)
         {

@@ -65,7 +65,7 @@ namespace KeithsFunFunPantry.CS
 				{
 					{ Unit.Gram, GramToKilogram },
 					{ Unit.Ounce, OunceToKilogram  },
-					{ Unit.Pound, PoundToGram }
+					{ Unit.Pound, PoundToKilogram }
 				}
 			},
 			{
@@ -100,7 +100,11 @@ namespace KeithsFunFunPantry.CS
 					{ Unit.Teaspoon, TeaspoonToOunce },
 					{ Unit.Tablespoon, TablespoonToOunce },
 					{ Unit.Cup, CupToOunce },
-					{ Unit.Pound, PoundToOunce }
+					{ Unit.Pound, PoundToOunce },
+					{ Unit.Gram, GramToOunce },
+					{ Unit.Liter, LiterToOunce },
+					{ Unit.Milliliter, MilliliterToOunce },
+					{ Unit.Kilogram, KilogramToOunce }
 				}
 			},
 			{
@@ -111,7 +115,8 @@ namespace KeithsFunFunPantry.CS
 					{ Unit.FluidOunce, FluidOuncesToPints },
 					{ Unit.Cup, CupsToPints },
 					{ Unit.Quart, QuartsToPints },
-					{ Unit.Gallon, GallonsToPints }
+					{ Unit.Gallon, GallonsToPints },
+					{ Unit.Liter, LiterToPint }
 				}
 			},
 			{
@@ -122,7 +127,9 @@ namespace KeithsFunFunPantry.CS
 					{ Unit.Teaspoon, TeaspoonToPound },
 					{ Unit.Tablespoon, TablespoonToPound },
 					{ Unit.Cup, CupToPound },
-					{ Unit.Ounce, OunceToPound }
+					{ Unit.Ounce, OunceToPound },
+					{ Unit.Kilogram, KilogramToPound },
+					{ Unit.Gram, GramToPound }
 				}
 			},
 			{
@@ -133,7 +140,8 @@ namespace KeithsFunFunPantry.CS
 					{ Unit.FluidOunce, FluidOuncesToQuarts },
 					{ Unit.Cup, CupsToQuarts },
 					{ Unit.Pint, PintsToQuarts },
-					{ Unit.Gallon, GallonsToQuarts }
+					{ Unit.Gallon, GallonsToQuarts },
+					{ Unit.Liter, LiterToQuart }
 				}
 			},
 			{
@@ -144,7 +152,8 @@ namespace KeithsFunFunPantry.CS
 					{ Unit.Teaspoon, TeaspoonToTablespoon },
 					{ Unit.Cup, CupToTablespoon },
 					{ Unit.Ounce, OunceToTablespoon },
-					{ Unit.Pound, PoundToTablespoon }
+					{ Unit.Pound, PoundToTablespoon },
+					{ Unit.Milliliter, MilliliterToTablespoon }
 				}
 			},
 			{
@@ -155,7 +164,8 @@ namespace KeithsFunFunPantry.CS
 					{ Unit.Tablespoon, TablespoonToTeaspoon },
 					{ Unit.Cup, CupToTeaspoon },
 					{ Unit.Ounce, OunceToTeaspoon },
-					{ Unit.Pound, PoundToTeaspoon }
+					{ Unit.Pound, PoundToTeaspoon },
+					{ Unit.Milliliter, MilliliterToTeaspoon }
 				}
 			}
 		};

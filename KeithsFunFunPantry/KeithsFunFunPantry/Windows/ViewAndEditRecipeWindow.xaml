@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeithsFunFunPantry.Windows"
         mc:Ignorable="d"
-        Title="ViewAndEditRecipeWindow" Height="300" Width="300">
+        Title="Edit Recipe" Height="300" Width="300">
     <StackPanel x:Name="ParentPanel">
 
         <Label x:Name="Header"
