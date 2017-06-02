@@ -76,17 +76,18 @@ namespace KeithsFunFunPantry
             set { recipes = value; }
         }
 
-
+        //MAKE SURE TO DELETE THIS AND FIX ITS CALLS, ONCE BRIAN IMPLEMENTS HIS CALL IN THE SPLASH SCREEN.xaml.cs
         private static void GenRecipes()
         {
-            CS.Measurement measure = new CS.Measurement(5, CS.Unit.Count);
-            List<Ingredient> testList = new List<Ingredient> { new Ingredient("fish", measure), new Ingredient("fish", measure) };
-            List<Ingredient> testList2 = new List<Ingredient> { new Ingredient("notfish", measure), new Ingredient("nptfish", measure) };
-            Recipe r1 = new Recipe(testList, "fish");
-            Recipe r2 = new Recipe(testList2, "notfish");
-            Instance.Recipes.Add(r1);
-            Instance.Recipes.Add(r2);
+            //CS.Measurement measure = new CS.Measurement(5, CS.Unit.Count);
+            //List<Ingredient> testList = new List<Ingredient> { new Ingredient("fish", measure), new Ingredient("fish", measure) };
+            //List<Ingredient> testList2 = new List<Ingredient> { new Ingredient("notfish", measure), new Ingredient("nptfish", measure) };
+            //Recipe r1 = new Recipe(testList, "fish");
+            //Recipe r2 = new Recipe(testList2, "notfish");
+            //Instance.Recipes.Add(r1);
+            //Instance.Recipes.Add(r2);
         }
+
         public void SaveRecipes()
         {
             try
