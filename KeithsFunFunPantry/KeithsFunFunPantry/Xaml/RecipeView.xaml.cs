@@ -90,8 +90,7 @@ namespace KeithsFunFunPantry
             AddRecipeWinodw w = new AddRecipeWinodw(this);
             w.Height = 400;
             w.Width = 500;
-            w.Show();
-            
+            w.Show();            
         }
 
         private void RecipeRemoveButton_Click(object sender, RoutedEventArgs e)

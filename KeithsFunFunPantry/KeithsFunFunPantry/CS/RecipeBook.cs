@@ -43,9 +43,10 @@ namespace KeithsFunFunPantry
                                 Logging.WriteLog(LogLevel.Warning, "New RecipeBook created due deserialized file not registering as a RecipeBook");
                                 genRecipes = true;
                             }
+                            Instance.Recipes.Sort();
 
                         }
-                        catch (SerializationException e)
+                        catch (SerializationException)
                         {
 
                             instance = new RecipeBook();
@@ -104,8 +105,6 @@ namespace KeithsFunFunPantry
                 Logging.WriteLog(LogLevel.Error, "RecipeBook Failed to save properly error follows:\n" + e.ToString());
             } 
         }
-
-
 		#region Search Function
 
 		//Controls recipe-specific search function
