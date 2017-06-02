@@ -53,6 +53,12 @@ namespace KeithsFunFunPantry
                             Logging.WriteLog(LogLevel.Info, "New RecipeBook created due to serialization error.");
                             genRecipes = true;
                             //MessageBox.Show("Failed to load or create the Recipebook!\n" + e.ToString());
+                        }catch (ArgumentException)
+                        {
+                            instance = new RecipeBook();
+                            Logging.WriteLog(LogLevel.Info, "New RecipeBook created due Argument Error with a legacy Recipe Book.");
+                            genRecipes = true;
+                            //MessageBox.Show("Failed to load or create the Recipebook!\n" + e.ToString());
                         }
                     };
 
