@@ -5,10 +5,25 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeithsFunFunPantry.Windows"
         mc:Ignorable="d"
-        Title="Edit Recipe" Height="300" Width="300">
+        Title="Edit Recipe" Height="550" Width="300">
     <StackPanel x:Name="ParentPanel">
 
-        <Label x:Name="Header"
+        <Label x:Name="Header1"
+               Content="Please select relevant tags below."
+               />
+        <ListBox x:Name="TagDisplayer"
+                 SelectionMode="Multiple"
+                 Height="150">
+
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Setter Property="IsEnabled" Value="{Binding Path=DataContext.Enabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=StackPanel}}" />
+                </Style>
+            </ListBox.ItemContainerStyle>
+
+        </ListBox>
+
+        <Label x:Name="Header2"
                Content="Please select relevant ingrediants below then fill in the text boxes."
                />
         <ListBox x:Name="IngredientDisplayer"
@@ -20,7 +35,6 @@
                     <Setter Property="IsEnabled" Value="{Binding Path=DataContext.Enabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=StackPanel}}" />
                 </Style>
             </ListBox.ItemContainerStyle>
-
 
         </ListBox>
 

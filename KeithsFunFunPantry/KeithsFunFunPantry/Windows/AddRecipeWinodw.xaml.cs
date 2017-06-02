@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.CS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -30,12 +31,19 @@ namespace KeithsFunFunPantry.Windows
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            List<Tag> selectedTags = new List<Tag>();
+            foreach (Object obj in TagDisplayer.SelectedItems)
+            {
+                selectedTags.Add((Tag)obj);
+            }
+
             List<Ingredient> selectedIngredients = new List<Ingredient>();
             foreach (Object obj in IngredientDisplayer.SelectedItems)
             {
                 selectedIngredients.Add((Ingredient)obj);
             }
-            Recipe r = new Recipe(selectedIngredients, TitleEntryTB.Text, DirectionsEntryTB.Text, NotesEntryTB.Text);
+
+            Recipe r = new Recipe(selectedTags, selectedIngredients, TitleEntryTB.Text, DirectionsEntryTB.Text, NotesEntryTB.Text);
             RecipeBook book = RecipeBook.Instance;
             book.Recipes.Add(r);
             rv.ListBox_RecipeView.ItemsSource = null;

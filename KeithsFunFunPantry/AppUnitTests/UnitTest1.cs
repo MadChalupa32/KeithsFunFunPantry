@@ -50,7 +50,14 @@ namespace AppUnitTests
 		{
 			RecipeBook book = RecipeBook.Instance;
 
-			List<Ingredient> ingredients = new List<Ingredient>()
+            List<Tag> tags = new List<Tag>()
+            {
+                Tag.Gluten,
+                Tag.Indian,
+                Tag.Vegan
+            };
+
+            List<Ingredient> ingredients = new List<Ingredient>()
 			{
 				new Ingredient("Milk", new Measurement(1f, Unit.Gallon)),
 				new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
@@ -59,13 +66,13 @@ namespace AppUnitTests
 
 			book.Recipes = new List<Recipe>()
 			{
-				new Recipe(ingredients, "Chocolate Cake"),
-				new Recipe(ingredients, "Grilled Cheese"),
-				new Recipe(ingredients, "Pound Cake"),
-				new Recipe(ingredients, "Spaghetti"),
-				new Recipe(ingredients, "Shepard's Pie"),
-				new Recipe(ingredients, "Strawberry Cake"),
-				new Recipe(ingredients, "Banana Bread")
+				new Recipe(tags, ingredients, "Chocolate Cake"),
+				new Recipe(tags, ingredients, "Grilled Cheese"),
+				new Recipe(tags, ingredients, "Pound Cake"),
+				new Recipe(tags, ingredients, "Spaghetti"),
+				new Recipe(tags, ingredients, "Shepard's Pie"),
+				new Recipe(tags, ingredients, "Strawberry Cake"),
+				new Recipe(tags, ingredients, "Banana Bread")
 			};
 
 			string query = "cake";
@@ -73,9 +80,9 @@ namespace AppUnitTests
 
 			List<Recipe> expectedResults = new List<Recipe>()
 			{
-				new Recipe(ingredients, "Chocolate Cake"),
-				new Recipe(ingredients, "Pound Cake"),
-				new Recipe(ingredients, "Strawberry Cake")
+				new Recipe(tags, ingredients, "Chocolate Cake"),
+				new Recipe(tags, ingredients, "Pound Cake"),
+				new Recipe(tags, ingredients, "Strawberry Cake")
 			};
 
 			Assert.AreEqual(expectedResults.Count, results.Count);

@@ -5,10 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:KeithsFunFunPantry.Windows"
         mc:Ignorable="d"
-        Title="AddRecipeWinodw" Height="300" Width="300">
+        Title="AddRecipeWinodw" Height="550" Width="300">
     <StackPanel>
 
-        <Label x:Name="Header"
+        <Label x:Name="Header1"
+               Content="Please select relevant tags below."
+               />
+        <ListBox x:Name="TagDisplayer"
+                 SelectionMode="Multiple"
+                 Height="150"/>
+        
+        <Label x:Name="Header2"
                Content="Please select relevant ingrediants below then fill in the text boxes."
                />
         <ListBox x:Name="IngredientDisplayer"
