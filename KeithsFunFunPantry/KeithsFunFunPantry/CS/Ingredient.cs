@@ -13,7 +13,7 @@ using System.Windows;
 namespace KeithsFunFunPantry
 {
     [Serializable()]
-    public class Ingredient
+    public class Ingredient : IComparable<Ingredient>, IEquatable<Ingredient>
     {
         public event PropertyChangedEventHandler PropertyChanged;
         Regex nameValidation = new Regex(@"^[a-zA-Z/s]*$");
@@ -79,6 +79,18 @@ namespace KeithsFunFunPantry
             {
                 PropertyChanged(this, new PropertyChangedEventArgs(field));
             }
+        }
+
+        public int CompareTo(Ingredient other)
+        {
+            if (this.Name == other.Name) return 0;
+            return this.Name.CompareTo(other.Name);
+        }
+
+        public bool Equals(Ingredient other)
+        {
+            if (this.Name.Equals(other.Name)) return true;
+            return false;
         }
     }
 }
