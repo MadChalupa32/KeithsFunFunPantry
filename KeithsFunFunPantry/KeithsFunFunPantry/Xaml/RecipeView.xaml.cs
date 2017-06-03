@@ -72,7 +72,13 @@ namespace KeithsFunFunPantry
 						tags.Add(t);
 					}
 				}
-				ListBox_RecipeView.ItemsSource = RecipeBook.Instance.RecipeSearchController(query/*, tags*/);
+
+				if(query == "search recipes")
+				{
+					query = "";
+				}
+
+				ListBox_RecipeView.ItemsSource = RecipeBook.Instance.RecipeSearchController(query, tags);
             }
             else
             {

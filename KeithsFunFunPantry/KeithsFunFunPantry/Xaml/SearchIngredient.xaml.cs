@@ -94,6 +94,11 @@ namespace KeithsFunFunPantry
 				//	}
 				//}
 
+				//if (query == "search recipes")
+				//{
+				//	query = "";
+				//}
+
 				ListIngredients(Pantry.IngredientSearchController(query/*, tags*/));
             }
             else

@@ -115,13 +115,12 @@ namespace KeithsFunFunPantry
 		#region Search Function
 
 		//Controls recipe-specific search function
-		public List<Recipe> RecipeSearchController(string query/*, List<Tag> tags*/)
+		public List<Recipe> RecipeSearchController(string query, List<Tag> tags)
 		{
 			List<Recipe> nameSearchResults = RecipeNameSearch(query);
-            return nameSearchResults;
 
-			//List<Recipe> finalSearchResults = tags.Count != 0 ? RecipeCheckBoxFilter(nameSearchResults, tags) : nameSearchResults;
-			//return finalSearchResults;
+			List<Recipe> finalSearchResults = tags.Count != 0 ? RecipeCheckBoxFilter(nameSearchResults, tags) : nameSearchResults;
+			return finalSearchResults;
 		}
 
 		//Executes name search and returns the results
@@ -132,7 +131,7 @@ namespace KeithsFunFunPantry
 			return queryResults;
 		}
 
-		/*
+		
 		//Filters the given list based on the tags and returns the filtered list
 		public static List<Recipe> RecipeCheckBoxFilter(List<Recipe> recipeList, List<Tag> tags)
 		{
@@ -144,7 +143,7 @@ namespace KeithsFunFunPantry
 			{
 				foreach(Tag tag in tags)
 				{
-					if (recipe.Tags.Contains(tag))
+					if (recipe.TagList.Contains(tag))
 					{
 						results.Add(recipe);
 						break;
@@ -154,7 +153,6 @@ namespace KeithsFunFunPantry
 
 			return results;
 		}
-		*/
 
 		#endregion
 	}
