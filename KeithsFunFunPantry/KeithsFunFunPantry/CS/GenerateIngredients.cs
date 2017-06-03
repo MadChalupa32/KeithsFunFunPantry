@@ -4,23 +4,29 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace KeithsFunFunPantry.CS
 {
     public class GenerateIngredients
     {
-        //Measurement measure;
-        //public GenerateIngredients()
-        //{
-        //   measure = new Measurement(2f, Unit.Cup);
+    //    private ObservableCollection<Ingredient> ingredients;
+    //    Measurement measure;
+    //    public GenerateIngredients()
+    //    {
+          
+    //    }
+    //    public void Gen()
+    //    {
+    //        MessageBox.Show("Gen In");
+    //        measure = new Measurement(2f, Unit.Cup);
+    //        ingredients = new ObservableCollection<Ingredient>();
 
-        //        new Ingredient("Salt", measure);
-        //        new Ingredient("Ground Beef", measure);
-        //        new Ingredient("Oil", measure);
-            
-        //}
-
-        //public static ObservableCollection<Ingredient> Ingredients { get; set; }
+    //        ingredients.Add(new Ingredient("Salt", measure));
+    //        ingredients.Add(new Ingredient("Beef", measure));
+    //        ingredients.Add(new Ingredient("Oil", measure));
+    //    }
+    //    public  ObservableCollection<Ingredient> Ingredients { get; set; }
 
     }
 }
