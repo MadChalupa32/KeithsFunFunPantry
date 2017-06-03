@@ -31,7 +31,7 @@ namespace KeithsFunFunPantry
             InitializeComponent();
             TextBoxOptions();
             ListBox_RecipeView.ItemsSource = book.Recipes;
-            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
+            TagListBox.ItemsSource = Enum.GetValues(typeof(Tag));
             
         }
 
@@ -61,15 +61,17 @@ namespace KeithsFunFunPantry
         {
             string query = TextBox_RecipeSearch.Text.ToLower();
 
-            //Compile a list<string> of the check box values (advanced searching)
-
-            if (!query.Equals("search recipes"))
+			//Compile the list of selected tags
+            if (!query.Equals("search recipes") || (bool)TagSearchVisibiltyCheckBox.IsChecked)
             {
-				//List<Tag> tags = new List<CS.Tag>();
-				//if (tagSearchCheckBox.IsChecked)
-				//{
-				//	tags = tagSearchListBox.SelectedItems;
-				//}
+				List<Tag> tags =  new List<Tag>();
+				if ((bool)TagSearchVisibiltyCheckBox.IsChecked)
+				{
+					foreach(Tag t in TagListBox.SelectedItems)
+					{
+						tags.Add(t);
+					}
+				}
 				ListBox_RecipeView.ItemsSource = RecipeBook.Instance.RecipeSearchController(query/*, tags*/);
             }
             else
