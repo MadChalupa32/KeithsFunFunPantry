@@ -53,6 +53,12 @@ namespace KeithsFunFunPantry
                             Logging.WriteLog(LogLevel.Info, "New RecipeBook created due to serialization error.");
                             genRecipes = true;
                             //MessageBox.Show("Failed to load or create the Recipebook!\n" + e.ToString());
+                        }catch (ArgumentException)
+                        {
+                            instance = new RecipeBook();
+                            Logging.WriteLog(LogLevel.Info, "New RecipeBook created due Argument Error with a legacy Recipe Book.");
+                            genRecipes = true;
+                            //MessageBox.Show("Failed to load or create the Recipebook!\n" + e.ToString());
                         }
                     };
 
@@ -60,7 +66,8 @@ namespace KeithsFunFunPantry
                 }
                 if (genRecipes)
                 {
-                    GenRecipes();
+                    GenerateRecipes.AddRecipes();
+                    //GenRecipes();
                 }
                 return instance;
             }
@@ -76,17 +83,18 @@ namespace KeithsFunFunPantry
             set { recipes = value; }
         }
 
-
+        //MAKE SURE TO DELETE THIS AND FIX ITS CALLS, ONCE BRIAN IMPLEMENTS HIS CALL IN THE SPLASH SCREEN.xaml.cs
         private static void GenRecipes()
         {
-            CS.Measurement measure = new CS.Measurement(5, CS.Unit.Count);
-            List<Ingredient> testList = new List<Ingredient> { new Ingredient("fish", measure), new Ingredient("fish", measure) };
-            List<Ingredient> testList2 = new List<Ingredient> { new Ingredient("notfish", measure), new Ingredient("nptfish", measure) };
-            Recipe r1 = new Recipe(testList, "fish");
-            Recipe r2 = new Recipe(testList2, "notfish");
-            Instance.Recipes.Add(r1);
-            Instance.Recipes.Add(r2);
+            //CS.Measurement measure = new CS.Measurement(5, CS.Unit.Count);
+            //List<Ingredient> testList = new List<Ingredient> { new Ingredient("fish", measure), new Ingredient("fish", measure) };
+            //List<Ingredient> testList2 = new List<Ingredient> { new Ingredient("notfish", measure), new Ingredient("nptfish", measure) };
+            //Recipe r1 = new Recipe(testList, "fish");
+            //Recipe r2 = new Recipe(testList2, "notfish");
+            //Instance.Recipes.Add(r1);
+            //Instance.Recipes.Add(r2);
         }
+
         public void SaveRecipes()
         {
             try
