@@ -31,7 +31,7 @@ namespace KeithsFunFunPantry
             InitializeComponent();
             TextBoxOptions();
             ListBox_RecipeView.ItemsSource = book.Recipes;
-            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
+            TagListBox.ItemsSource = Enum.GetValues(typeof(Tag));
             
         }
 
@@ -61,15 +61,17 @@ namespace KeithsFunFunPantry
         {
             string query = TextBox_RecipeSearch.Text.ToLower();
 
-            //Compile a list<string> of the check box values (advanced searching)
-
-            if (!query.Equals("search recipes"))
+			//Compile the list of selected tags
+            if (!query.Equals("search recipes") || (bool)TagSearchVisibiltyCheckBox.IsChecked)
             {
-				//List<Tag> tags = new List<CS.Tag>();
-				//if (tagSearchCheckBox.IsChecked)
-				//{
-				//	tags = tagSearchListBox.SelectedItems;
-				//}
+				List<Tag> tags =  new List<Tag>();
+				if ((bool)TagSearchVisibiltyCheckBox.IsChecked)
+				{
+					foreach(Tag t in TagListBox.SelectedItems)
+					{
+						tags.Add(t);
+					}
+				}
 				ListBox_RecipeView.ItemsSource = RecipeBook.Instance.RecipeSearchController(query/*, tags*/);
             }
             else
@@ -91,10 +93,22 @@ namespace KeithsFunFunPantry
 
         private void RecipeAddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddRecipeWinodw w = new AddRecipeWinodw(this);
-            w.Height = 400;
-            w.Width = 500;
-            w.Show();            
+            bool isWindowOpen = false;
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is AddRecipeWinodw)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+            if (!isWindowOpen)
+            {
+                AddRecipeWinodw w = new AddRecipeWinodw(this);
+                w.Topmost = true;
+                w.Show();
+                w.Focus();
+            }
         }
 
         private void RecipeRemoveButton_Click(object sender, RoutedEventArgs e)
@@ -109,21 +123,34 @@ namespace KeithsFunFunPantry
         {
             if (e.Key == Key.Enter)
             {
-                ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
-                w.Height = 400;
-                w.Width = 500;
-                w.Show();
-
+                CreateRecipeViewWindow();
             }
         }
 
         private void ListBox_RecipeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
-            w.Topmost = true;
-            w.Height = 400;
-            w.Width = 500;
-            w.Show();
+            CreateRecipeViewWindow();
+            e.Handled = true;
+        }
+
+        private void CreateRecipeViewWindow()
+        {
+            bool isWindowOpen = false;
+            foreach(Window w in Application.Current.Windows)
+            {
+                if (w is ViewAndEditRecipeWindow)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+            if (!isWindowOpen)
+            {
+                ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
+                w.Topmost = true;
+                w.Show();
+                w.Focus();
+            }
         }
     }
 }

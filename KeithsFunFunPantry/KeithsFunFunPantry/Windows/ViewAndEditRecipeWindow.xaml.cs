@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KeithsFunFunPantry.CS;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -53,6 +54,7 @@ namespace KeithsFunFunPantry.Windows
             NotesEntryTB.Text = ((Recipe)rv.ListBox_RecipeView.SelectedItem).Notes;
             this.rv = rv;
             Enabled = false;
+            this.Focus();
         }
         
         public void FieldChanged([CallerMemberName] string fieldName = "")
@@ -62,12 +64,18 @@ namespace KeithsFunFunPantry.Windows
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
         {
+            List<Tag> selectedTags = new List<Tag>();
+            foreach (Object obj in TagDisplayer.SelectedItems)
+            {
+                selectedTags.Add((Tag)obj);
+            }
+
             List<Ingredient> selectedIngredients = new List<Ingredient>();
             foreach (Object obj in IngredientDisplayer.SelectedItems)
             {
                 selectedIngredients.Add((Ingredient)obj);
             }
-            Recipe r = new Recipe(selectedIngredients, TitleEntryTB.Text, DirectionsEntryTB.Text, NotesEntryTB.Text);
+            Recipe r = new Recipe(selectedTags, selectedIngredients, TitleEntryTB.Text, DirectionsEntryTB.Text, NotesEntryTB.Text);
             RecipeBook book = RecipeBook.Instance;
             foreach (Recipe rec in book.Recipes.ToList<Recipe>())
             {
