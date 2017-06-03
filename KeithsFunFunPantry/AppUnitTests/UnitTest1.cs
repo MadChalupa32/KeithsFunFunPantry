@@ -126,7 +126,7 @@ namespace AppUnitTests
 
 
 		[TestMethod]
-		public void ConversionTest()
+		public void LiquidConversionTest()
 		{
 			Measurement m = new Measurement(33f, Unit.FluidOunce);
 			m.Convert(Unit.Cup);
@@ -173,7 +173,7 @@ namespace AppUnitTests
 			Assert.AreEqual(1f, m.Amount);
 		}
 		[TestMethod]
-		public void InvalidConversionTest()
+		public void InvalidLiquidConversionTest()
 		{
 			Measurement m = new Measurement(1f, Unit.Cup);
 			Measurement c = new Measurement(1f, Unit.Cup);
@@ -195,6 +195,127 @@ namespace AppUnitTests
 			c = new Measurement(1f, Unit.Count);
 			m.Convert(Unit.FluidOunce);
 			Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+		}
+
+        [TestMethod]
+        public void DryConversionTest()
+        {
+            Measurement m = new Measurement(54f, Unit.Teaspoon);
+            m.Convert(Unit.Cup);
+            Assert.AreEqual(1.125f, m.Amount);
+
+            m = new Measurement(33f, Unit.Tablespoon);
+            m.Convert(Unit.Cup);
+            Assert.AreEqual(2.062f, m.Amount);
+
+            m = new Measurement(23f, Unit.Ounce);
+            m.Convert(Unit.Cup);
+            Assert.AreEqual(2.875f, m.Amount);
+
+            m = new Measurement(13f, Unit.Pound);
+            m.Convert(Unit.Cup);
+            Assert.AreEqual(26f, m.Amount);
+
+            m = new Measurement(10f, Unit.Cup);
+            m.Convert(Unit.Teaspoon);
+            Assert.AreEqual(480f, m.Amount);
+
+            m = new Measurement(23f, Unit.Cup);
+            m.Convert(Unit.Tablespoon);
+            Assert.AreEqual(368f, m.Amount);
+
+            m = new Measurement(20f, Unit.Cup);
+            m.Convert(Unit.Ounce);
+            Assert.AreEqual(160f, m.Amount);
+
+            m = new Measurement(50f, Unit.Cup);
+            m.Convert(Unit.Pound);
+            Assert.AreEqual(25f, m.Amount);
+
+            m = new Measurement(3f, Unit.Pound);
+            m.Convert(Unit.Teaspoon);
+            Assert.AreEqual(288f, m.Amount);
+
+            m = new Measurement(33f, Unit.Tablespoon);
+            m.Convert(Unit.Ounce);
+            Assert.AreEqual(16.5f, m.Amount);
+
+            m = new Measurement(9f, Unit.Tablespoon);
+            m.Convert(Unit.Teaspoon);
+            Assert.AreEqual(27f, m.Amount);
+        }
+        [TestMethod]
+
+        public void InvalidDryConversionTest()
+        {
+            Measurement m = new Measurement(10f, Unit.Tablespoon);
+            Measurement c = new Measurement(10f, Unit.Tablespoon);
+
+            //Same units
+            m.Convert(Unit.Tablespoon);
+            Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+
+            m = new Measurement(5f, Unit.Pound);
+            c = new Measurement(5f, Unit.Pound);
+            m.Convert(Unit.Pound);
+            Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+
+            //Invalid conversions
+            m.Convert(Unit.Count);
+            Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+
+            m = new Measurement(13f, Unit.Count);
+            c = new Measurement(13f, Unit.Count);
+            m.Convert(Unit.Teaspoon);
+            Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+        }
+    }
+
+		[TestMethod]
+		public void RecipeTagSearchTest()
+		{
+			List<Tag> tags = new List<Tag>()
+			{
+				Tag.Gluten,
+				Tag.Indian,
+				Tag.Vegan
+			};
+
+			List<Ingredient> ingredients = new List<Ingredient>()
+			{
+				new Ingredient("Milk", new Measurement(1f, Unit.Gallon)),
+				new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
+				new Ingredient("Sugar", new Measurement(1f, Unit.Pound))
+			};
+
+			RecipeBook.Instance.Recipes = new List<Recipe>()
+			{
+				new Recipe(new List<Tag>(){Tag.American, Tag.Comfort}, ingredients, "Chocolate Cake"),
+				new Recipe(new List<Tag>(){Tag.American}, ingredients, "Grilled Cheese"),
+				new Recipe(new List<Tag>(){Tag.Gluten}, ingredients, "Pound Cake"),
+				new Recipe(new List<Tag>(){Tag.Italian, Tag.Vegetarian}, ingredients, "Spaghetti"),
+				new Recipe(new List<Tag>(){Tag.Vegetarian}, ingredients, "Shepard's Pie"),
+				new Recipe(new List<Tag>(){Tag.Lactose}, ingredients, "Strawberry Cake"),
+				new Recipe(new List<Tag>(){Tag.Comfort}, ingredients, "Banana Bread")
+			};
+
+			string query = "";
+			List<Recipe> results = RecipeBook.Instance.RecipeNameSearch(query/*, new List<Tag>(){Tag.Lactose, Tag.Vegetarian, Tag.Gluten}*/);
+
+			List<Recipe> expectedResults = new List<Recipe>()
+			{
+				new Recipe(new List<Tag>(){Tag.Gluten}, ingredients, "Pound Cake"),
+				new Recipe(new List<Tag>(){Tag.Italian, Tag.Vegetarian}, ingredients, "Spaghetti"),
+				new Recipe(new List<Tag>(){Tag.Vegetarian}, ingredients, "Shepard's Pie"),
+				new Recipe(new List<Tag>(){Tag.Lactose}, ingredients, "Strawberry Cake")
+			};
+
+			Assert.AreEqual(expectedResults.Count, results.Count);
+			Assert.AreEqual(expectedResults[1], results[1]);
+			for (int i = 0; i < results.Count; i++)
+			{
+				Assert.AreEqual(expectedResults[i].ToString(), results[i].ToString());
+			}
 		}
 	}
 }
