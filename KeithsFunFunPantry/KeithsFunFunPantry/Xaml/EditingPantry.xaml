@@ -142,6 +142,24 @@
                      HorizontalAlignment="Center"
                      VerticalAlignment="Top"/>
         </Border>
+        <TextBlock Panel.ZIndex="1"
+                   Grid.Row="11"
+                   Grid.RowSpan="3"
+                   Grid.ColumnSpan="4"
+                   Margin="20,30,0,30"
+                   TextWrapping="Wrap">
+            Cups -> Fluid Ounces, Pints, Quarts, Gallons, Teaspoons, Tablespoons, Ounces, Pounds, Liters <LineBreak/>
+            Fluid Ounces -> Cups, Pints, Quarts, Gallons <LineBreak/>
+            Gallons -> Fluid Ounces, Cups, Pints, Quarts <LineBreak/>
+            Grams -> Kilograms <LineBreak/>
+            Kilograms -> Pounds<LineBreak/>
+            Ounces -> Teaspoons, Tablespoons, Cups, Pounds <LineBreak/>
+            Pints -> Fluid Ounces, Cups, Quarts, Gallons<LineBreak/>
+            Pounds -> Teaspoons, Tablespoons, Cups, Ounces
+            Quarts -> Fluid Ounces, Cups, Pints, Gallons <LineBreak/>
+            Tablespoons -> Teaspoons, Cups, Ounces, Pounds <LineBreak/>
+            Teaspoons -> Tablespoons, Cups, Ounces, Pounds<LineBreak/>
+        </TextBlock>
         <!--<Border BorderBrush="Black"
                 Background="White"
                 BorderThickness="1"

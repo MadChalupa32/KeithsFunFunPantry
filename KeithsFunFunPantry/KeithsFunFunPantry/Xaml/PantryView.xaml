@@ -150,11 +150,12 @@
                     Grid.ColumnSpan="3"
                     Grid.Row="4"
                     Grid.RowSpan="6"
-                    Margin="10">
+                    Margin="10,10,0,20">
             <ListBox x:Name="TagListBox"
                  Margin="10"
-                 MaxHeight="300"
+                 MaxHeight="550"
                  MinHeight="25"
+                 FontSize="24"
                  VerticalAlignment="Top"
                  SelectionMode="Multiple"
                  Visibility="{Binding IsChecked, ElementName=TagSearchVisibiltyCheckBox, Converter={StaticResource BoolToVis}}"/>
