@@ -134,7 +134,7 @@ namespace KeithsFunFunPantry
 
 		
 		//Filters the given list based on the tags and returns the filtered list
-		public static List<Recipe> RecipeCheckBoxFilter(List<Recipe> recipeList, List<Tag> tags)
+		public List<Recipe> RecipeCheckBoxFilter(List<Recipe> recipeList, List<Tag> tags)
 		{
 			List<Recipe> results = new List<Recipe>();
 

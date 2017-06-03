@@ -85,23 +85,23 @@ namespace KeithsFunFunPantry
         {
             string query = TextBox_ByIngredientSearch.Text.ToLower();
 
-            if (!query.Equals("search by ingredient")/* || (bool)[tagSearchCheckBox].IsChecked*/)
+            if (!query.Equals("search by ingredient") || (bool)TagSearchVisibilityCheckBox.IsChecked)
             {
-				//List<Tag> tags = new List<Tag>();
-				//if ((bool)[tagSearchCheckBox].IsChecked)
-				//{
-				//	foreach(Tag t in [tagSearchListBox].SelectedItems)
-				//	{
-				//		tags.Add(t);
-				//	}
-				//}
+				List<Tag> tags = new List<Tag>();
+				if ((bool)TagSearchVisibilityCheckBox.IsChecked)
+				{
+					foreach (Tag t in TagListBox.SelectedItems)
+					{
+						tags.Add(t);
+					}
+				}
 
-				//if (query == "search recipes")
-				//{
-				//	query = "";
-				//}
+				if (query == "search recipes")
+				{
+					query = "";
+				}
 
-				ListIngredients(Pantry.IngredientSearchController(query/*, tags*/));
+				ListIngredients(Pantry.IngredientSearchController(query, tags));
             }
             else
             {

@@ -242,7 +242,7 @@ namespace KeithsFunFunPantry
             string query = TextBox_IngredientSearch.Text.ToLower();
             if (!query.Equals("search ingredient"))
             {
-                ListBox_EditPantry.ItemsSource = Pantry.IngredientSearchController(query);
+                ListBox_EditPantry.ItemsSource = Pantry.IngredientSearchController(query, new List<Tag>());
             }
             else
             {

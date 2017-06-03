@@ -111,7 +111,7 @@
                     Grid.RowSpan="3"
                     Margin="10"
                     VerticalAlignment="Bottom">
-            <CheckBox x:Name="TagSearchVisibiltyCheckBox"
+            <CheckBox x:Name="TagSearchVisibilityCheckBox"
                       HorizontalAlignment="Center"
                       Margin="10, 3"/>
 

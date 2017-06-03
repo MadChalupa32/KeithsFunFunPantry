@@ -91,39 +91,28 @@ namespace KeithsFunFunPantry
 
 			RecipeBook book = RecipeBook.Instance;
 
-			if (!query.Equals("search by recipe")/* || (bool)[tagSearchCheckBox].IsChecked*/)
+			if (!query.Equals("search by recipe") || (bool)TagSearchVisibilityCheckBox.IsChecked)
 			{
-				//List<Tag> tags = new List<Tag>();
-				//if ((bool)[tagSearchCheckBox].IsChecked)
-				//{
-				//	foreach(Tag t in [tagSearchListBox].SelectedItems)
-				//	{
-				//		tags.Add(t);
-				//	}
-				//}
+				List<Tag> tags = new List<Tag>();
+				if ((bool)TagSearchVisibilityCheckBox.IsChecked)
+				{
+					foreach (Tag t in TagListBox.SelectedItems)
+					{
+						tags.Add(t);
+					}
+				}
 
-				//if (query == "search recipes")
-				//{
-				//	query = "";
-				//}
+				if (query == "search recipes")
+				{
+					query = "";
+				}
 
-				ListRecipes(book.RecipeSearchController(query/*, tags*/));
+				ListRecipes(book.RecipeSearchController(query, tags));
 			}
 			else
 			{
 				ListRecipes(book.Recipes);
 			}
-		
-            if (!query.Equals("search recipes"))
-            {
-
-                ListBox_EditRecipe.ItemsSource = book.RecipeSearchController(query);
-
-            }
-            else
-            {
-                ListBox_EditRecipe.ItemsSource = book.Recipes;
-            }
         }
 		public void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
 		{

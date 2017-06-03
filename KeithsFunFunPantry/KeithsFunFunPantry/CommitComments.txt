@@ -8,7 +8,7 @@ Cristian Bravo
 	5/23 I helped brian on work on the remove ingredient part of the project
 
 Randal McClure
-	6/2		I finished writing the tag search logic for the View and Search pages. // It's all commented out as it requires a list box in the xaml in order to compile.
+	6/2		I finished writing the tag search logic for the View and Search pages. The search functinality is currently untested.
 
 Tyler Wharton
 
