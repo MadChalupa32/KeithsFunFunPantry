@@ -75,11 +75,13 @@
                Grid.Row="1"
                Grid.RowSpan="3"
                Grid.Column="3"
+               Grid.ColumnSpan="2"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
                FontFamily="Georgia"
                FontSize="20"
-               FontWeight="Bold" Margin="92,30,92.8,0" Height="32" Width="160"/>
+               FontWeight="Bold"
+               Margin="0,30,0,0"/>
         <Label Content="Pantry ingredients"
                Grid.Row="1"
                Grid.RowSpan="3"
@@ -95,9 +97,9 @@
                  Background="#E5C698"
                  Grid.Row="3"
                  Grid.RowSpan="7"
-                 Grid.Column="1"
-                 Grid.ColumnSpan="4"
-                 Margin="20,10,20,20"
+                 Grid.Column="3"
+                 Grid.ColumnSpan="2"
+                 Margin="20,10,10,20"
                  HorizontalContentAlignment="Stretch"
                  SelectionChanged="ListBox_EditRecipe_SelectionChanged">
             <ListBox.ItemTemplate>
@@ -123,7 +125,37 @@
                     </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-
         </ListBox>
+        <WrapPanel  Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Grid.Row="1"
+                    Grid.RowSpan="3"
+                    Margin="10"
+                    VerticalAlignment="Bottom">
+            <CheckBox x:Name="TagSearchVisibiltyCheckBox"
+                      HorizontalAlignment="Center"
+                      Margin="10, 3"/>
+
+            <Label Content="EnableTag Search"
+               FontSize="14"
+               HorizontalContentAlignment="Center"
+               VerticalAlignment="Bottom"/>
+
+        </WrapPanel>
+
+        <StackPanel x:Name="VisibilityWrapPanel"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="4"
+                    Grid.RowSpan="6"
+                    Margin="10">
+            <ListBox x:Name="TagListBox"
+                 Margin="10"
+                 MaxHeight="300"
+                 MinHeight="25"
+                 VerticalAlignment="Top"
+                 SelectionMode="Multiple"
+                 Visibility="{Binding IsChecked, ElementName=TagSearchVisibiltyCheckBox, Converter={StaticResource BoolToVis}}"/>
+        </StackPanel>
     </Grid>
 </Page>

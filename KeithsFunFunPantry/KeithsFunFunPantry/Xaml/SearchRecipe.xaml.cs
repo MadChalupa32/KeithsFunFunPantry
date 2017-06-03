@@ -1,4 +1,5 @@
 ﻿using KeithsFunFunPantry.AppControls;
+using KeithsFunFunPantry.CS;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,7 +29,7 @@ namespace KeithsFunFunPantry
 
 			RecipeBook book = RecipeBook.Instance;
             //ListRecipes(book.Recipes);
-
+            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
             ListBox_EditRecipe.ItemsSource = book.Recipes;
             ListBox_PantryList.ItemsSource = Pantry.Ingredients;
         }
@@ -88,14 +89,20 @@ namespace KeithsFunFunPantry
             
             string query = TextBox_ByRecipeSearch.Text.ToLower();
 
-            //Compile a list<string> of the check box values (advanced searching)
+			RecipeBook book = RecipeBook.Instance;
 
-            RecipeBook book = RecipeBook.Instance;
-
-			//RecipeList.Children.Clear();
-			if (!query.Equals("search by recipe"))
+			if (!query.Equals("search by recipe")/* || (bool)[tagSearchCheckBox].IsChecked*/)
 			{
-				ListRecipes(book.RecipeSearchController(query));
+				//List<Tag> tags = new List<Tag>();
+				//if ((bool)[tagSearchCheckBox].IsChecked)
+				//{
+				//	foreach(Tag t in [tagSearchListBox].SelectedItems)
+				//	{
+				//		tags.Add(t);
+				//	}
+				//}
+
+				ListRecipes(book.RecipeSearchController(query/*, tags*/));
 			}
 			else
 			{

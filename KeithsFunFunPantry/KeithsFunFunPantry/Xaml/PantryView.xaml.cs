@@ -27,7 +27,8 @@ namespace KeithsFunFunPantry
             InitializeComponent();
             TextBoxOptions();
             ListBox_PantryView.ItemsSource = Pantry.Ingredients;
-            
+            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
+
         }
 
         private string searchBar = "Search Ingredients";
@@ -75,15 +76,18 @@ namespace KeithsFunFunPantry
         {
             //StackPanel_PantryView.Children.Clear();
             string query = TextBox_PantrySearch.Text.ToLower();
-            if (!query.Equals("search ingredients"))
+            if (!query.Equals("search ingredients")/* || (bool)[TagSearchVisibiltyCheckBox].IsChecked*/)
             {
-				//List<Tag> tags = new List<CS.Tag>();
-				//if (tagSearchCheckBox.IsChecked)
+				//List<Tag> tags = new List<Tag>();
+				//if ((bool)[tagSearchCheckBox].IsChecked)
 				//{
-				//	tags = tagSearchListBox.SelectedItems.ToList<Tag>();
+				//	foreach(Tag t in [tagSearchListBox].SelectedItems)
+				//	{
+				//		tags.Add(t);
+				//	}
 				//}
 
-                ListIngredients(Pantry.IngredientSearchController(query/*, tags*/));
+				ListIngredients(Pantry.IngredientSearchController(query/*, tags*/));
             }
             else
             {

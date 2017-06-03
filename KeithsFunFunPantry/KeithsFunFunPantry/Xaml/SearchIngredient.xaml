@@ -14,9 +14,11 @@
             <ColumnDefinition Width="50"/>
             <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="120"/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="347*"/>
+            <ColumnDefinition Width="64*"/>
+            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="347*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="60" />
@@ -40,7 +42,7 @@
                 BorderThickness="2" 
                 BorderBrush="LightGray" 
                 UseLayoutRounding='True' 
-                Background="White">
+                Background="White" Margin="0.4,0,0.2,0.4">
             <TextBox x:Name="TextBox_ByIngredientSearch" 
                      Background="Transparent" 
                      BorderThickness="0"
@@ -51,7 +53,7 @@
         <Label VerticalAlignment="Center" 
                HorizontalAlignment="Left"
                Background="Transparent"
-               Margin="3,1,0,0"
+               Margin="3.4,1,0,0.4"
                Grid.Row="1"
                Grid.Column="1"
                Grid.ColumnSpan="2">
@@ -66,7 +68,7 @@
                 OpacityMask="Transparent"
                 Width="20"
                 Height="20"
-                Margin="7,6,0,5"
+                Margin="7.4,6,0,4.4"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Left"
                 Click="SearchButton_ClickHandler">
@@ -80,20 +82,21 @@
         <Label Content="Recipes"
                Grid.Row="1"
                Grid.RowSpan="3"
-               Grid.Column="4"
+               Grid.ColumnSpan="5"
+               Grid.Column="3"
                FontFamily="Georgia"
                FontSize="20"
                FontWeight="Bold"
                VerticalAlignment="Top"
-               HorizontalAlignment="Center" Height="32" Margin="128.8,30,128.4,0" Width="90"/>
+               HorizontalAlignment="Center" Height="32" Margin="195.6,30,301.6,0" Width="90"/>
         <ListBox x:Name="ListBox_SearchIngredient"
                  Background="#E5C698"
-                 Grid.Row="4"
+                 Grid.Row="3"
                  Grid.RowSpan="8"
                  Grid.Column="3"
-                 Grid.ColumnSpan="3"
+                 Grid.ColumnSpan="5"
                  HorizontalContentAlignment="Stretch"
-                 Margin="20,0,20,20">
+                 Margin="10,9.6,19.6,19.8">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -102,6 +105,36 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        
+        <WrapPanel  Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Grid.Row="1"
+                    Grid.RowSpan="3"
+                    Margin="10"
+                    VerticalAlignment="Bottom">
+            <CheckBox x:Name="TagSearchVisibiltyCheckBox"
+                      HorizontalAlignment="Center"
+                      Margin="10, 3"/>
+
+            <Label Content="EnableTag Search"
+               FontSize="14"
+               HorizontalContentAlignment="Center"
+               VerticalAlignment="Bottom"/>
+
+        </WrapPanel>
+
+        <StackPanel x:Name="VisibilityWrapPanel"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="4"
+                    Grid.RowSpan="6"
+                    Margin="10">
+            <ListBox x:Name="TagListBox"
+                 Margin="10"
+                 MaxHeight="300"
+                 MinHeight="25"
+                 VerticalAlignment="Top"
+                 SelectionMode="Multiple"
+                 Visibility="{Binding IsChecked, ElementName=TagSearchVisibiltyCheckBox, Converter={StaticResource BoolToVis}}"/>
+        </StackPanel>
     </Grid>
 </Page>

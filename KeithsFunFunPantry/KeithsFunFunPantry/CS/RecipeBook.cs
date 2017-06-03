@@ -66,7 +66,8 @@ namespace KeithsFunFunPantry
                 }
                 if (genRecipes)
                 {
-                    GenRecipes();
+                    GenerateRecipes.AddRecipes();
+                    //GenRecipes();
                 }
                 return instance;
             }
