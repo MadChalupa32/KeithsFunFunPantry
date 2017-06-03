@@ -1,4 +1,5 @@
 ﻿using KeithsFunFunPantry.AppControls;
+using KeithsFunFunPantry.CS;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -27,6 +28,8 @@ namespace KeithsFunFunPantry
             InitializeComponent();
             TextBoxOptions();
             RecipeBook book = RecipeBook.Instance;
+
+            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
 
             ListBox_SearchIngredient.ItemsSource = book.Recipes;
 			ListIngredients(Pantry.Ingredients);

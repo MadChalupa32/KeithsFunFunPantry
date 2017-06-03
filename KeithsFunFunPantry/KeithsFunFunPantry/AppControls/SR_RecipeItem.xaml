@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
              mc:Ignorable="d" 
-             d:DesignHeight="100" Width="500">
+             d:DesignHeight="100" Width="450">
     <Grid>
         <Border CornerRadius="15"
                 BorderBrush="#A3CC72"
@@ -16,16 +16,17 @@
             <Grid Margin="5">
                 <Label x:Name="RecipeName_L"
                        Content="{Binding Path=Title, Mode=OneWay}"
-                       Margin="25,0,0,0"
                        FontFamily="Georgia"
                        FontSize="30"
                        FontWeight="Bold"
-                       VerticalAlignment="Center"
-                       HorizontalAlignment="Left"/>
+                       VerticalAlignment="Stretch"
+                       HorizontalAlignment="Right"
+                       VerticalContentAlignment="Center"
+                       HorizontalContentAlignment="Center" Width="470"/>
             </Grid>
         </Border>
 
-        <Popup Name="MyPopup"
+        <!--<Popup Name="MyPopup"
                Placement="Mouse"
                HorizontalOffset="300"
                VerticalOffset="-100"
@@ -128,6 +129,6 @@
                         Click="HidePopUp_Click"/>
                 <Label/>
             </Grid>
-        </Popup>
+        </Popup>-->
     </Grid>
 </UserControl>
