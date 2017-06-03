@@ -54,6 +54,7 @@ namespace KeithsFunFunPantry.Windows
             NotesEntryTB.Text = ((Recipe)rv.ListBox_RecipeView.SelectedItem).Notes;
             this.rv = rv;
             Enabled = false;
+            this.Focus();
         }
         
         public void FieldChanged([CallerMemberName] string fieldName = "")
