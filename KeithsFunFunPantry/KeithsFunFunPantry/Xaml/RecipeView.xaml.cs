@@ -91,10 +91,22 @@ namespace KeithsFunFunPantry
 
         private void RecipeAddButton_Click(object sender, RoutedEventArgs e)
         {
-            AddRecipeWinodw w = new AddRecipeWinodw(this);
-            w.Height = 400;
-            w.Width = 500;
-            w.Show();            
+            bool isWindowOpen = false;
+            foreach (Window w in Application.Current.Windows)
+            {
+                if (w is AddRecipeWinodw)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+            if (!isWindowOpen)
+            {
+                AddRecipeWinodw w = new AddRecipeWinodw(this);
+                w.Topmost = true;
+                w.Show();
+                w.Focus();
+            }
         }
 
         private void RecipeRemoveButton_Click(object sender, RoutedEventArgs e)
@@ -109,21 +121,34 @@ namespace KeithsFunFunPantry
         {
             if (e.Key == Key.Enter)
             {
-                ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
-                w.Height = 400;
-                w.Width = 500;
-                w.Show();
-
+                CreateRecipeViewWindow();
             }
         }
 
         private void ListBox_RecipeView_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
-            w.Topmost = true;
-            w.Height = 400;
-            w.Width = 500;
-            w.Show();
+            CreateRecipeViewWindow();
+            e.Handled = true;
+        }
+
+        private void CreateRecipeViewWindow()
+        {
+            bool isWindowOpen = false;
+            foreach(Window w in Application.Current.Windows)
+            {
+                if (w is ViewAndEditRecipeWindow)
+                {
+                    isWindowOpen = true;
+                    w.Activate();
+                }
+            }
+            if (!isWindowOpen)
+            {
+                ViewAndEditRecipeWindow w = new ViewAndEditRecipeWindow(this);
+                w.Topmost = true;
+                w.Show();
+                w.Focus();
+            }
         }
     }
 }

@@ -27,6 +27,7 @@ namespace KeithsFunFunPantry.Windows
             IngredientDisplayer.ItemsSource = Pantry.Ingredients;
             this.rv = rv;
             TextBoxOptions();
+            this.Focus();
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
