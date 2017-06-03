@@ -9,18 +9,18 @@ namespace KeithsFunFunPantry.CS
 {
     public class GenerateIngredients
     {
-        Measurement measure;
-        public GenerateIngredients()
-        {
-           measure = new Measurement(2f, Unit.Cup);
+        //Measurement measure;
+        //public GenerateIngredients()
+        //{
+        //   measure = new Measurement(2f, Unit.Cup);
 
-                new Ingredient("Salt", measure);
-                new Ingredient("Ground Beef", measure);
-                new Ingredient("Oil", measure);
+        //        new Ingredient("Salt", measure);
+        //        new Ingredient("Ground Beef", measure);
+        //        new Ingredient("Oil", measure);
             
-        }
+        //}
 
-        public static ObservableCollection<Ingredient> Ingredients { get; set; }
+        //public static ObservableCollection<Ingredient> Ingredients { get; set; }
 
     }
 }
