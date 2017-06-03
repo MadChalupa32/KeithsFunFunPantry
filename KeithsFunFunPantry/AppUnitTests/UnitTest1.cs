@@ -126,7 +126,7 @@ namespace AppUnitTests
 
 
 		[TestMethod]
-		public void ConversionTest()
+		public void LiquidConversionTest()
 		{
 			Measurement m = new Measurement(33f, Unit.FluidOunce);
 			m.Convert(Unit.Cup);
@@ -173,7 +173,7 @@ namespace AppUnitTests
 			Assert.AreEqual(1f, m.Amount);
 		}
 		[TestMethod]
-		public void InvalidConversionTest()
+		public void InvalidLiquidConversionTest()
 		{
 			Measurement m = new Measurement(1f, Unit.Cup);
 			Measurement c = new Measurement(1f, Unit.Cup);
@@ -196,6 +196,80 @@ namespace AppUnitTests
 			m.Convert(Unit.FluidOunce);
 			Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
 		}
+
+        [TestMethod]
+        public void DryConversionTest()
+        {
+            Measurement m = new Measurement(54f, Unit.Teaspoon);
+            m.Convert(Unit.Cup);
+            Assert.AreEqual(1.125f, m.Amount);
+
+            m = new Measurement(33f, Unit.Tablespoon);
+            m.Convert(Unit.Cup);
+            Assert.AreEqual(2.062f, m.Amount);
+
+            m = new Measurement(23f, Unit.Ounce);
+            m.Convert(Unit.Cup);
+            Assert.AreEqual(2.875f, m.Amount);
+
+            m = new Measurement(13f, Unit.Pound);
+            m.Convert(Unit.Cup);
+            Assert.AreEqual(26f, m.Amount);
+
+            m = new Measurement(10f, Unit.Cup);
+            m.Convert(Unit.Teaspoon);
+            Assert.AreEqual(480f, m.Amount);
+
+            m = new Measurement(23f, Unit.Cup);
+            m.Convert(Unit.Tablespoon);
+            Assert.AreEqual(368f, m.Amount);
+
+            m = new Measurement(20f, Unit.Cup);
+            m.Convert(Unit.Ounce);
+            Assert.AreEqual(160f, m.Amount);
+
+            m = new Measurement(50f, Unit.Cup);
+            m.Convert(Unit.Pound);
+            Assert.AreEqual(25f, m.Amount);
+
+            m = new Measurement(3f, Unit.Pound);
+            m.Convert(Unit.Teaspoon);
+            Assert.AreEqual(288f, m.Amount);
+
+            m = new Measurement(33f, Unit.Tablespoon);
+            m.Convert(Unit.Ounce);
+            Assert.AreEqual(16.5f, m.Amount);
+
+            m = new Measurement(9f, Unit.Tablespoon);
+            m.Convert(Unit.Teaspoon);
+            Assert.AreEqual(27f, m.Amount);
+        }
+        [TestMethod]
+
+        public void InvalidDryConversionTest()
+        {
+            Measurement m = new Measurement(10f, Unit.Tablespoon);
+            Measurement c = new Measurement(10f, Unit.Tablespoon);
+
+            //Same units
+            m.Convert(Unit.Tablespoon);
+            Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+
+            m = new Measurement(5f, Unit.Pound);
+            c = new Measurement(5f, Unit.Pound);
+            m.Convert(Unit.Pound);
+            Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+
+            //Invalid conversions
+            m.Convert(Unit.Count);
+            Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+
+            m = new Measurement(13f, Unit.Count);
+            c = new Measurement(13f, Unit.Count);
+            m.Convert(Unit.Teaspoon);
+            Assert.AreEqual(m.UnitOfMeasurement, c.UnitOfMeasurement);
+        }
+    }
 
 		[TestMethod]
 		public void RecipeTagSearchTest()

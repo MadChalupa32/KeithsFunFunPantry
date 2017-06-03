@@ -29,7 +29,7 @@ namespace KeithsFunFunPantry
 
 			RecipeBook book = RecipeBook.Instance;
             //ListRecipes(book.Recipes);
-
+            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
             ListBox_EditRecipe.ItemsSource = book.Recipes;
             ListBox_PantryList.ItemsSource = Pantry.Ingredients;
         }

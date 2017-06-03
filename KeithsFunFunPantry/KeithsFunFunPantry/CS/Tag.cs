@@ -14,7 +14,8 @@ namespace KeithsFunFunPantry.CS
             Oriental,
             Indian,
             American,
-            Comfort,
+            Southern,
+            
 
         //Allgeries
             Lactose,
