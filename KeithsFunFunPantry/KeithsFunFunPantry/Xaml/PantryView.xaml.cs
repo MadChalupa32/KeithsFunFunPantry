@@ -27,8 +27,6 @@ namespace KeithsFunFunPantry
             InitializeComponent();
             TextBoxOptions();
             ListBox_PantryView.ItemsSource = Pantry.Ingredients;
-            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
-
         }
 
         private string searchBar = "Search Ingredients";
