@@ -17,7 +17,7 @@
                 <Label x:Name="RecipeName_L"
                        Content="{Binding Path=Title, Mode=OneWay}"
                        FontFamily="Georgia"
-                       FontSize="30"
+                       FontSize="25"
                        FontWeight="Bold"
                        VerticalAlignment="Stretch"
                        HorizontalAlignment="Right"

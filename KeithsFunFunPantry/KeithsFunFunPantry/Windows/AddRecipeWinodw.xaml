@@ -7,32 +7,24 @@
         mc:Ignorable="d"
         Title="AddRecipeWinodw" Height="550" Width="500">
     <StackPanel>
-
         <Label x:Name="Header1"
-               Content="Please select relevant tags below."
-               />
+               Content="Please select relevant tags below."/>
         <ListBox x:Name="TagDisplayer"
                  SelectionMode="Multiple"
                  Height="150"/>
-        
         <Label x:Name="Header2"
-               Content="Please select relevant ingrediants below then fill in the text boxes."
-               />
+               Content="Please select relevant ingrediants below then fill in the text boxes."/>
         <ListBox x:Name="IngredientDisplayer"
                  SelectionMode="Multiple"
                  Height="150"/>
-
         <TextBox x:Name="TitleEntryTB"
                  Grid.Row="1"/>
-
         <TextBox x:Name="DirectionsEntryTB"
                  Grid.Row="2"
                  Height="60"/>
-
         <TextBox x:Name="NotesEntryTB"
                  Grid.Row="3"
                  Height="40"/>
-
         <Button x:Name="SaveButton"
                 Content="Save Recipe"
                 Margin="10"
