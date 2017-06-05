@@ -32,7 +32,6 @@ namespace KeithsFunFunPantry
             TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
 
             ListBox_SearchIngredient.ItemsSource = book.Recipes;
-			ListIngredients(Pantry.Ingredients);
         }
 
         private string searchBar = "Search by Ingredient";
@@ -56,24 +55,6 @@ namespace KeithsFunFunPantry
                 TextBox_ByIngredientSearch.Text = searchBar;
             }
         }
-
-		public void ListIngredients(ObservableCollection<Ingredient> displayList)
-		{
-
-
-			//foreach (Ingredient ingredient in displayList)
-			//{
-			//	PantryViewItem pvi = new PantryViewItem();
-			//	pvi.DataContext = ingredient;
-			//}
-
-			//if (displayList.Count == 0)
-			//{
-			//	Label noResults = new Label();
-			//	noResults.Content = "No results found";
-			//}
-
-		}
 
 		/// <summary>
 		/// Event handler that will search the pantry for ingredient objects whose name contains the query found in the ingredient search text box.

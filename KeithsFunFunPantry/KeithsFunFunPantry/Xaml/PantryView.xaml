@@ -111,7 +111,7 @@
                   Margin="5,2"/>
         <CheckBox Content="Fruits" FontFamily="Georgia" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>
         <CheckBox Content="Vegetables" FontFamily="Georgia" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" Margin="5,2"/>-->
-        <ListBox x:Name="ListBox_PantryView"
+		<ListBox x:Name="ListBox_PantryView"
                  Background="#E5C698"
                  Grid.Row="4"
                  Grid.RowSpan="7"
@@ -119,46 +119,14 @@
                  Grid.ColumnSpan="3"
                  Margin="20,0,20,20"
                  HorizontalContentAlignment="Stretch">
-            <ListBox.ItemTemplate>
-                <DataTemplate>
-                        <StackPanel>
-                            <AC:PantryViewItem/>
-                        </StackPanel>
-                </DataTemplate>
-            </ListBox.ItemTemplate>
-            
-        </ListBox>
-        <WrapPanel  Grid.Column="1"
-                    Grid.ColumnSpan="4"
-                    Grid.Row="1"
-                    Grid.RowSpan="3"
-                    Margin="10"
-                    VerticalAlignment="Bottom">
-            <CheckBox x:Name="TagSearchVisibilityCheckBox"
-                      HorizontalAlignment="Center"
-                      Margin="10, 3"/>
+			<ListBox.ItemTemplate>
+				<DataTemplate>
+					<StackPanel>
+						<AC:PantryViewItem/>
+					</StackPanel>
+				</DataTemplate>
+			</ListBox.ItemTemplate>
 
-            <Label Content="EnableTag Search"
-               FontSize="14"
-               HorizontalContentAlignment="Center"
-               VerticalAlignment="Bottom"/>
-
-        </WrapPanel>
-
-        <StackPanel x:Name="VisibilityWrapPanel"
-                    Grid.Column="0"
-                    Grid.ColumnSpan="3"
-                    Grid.Row="4"
-                    Grid.RowSpan="6"
-                    Margin="10,10,0,20">
-            <ListBox x:Name="TagListBox"
-                 Margin="10"
-                 MaxHeight="550"
-                 MinHeight="25"
-                 FontSize="24"
-                 VerticalAlignment="Top"
-                 SelectionMode="Multiple"
-                 Visibility="{Binding IsChecked, ElementName=TagSearchVisibilityCheckBox, Converter={StaticResource BoolToVis}}"/>
-        </StackPanel>
-    </Grid>
+		</ListBox>
+	</Grid>
 </Page>
