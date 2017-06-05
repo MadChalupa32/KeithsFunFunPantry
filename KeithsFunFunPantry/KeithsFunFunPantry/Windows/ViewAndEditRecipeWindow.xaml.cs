@@ -37,6 +37,18 @@ namespace KeithsFunFunPantry.Windows
             InitializeComponent();
             TextBoxOptions();
             ParentPanel.DataContext = this;
+            TagDisplayer.ItemsSource = Enum.GetValues(typeof(Tag));
+            foreach (Object obj in TagDisplayer.Items)
+            {
+                foreach (Tag t in ((rv.ListBox_RecipeView.SelectedItem as Recipe).TagList))
+                {
+                    if (t == ((Tag)obj))
+                    {
+                        TagDisplayer.SelectedItems.Add(obj);
+                    }
+                }
+            }
+            TagDisplayer.SelectedItems.Add(TagDisplayer.Items);
             IngredientDisplayer.ItemsSource = Pantry.Ingredients;
             foreach (Object obj in IngredientDisplayer.Items)
             {
