@@ -12,6 +12,9 @@ namespace KeithsFunFunPantry.CS
     {
         private ObservableCollection<Ingredient> ingredients;
         Measurement measure;
+        Measurement measure1;
+        Measurement measure2;
+        Measurement measure3;
         public GenerateIngredients()
         {
 
@@ -19,12 +22,17 @@ namespace KeithsFunFunPantry.CS
         public void Gen()
         {
             measure = new Measurement(2f, Unit.Cup);
+            measure1 = new Measurement(3f, Unit.Pound);
+            measure2 = new Measurement(4f, Unit.Tablespoon);
+            measure3 = new Measurement(5f, Unit.Count);
             ingredients = new ObservableCollection<Ingredient>();
 
             ingredients.Add(new Ingredient("Salt", measure));
-            ingredients.Add(new Ingredient("Beef", measure));
-            ingredients.Add(new Ingredient("Oil", measure));
-            foreach(Ingredient ingredient in ingredients)
+            ingredients.Add(new Ingredient("Beef", measure1));
+            ingredients.Add(new Ingredient("Oil", measure2));
+            ingredients.Add(new Ingredient("Egg", measure3));
+
+            foreach (Ingredient ingredient in ingredients)
             {
                 bool doesntExist = true;
                 foreach(Ingredient existing in Pantry.Ingredients)
