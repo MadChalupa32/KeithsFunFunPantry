@@ -9,49 +9,39 @@
     <StackPanel x:Name="ParentPanel">
 
         <Label x:Name="Header1"
-               Content="Please select relevant tags below."
-               />
+               Content="Please select relevant tags below."/>
         <ListBox x:Name="TagDisplayer"
                  SelectionMode="Multiple"
                  Height="150">
-
             <ListBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
                     <Setter Property="IsEnabled" Value="{Binding Path=DataContext.Enabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=StackPanel}}" />
                 </Style>
             </ListBox.ItemContainerStyle>
-
         </ListBox>
-
         <Label x:Name="Header2"
                Content="Please select relevant ingrediants below then fill in the text boxes."
                />
         <ListBox x:Name="IngredientDisplayer"
                  SelectionMode="Multiple"
                  Height="150">
-
             <ListBox.ItemContainerStyle>
                 <Style TargetType="{x:Type ListBoxItem}">
                     <Setter Property="IsEnabled" Value="{Binding Path=DataContext.Enabled, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=StackPanel}}" />
                 </Style>
             </ListBox.ItemContainerStyle>
-
         </ListBox>
-
         <TextBox x:Name="TitleEntryTB"
                  Grid.Row="1"
                  IsEnabled="{Binding Enabled}"/>
-
         <TextBox x:Name="DirectionsEntryTB"
                  Grid.Row="2"
                  Height="60"
                  IsEnabled="{Binding Enabled}"/>
-
         <TextBox x:Name="NotesEntryTB"
                  Grid.Row="3"
                  Height="40"
                  IsEnabled="{Binding Enabled}"/>
-
         <WrapPanel HorizontalAlignment="Center">
             <Button x:Name="SaveButton"
                     Content="Save Recipe"
@@ -68,8 +58,6 @@
                     Margin="10"
                     Width="100"
                     Content="Close"/>
-
-
         </WrapPanel>
     </StackPanel>
 </Window>
