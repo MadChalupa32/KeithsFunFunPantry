@@ -24,6 +24,7 @@ namespace KeithsFunFunPantry.Windows
         public AddRecipeWinodw(RecipeView rv)
         {
             InitializeComponent();
+            TagDisplayer.ItemsSource = Enum.GetValues(typeof(Tag));
             IngredientDisplayer.ItemsSource = Pantry.Ingredients;
             this.rv = rv;
             TextBoxOptions();

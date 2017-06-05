@@ -157,12 +157,10 @@ namespace KeithsFunFunPantry
         #region Search Function
 
         //Controls ingredient-specific search function
-        public static ObservableCollection<Ingredient> IngredientSearchController(string query, List<Tag> tags)
+        public static ObservableCollection<Ingredient> IngredientSearchController(string query)
 		{
 			ObservableCollection<Ingredient> nameSearchResults = IngredientNameSearch(query);
-
-			ObservableCollection<Ingredient> finalSearchResults = tags.Count != 0 ? IngredientCheckBoxFilter(nameSearchResults, tags) : nameSearchResults;
-			return finalSearchResults;
+			return nameSearchResults;
 		}
 
 		//Executes name search and returns the results
@@ -170,29 +168,6 @@ namespace KeithsFunFunPantry
 		{
             ObservableCollection<Ingredient> queryResults = new ObservableCollection<Ingredient>(Ingredients.Where(ingredient => ingredient.Name.ToLower().Contains(query)));
 			return queryResults;
-		}
-
-		
-		//Filters the given list based on the tags and returns the filtered list
-		public static ObservableCollection<Ingredient> IngredientCheckBoxFilter(ObservableCollection<Ingredient> ingredientList, List<Tag> tags)
-		{
-			ObservableCollection<Ingredient> results = new ObservableCollection<Ingredient>();
-
-			//For each ingredient, itterate through the tags. 
-			//If the ingredient contains one of the requested tags, add the ingredient to the result list, break, and move on to the next ingredient
-			foreach(Ingredient ingredient in Ingredients)
-			{
-				foreach(Tag tag in tags)
-				{
-					if (ingredient.Tags.Contains(tag))
-					{
-						results.Add(ingredient);
-						break;
-					}
-				}
-			}
-
-			return results;
 		}
         #endregion
     }
