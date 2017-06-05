@@ -106,12 +106,44 @@
                  HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <AC:PantryViewItem/>
-                    </StackPanel>
+                        <StackPanel>
+                            <AC:PantryViewItem/>
+                        </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-
+            
         </ListBox>
+        <WrapPanel  Grid.Column="1"
+                    Grid.ColumnSpan="4"
+                    Grid.Row="1"
+                    Grid.RowSpan="3"
+                    Margin="10"
+                    VerticalAlignment="Bottom">
+            <CheckBox x:Name="TagSearchVisibilityCheckBox"
+                      HorizontalAlignment="Center"
+                      Margin="10, 3"/>
+
+            <Label Content="EnableTag Search"
+               FontSize="14"
+               HorizontalContentAlignment="Center"
+               VerticalAlignment="Bottom"/>
+
+        </WrapPanel>
+
+        <StackPanel x:Name="VisibilityWrapPanel"
+                    Grid.Column="0"
+                    Grid.ColumnSpan="3"
+                    Grid.Row="4"
+                    Grid.RowSpan="6"
+                    Margin="10,10,0,20">
+            <ListBox x:Name="TagListBox"
+                 Margin="10"
+                 MaxHeight="550"
+                 MinHeight="25"
+                 FontSize="24"
+                 VerticalAlignment="Top"
+                 SelectionMode="Multiple"
+                 Visibility="{Binding IsChecked, ElementName=TagSearchVisibilityCheckBox, Converter={StaticResource BoolToVis}}"/>
+        </StackPanel>
     </Grid>
 </Page>

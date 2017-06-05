@@ -273,13 +273,6 @@ namespace AppUnitTests
 		[TestMethod]
 		public void RecipeTagSearchTest()
 		{
-			List<Tag> tags = new List<Tag>()
-			{
-				Tag.Gluten,
-				Tag.Indian,
-				Tag.Vegan
-			};
-
 			List<Ingredient> ingredients = new List<Ingredient>()
 			{
 				new Ingredient("Milk", new Measurement(1f, Unit.Gallon)),
@@ -298,11 +291,43 @@ namespace AppUnitTests
 				new Recipe(new List<Tag>(){Tag.Peanuts}, ingredients, "Banana Bread")
 			};
 
-			List<Recipe> results = RecipeBook.Instance.RecipeCheckBoxFilter(RecipeBook.Instance.Recipes, new List<Tag>(){Tag.Lactose, Tag.Vegetarian, Tag.Gluten});
+			List<Tag> tagQuery = new List<Tag>() { Tag.Lactose, Tag.Vegetarian, Tag.Gluten, Tag.Peanuts };
+			List<Recipe> results = RecipeBook.Instance.RecipeCheckBoxFilter(RecipeBook.Instance.Recipes, tagQuery);
 
 			List<Recipe> expectedResults = new List<Recipe>()
 			{
+				RecipeBook.Instance.Recipes[0],
+				RecipeBook.Instance.Recipes[2],
+				RecipeBook.Instance.Recipes[3],
+				RecipeBook.Instance.Recipes[4],
+				RecipeBook.Instance.Recipes[5],
+				RecipeBook.Instance.Recipes[6]
+			};
+
+			Assert.AreEqual(expectedResults.Count, results.Count);
+			Assert.AreEqual(expectedResults[1], results[1]);
+			Assert.AreEqual(expectedResults[expectedResults.Count - 1], results[results.Count - 1]);
+
+			for (int i = 0; i < results.Count; i++)
+			{
+				Assert.AreEqual(expectedResults[i].ToString(), results[i].ToString());
+			}
+		}
+
+		[TestMethod]
+		public void RecipeTagSearchTest2()
+		{
+			List<Ingredient> ingredients = new List<Ingredient>()
+			{
+				new Ingredient("Milk", new Measurement(1f, Unit.Gallon)),
+				new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
+				new Ingredient("Sugar", new Measurement(1f, Unit.Pound))
+			};
+
+			RecipeBook.Instance.Recipes = new List<Recipe>()
+			{
 				new Recipe(new List<Tag>(){Tag.American, Tag.Peanuts}, ingredients, "Chocolate Cake"),
+				new Recipe(new List<Tag>(){Tag.American}, ingredients, "Grilled Cheese"),
 				new Recipe(new List<Tag>(){Tag.Gluten}, ingredients, "Pound Cake"),
 				new Recipe(new List<Tag>(){Tag.Italian, Tag.Vegetarian}, ingredients, "Spaghetti"),
 				new Recipe(new List<Tag>(){Tag.Vegetarian}, ingredients, "Shepard's Pie"),
@@ -310,8 +335,61 @@ namespace AppUnitTests
 				new Recipe(new List<Tag>(){Tag.Peanuts}, ingredients, "Banana Bread")
 			};
 
+			List<Tag> tagQuery = new List<Tag>() { Tag.Italian };
+			List<Recipe> results = RecipeBook.Instance.RecipeCheckBoxFilter(RecipeBook.Instance.Recipes, tagQuery);
+
+			List<Recipe> expectedResults = new List<Recipe>()
+			{
+				RecipeBook.Instance.Recipes[3]
+			};
+
+			Assert.AreEqual(expectedResults.Count, results.Count);
+			Assert.AreEqual(expectedResults[0], results[0]);
+
+			for (int i = 0; i < results.Count; i++)
+			{
+				Assert.AreEqual(expectedResults[i].ToString(), results[i].ToString());
+			}
+		}
+
+		[TestMethod]
+		public void IngredientTagSearchTest()
+		{
+			List<Ingredient> ingredients = new List<Ingredient>()
+			{
+				new Ingredient("Milk", new Measurement(1f, Unit.Gallon)),
+				new Ingredient("Bleu Cheese Dressing", new Measurement(16.7f, Unit.Ounce)),
+				new Ingredient("Sugar", new Measurement(1f, Unit.Pound))
+			};
+
+			RecipeBook.Instance.Recipes = new List<Recipe>()
+			{
+				new Recipe(new List<Tag>(){Tag.American, Tag.Peanuts}, ingredients, "Chocolate Cake"),
+				new Recipe(new List<Tag>(){Tag.American}, ingredients, "Grilled Cheese"),
+				new Recipe(new List<Tag>(){Tag.Gluten}, ingredients, "Pound Cake"),
+				new Recipe(new List<Tag>(){Tag.Italian, Tag.Vegetarian}, ingredients, "Spaghetti"),
+				new Recipe(new List<Tag>(){Tag.Vegetarian}, ingredients, "Shepard's Pie"),
+				new Recipe(new List<Tag>(){Tag.Lactose}, ingredients, "Strawberry Cake"),
+				new Recipe(new List<Tag>(){Tag.Peanuts}, ingredients, "Banana Bread")
+			};
+
+			List<Tag> tagQuery = new List<Tag>() { Tag.Lactose, Tag.Vegetarian, Tag.Gluten, Tag.Peanuts };
+			List<Recipe> results = RecipeBook.Instance.RecipeCheckBoxFilter(RecipeBook.Instance.Recipes, tagQuery);
+
+			List<Recipe> expectedResults = new List<Recipe>()
+			{
+				RecipeBook.Instance.Recipes[0],
+				RecipeBook.Instance.Recipes[2],
+				RecipeBook.Instance.Recipes[3],
+				RecipeBook.Instance.Recipes[4],
+				RecipeBook.Instance.Recipes[5],
+				RecipeBook.Instance.Recipes[6]
+			};
+
 			Assert.AreEqual(expectedResults.Count, results.Count);
 			Assert.AreEqual(expectedResults[1], results[1]);
+			Assert.AreEqual(expectedResults[expectedResults.Count - 1], results[results.Count - 1]);
+
 			for (int i = 0; i < results.Count; i++)
 			{
 				Assert.AreEqual(expectedResults[i].ToString(), results[i].ToString());

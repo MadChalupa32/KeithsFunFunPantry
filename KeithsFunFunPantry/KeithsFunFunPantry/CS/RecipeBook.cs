@@ -35,6 +35,10 @@ namespace KeithsFunFunPantry
                             if (recipesInTheFile != null)
                             {
                                 instance = recipesInTheFile;
+                                if (instance.recipes.Count == 0)
+                                {
+                                    genRecipes = true;
+                                }
                                 Logging.WriteLog(LogLevel.Info, "RecipeBook successfully loaded from the saved file");
                             }
                             else
@@ -72,8 +76,7 @@ namespace KeithsFunFunPantry
                 return instance;
             }
         }
-
-
+        }
 		static IFormatter format = new BinaryFormatter();
         private List<Recipe> recipes = new List<Recipe>();
 
@@ -101,7 +104,7 @@ namespace KeithsFunFunPantry
             {
                 if (Instance != null)
                 {
-                    using (FileStream file = File.Open("recipeBook.txt", FileMode.OpenOrCreate))
+                    using (FileStream file = File.Open("recipeBook.txt", FileMode.Create))
                     {
                         format.Serialize(file, Instance);
                         Logging.WriteLog(LogLevel.Info, "RecipeBook Succesfully saved.");

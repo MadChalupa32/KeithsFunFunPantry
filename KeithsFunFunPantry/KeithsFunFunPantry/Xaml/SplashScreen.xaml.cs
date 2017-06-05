@@ -27,17 +27,8 @@ namespace KeithsFunFunPantry
             Splash();
             InitializeComponent();
 
-            //VALIDATION
-            //RecipeBook.Instance.Recipes.Count == 0;
-            //SETTING TO DEFAULT DATA
-            //for both the RecipeBook & Pantry
-            //Pantry.Ingredients = GenerateIngredients.ingredients;
-            //GenerateIngredients gi = new GenerateIngredients();
-            //gi.Gen();
-            //foreach(Ingredient i in gi.Ingredients)
-            //{
-            //    Pantry.Ingredients.Add(i);
-            //}
+            GenerateIngredients gi = new GenerateIngredients();
+            gi.Gen();
         }
 
         DispatcherTimer timer = new DispatcherTimer();
