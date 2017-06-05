@@ -26,7 +26,18 @@ namespace KeithsFunFunPantry.CS
             ingredients.Add(new Ingredient("Oil", measure));
             foreach(Ingredient ingredient in ingredients)
             {
-                Pantry.Ingredients.Add(ingredient);
+                bool doesntExist = true;
+                foreach(Ingredient existing in Pantry.Ingredients)
+                {
+                    if (existing.Name == ingredient.Name)
+                    {
+                        doesntExist = false;
+                    }
+                }
+                if (doesntExist)
+                {
+                    Pantry.Ingredients.Add(ingredient);
+                }
             }
         }
         public ObservableCollection<Ingredient> Ingredients { get; set; }

@@ -35,6 +35,10 @@ namespace KeithsFunFunPantry
                             if (recipesInTheFile != null)
                             {
                                 instance = recipesInTheFile;
+                                if (instance.recipes.Count == 0)
+                                {
+                                    genRecipes = true;
+                                }
                                 Logging.WriteLog(LogLevel.Info, "RecipeBook successfully loaded from the saved file");
                             }
                             else
