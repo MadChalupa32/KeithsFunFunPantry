@@ -84,7 +84,7 @@ namespace KeithsFunFunPantry
 					query = "";
 				}
 
-				ListIngredients(Pantry.IngredientSearchController(query, tags));
+				//ListIngredients(Pantry.IngredientSearchController(query, tags));
             }
             else
             {
