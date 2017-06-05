@@ -61,7 +61,8 @@ namespace KeithsFunFunPantry
         {
             string query = TextBox_RecipeSearch.Text.ToLower();
 
-			//Compile the list of selected tags
+            //Compile the list of selected tags
+            
             if (!query.Equals("search recipes") || (bool)TagSearchVisibilityCheckBox.IsChecked)
             {
 				List<Tag> tags =  new List<Tag>();

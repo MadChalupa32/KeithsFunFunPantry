@@ -156,7 +156,7 @@
                  FontSize="24"
                  VerticalAlignment="Top"
                  SelectionMode="Multiple"
-                 Visibility="{Binding IsChecked, ElementName=TagSearchVisibiltyCheckBox, Converter={StaticResource BoolToVis}}"/>
+                 Visibility="{Binding IsChecked, ElementName=TagSearchVisibilityCheckBox, Converter={StaticResource BoolToVis}}"/>
         </StackPanel>
     </Grid>
 </Page>
