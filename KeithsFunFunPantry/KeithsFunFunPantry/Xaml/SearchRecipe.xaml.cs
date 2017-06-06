@@ -29,7 +29,7 @@ namespace KeithsFunFunPantry
 
 			RecipeBook book = RecipeBook.Instance;
             //ListRecipes(book.Recipes);
-            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
+            TagListBox.ItemsSource = Enum.GetValues(typeof(Tag));
             ListBox_EditRecipe.ItemsSource = book.Recipes;
             ListBox_PantryList.ItemsSource = Pantry.Ingredients;
         }
@@ -102,16 +102,16 @@ namespace KeithsFunFunPantry
 					}
 				}
 
-				if (query == "search recipes")
+				if (query == "search by recipe")
 				{
 					query = "";
 				}
 
-				ListRecipes(book.RecipeSearchController(query, tags));
+				ListBox_EditRecipe.ItemsSource = book.RecipeSearchController(query, tags);
 			}
 			else
 			{
-				ListRecipes(book.Recipes);
+				ListBox_EditRecipe.ItemsSource = book.Recipes;
 			}
         }
 		public void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
