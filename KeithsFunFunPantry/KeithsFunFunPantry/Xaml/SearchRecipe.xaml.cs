@@ -145,5 +145,10 @@ namespace KeithsFunFunPantry
 
             ListBox_PantryList.ItemsSource = associatedIngredients;
         }
+
+        private void TextBox_ByRecipeSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Search();
+        }
     }
 }

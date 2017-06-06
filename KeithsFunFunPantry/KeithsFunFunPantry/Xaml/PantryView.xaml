@@ -45,6 +45,7 @@
                      BorderThickness="0"
                      FontFamily="Georgia"
                      Margin="28,0,0,0"
+                     TextChanged="TextBox_PantrySearch_TextChanged"
                      Keyboard.KeyDown="TextBox_PantrySearch_KeyDown"/>
         </Border>
         <Label Content="Ingredient Name"

@@ -159,5 +159,15 @@ namespace KeithsFunFunPantry
                 w.Focus();
             }
         }
+
+        private void TagListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Search();
+        }
+
+        private void TextBox_RecipeSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Search();
+        }
     }
 }

@@ -100,5 +100,10 @@ namespace KeithsFunFunPantry
                 Search();
             }
         }
+
+        private void TextBox_PantrySearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Search();
+        }
     }
 }
