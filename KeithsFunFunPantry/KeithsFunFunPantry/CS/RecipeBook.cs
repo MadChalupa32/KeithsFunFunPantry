@@ -41,6 +41,10 @@ namespace KeithsFunFunPantry
                                 }
                                 Logging.WriteLog(LogLevel.Info, "RecipeBook successfully loaded from the saved file");
                             }
+                            else if (recipesInTheFile.Equals(""))
+                            {
+                                genRecipes = true;
+                            }
                             else
                             {
                                 instance = new RecipeBook();
@@ -76,6 +80,7 @@ namespace KeithsFunFunPantry
                 return instance;
             }
         }
+
 		static IFormatter format = new BinaryFormatter();
         private List<Recipe> recipes = new List<Recipe>();
 

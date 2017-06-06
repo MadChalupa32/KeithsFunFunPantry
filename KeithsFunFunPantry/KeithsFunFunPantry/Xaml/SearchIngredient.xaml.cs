@@ -84,11 +84,11 @@ namespace KeithsFunFunPantry
 					query = "";
 				}
 
-				//ListIngredients(Pantry.IngredientSearchController(query, tags));
+				ObservableCollection<Ingredient> ingredientQuery = Pantry.IngredientSearchController(query);
             }
             else
             {
-                ListIngredients(Pantry.Ingredients);
+                //ListIngredients(Pantry.Ingredients);
             }
         }
 		private void SearchButton_ClickHandler(object sender, RoutedEventArgs e)
