@@ -80,7 +80,7 @@ namespace KeithsFunFunPantry
                 return instance;
             }
         }
-        
+
 		static IFormatter format = new BinaryFormatter();
         private List<Recipe> recipes = new List<Recipe>();
 
