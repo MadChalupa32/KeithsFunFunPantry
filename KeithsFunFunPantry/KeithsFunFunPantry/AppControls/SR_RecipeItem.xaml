@@ -17,12 +17,12 @@
                 <Label x:Name="RecipeName_L"
                        Content="{Binding Path=Title, Mode=OneWay}"
                        FontFamily="Georgia"
-                       FontSize="25"
+                       FontSize="30"
                        FontWeight="Bold"
                        VerticalAlignment="Stretch"
                        HorizontalAlignment="Right"
                        VerticalContentAlignment="Center"
-                       HorizontalContentAlignment="Center" Width="470"/>
+                       HorizontalContentAlignment="Center" Width="421" Margin="0,0,-0.6,-0.4"/>
             </Grid>
         </Border>
 
