@@ -154,5 +154,10 @@ namespace KeithsFunFunPantry
         {
             Search();
         }
+
+        private void TagListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Search();
+        }
     }
 }

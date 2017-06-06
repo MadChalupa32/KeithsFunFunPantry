@@ -156,6 +156,7 @@
                  FontSize="24"
                  VerticalAlignment="Top"
                  SelectionMode="Multiple"
+                 SelectionChanged="TagListBox_SelectionChanged"
                  Visibility="{Binding IsChecked, ElementName=TagSearchVisibilityCheckBox, Converter={StaticResource BoolToVis}}"/>
         </StackPanel>
     </Grid>
