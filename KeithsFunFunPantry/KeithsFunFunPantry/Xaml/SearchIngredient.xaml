@@ -75,7 +75,7 @@
                FontSize="20"
                FontWeight="Bold"
                VerticalAlignment="Top"
-               HorizontalAlignment="Center" Height="32" Margin="206,30,10.2,0" Width="131"/>
+               HorizontalAlignment="Center" Height="32" Margin="61,30,155.2,0" Width="131"/>
         <Label Content="Recipes"
                Grid.Row="1"
                Grid.RowSpan="3"
@@ -89,10 +89,10 @@
                  Background="#E5C698"
                  Grid.Row="3"
                  Grid.RowSpan="2"
-                 Grid.Column="6"
-                 Grid.ColumnSpan="2"
+                 Grid.Column="5"
+                 Grid.ColumnSpan="3"
                  HorizontalContentAlignment="Stretch"
-                 Margin="13.6,9.6,19.6,19.8">
+                 Margin="9.8,9.6,19.6,19.8">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -105,10 +105,10 @@
                  Background="#E5C698"
                  Grid.Row="3"
                  Grid.RowSpan="2"
-                 Grid.Column="3"
-                 Grid.ColumnSpan="3"
-                 Margin="20,9.6,6.4,19.8"
-                 HorizontalContentAlignment="Stretch">
+                 Grid.Column="1"
+                 Grid.ColumnSpan="4"
+                 Margin="10.4,9.6,0,19.8"
+                 HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" Width="541">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -117,7 +117,7 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-        <WrapPanel  Grid.Column="1"
+        <!--<WrapPanel  Grid.Column="1"
                     Grid.ColumnSpan="4"
                     Grid.Row="2"
                     Grid.RowSpan="2"
@@ -144,6 +144,6 @@
                  VerticalAlignment="Top"
                  SelectionMode="Multiple"
                  Visibility="{Binding IsChecked, ElementName=TagSearchVisibilityCheckBox, Converter={StaticResource BoolToVis}}"/>
-        </StackPanel>
+        </StackPanel>-->
     </Grid>
 </Page>
