@@ -15,6 +15,7 @@ namespace KeithsFunFunPantry
     {
         private void Application_Startup(object sender, StartupEventArgs e)
         {
+            Pantry.ReadIngredientsFromFile();
             RecipeBook book = RecipeBook.Instance;
         }
     }

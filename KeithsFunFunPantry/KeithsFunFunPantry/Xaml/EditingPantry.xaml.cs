@@ -261,5 +261,10 @@ namespace KeithsFunFunPantry
                 Search();
             }
         }
+
+        private void TextBox_IngredientSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Search();
+        }
     }
 }

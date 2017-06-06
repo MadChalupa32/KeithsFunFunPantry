@@ -46,6 +46,7 @@
                      BorderThickness="0" 
                      FontFamily="Georgia"
                      Margin="28,0,0,0"
+                     TextChanged="TextBox_ByRecipeSearch_TextChanged"
                      Keyboard.KeyDown="TextBox_ByRecipeSearch_KeyDown"/>
         </Border>
         <Label VerticalAlignment="Center" 
