@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace KeithsFunFunPantry.CS
 {
@@ -35,11 +36,12 @@ namespace KeithsFunFunPantry.CS
         }
         private static void CheckIngredients(Recipe r)
         {
+            MessageBox.Show(Pantry.Ingredients.Count.ToString());
             foreach(Ingredient i in r.IngredientList)
             {
                 if (!Pantry.Ingredients.Contains(i))
                 {
-                    Pantry.Ingredients.Add(new Ingredient(i.Name, new Measurement(0f, i.IngredientMeasurement.UnitOfMeasurement)));
+                    Pantry.Ingredients.Add(i);
                 }            
             }
         }

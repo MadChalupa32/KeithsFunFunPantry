@@ -22,7 +22,6 @@ namespace KeithsFunFunPantry
         public HomePage()
         {
             InitializeComponent();
-            Pantry.ReadIngredientsFromFile();
             this.Closed += new EventHandler(HomePage_Closed);
         }
         private void HomePage_Closed(object sender, EventArgs e)

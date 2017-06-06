@@ -106,6 +106,7 @@ namespace KeithsFunFunPantry
         //Will import all ingredients from file to list
         public static void ReadIngredientsFromFile()
         {
+            MessageBox.Show("loading pantry");
             try
             {
                 using (Stream stream = File.Open("ingredients.xml", FileMode.Open))
