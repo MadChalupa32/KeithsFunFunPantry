@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:KeithsFunFunPantry.AppControls"
              mc:Ignorable="d" 
-             d:DesignHeight="150" Width="450">
+             d:DesignHeight="150" Width="800">
     <Grid>
         <Border CornerRadius="15"
                 BorderBrush="#A3CC72"
@@ -19,7 +19,7 @@
                 </Grid.RowDefinitions>
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="1.5*"/>
+                    <ColumnDefinition Width="3.5*"/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Name:"
                        Margin="25,0,0,0"

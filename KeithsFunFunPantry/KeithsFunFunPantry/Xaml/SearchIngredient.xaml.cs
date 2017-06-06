@@ -74,8 +74,7 @@ namespace KeithsFunFunPantry
 				{
 					query = "";
 				}
-
-				ListBox_IngredientList.ItemsSource = Pantry.IngredientSearchController(query);
+                ListBox_IngredientList.ItemsSource = Pantry.IngredientSearchController(query);
             }
             else
             {
@@ -119,6 +118,11 @@ namespace KeithsFunFunPantry
             }
 
             ListBox_SearchIngredient.ItemsSource = associatedRecipes;
+        }
+
+        private void TextBox_ByIngredientSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Search();
         }
     }
 }
