@@ -32,6 +32,8 @@ namespace KeithsFunFunPantry
             //TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
             ListBox_IngredientList.ItemsSource = Pantry.Ingredients;
             ListBox_SearchIngredient.ItemsSource = book.Recipes;
+            ListBox_IngredientList.DataContext = Pantry.Ingredients;
+            ListBox_IngredientList.ItemsSource = Pantry.Ingredients;
         }
 
         private string searchBar = "Search by Ingredient";

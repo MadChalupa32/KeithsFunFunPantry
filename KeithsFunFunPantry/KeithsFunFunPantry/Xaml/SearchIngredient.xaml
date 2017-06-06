@@ -126,7 +126,7 @@
             <CheckBox x:Name="TagSearchVisibilityCheckBox"
                       HorizontalAlignment="Center"
                       Margin="10, 3"/>
-            <Label Content="EnableTag Search"
+            <Label Content="Enable Tag Search"
                FontSize="14"
                HorizontalContentAlignment="Center"
                VerticalAlignment="Bottom"/>
