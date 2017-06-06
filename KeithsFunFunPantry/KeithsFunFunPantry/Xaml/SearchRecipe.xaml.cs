@@ -130,20 +130,29 @@ namespace KeithsFunFunPantry
         private void ListBox_EditRecipe_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Recipe selectedRecipe = (Recipe)ListBox_EditRecipe.SelectedItem;
-            List<Ingredient> associatedIngredients = new List<Ingredient>();
 
-            foreach(Ingredient i in Pantry.Ingredients)
+            if (selectedRecipe != null)
             {
-                foreach (Ingredient n in selectedRecipe.IngredientList)
+                List<Ingredient> associatedIngredients = new List<Ingredient>();
+
+                foreach (Ingredient i in Pantry.Ingredients)
                 {
-                    if(i.Name == n.Name)
+                    foreach (Ingredient n in selectedRecipe.IngredientList)
                     {
-                        associatedIngredients.Add(i);
+                        if (i.Name == n.Name)
+                        {
+                            associatedIngredients.Add(i);
+                        }
                     }
                 }
-            }
 
-            ListBox_PantryList.ItemsSource = associatedIngredients;
+                ListBox_PantryList.ItemsSource = associatedIngredients;
+            }
+        }
+
+        private void TextBox_ByRecipeSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            Search();
         }
     }
 }

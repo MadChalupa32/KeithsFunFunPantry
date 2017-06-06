@@ -39,6 +39,7 @@
                      BorderThickness="0"
                      FontFamily="Georgia"
                      Margin="28,0,0,0"
+                     TextChanged="TextBox_RecipeSearch_TextChanged"
                      Keyboard.KeyDown="SearchButton_KeyDown"/>
         </Border>
         <Label VerticalAlignment="Center" 
@@ -137,6 +138,7 @@
                  FontSize="24"
                  VerticalAlignment="Top"
                  SelectionMode="Multiple"
+                     SelectionChanged="TagListBox_SelectionChanged"
                  Visibility="{Binding IsChecked, ElementName=TagSearchVisibilityCheckBox, Converter={StaticResource BoolToVis}}"/>
         </StackPanel>
     </Grid>
