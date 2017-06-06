@@ -130,7 +130,7 @@ namespace KeithsFunFunPantry
         private void ListBox_EditRecipe_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             Recipe selectedRecipe = (Recipe)ListBox_EditRecipe.SelectedItem;
-            List<Ingredient> ingres = new List<Ingredient>();
+            List<Ingredient> associatedIngredients = new List<Ingredient>();
 
             foreach(Ingredient i in Pantry.Ingredients)
             {
@@ -138,12 +138,12 @@ namespace KeithsFunFunPantry
                 {
                     if(i.Name == n.Name)
                     {
-                        ingres.Add(i);
+                        associatedIngredients.Add(i);
                     }
                 }
             }
 
-            ListBox_PantryList.ItemsSource = ingres;
+            ListBox_PantryList.ItemsSource = associatedIngredients;
         }
     }
 }

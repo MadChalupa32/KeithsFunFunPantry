@@ -120,6 +120,7 @@ namespace KeithsFunFunPantry
                 Logging.WriteLog(LogLevel.Error, "RecipeBook Failed to save properly error follows:\n" + e.ToString());
             } 
         }
+
 		#region Search Function
 
 		//Controls recipe-specific search function

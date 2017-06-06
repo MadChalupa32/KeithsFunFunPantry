@@ -108,7 +108,9 @@
                  Grid.Column="1"
                  Grid.ColumnSpan="4"
                  Margin="10.4,9.6,0,19.8"
-                 HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" Width="541">
+                 HorizontalContentAlignment="Stretch" HorizontalAlignment="Left" Width="541"
+                 SelectionMode="Multiple"
+                 SelectionChanged="ListBox_IngredientList_SelectionChanged">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>

@@ -105,5 +105,31 @@ namespace KeithsFunFunPantry
                 Search();
             }
         }
+
+        private void ListBox_IngredientList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<Ingredient> selectedIngredients = new List<Ingredient>();
+            foreach(object obj in ListBox_IngredientList.SelectedItems)
+            {
+                selectedIngredients.Add((Ingredient)obj);
+            }
+            List<Recipe> associatedRecipes = new List<Recipe>();
+
+            foreach(Recipe r in RecipeBook.Instance.Recipes)
+            {
+                foreach(Ingredient i in selectedIngredients)
+                {
+                    foreach(Ingredient n in r.IngredientList)
+                    {
+                        if (i.Name == n.Name && !associatedRecipes.Contains(r))
+                        {
+                            associatedRecipes.Add(r);
+                        }
+                    }
+                }
+            }
+
+            ListBox_SearchIngredient.ItemsSource = associatedRecipes;
+        }
     }
 }
