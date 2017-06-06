@@ -171,8 +171,9 @@ namespace KeithsFunFunPantry.Windows
 
         private void EnableEditButton_Click(object sender, RoutedEventArgs e)
         {
-            Enabled = !Enabled;
+			EnableEditButton.Content = Enabled ? "Allow Edits" : "Disallow Edits";
 
+			Enabled = !Enabled;
         }
 
         private void CloseButton_Click(object sender, RoutedEventArgs e)
