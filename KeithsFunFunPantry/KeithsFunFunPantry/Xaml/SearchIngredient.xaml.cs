@@ -29,8 +29,6 @@ namespace KeithsFunFunPantry
             TextBoxOptions();
             RecipeBook book = RecipeBook.Instance;
 
-            TagListBox.ItemsSource = Enum.GetValues(typeof(Tag));
-
             ListBox_SearchIngredient.ItemsSource = book.Recipes;
             ListBox_IngredientList.DataContext = Pantry.Ingredients;
             ListBox_IngredientList.ItemsSource = Pantry.Ingredients;
@@ -70,17 +68,8 @@ namespace KeithsFunFunPantry
         {
             string query = TextBox_ByIngredientSearch.Text.ToLower();
 
-            if (!query.Equals("search by ingredient"))//|| (bool)TagSearchVisibilityCheckBox.IsChecked)
+            if (!query.Equals("search by ingredient"))
             {
-				//List<Tag> tags = new List<Tag>();
-				//if ((bool)TagSearchVisibilityCheckBox.IsChecked)
-				//{
-				//	foreach (Tag t in TagListBox.SelectedItems)
-				//	{
-				//		tags.Add(t);
-				//	}
-				//}
-
 				if (query == "search recipes")
 				{
 					query = "";
