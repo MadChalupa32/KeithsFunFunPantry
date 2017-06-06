@@ -29,8 +29,6 @@ namespace KeithsFunFunPantry
             TextBoxOptions();
             RecipeBook book = RecipeBook.Instance;
 
-            TagListBox.ItemsSource = Enum.GetNames(typeof(Tag));
-
             ListBox_SearchIngredient.ItemsSource = book.Recipes;
             ListBox_IngredientList.DataContext = Pantry.Ingredients;
             ListBox_IngredientList.ItemsSource = Pantry.Ingredients;
@@ -70,17 +68,8 @@ namespace KeithsFunFunPantry
         {
             string query = TextBox_ByIngredientSearch.Text.ToLower();
 
-            if (!query.Equals("search by ingredient") || (bool)TagSearchVisibilityCheckBox.IsChecked)
+            if (!query.Equals("search by ingredient"))
             {
-				List<Tag> tags = new List<Tag>();
-				if ((bool)TagSearchVisibilityCheckBox.IsChecked)
-				{
-					foreach (Tag t in TagListBox.SelectedItems)
-					{
-						tags.Add(t);
-					}
-				}
-
 				if (query == "search recipes")
 				{
 					query = "";
@@ -104,6 +93,32 @@ namespace KeithsFunFunPantry
             {
                 Search();
             }
+        }
+
+        private void ListBox_IngredientList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            List<Ingredient> selectedIngredients = new List<Ingredient>();
+            foreach(object obj in ListBox_IngredientList.SelectedItems)
+            {
+                selectedIngredients.Add((Ingredient)obj);
+            }
+            List<Recipe> associatedRecipes = new List<Recipe>();
+
+            foreach(Recipe r in RecipeBook.Instance.Recipes)
+            {
+                foreach(Ingredient i in selectedIngredients)
+                {
+                    foreach(Ingredient n in r.IngredientList)
+                    {
+                        if (i.Name == n.Name && !associatedRecipes.Contains(r))
+                        {
+                            associatedRecipes.Add(r);
+                        }
+                    }
+                }
+            }
+
+            ListBox_SearchIngredient.ItemsSource = associatedRecipes;
         }
     }
 }

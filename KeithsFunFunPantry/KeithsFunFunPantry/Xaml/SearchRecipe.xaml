@@ -15,8 +15,8 @@
             <ColumnDefinition Width="30"/>
             <ColumnDefinition Width="120"/>
             <ColumnDefinition Width="345"/>
-            <ColumnDefinition Width="148*"/>
-            <ColumnDefinition Width="227*"/>
+            <ColumnDefinition Width="190*"/>
+            <ColumnDefinition Width="185*"/>
             <ColumnDefinition Width="322*"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
@@ -75,13 +75,12 @@
                Grid.Row="1"
                Grid.RowSpan="3"
                Grid.Column="3"
-               Grid.ColumnSpan="2"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
                FontFamily="Georgia"
                FontSize="20"
                FontWeight="Bold"
-               Margin="0,30,0,0"/>
+               Margin="168,30,16.8,0" Height="32" Width="160"/>
         <Label Content="Pantry ingredients"
                Grid.Row="1"
                Grid.RowSpan="3"
@@ -92,14 +91,14 @@
                FontFamily="Georgia"
                FontSize="20"
                FontWeight="Bold" 
-               Margin="0,30,0,0"/>
+               Margin="150.8,30,152.6,0" Height="32" Width="203"/>
         <ListBox x:Name="ListBox_EditRecipe"
                  Background="#E5C698"
                  Grid.Row="3"
                  Grid.RowSpan="7"
                  Grid.Column="3"
                  Grid.ColumnSpan="2"
-                 Margin="20,10,10,20"
+                 Margin="20,9.6,9.2,19.8"
                  HorizontalContentAlignment="Stretch"
                  SelectionChanged="ListBox_EditRecipe_SelectionChanged">
             <ListBox.ItemTemplate>
@@ -117,7 +116,7 @@
                  Grid.Column="5"
                  Grid.ColumnSpan="2"
                  HorizontalContentAlignment="Stretch"
-                 Margin="20,10,20,20">
+                 Margin="20.8,9.6,19.6,19.8">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <StackPanel>
@@ -128,10 +127,10 @@
         </ListBox>
         <WrapPanel  Grid.Column="1"
                     Grid.ColumnSpan="4"
-                    Grid.Row="1"
-                    Grid.RowSpan="3"
-                    Margin="10"
-                    VerticalAlignment="Bottom">
+                    Grid.Row="2"
+                    Grid.RowSpan="2"
+                    Margin="10.4,0,9.2,10.4"
+                    VerticalAlignment="Bottom" Height="28">
             <CheckBox x:Name="TagSearchVisibilityCheckBox"
                       HorizontalAlignment="Center"
                       Margin="10, 3"/>
@@ -148,7 +147,7 @@
                     Grid.ColumnSpan="3"
                     Grid.Row="4"
                     Grid.RowSpan="6"
-                    Margin="10,10,0,20">
+                    Margin="10,9.6,0,19.8">
             <ListBox x:Name="TagListBox"
                  Margin="10"
                  MaxHeight="550"
