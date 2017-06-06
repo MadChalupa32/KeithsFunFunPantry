@@ -36,7 +36,6 @@ namespace KeithsFunFunPantry.CS
         }
         private static void CheckIngredients(Recipe r)
         {
-            MessageBox.Show(Pantry.Ingredients.Count.ToString());
             foreach(Ingredient i in r.IngredientList)
             {
                 if (!Pantry.Ingredients.Contains(i))
