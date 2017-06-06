@@ -50,13 +50,12 @@
         <Label Content="Ingredient Name"
                Grid.Row="2"
                Grid.RowSpan="2"
-               Grid.Column="2"
-               Grid.ColumnSpan="2"
+               Grid.Column="3"
                VerticalAlignment="Top"
                HorizontalAlignment="Center"
                FontFamily="Georgia"
                FontSize="20"
-               FontWeight="Bold" Margin="83,4.6,199.2,0"/>
+               FontWeight="Bold" Margin="75,2.6,68.2,0" Width="204"/>
         <Label Content="Amount of Ingredient"
                Grid.Row="2"
                Grid.RowSpan="2"
@@ -66,7 +65,7 @@
                HorizontalAlignment="Center"
                FontFamily="Georgia"
                FontSize="20"
-               FontWeight="Bold"/>
+               FontWeight="Bold" Margin="129.8,2.6,313.6,0" Width="251"/>
         <Label VerticalAlignment="Center" 
                HorizontalAlignment="Left"
                Background="Transparent"
@@ -101,17 +100,18 @@
                  Background="#E5C698"
                  Grid.Row="3"
                  Grid.RowSpan="7"
+                 Grid.Column="1"
                  Grid.ColumnSpan="6"
-                 Margin="10,19.6,19.6,19.8"
+                 Margin="20"
                  HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                        <StackPanel>
-                            <AC:PantryViewItem/>
-                        </StackPanel>
+                    <StackPanel>
+                        <AC:PantryViewItem/>
+                    </StackPanel>
                 </DataTemplate>
             </ListBox.ItemTemplate>
-            
+
         </ListBox>
     </Grid>
 </Page>
