@@ -101,7 +101,7 @@ namespace KeithsFunFunPantry.AppControls
             {
             if(Pantry.Ingredients[x].Name.ToLower() == TextBox_Ingredient.Text.ToLower())
                 {
-                    if ((Pantry.Ingredients[x].IngredientMeasurement.Amount += subAmount) < 0)
+                    if ((Pantry.Ingredients[x].IngredientMeasurement.Amount + subAmount) < 0)
                     {
                         Logging.WriteLog(LogLevel.Warning, "Can't subtract more than you have");
                     }
