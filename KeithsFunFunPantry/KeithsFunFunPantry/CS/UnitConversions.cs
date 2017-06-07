@@ -173,31 +173,17 @@ namespace KeithsFunFunPantry.CS
 		public static void Convert(this Measurement original, Unit targetUnit)
 		{
 			//Validation & Conversion
-			try
-			{
-				if (original.UnitOfMeasurement.Equals(targetUnit))
-					throw new ArgumentException("The units are the same!");
+			if (original.UnitOfMeasurement.Equals(targetUnit))
+				throw new ArgumentException("The units are the same!");
 
-				//Attempt to convert the measurement into the target unit
-				float convertedAmount = conversions[targetUnit][original.UnitOfMeasurement].Invoke(original.Amount);
+			//Attempt to convert the measurement into the target unit
+			float convertedAmount = conversions[targetUnit][original.UnitOfMeasurement].Invoke(original.Amount);
 
-				//Truncate the Amount measurement to three places
-				convertedAmount = (float)Math.Truncate(convertedAmount * 1000) / 1000;
-				//Change original measurement
-				original.Amount = convertedAmount;
-				original.UnitOfMeasurement = targetUnit;
-
-			}
-			catch (KeyNotFoundException)
-			{
-				//Catches failure cases where the units are not compatible
-				Console.WriteLine("Cannot convert " + original.UnitOfMeasurement + " to " + targetUnit + " because the conversion is invalid.");
-			}
-			catch (ArgumentException)
-			{
-				//Catches the failure cases where the units are the same
-				Console.WriteLine("The measurement unit and the target unit are the same: \'" + targetUnit + "\'.");
-			}
+			//Truncate the Amount measurement to three places
+			convertedAmount = (float)Math.Truncate(convertedAmount * 1000) / 1000;
+			//Change original measurement
+			original.Amount = convertedAmount;
+			original.UnitOfMeasurement = targetUnit;
 		}
 
 		//Private methods for each conversion

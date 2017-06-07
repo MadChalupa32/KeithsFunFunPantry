@@ -113,8 +113,16 @@ namespace KeithsFunFunPantry.AppControls
             Unit targetUnit = ComboBox_1.SelectedItem as Unit;
 
             Ingredient targetIngredient = DataContext as Ingredient;
-            
-            targetIngredient.IngredientMeasurement.Convert(targetUnit);
+
+			try
+			{
+				targetIngredient.IngredientMeasurement.Convert(targetUnit);
+			}
+			catch(Exception)
+			{
+				//Conversion failed
+				ComboBox_1.SelectedItem = targetIngredient.IngredientMeasurement.UnitOfMeasurement;
+			}
         }
     }
 
