@@ -16,6 +16,7 @@ Tyler Wharton
 Taylor Dudley
 	5/22/2017 Worked on timeline redesign and trello sprints
 	5/23/2017 Trystan, Randal and I worked on how we are going to implement the conversions.
+	6/6/2017 Tested the generating ingredients, made sure adding worked correctly since we generated our data, then checked to make sure other pages worked correctly 
 
 Trystan Orr
 	5-22-17		Worked on redesigning the timeline and Trello boards according to our resubmit of the first delieverable and the rest of our planned features.
