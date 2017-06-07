@@ -62,6 +62,11 @@ namespace KeithsFunFunPantry
                     foundMatch = true;
                     break;
                 }
+                else if(i.IngredientMeasurement.Amount < 0)
+                {
+                    Logging.WriteLog(LogLevel.Warning, "Can't add less than 0 for an ingredient");
+                    break;
+                }
                 else if (Ingredients.ElementAt(count - 1).Name.ToLower() == i.Name.ToLower())
                 {
                     Logging.WriteLog(LogLevel.Info, "Ingredient already exists in list");

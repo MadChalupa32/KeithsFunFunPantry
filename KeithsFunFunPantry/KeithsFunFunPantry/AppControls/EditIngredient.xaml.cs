@@ -99,9 +99,16 @@ namespace KeithsFunFunPantry.AppControls
             float.TryParse(TextBox_Subtract.Text, out subAmount);
             for(int x = 0; x < Pantry.Ingredients.Count(); x++)
             {
-                if(Pantry.Ingredients[x].Name.ToLower() == TextBox_Ingredient.Text.ToLower())
+            if(Pantry.Ingredients[x].Name.ToLower() == TextBox_Ingredient.Text.ToLower())
                 {
-                    Pantry.Ingredients[x].IngredientMeasurement.Amount -= subAmount;
+                    if ((Pantry.Ingredients[x].IngredientMeasurement.Amount += subAmount) < 0)
+                    {
+                        Logging.WriteLog(LogLevel.Warning, "Can't subtract more than you have");
+                    }
+                    else
+                    {
+                        Pantry.Ingredients[x].IngredientMeasurement.Amount -= subAmount;                    
+                    }
                 }
             }
             TextBox_Subtract.Text = "";
