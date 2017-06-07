@@ -26,14 +26,13 @@ namespace KeithsFunFunPantry
             get { return name; }
             set
             {
-                if (nameValidation.IsMatch(name))
+                if (nameValidation.IsMatch(value))
                 {
-                name = value;
-                FieldChanged();
+                    name = value;
+                    FieldChanged();
                 }
                 else
                 {
-                    MessageBox.Show("Please enter a valid name for the ingredient.");
                     Logging.WriteLog(LogLevel.Warning, "Invalid ingredient name entered" + name);
                 }
             }

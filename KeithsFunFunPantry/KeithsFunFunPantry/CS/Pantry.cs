@@ -53,6 +53,10 @@ namespace KeithsFunFunPantry
             bool foundMatch = false;
             int count = Ingredients.Count();
             Ingredient i = new Ingredient(name, m);
+            if (i.Name.Equals(""))
+            {
+                foundMatch = true;
+            }
             while (!foundMatch && count >= 0)
             {
                 if (count == 0)

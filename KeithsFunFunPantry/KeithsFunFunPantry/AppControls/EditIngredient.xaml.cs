@@ -84,10 +84,17 @@ namespace KeithsFunFunPantry.AppControls
             float addAmount;
             float.TryParse(TextBox_Add.Text, out addAmount);
             for(int x = 0; x < Pantry.Ingredients.Count(); x++)
-            {
+            {                
                 if (Pantry.Ingredients[x].Name.ToLower() == TextBox_Ingredient.Text.ToLower())
                 {
-                    Pantry.Ingredients[x].IngredientMeasurement.Amount += addAmount;
+                    if ((Pantry.Ingredients[x].IngredientMeasurement.Amount + addAmount) < Pantry.Ingredients[x].IngredientMeasurement.Amount)
+                    {
+                        Logging.WriteLog(LogLevel.Warning, "Can't add a negative number");
+                    }
+                    else
+                    {
+                        Pantry.Ingredients[x].IngredientMeasurement.Amount += addAmount;
+                    }
                 }
             }
             TextBox_Add.Text = "";
@@ -99,9 +106,9 @@ namespace KeithsFunFunPantry.AppControls
             float.TryParse(TextBox_Subtract.Text, out subAmount);
             for(int x = 0; x < Pantry.Ingredients.Count(); x++)
             {
-            if(Pantry.Ingredients[x].Name.ToLower() == TextBox_Ingredient.Text.ToLower())
+                if(Pantry.Ingredients[x].Name.ToLower() == TextBox_Ingredient.Text.ToLower())
                 {
-                    if ((Pantry.Ingredients[x].IngredientMeasurement.Amount + subAmount) < 0)
+                    if ((Pantry.Ingredients[x].IngredientMeasurement.Amount - subAmount) < 0)
                     {
                         Logging.WriteLog(LogLevel.Warning, "Can't subtract more than you have");
                     }
