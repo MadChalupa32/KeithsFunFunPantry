@@ -8,7 +8,7 @@ Cristian Bravo
 	5/23 I helped brian on work on the remove ingredient part of the project
 
 Randal McClure
-	6/2		I finished writing the tag search logic for the View and Search pages. The search functinality is currently untested.
+	6/6		I fixed some pretty minor bugs with searching. I made some small UI changes to make it more user friendly. And I changed how failed conversions are handled, including the how the UI presents the failures.
 
 Tyler Wharton
 
